@@ -1,0 +1,51 @@
+﻿using System;
+using RestSharp;
+using RestSharp.Authenticators;
+using RestSharp.Serializers.NewtonsoftJson;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using nsxtalbsdk.Modules;
+
+namespace nsxtalbapi
+{
+    public class NSXTALBClient
+    {
+        public string EndPoint { get; set; }
+        public RestClient restClient { get; set; }
+        JsonSerializerSettings defaultSerializationSettings;
+        public NSXTALBClient(string host, string Username, string Password, bool? remoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, int Port = 443)
+        {
+            var uri = new UriBuilder(host)
+            {
+                Scheme = Uri.UriSchemeHttps,
+                Port = Port
+            };
+            restClient = new RestClient(uri.Uri);
+            if (remoteCertificateValidation == false)
+            {
+                restClient.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+            }            
+            restClient.Authenticator = new HttpBasicAuthenticator(Username, Password);
+            if (DefaultSerializationSettings == null)
+            {
+                defaultSerializationSettings = new JsonSerializerSettings
+                {
+                    ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                    DefaultValueHandling = DefaultValueHandling.Include,
+                    TypeNameHandling = TypeNameHandling.None,
+                    NullValueHandling = NullValueHandling.Ignore,
+                    Formatting = Formatting.None,
+                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
+                };
+            }
+            else
+            {
+                defaultSerializationSettings = DefaultSerializationSettings;
+            }
+            restClient.UseNewtonsoftJson(defaultSerializationSettings);
+        }
+        {{#modules}}
+        public {{.}} {{.}}Module => new {{.}}(restClient, defaultSerializationSettings);
+        {{/modules}}
+    }
+}

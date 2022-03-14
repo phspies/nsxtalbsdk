@@ -1,0 +1,55 @@
+﻿
+using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Net;
+using nsxtalbsdk;
+using nsxtalbsdk.Models;
+
+namespace nsxtalbsdk.Modules
+{
+    public class {{module}}
+    {
+        RestClient restClient;
+        JsonSerializerSettings defaultSerializationSettings;
+        public {{module}}(RestClient Client, JsonSerializerSettings DefaultSerializationSettings)
+        {
+            restClient = Client;
+            defaultSerializationSettings = DefaultSerializationSettings;
+        }
+        {{#operations}}
+        public {{GetOperationReturnType . "full"}} {{GetMethodName .}}({{GetOperationPathParams .}})
+        {
+            {{#operation.parameters}}
+            {{#isRequired}}
+            if ({{GetParameterPascalCase name}} == null) { throw new ArgumentNullException("{{GetParameterPascalCase name}} cannot be null"); }
+            {{/isRequired}}
+            {{/operation.parameters}}
+            {{GetOperationReturnType . "init"}}
+            StringBuilder {{GetMethodName .}}ServiceURL = new StringBuilder("{{ GetServiceUrl . }}");
+            var request = new RestRequest
+            {              
+                RequestFormat = DataFormat.Json,
+                Method = Method.{{GetOperationHttpMethod .}}
+            };
+            request.AddHeader("Content-type", "application/json");
+            {{#operation.parameters}}
+            {{GetOperationPathInjectionCode . operations.Current }}
+            {{/operation.parameters}}
+            request.Resource = {{GetMethodName .}}ServiceURL.ToString();
+            var response = restClient.Execute(request);
+            if (response.StatusCode != HttpStatusCode.OK)
+			{
+                var message = "HTTP {{GetOperationHttpMethod .}} operation to " + {{GetMethodName .}}ServiceURL.ToString() + " did not complete successfull";
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+			}
+            {{GetOperationReturnType . "return"}}
+        }
+        {{/operations}}
+    }
+}

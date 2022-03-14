@@ -1,0 +1,31 @@
+using nsxtalbsdk.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
+
+namespace nsxtalbsdk.Models
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class NSXTALBURIParamType 
+    {
+        public NSXTALBURIParamType()
+        {
+        }
+        /// <summary>
+        /// Token config either for the URI components or a constant string. Minimum of 1 items required.
+        /// </summary>
+        [JsonProperty(PropertyName = "tokens")]
+        public IList<NSXTALBURIParamTokenType> Tokens { get; set; }
+        /// <summary>
+        /// URI param type. Enum options - URI_PARAM_TYPE_TOKENIZED.
+        /// </summary>
+        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Type { get; set; }
+    }
+}

@@ -1,0 +1,271 @@
+
+using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Net;
+using nsxtalbsdk;
+using nsxtalbsdk.Models;
+
+namespace nsxtalbsdk.Modules
+{
+    public class SiteVersion
+    {
+        RestClient restClient;
+        JsonSerializerSettings defaultSerializationSettings;
+        public SiteVersion(RestClient Client, JsonSerializerSettings DefaultSerializationSettings)
+        {
+            restClient = Client;
+            defaultSerializationSettings = DefaultSerializationSettings;
+        }
+        public NSXTALBSiteVersionApiResponseType GetSiteversion(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        {
+            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            NSXTALBSiteVersionApiResponseType? returnValue = default(NSXTALBSiteVersionApiResponseType);
+            StringBuilder GetSiteversionServiceURL = new StringBuilder("/api/siteversion");
+            var request = new RestRequest
+            {              
+                RequestFormat = DataFormat.Json,
+                Method = Method.GET
+            };
+            request.AddHeader("Content-type", "application/json");
+            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (RefersTo != null) { request.AddQueryParameter("refers_to", RefersTo.ToString()); }
+            if (ReferredBy != null) { request.AddQueryParameter("referred_by", ReferredBy.ToString()); }
+            if (Fields != null) { request.AddQueryParameter("fields", Fields.ToString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
+            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JoinSubresources.ToString()); }
+            if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
+            if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
+            if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
+            if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
+            request.Resource = GetSiteversionServiceURL.ToString();
+            var response = restClient.Execute(request);
+            if (response.StatusCode != HttpStatusCode.OK)
+			{
+                var message = "HTTP GET operation to " + GetSiteversionServiceURL.ToString() + " did not complete successfull";
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+			}
+            else
+			{
+				try
+				{
+					returnValue = JsonConvert.DeserializeObject<NSXTALBSiteVersionApiResponseType>(response.Content, defaultSerializationSettings);
+				}
+				catch (Exception ex)
+				{
+					var message = "Could not deserialize the response body string as " + typeof(NSXTALBSiteVersionApiResponseType).FullName + ".";
+					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
+				}
+			}
+			return returnValue;
+        }
+        public NSXTALBSiteVersionType PostSiteversion(string XAviVersion, NSXTALBSiteVersionType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        {
+            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
+            NSXTALBSiteVersionType? returnValue = default(NSXTALBSiteVersionType);
+            StringBuilder PostSiteversionServiceURL = new StringBuilder("/api/siteversion");
+            var request = new RestRequest
+            {              
+                RequestFormat = DataFormat.Json,
+                Method = Method.POST
+            };
+            request.AddHeader("Content-type", "application/json");
+            if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
+            if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
+            if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
+            if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
+            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.Resource = PostSiteversionServiceURL.ToString();
+            var response = restClient.Execute(request);
+            if (response.StatusCode != HttpStatusCode.OK)
+			{
+                var message = "HTTP POST operation to " + PostSiteversionServiceURL.ToString() + " did not complete successfull";
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+			}
+            else
+			{
+				try
+				{
+					returnValue = JsonConvert.DeserializeObject<NSXTALBSiteVersionType>(response.Content, defaultSerializationSettings);
+				}
+				catch (Exception ex)
+				{
+					var message = "Could not deserialize the response body string as " + typeof(NSXTALBSiteVersionType).FullName + ".";
+					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
+				}
+			}
+			return returnValue;
+        }
+        public NSXTALBSiteVersionType GetSiteversionUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
+        {
+            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            NSXTALBSiteVersionType? returnValue = default(NSXTALBSiteVersionType);
+            StringBuilder GetSiteversionUuidServiceURL = new StringBuilder("/api/siteversion/{uuid}");
+            var request = new RestRequest
+            {              
+                RequestFormat = DataFormat.Json,
+                Method = Method.GET
+            };
+            request.AddHeader("Content-type", "application/json");
+            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
+            if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
+            if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
+            if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
+            GetSiteversionUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
+            if (Fields != null) { request.AddQueryParameter("fields", Fields.ToString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
+            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JoinSubresources.ToString()); }
+            request.Resource = GetSiteversionUuidServiceURL.ToString();
+            var response = restClient.Execute(request);
+            if (response.StatusCode != HttpStatusCode.OK)
+			{
+                var message = "HTTP GET operation to " + GetSiteversionUuidServiceURL.ToString() + " did not complete successfull";
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+			}
+            else
+			{
+				try
+				{
+					returnValue = JsonConvert.DeserializeObject<NSXTALBSiteVersionType>(response.Content, defaultSerializationSettings);
+				}
+				catch (Exception ex)
+				{
+					var message = "Could not deserialize the response body string as " + typeof(NSXTALBSiteVersionType).FullName + ".";
+					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
+				}
+			}
+			return returnValue;
+        }
+        public NSXTALBSiteVersionType PutSiteversionUuid(string XAviVersion, NSXTALBSiteVersionType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        {
+            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
+            if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            NSXTALBSiteVersionType? returnValue = default(NSXTALBSiteVersionType);
+            StringBuilder PutSiteversionUuidServiceURL = new StringBuilder("/api/siteversion/{uuid}");
+            var request = new RestRequest
+            {              
+                RequestFormat = DataFormat.Json,
+                Method = Method.PUT
+            };
+            request.AddHeader("Content-type", "application/json");
+            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
+            if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
+            if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
+            if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
+            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            PutSiteversionUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
+            request.Resource = PutSiteversionUuidServiceURL.ToString();
+            var response = restClient.Execute(request);
+            if (response.StatusCode != HttpStatusCode.OK)
+			{
+                var message = "HTTP PUT operation to " + PutSiteversionUuidServiceURL.ToString() + " did not complete successfull";
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+			}
+            else
+			{
+				try
+				{
+					returnValue = JsonConvert.DeserializeObject<NSXTALBSiteVersionType>(response.Content, defaultSerializationSettings);
+				}
+				catch (Exception ex)
+				{
+					var message = "Could not deserialize the response body string as " + typeof(NSXTALBSiteVersionType).FullName + ".";
+					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
+				}
+			}
+			return returnValue;
+        }
+        public NSXTALBSiteVersionType PatchSiteversionUuid(string XAviVersion, NSXTALBSiteVersionType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        {
+            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
+            if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            NSXTALBSiteVersionType? returnValue = default(NSXTALBSiteVersionType);
+            StringBuilder PatchSiteversionUuidServiceURL = new StringBuilder("/api/siteversion/{uuid}");
+            var request = new RestRequest
+            {              
+                RequestFormat = DataFormat.Json,
+                Method = Method.PATCH
+            };
+            request.AddHeader("Content-type", "application/json");
+            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
+            if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
+            if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
+            if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
+            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            PatchSiteversionUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
+            request.Resource = PatchSiteversionUuidServiceURL.ToString();
+            var response = restClient.Execute(request);
+            if (response.StatusCode != HttpStatusCode.OK)
+			{
+                var message = "HTTP PATCH operation to " + PatchSiteversionUuidServiceURL.ToString() + " did not complete successfull";
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+			}
+            else
+			{
+				try
+				{
+					returnValue = JsonConvert.DeserializeObject<NSXTALBSiteVersionType>(response.Content, defaultSerializationSettings);
+				}
+				catch (Exception ex)
+				{
+					var message = "Could not deserialize the response body string as " + typeof(NSXTALBSiteVersionType).FullName + ".";
+					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
+				}
+			}
+			return returnValue;
+        }
+        public string DeleteSiteversionUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        {
+            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            string? returnValue  = default(string);
+            StringBuilder DeleteSiteversionUuidServiceURL = new StringBuilder("/api/siteversion/{uuid}");
+            var request = new RestRequest
+            {              
+                RequestFormat = DataFormat.Json,
+                Method = Method.DELETE
+            };
+            request.AddHeader("Content-type", "application/json");
+            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
+            if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
+            if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
+            if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
+            DeleteSiteversionUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
+            request.Resource = DeleteSiteversionUuidServiceURL.ToString();
+            var response = restClient.Execute(request);
+            if (response.StatusCode != HttpStatusCode.OK)
+			{
+                var message = "HTTP DELETE operation to " + DeleteSiteversionUuidServiceURL.ToString() + " did not complete successfull";
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+			}
+            else
+			{
+				try
+				{
+					returnValue = (string)response.Content;
+				}
+				catch (Exception ex)
+				{
+					var message = "Could not deserialize the response body string as " + typeof(string).FullName + ".";
+					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
+				}
+			}
+			return returnValue;
+        }
+    }
+}

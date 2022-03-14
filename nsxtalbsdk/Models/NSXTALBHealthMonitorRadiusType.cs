@@ -1,0 +1,38 @@
+using nsxtalbsdk.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
+
+namespace nsxtalbsdk.Models
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class NSXTALBHealthMonitorRadiusType 
+    {
+        public NSXTALBHealthMonitorRadiusType()
+        {
+        }
+        /// <summary>
+        /// Radius monitor will query Radius server with this password. Field introduced in 18.2.3.
+        /// </summary>
+        [JsonProperty(PropertyName = "password", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Password { get; set; }
+        /// <summary>
+        /// Radius monitor will query Radius server with this shared secret. Field introduced in 18.2.3.
+        /// </summary>
+        [JsonProperty(PropertyName = "shared_secret", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string SharedSecret { get; set; }
+        /// <summary>
+        /// Radius monitor will query Radius server with this username. Field introduced in 18.2.3.
+        /// </summary>
+        [JsonProperty(PropertyName = "username", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Username { get; set; }
+    }
+}

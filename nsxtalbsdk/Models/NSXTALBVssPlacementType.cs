@@ -1,0 +1,30 @@
+using nsxtalbsdk.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
+
+namespace nsxtalbsdk.Models
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class NSXTALBVssPlacementType 
+    {
+        public NSXTALBVssPlacementType()
+        {
+        }
+        /// <summary>
+        /// Degree of core non-affinity for VS placement. Allowed values are 1-256. Field introduced in 17.2.5.
+        /// </summary>
+        [JsonProperty(PropertyName = "core_nonaffinity")]
+        public int? CoreNonaffinity { get; set; }
+        /// <summary>
+        /// Number of sub-cores that comprise a CPU core. Allowed values are 1-128. Field introduced in 17.2.5.
+        /// </summary>
+        [JsonProperty(PropertyName = "num_subcores")]
+        public int? NumSubcores { get; set; }
+    }
+}

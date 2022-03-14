@@ -1,0 +1,32 @@
+using nsxtalbsdk.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
+
+namespace nsxtalbsdk.Models
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class NSXTALBDsrProfileType 
+    {
+        public NSXTALBDsrProfileType()
+        {
+        }
+        /// <summary>
+        /// Encapsulation type to use when DSR is L3. Enum options - ENCAP_IPINIP, ENCAP_GRE. Field introduced in 18.2.3.
+        /// </summary>
+        [JsonProperty(PropertyName = "dsr_encap_type", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string DsrEncapType { get; set; }
+        /// <summary>
+        /// DSR type L2/L3. Enum options - DSR_TYPE_L2, DSR_TYPE_L3. Field introduced in 18.2.3.
+        /// </summary>
+        [JsonProperty(PropertyName = "dsr_type", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string DsrType { get; set; }
+    }
+}

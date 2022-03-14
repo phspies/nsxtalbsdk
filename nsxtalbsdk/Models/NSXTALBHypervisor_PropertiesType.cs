@@ -1,0 +1,36 @@
+using nsxtalbsdk.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
+
+namespace nsxtalbsdk.Models
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class NSXTALBHypervisor_PropertiesType 
+    {
+        public NSXTALBHypervisor_PropertiesType()
+        {
+        }
+        /// <summary>
+        /// Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+        /// </summary>
+        [JsonProperty(PropertyName = "htype", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Htype { get; set; }
+        /// <summary>
+        /// Number of max_ips_per_nic.
+        /// </summary>
+        [JsonProperty(PropertyName = "max_ips_per_nic")]
+        public int? MaxIpsPerNic { get; set; }
+        /// <summary>
+        /// Number of max_nics.
+        /// </summary>
+        [JsonProperty(PropertyName = "max_nics")]
+        public int? MaxNics { get; set; }
+    }
+}

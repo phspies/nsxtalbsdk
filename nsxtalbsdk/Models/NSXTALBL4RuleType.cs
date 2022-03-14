@@ -1,0 +1,47 @@
+using nsxtalbsdk.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
+
+namespace nsxtalbsdk.Models
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class NSXTALBL4RuleType 
+    {
+        public NSXTALBL4RuleType()
+        {
+        }
+        /// <summary>
+        /// Action to be performed upon successful rule match. Field introduced in 17.2.7.
+        /// </summary>
+        [JsonProperty(PropertyName = "action")]
+        public NSXTALBL4RuleActionType Action { get; set; }
+        /// <summary>
+        /// Enable or disable the rule. Field introduced in 17.2.7.
+        /// </summary>
+        [JsonProperty(PropertyName = "enable")]
+        public bool? Enable { get; set; }
+        /// <summary>
+        /// Index of the rule. Field introduced in 17.2.7.
+        /// </summary>
+        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public int Index { get; set; }
+        /// <summary>
+        /// Match criteria of the rule. Field introduced in 17.2.7.
+        /// </summary>
+        [JsonProperty(PropertyName = "match")]
+        public NSXTALBL4RuleMatchTargetType Match { get; set; }
+        /// <summary>
+        /// Name of the rule. Field introduced in 17.2.7.
+        /// </summary>
+        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Name { get; set; }
+    }
+}

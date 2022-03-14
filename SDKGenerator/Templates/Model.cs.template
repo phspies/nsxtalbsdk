@@ -1,0 +1,53 @@
+﻿using nsxtalbsdk.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
+
+namespace nsxtalbsdk.Models
+{
+    /// <summary>
+    /// {{ToXmlDoc def.description "wrap"}}
+    /// </summary>
+    {{#discriminator}}
+    [JsonConverter(typeof(JsonInheritanceConverter), "{{discriminator}}")]
+    {{/discriminator}}
+    {{#inheritanceClasses}}
+    [JsonInheritanceAttribute("{{.}}", typeof(NSXT{{.}}Type))]
+    {{/inheritanceClasses}}
+    public class NSXTALB{{clz}}Type {{referenced}}
+    {
+        public NSXTALB{{clz}}Type()
+        {
+            {{#def.Value.Properties}}
+            {{#each def.Value.Properties}}
+            {{#value.default}}
+            {{/value.default}}
+            {{/each}}
+            {{/def.Value.Properties}}
+        }
+        {{#properties}}
+        /// <summary>
+        /// {{ToXmlDoc description "wrap"}}
+        /// </summary>
+        {{#isRequired}}
+        [JsonProperty(PropertyName = "{{name}}", Required = Required.AllowNull)]
+        {{/isRequired}}
+        {{^isRequired}}
+        [JsonProperty(PropertyName = "{{name}}")]
+        {{/isRequired}}
+        {{#minimum}}
+        //[System.ComponentModel.DataAnnotations.MinLength({{minimum}})]
+        {{/minimum}}
+        {{#maximum}}
+        //[System.ComponentModel.DataAnnotations.MaxLength({{maximum}})]
+        {{/maximum}}
+        {{#isRequired}}
+        [System.ComponentModel.DataAnnotations.Required]
+        {{/isRequired}}
+        public {{GetDotNetType . name clz}} {{GetDotNetName name "field"}} { get; set; }
+        {{/properties}}
+    }
+}

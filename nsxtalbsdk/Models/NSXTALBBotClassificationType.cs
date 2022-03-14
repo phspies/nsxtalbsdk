@@ -1,0 +1,32 @@
+using nsxtalbsdk.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
+
+namespace nsxtalbsdk.Models
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public class NSXTALBBotClassificationType 
+    {
+        public NSXTALBBotClassificationType()
+        {
+        }
+        /// <summary>
+        /// One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT,
+        /// USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1.
+        /// </summary>
+        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [System.ComponentModel.DataAnnotations.Required]
+        public string Type { get; set; }
+        /// <summary>
+        /// If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1.
+        /// </summary>
+        [JsonProperty(PropertyName = "user_defined_type")]
+        public string? UserDefinedType { get; set; }
+    }
+}
