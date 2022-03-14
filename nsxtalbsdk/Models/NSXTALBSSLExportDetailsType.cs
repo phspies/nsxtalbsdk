@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLExportDetailsType 
     {
-        public NSXTALBSSLExportDetailsType()
-        {
-        }
         /// <summary>
         /// Request user.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBackupConfigurationType 
     {
-        public NSXTALBBackupConfigurationType()
-        {
-        }
         /// <summary>
         /// UNIX time since epoch in microseconds. Units(MICROSECONDS).
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBALBServicesStatusDetailsType 
     {
-        public NSXTALBALBServicesStatusDetailsType()
-        {
-        }
         /// <summary>
         /// Connection status of the controller cluster to ALBServices. Enum options - ALBSERVICES_CONNECTIVITY_UNKNOWN,
         /// ALBSERVICES_DISCONNECTED, ALBSERVICES_CONNECTED. Field introduced in 18.2.6.

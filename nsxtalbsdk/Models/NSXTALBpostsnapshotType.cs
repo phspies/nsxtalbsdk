@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBpostsnapshotType 
     {
-        public NSXTALBpostsnapshotType()
-        {
-        }
         /// <summary>
         /// FB Gs snapshot data. Field introduced in 21.1.3.
         /// </summary>

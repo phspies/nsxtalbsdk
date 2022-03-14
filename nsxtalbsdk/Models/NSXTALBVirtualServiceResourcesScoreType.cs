@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVirtualServiceResourcesScoreType 
     {
-        public NSXTALBVirtualServiceResourcesScoreType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property hs_entity of obj type VirtualServiceResourcesScore field type str  type object
         /// </summary>

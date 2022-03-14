@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLRenewDetailsType 
     {
-        public NSXTALBSSLRenewDetailsType()
-        {
-        }
         /// <summary>
         /// Name of SSL Certificate.
         /// </summary>

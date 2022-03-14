@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBParamInfoType 
     {
-        public NSXTALBParamInfoType()
-        {
-        }
         /// <summary>
         /// Number of hits for a param. Field introduced in 20.1.1.
         /// </summary>

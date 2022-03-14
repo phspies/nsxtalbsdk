@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBStaticIpAllocInfoType 
     {
-        public NSXTALBStaticIpAllocInfoType()
-        {
-        }
         /// <summary>
         /// IP address. Field introduced in 20.1.3.
         /// </summary>

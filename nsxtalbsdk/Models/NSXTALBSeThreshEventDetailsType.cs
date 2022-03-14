@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeThreshEventDetailsType 
     {
-        public NSXTALBSeThreshEventDetailsType()
-        {
-        }
         /// <summary>
         /// Number of curr_value.
         /// </summary>

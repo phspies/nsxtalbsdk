@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBJWTMatchType 
     {
-        public NSXTALBJWTMatchType()
-        {
-        }
         /// <summary>
         /// Claims whose values need to be matched. Field introduced in 20.1.3.
         /// </summary>

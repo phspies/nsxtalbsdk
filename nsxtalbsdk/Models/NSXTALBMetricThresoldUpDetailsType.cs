@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricThresoldUpDetailsType 
     {
-        public NSXTALBMetricThresoldUpDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property current_value of obj type MetricThresoldUpDetails field type str  type number
         /// </summary>

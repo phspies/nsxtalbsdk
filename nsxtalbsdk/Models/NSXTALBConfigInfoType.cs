@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigInfoType 
     {
-        public NSXTALBConfigInfoType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property queue of obj type ConfigInfo field type str  type object
         /// </summary>

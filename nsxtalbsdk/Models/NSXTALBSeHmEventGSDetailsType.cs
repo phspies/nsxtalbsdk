@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeHmEventGSDetailsType 
     {
-        public NSXTALBSeHmEventGSDetailsType()
-        {
-        }
         /// <summary>
         /// GslbService name. It is a reference to an object of type GslbService.
         /// </summary>

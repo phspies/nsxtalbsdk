@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVISeVmOvaParamsType 
     {
-        public NSXTALBVISeVmOvaParamsType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of controller_cluster.
         /// </summary>

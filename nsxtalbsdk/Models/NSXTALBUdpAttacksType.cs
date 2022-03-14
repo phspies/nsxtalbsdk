@@ -13,8 +13,5 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUdpAttacksType 
     {
-        public NSXTALBUdpAttacksType()
-        {
-        }
     }
 }

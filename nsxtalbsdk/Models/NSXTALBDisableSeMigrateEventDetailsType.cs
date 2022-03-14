@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDisableSeMigrateEventDetailsType 
     {
-        public NSXTALBDisableSeMigrateEventDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property migrate_params of obj type DisableSeMigrateEventDetails field type str  type
         /// object

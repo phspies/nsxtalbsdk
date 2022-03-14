@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerSizingLimitsType 
     {
-        public NSXTALBControllerSizingLimitsType()
-        {
-        }
         /// <summary>
         /// Controller system limits specific to cloud type for this controller sizing. Field introduced in 20.1.1.
         /// </summary>

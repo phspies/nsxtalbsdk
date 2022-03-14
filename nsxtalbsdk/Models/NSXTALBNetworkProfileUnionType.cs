@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNetworkProfileUnionType 
     {
-        public NSXTALBNetworkProfileUnionType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property tcp_fast_path_profile of obj type NetworkProfileUnion field type str  type
         /// object

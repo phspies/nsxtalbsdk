@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL4PolicySetType 
     {
-        public NSXTALBL4PolicySetType()
-        {
-        }
         /// <summary>
         /// UNIX time since epoch in microseconds. Units(MICROSECONDS).
         /// </summary>

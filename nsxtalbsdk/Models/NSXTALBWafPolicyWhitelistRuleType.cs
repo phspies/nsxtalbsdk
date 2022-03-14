@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafPolicyWhitelistRuleType 
     {
-        public NSXTALBWafPolicyWhitelistRuleType()
-        {
-        }
         /// <summary>
         /// Actions to be performed upon successful matching. Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW,
         /// WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE. Field deprecated in 20.1.3. Field

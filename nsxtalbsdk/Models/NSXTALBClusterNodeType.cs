@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClusterNodeType 
     {
-        public NSXTALBClusterNodeType()
-        {
-        }
         /// <summary>
         /// Optional service categories that a node can be assigned (e.g. SYSTEM, INFRASTRUCTURE or ANALYTICS). Field introduced in
         /// 18.1.1.

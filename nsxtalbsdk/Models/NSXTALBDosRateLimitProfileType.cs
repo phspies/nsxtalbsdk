@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDosRateLimitProfileType 
     {
-        public NSXTALBDosRateLimitProfileType()
-        {
-        }
         /// <summary>
         /// Profile for DoS attack detection.
         /// </summary>

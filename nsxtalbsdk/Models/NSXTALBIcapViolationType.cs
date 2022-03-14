@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIcapViolationType 
     {
-        public NSXTALBIcapViolationType()
-        {
-        }
         /// <summary>
         /// The file that ICAP server has identified as containing a violation. Field introduced in 20.1.3.
         /// </summary>

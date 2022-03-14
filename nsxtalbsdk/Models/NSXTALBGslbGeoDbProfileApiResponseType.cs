@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbGeoDbProfileApiResponseType 
     {
-        public NSXTALBGslbGeoDbProfileApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

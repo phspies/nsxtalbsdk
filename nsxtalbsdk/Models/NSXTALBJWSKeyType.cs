@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBJWSKeyType 
     {
-        public NSXTALBJWSKeyType()
-        {
-        }
         /// <summary>
         /// Algorithm that need to be used while signing/validation, allowed values  HS256, HS384, HS512. Field introduced in
         /// 20.1.6.

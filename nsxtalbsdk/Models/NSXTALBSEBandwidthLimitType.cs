@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSEBandwidthLimitType 
     {
-        public NSXTALBSEBandwidthLimitType()
-        {
-        }
         /// <summary>
         /// Total number of Service Engines for bandwidth based licenses. Field introduced in 17.2.5.
         /// </summary>

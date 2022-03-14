@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthorizationMatchType 
     {
-        public NSXTALBAuthorizationMatchType()
-        {
-        }
         /// <summary>
         /// Access Token claims to be matched. Field introduced in 20.1.3.
         /// </summary>

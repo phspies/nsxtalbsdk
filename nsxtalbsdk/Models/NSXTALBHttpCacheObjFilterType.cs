@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHttpCacheObjFilterType 
     {
-        public NSXTALBHttpCacheObjFilterType()
-        {
-        }
         /// <summary>
         /// HTTP cache object's exact key.
         /// </summary>

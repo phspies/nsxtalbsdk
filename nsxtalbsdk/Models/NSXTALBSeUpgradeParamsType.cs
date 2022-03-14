@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeUpgradeParamsType 
     {
-        public NSXTALBSeUpgradeParamsType()
-        {
-        }
         /// <summary>
         /// This field is used to disable scale-in/scale out operations during upgrade operations. .
         /// </summary>

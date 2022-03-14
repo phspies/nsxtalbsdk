@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRoleFilterType 
     {
-        public NSXTALBRoleFilterType()
-        {
-        }
         /// <summary>
         /// Enable this filter. Field introduced in 20.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricStatisticsType 
     {
-        public NSXTALBMetricStatisticsType()
-        {
-        }
         /// <summary>
         /// value of the last sample.
         /// </summary>

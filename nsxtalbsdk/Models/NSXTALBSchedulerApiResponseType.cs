@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSchedulerApiResponseType 
     {
-        public NSXTALBSchedulerApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

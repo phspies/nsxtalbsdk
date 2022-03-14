@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerPerformanceScoreDataType 
     {
-        public NSXTALBServerPerformanceScoreDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property apdexc of obj type ServerPerformanceScoreData field type str  type number
         /// </summary>

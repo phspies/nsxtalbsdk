@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugSeFaultType 
     {
-        public NSXTALBDebugSeFaultType()
-        {
-        }
         /// <summary>
         /// Set of faults to enable/disable. Field introduced in 20.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUserAccountProfileType 
     {
-        public NSXTALBUserAccountProfileType()
-        {
-        }
         /// <summary>
         /// UNIX time since epoch in microseconds. Units(MICROSECONDS).
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPatchDataType 
     {
-        public NSXTALBPatchDataType()
-        {
-        }
         /// <summary>
         /// Image path of current patch image. . Field introduced in 18.2.10, 20.1.1.
         /// </summary>

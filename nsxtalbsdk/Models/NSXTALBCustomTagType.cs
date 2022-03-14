@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCustomTagType 
     {
-        public NSXTALBCustomTagType()
-        {
-        }
         /// <summary>
         /// tag_key of CustomTag.
         /// </summary>

@@ -275,19 +275,7 @@ namespace nsxtapi
                         var okResponse = operation.Responses.FirstOrDefault(x => x.Key.StartsWith("20"));
                         if (okResponse.Value.Schema != null)
                         {
-                            context.Write("else");
-                            context.Write("\r\n\t\t\t{");
-                            context.Write("\r\n\t\t\t\ttry");
-                            context.Write("\r\n\t\t\t\t{");
-                            context.Write($"\r\n\t\t\t\t\treturnValue = JsonConvert.DeserializeObject<NSXTALB{((IJsonReferenceBase)okResponse.Value.Schema).ReferencePath.Split("/")[3]}Type>(response.Content, defaultSerializationSettings);");
-                            context.Write("\r\n\t\t\t\t}");
-                            context.Write("\r\n\t\t\t\tcatch (Exception ex)");
-                            context.Write("\r\n\t\t\t\t{");
-                            context.Write("\r\n\t\t\t\t\t" + @"var message = ""Could not deserialize the response body string as "" + typeof(" + className + @").FullName + ""."";");
-                            context.Write("\r\n\t\t\t\t\t" + @"throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);");
-                            context.Write("\r\n\t\t\t\t}");
-                            context.Write("\r\n\t\t\t}");
-                            context.Write("\r\n\t\t\treturn returnValue;");
+                            context.Write("return response.Data;");
                         }
                     }
                     else if (arguments[1] as string == "cmdlet")
@@ -330,26 +318,7 @@ namespace nsxtapi
                         var okResponse = operation.Responses.FirstOrDefault(x => x.Key.StartsWith("20"));
                         if (okResponse.Value.Schema != null)
                         {
-                            context.Write("else");
-                            context.Write("\r\n\t\t\t{");
-                            context.Write("\r\n\t\t\t\ttry");
-                            context.Write("\r\n\t\t\t\t{");
-                            if (okResponse.Value.Schema.Type == JsonObjectType.String)
-                            {
-                                context.Write($"\r\n\t\t\t\t\treturnValue = (" + okResponse.Value.Schema.Type.ToString().ToLower() + @")response.Content;");
-                            }
-                            else
-                            {
-                                context.Write($"\r\n\t\t\t\t\treturnValue = JsonConvert.DeserializeObject<" + okResponse.Value.Schema.Type.ToString().ToLower() + @">(response.Content, defaultSerializationSettings);");
-                            }
-                            context.Write("\r\n\t\t\t\t}");
-                            context.Write("\r\n\t\t\t\tcatch (Exception ex)");
-                            context.Write("\r\n\t\t\t\t{");
-                            context.Write("\r\n\t\t\t\t\t" + @"var message = ""Could not deserialize the response body string as "" + typeof(" + className + @").FullName + ""."";");
-                            context.Write("\r\n\t\t\t\t\t" + @"throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);");
-                            context.Write("\r\n\t\t\t\t}");
-                            context.Write("\r\n\t\t\t}");
-                            context.Write("\r\n\t\t\treturn returnValue;");
+                            context.Write("return response.Data;");
                         }
                     }
                     else if (arguments[1] as string == "cmdlet")
@@ -440,7 +409,7 @@ namespace nsxtapi
             }
             else if (parameter.Kind == OpenApiParameterKind.Query)
             {
-                context.Write($"if ({PascalCase(parameter.Name)} != null) {{ request.AddQueryParameter(\"{parameter.Name}\", {PascalCase(parameter.Name)}.ToString()); }}");
+                context.Write($"if ({PascalCase(parameter.Name)} != null) {{ request.AddQueryParameter(\"{parameter.Name}\", JsonConvert.ToString({PascalCase(parameter.Name)}).ToLowerString()); }}");
             }
             else if (parameter.Kind == OpenApiParameterKind.Body)
             {

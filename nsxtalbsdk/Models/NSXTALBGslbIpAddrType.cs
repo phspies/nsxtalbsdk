@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbIpAddrType 
     {
-        public NSXTALBGslbIpAddrType()
-        {
-        }
         /// <summary>
         /// Public IP address of the pool member. Field introduced in 17.1.2.
         /// </summary>

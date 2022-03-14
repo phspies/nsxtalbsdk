@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLearningLogPolicyType 
     {
-        public NSXTALBLearningLogPolicyType()
-        {
-        }
         /// <summary>
         /// Determine whether app learning logging is enabled. Field introduced in 20.1.3.
         /// </summary>

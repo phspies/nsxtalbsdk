@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFbGsInfoType 
     {
-        public NSXTALBFbGsInfoType()
-        {
-        }
         /// <summary>
         /// FB snapshot data. Field introduced in 21.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSaasLicensingInfoType 
     {
-        public NSXTALBSaasLicensingInfoType()
-        {
-        }
         /// <summary>
         /// Maximum service units limit for controller. Allowed values are 0-1000. Special values are 0 - infinite. Field introduced
         /// in 21.1.3.

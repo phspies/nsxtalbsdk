@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackSyncServicesType 
     {
-        public NSXTALBOpenStackSyncServicesType()
-        {
-        }
         /// <summary>
         /// error_string of OpenStackSyncServices.
         /// </summary>

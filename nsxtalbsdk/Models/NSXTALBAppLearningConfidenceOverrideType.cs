@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAppLearningConfidenceOverrideType 
     {
-        public NSXTALBAppLearningConfidenceOverrideType()
-        {
-        }
         /// <summary>
         /// Confidence threshold for label CONFIDENCE_HIGH. Field introduced in 18.2.3.
         /// </summary>

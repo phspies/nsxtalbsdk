@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFullClientLogsType 
     {
-        public NSXTALBFullClientLogsType()
-        {
-        }
         /// <summary>
         /// [DEPRECATED] Log all headers. Please use the all_headers flag in AnalyticsPolicy. Field deprecated in 18.1.4, 18.2.1.
         /// </summary>

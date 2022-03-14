@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbReplicationStatsType 
     {
-        public NSXTALBGslbReplicationStatsType()
-        {
-        }
         /// <summary>
         /// Last config version acknowledged. Field introduced in 20.1.1.
         /// </summary>

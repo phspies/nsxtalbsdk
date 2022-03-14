@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHSMSafenetLunaType 
     {
-        public NSXTALBHSMSafenetLunaType()
-        {
-        }
         /// <summary>
         /// Group Number of generated HA Group.
         /// </summary>

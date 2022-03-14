@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTier1LogicalRouterInfoType 
     {
-        public NSXTALBTier1LogicalRouterInfoType()
-        {
-        }
         /// <summary>
         /// Locale-services configuration, holds T1 edge-cluster information. When VirtualService is enabled with preserve client
         /// IP, ServiceInsertion VirtualEndpoint will be created in this locale-service. By default Avi controller picks default

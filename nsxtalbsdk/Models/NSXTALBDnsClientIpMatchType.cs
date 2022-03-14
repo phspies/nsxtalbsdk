@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsClientIpMatchType 
     {
-        public NSXTALBDnsClientIpMatchType()
-        {
-        }
         /// <summary>
         /// IP addresses to match against client IP. Field introduced in 17.1.6,17.2.2.
         /// </summary>

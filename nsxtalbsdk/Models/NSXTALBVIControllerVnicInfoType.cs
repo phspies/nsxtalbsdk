@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIControllerVnicInfoType 
     {
-        public NSXTALBVIControllerVnicInfoType()
-        {
-        }
         /// <summary>
         /// portgroup of VIControllerVnicInfo.
         /// </summary>

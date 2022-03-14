@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsAAAARdataType 
     {
-        public NSXTALBDnsAAAARdataType()
-        {
-        }
         /// <summary>
         /// IPv6 address for FQDN. Field introduced in 18.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGatewayMonitorType 
     {
-        public NSXTALBGatewayMonitorType()
-        {
-        }
         /// <summary>
         /// IP address of next hop gateway to be monitored.
         /// </summary>

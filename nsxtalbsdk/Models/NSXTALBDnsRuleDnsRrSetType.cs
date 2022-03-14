@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRuleDnsRrSetType 
     {
-        public NSXTALBDnsRuleDnsRrSetType()
-        {
-        }
         /// <summary>
         /// DNS resource record set - (records in the resource record set share the DNS domain name, type, and class). Field
         /// introduced in 17.2.12, 18.1.2.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSnmpV3UserParamsType 
     {
-        public NSXTALBSnmpV3UserParamsType()
-        {
-        }
         /// <summary>
         /// SNMP V3 authentication passphrase. Field introduced in 17.2.3.
         /// </summary>

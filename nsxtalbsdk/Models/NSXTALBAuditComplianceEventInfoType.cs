@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuditComplianceEventInfoType 
     {
-        public NSXTALBAuditComplianceEventInfoType()
-        {
-        }
         /// <summary>
         /// Cluster uuid used for controller event. Field introduced in 20.1.6.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsCollectionApiRspType 
     {
-        public NSXTALBMetricsCollectionApiRspType()
-        {
-        }
         /// <summary>
         /// list of metrics data series map
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCifType 
     {
-        public NSXTALBCifType()
-        {
-        }
         /// <summary>
         /// Field deprecated in 21.1.1.
         /// </summary>

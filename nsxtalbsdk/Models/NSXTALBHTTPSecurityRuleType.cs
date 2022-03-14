@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPSecurityRuleType 
     {
-        public NSXTALBHTTPSecurityRuleType()
-        {
-        }
         /// <summary>
         /// Action to be performed upon successful matching.
         /// </summary>

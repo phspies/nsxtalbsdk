@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtHostsType 
     {
-        public NSXTALBNsxtHostsType()
-        {
-        }
         /// <summary>
         /// List of transport nodes. Field introduced in 20.1.1.
         /// </summary>

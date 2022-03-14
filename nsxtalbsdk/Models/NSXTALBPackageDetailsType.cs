@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPackageDetailsType 
     {
-        public NSXTALBPackageDetailsType()
-        {
-        }
         /// <summary>
         /// This contains build related information. Field introduced in 18.2.6.
         /// </summary>

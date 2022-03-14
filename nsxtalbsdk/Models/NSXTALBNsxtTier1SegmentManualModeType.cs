@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtTier1SegmentManualModeType 
     {
-        public NSXTALBNsxtTier1SegmentManualModeType()
-        {
-        }
         /// <summary>
         /// Tier1 logical router placement information. Field introduced in 20.1.1. Minimum of 1 items required. Maximum of 128
         /// items allowed.

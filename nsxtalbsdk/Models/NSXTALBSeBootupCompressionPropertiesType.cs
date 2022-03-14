@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeBootupCompressionPropertiesType 
     {
-        public NSXTALBSeBootupCompressionPropertiesType()
-        {
-        }
         /// <summary>
         /// Number of buffers to use for compression output.
         /// </summary>

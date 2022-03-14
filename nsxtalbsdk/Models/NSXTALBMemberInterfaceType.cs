@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMemberInterfaceType 
     {
-        public NSXTALBMemberInterfaceType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property active of obj type MemberInterface field type str  type boolean
         /// </summary>

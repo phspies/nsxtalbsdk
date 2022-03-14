@@ -17,12 +17,12 @@ namespace nsxtalbsdk.Modules
     {
         RestClient restClient;
         JsonSerializerSettings defaultSerializationSettings;
-        public TestSeDatastoreLevel3(RestClient Client, JsonSerializerSettings DefaultSerializationSettings)
+        public TestSeDatastoreLevel3(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken cancellationToken = default(CancellationToken), int timeout, int retry)
         {
             restClient = Client;
             defaultSerializationSettings = DefaultSerializationSettings;
         }
-        public NSXTALBTestSeDatastoreLevel3ApiResponseType GetTestsedatastorelevel3(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBTestSeDatastoreLevel3ApiResponseType> GetTestsedatastorelevel3(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             NSXTALBTestSeDatastoreLevel3ApiResponseType? returnValue = default(NSXTALBTestSeDatastoreLevel3ApiResponseType);
@@ -33,39 +33,27 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
-            if (RefersTo != null) { request.AddQueryParameter("refers_to", RefersTo.ToString()); }
-            if (ReferredBy != null) { request.AddQueryParameter("referred_by", ReferredBy.ToString()); }
-            if (Fields != null) { request.AddQueryParameter("fields", Fields.ToString()); }
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
-            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JoinSubresources.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
+            if (RefersTo != null) { request.AddQueryParameter("refers_to", JsonConvert.ToString(RefersTo).ToLowerString()); }
+            if (ReferredBy != null) { request.AddQueryParameter("referred_by", JsonConvert.ToString(ReferredBy).ToLowerString()); }
+            if (Fields != null) { request.AddQueryParameter("fields", JsonConvert.ToString(Fields).ToLowerString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
+            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetTestsedatastorelevel3ServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBTestSeDatastoreLevel3ApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTestSeDatastoreLevel3ApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetTestsedatastorelevel3ServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBTestSeDatastoreLevel3ApiResponseType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBTestSeDatastoreLevel3ApiResponseType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBTestSeDatastoreLevel3Type PostTestsedatastorelevel3(string XAviVersion, NSXTALBTestSeDatastoreLevel3Type Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBTestSeDatastoreLevel3Type> PostTestsedatastorelevel3(string XAviVersion, NSXTALBTestSeDatastoreLevel3Type Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
@@ -83,27 +71,15 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostTestsedatastorelevel3ServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBTestSeDatastoreLevel3Type> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTestSeDatastoreLevel3Type>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP POST operation to " + PostTestsedatastorelevel3ServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBTestSeDatastoreLevel3Type>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBTestSeDatastoreLevel3Type).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBTestSeDatastoreLevel3Type GetTestsedatastorelevel3Uuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
+        public async Task<NSXTALBTestSeDatastoreLevel3Type> GetTestsedatastorelevel3Uuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
@@ -115,38 +91,26 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             GetTestsedatastorelevel3UuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
-            if (Fields != null) { request.AddQueryParameter("fields", Fields.ToString()); }
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
-            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JoinSubresources.ToString()); }
+            if (Fields != null) { request.AddQueryParameter("fields", JsonConvert.ToString(Fields).ToLowerString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
+            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetTestsedatastorelevel3UuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBTestSeDatastoreLevel3Type> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTestSeDatastoreLevel3Type>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetTestsedatastorelevel3UuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBTestSeDatastoreLevel3Type>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBTestSeDatastoreLevel3Type).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBTestSeDatastoreLevel3Type PutTestsedatastorelevel3Uuid(string XAviVersion, NSXTALBTestSeDatastoreLevel3Type Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBTestSeDatastoreLevel3Type> PutTestsedatastorelevel3Uuid(string XAviVersion, NSXTALBTestSeDatastoreLevel3Type Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
@@ -159,7 +123,7 @@ namespace nsxtalbsdk.Modules
                 Method = Method.PUT
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
@@ -167,27 +131,15 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PutTestsedatastorelevel3UuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutTestsedatastorelevel3UuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBTestSeDatastoreLevel3Type> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTestSeDatastoreLevel3Type>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP PUT operation to " + PutTestsedatastorelevel3UuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBTestSeDatastoreLevel3Type>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBTestSeDatastoreLevel3Type).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBTestSeDatastoreLevel3Type PatchTestsedatastorelevel3Uuid(string XAviVersion, NSXTALBTestSeDatastoreLevel3Type Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBTestSeDatastoreLevel3Type> PatchTestsedatastorelevel3Uuid(string XAviVersion, NSXTALBTestSeDatastoreLevel3Type Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
@@ -200,7 +152,7 @@ namespace nsxtalbsdk.Modules
                 Method = Method.PATCH
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
@@ -208,27 +160,15 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PatchTestsedatastorelevel3UuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchTestsedatastorelevel3UuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBTestSeDatastoreLevel3Type> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTestSeDatastoreLevel3Type>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP PATCH operation to " + PatchTestsedatastorelevel3UuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBTestSeDatastoreLevel3Type>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBTestSeDatastoreLevel3Type).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public string DeleteTestsedatastorelevel3Uuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> DeleteTestsedatastorelevel3Uuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
@@ -240,32 +180,20 @@ namespace nsxtalbsdk.Modules
                 Method = Method.DELETE
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteTestsedatastorelevel3UuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteTestsedatastorelevel3UuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP DELETE operation to " + DeleteTestsedatastorelevel3UuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = (string)response.Content;
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(string).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
     }
 }

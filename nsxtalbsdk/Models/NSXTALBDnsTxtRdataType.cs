@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsTxtRdataType 
     {
-        public NSXTALBDnsTxtRdataType()
-        {
-        }
         /// <summary>
         /// Text data associated with the FQDN. Field introduced in 18.2.9, 20.1.1.
         /// </summary>

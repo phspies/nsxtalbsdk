@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHSMSafenetLunaServerType 
     {
-        public NSXTALBHSMSafenetLunaServerType()
-        {
-        }
         /// <summary>
         /// Field introduced in 16.5.2,17.2.3.
         /// </summary>

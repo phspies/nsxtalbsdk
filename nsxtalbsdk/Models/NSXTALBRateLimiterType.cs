@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRateLimiterType 
     {
-        public NSXTALBRateLimiterType()
-        {
-        }
         /// <summary>
         /// Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it
         /// will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9.

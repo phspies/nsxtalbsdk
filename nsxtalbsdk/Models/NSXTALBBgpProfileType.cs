@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBgpProfileType 
     {
-        public NSXTALBBgpProfileType()
-        {
-        }
         /// <summary>
         /// Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet.
         /// Field introduced in 17.1.2. Maximum of 16 items allowed.

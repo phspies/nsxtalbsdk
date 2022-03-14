@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertFilterType 
     {
-        public NSXTALBAlertFilterType()
-        {
-        }
         /// <summary>
         /// filter_action of AlertFilter.
         /// </summary>

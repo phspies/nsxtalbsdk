@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPServerReselectType 
     {
-        public NSXTALBHTTPServerReselectType()
-        {
-        }
         /// <summary>
         /// Enable HTTP request reselect when server responds with specific response codes. Allowed in Basic(Allowed values- false)
         /// edition, Essentials(Allowed values- false) edition, Enterprise edition.

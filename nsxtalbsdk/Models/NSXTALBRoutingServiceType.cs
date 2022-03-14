@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRoutingServiceType 
     {
-        public NSXTALBRoutingServiceType()
-        {
-        }
         /// <summary>
         /// Advertise reachability of backend server networks via ADC through BGP for default gateway feature. Field introduced in
         /// 18.2.5.

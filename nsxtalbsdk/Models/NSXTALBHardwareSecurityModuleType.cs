@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHardwareSecurityModuleType 
     {
-        public NSXTALBHardwareSecurityModuleType()
-        {
-        }
         /// <summary>
         /// AWS CloudHSM specific configuration. Field introduced in 17.2.7.
         /// </summary>

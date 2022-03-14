@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSamlServiceProviderSettingsType 
     {
-        public NSXTALBSamlServiceProviderSettingsType()
-        {
-        }
         /// <summary>
         /// FQDN if entity type is DNS_FQDN . Field introduced in 17.2.3.
         /// </summary>

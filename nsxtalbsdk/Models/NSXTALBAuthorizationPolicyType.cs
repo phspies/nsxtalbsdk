@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthorizationPolicyType 
     {
-        public NSXTALBAuthorizationPolicyType()
-        {
-        }
         /// <summary>
         /// Authorization Policy Rules. Field introduced in 18.2.5.
         /// </summary>

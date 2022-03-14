@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAutoScaleMgrDebugFilterType 
     {
-        public NSXTALBAutoScaleMgrDebugFilterType()
-        {
-        }
         /// <summary>
         /// Enable aws autoscale integration. This is an alpha feature. Field introduced in 17.1.1.
         /// </summary>

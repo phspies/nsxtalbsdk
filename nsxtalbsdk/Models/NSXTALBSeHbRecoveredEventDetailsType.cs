@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeHbRecoveredEventDetailsType 
     {
-        public NSXTALBSeHbRecoveredEventDetailsType()
-        {
-        }
         /// <summary>
         /// Heartbeat Request/Response received.
         /// </summary>

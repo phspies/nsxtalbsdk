@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBEventCacheType 
     {
-        public NSXTALBEventCacheType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property dns_state of obj type EventCache field type str  type boolean
         /// </summary>

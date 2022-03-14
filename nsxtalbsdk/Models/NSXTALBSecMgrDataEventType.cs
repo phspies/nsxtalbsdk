@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSecMgrDataEventType 
     {
-        public NSXTALBSecMgrDataEventType()
-        {
-        }
         /// <summary>
         /// Type of the generated for an application. Field introduced in 20.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPResponsePolicyType 
     {
-        public NSXTALBHTTPResponsePolicyType()
-        {
-        }
         /// <summary>
         /// Add rules to the HTTP response policy.
         /// </summary>

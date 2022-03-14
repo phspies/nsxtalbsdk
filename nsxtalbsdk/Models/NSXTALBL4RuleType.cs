@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL4RuleType 
     {
-        public NSXTALBL4RuleType()
-        {
-        }
         /// <summary>
         /// Action to be performed upon successful rule match. Field introduced in 17.2.7.
         /// </summary>

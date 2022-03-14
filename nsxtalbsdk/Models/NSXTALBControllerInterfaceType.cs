@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerInterfaceType 
     {
-        public NSXTALBControllerInterfaceType()
-        {
-        }
         /// <summary>
         /// Default gateway of the mgmt interface. Field introduced in 21.1.3.
         /// </summary>

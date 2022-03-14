@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCaseConfigType 
     {
-        public NSXTALBCaseConfigType()
-        {
-        }
         /// <summary>
         /// Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed in
         /// Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.

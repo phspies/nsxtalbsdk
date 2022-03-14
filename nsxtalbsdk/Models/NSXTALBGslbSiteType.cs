@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbSiteType 
     {
-        public NSXTALBGslbSiteType()
-        {
-        }
         /// <summary>
         /// IP Address or a DNS resolvable, fully qualified domain name of the Site Controller Cluster.
         /// </summary>

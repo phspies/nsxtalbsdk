@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIDeleteNetworkFilterType 
     {
-        public NSXTALBVIDeleteNetworkFilterType()
-        {
-        }
         /// <summary>
         /// Field introduced in 17.1.3.
         /// </summary>

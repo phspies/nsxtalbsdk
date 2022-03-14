@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpReputationConfigType 
     {
-        public NSXTALBIpReputationConfigType()
-        {
-        }
         /// <summary>
         /// IP reputation db file object expiry duration in days. Allowed values are 1-7. Field introduced in 20.1.1. Unit is DAYS.
         /// </summary>

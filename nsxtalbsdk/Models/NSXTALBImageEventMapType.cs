@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBImageEventMapType 
     {
-        public NSXTALBImageEventMapType()
-        {
-        }
         /// <summary>
         /// List of all events node wise. Field introduced in 21.1.3.
         /// </summary>

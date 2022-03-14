@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAnomalyDataSeriesType 
     {
-        public NSXTALBAnomalyDataSeriesType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property data of obj type AnomalyDataSeries field type str  type object
         /// </summary>

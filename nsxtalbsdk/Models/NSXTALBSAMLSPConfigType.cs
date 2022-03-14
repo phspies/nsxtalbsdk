@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSAMLSPConfigType 
     {
-        public NSXTALBSAMLSPConfigType()
-        {
-        }
         /// <summary>
         /// HTTP cookie name for authenticated session. Field introduced in 18.2.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackLbPluginOpType 
     {
-        public NSXTALBOpenStackLbPluginOpType()
-        {
-        }
         /// <summary>
         /// cc_id of OpenStackLbPluginOp.
         /// </summary>

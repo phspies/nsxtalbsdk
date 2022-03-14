@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudFlavorType 
     {
-        public NSXTALBCloudFlavorType()
-        {
-        }
         /// <summary>
         /// cost of CloudFlavor.
         /// </summary>

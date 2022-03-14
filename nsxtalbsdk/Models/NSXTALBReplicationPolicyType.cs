@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBReplicationPolicyType 
     {
-        public NSXTALBReplicationPolicyType()
-        {
-        }
         /// <summary>
         /// Leader's checkpoint. Follower attempt to replicate configuration till this checkpoint. It is a reference to an object of
         /// type FederationCheckpoint. Field introduced in 20.1.1.

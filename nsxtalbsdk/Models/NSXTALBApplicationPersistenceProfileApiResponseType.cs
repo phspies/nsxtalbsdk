@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBApplicationPersistenceProfileApiResponseType 
     {
-        public NSXTALBApplicationPersistenceProfileApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

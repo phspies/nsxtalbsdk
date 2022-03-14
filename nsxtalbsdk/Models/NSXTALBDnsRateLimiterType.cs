@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRateLimiterType 
     {
-        public NSXTALBDnsRateLimiterType()
-        {
-        }
         /// <summary>
         /// Action to perform upon rate limiting. Field introduced in 20.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigCreateDetailsType 
     {
-        public NSXTALBConfigCreateDetailsType()
-        {
-        }
         /// <summary>
         /// Error message if request failed.
         /// </summary>

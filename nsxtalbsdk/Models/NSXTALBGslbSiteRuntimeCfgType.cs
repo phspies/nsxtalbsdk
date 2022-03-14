@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbSiteRuntimeCfgType 
     {
-        public NSXTALBGslbSiteRuntimeCfgType()
-        {
-        }
         /// <summary>
         /// Gslb GeoDb files published for a site. Field introduced in 17.1.1.
         /// </summary>

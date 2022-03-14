@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMgmtIpAccessControlType 
     {
-        public NSXTALBMgmtIpAccessControlType()
-        {
-        }
         /// <summary>
         /// Configure IP addresses to access controller using API.
         /// </summary>

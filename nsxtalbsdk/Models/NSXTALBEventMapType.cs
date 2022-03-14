@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBEventMapType 
     {
-        public NSXTALBEventMapType()
-        {
-        }
         /// <summary>
         /// List of all events node wise.(Not in use). Field introduced in 18.2.6.
         /// </summary>

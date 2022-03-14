@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDNSConfigurationType 
     {
-        public NSXTALBDNSConfigurationType()
-        {
-        }
         /// <summary>
         /// Search domain to use in DNS lookup.
         /// </summary>

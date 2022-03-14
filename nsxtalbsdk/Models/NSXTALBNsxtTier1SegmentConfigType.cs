@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtTier1SegmentConfigType 
     {
-        public NSXTALBNsxtTier1SegmentConfigType()
-        {
-        }
         /// <summary>
         /// Avi controller creates and manages logical segments for a Tier-1 LR. Field introduced in 20.1.1. Allowed in Basic
         /// edition, Enterprise edition.

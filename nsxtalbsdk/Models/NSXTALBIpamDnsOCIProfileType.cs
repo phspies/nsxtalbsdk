@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamDnsOCIProfileType 
     {
-        public NSXTALBIpamDnsOCIProfileType()
-        {
-        }
         /// <summary>
         /// Credentials to access oracle cloud. It is a reference to an object of type CloudConnectorUser. Field introduced in
         /// 18.2.1,18.1.3.

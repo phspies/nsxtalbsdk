@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTenantLabelType 
     {
-        public NSXTALBTenantLabelType()
-        {
-        }
         /// <summary>
         /// Label key string. Field introduced in 20.1.2.
         /// </summary>

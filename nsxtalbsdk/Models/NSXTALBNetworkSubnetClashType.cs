@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNetworkSubnetClashType 
     {
-        public NSXTALBNetworkSubnetClashType()
-        {
-        }
         /// <summary>
         /// ip_nw of NetworkSubnetClash.
         /// </summary>

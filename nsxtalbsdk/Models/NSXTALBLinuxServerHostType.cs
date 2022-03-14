@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLinuxServerHostType 
     {
-        public NSXTALBLinuxServerHostType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property host_attr of obj type LinuxServerHost field type str  type object
         /// </summary>

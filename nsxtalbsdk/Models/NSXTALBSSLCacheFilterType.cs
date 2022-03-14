@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLCacheFilterType 
     {
-        public NSXTALBSSLCacheFilterType()
-        {
-        }
         /// <summary>
         /// Hexadecimal representation of the SSL session ID. Field introduced in 20.1.1.
         /// </summary>

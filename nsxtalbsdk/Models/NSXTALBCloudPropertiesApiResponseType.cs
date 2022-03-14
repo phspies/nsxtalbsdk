@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudPropertiesApiResponseType 
     {
-        public NSXTALBCloudPropertiesApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

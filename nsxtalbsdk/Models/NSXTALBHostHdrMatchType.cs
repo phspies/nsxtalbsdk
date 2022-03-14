@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHostHdrMatchType 
     {
-        public NSXTALBHostHdrMatchType()
-        {
-        }
         /// <summary>
         /// Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE.
         /// </summary>

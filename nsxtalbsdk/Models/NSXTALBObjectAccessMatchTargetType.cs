@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBObjectAccessMatchTargetType 
     {
-        public NSXTALBObjectAccessMatchTargetType()
-        {
-        }
         /// <summary>
         /// Key of the label to be matched. Field introduced in 18.2.7, 20.1.1.
         /// </summary>

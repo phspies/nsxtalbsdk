@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConnectionLogType 
     {
-        public NSXTALBConnectionLogType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property adf of obj type ConnectionLog field type str  type boolean
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLProfileSelectorType 
     {
-        public NSXTALBSSLProfileSelectorType()
-        {
-        }
         /// <summary>
         /// Configure client IP address groups. Field introduced in 18.2.3.
         /// </summary>

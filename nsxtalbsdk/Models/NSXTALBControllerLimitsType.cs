@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerLimitsType 
     {
-        public NSXTALBControllerLimitsType()
-        {
-        }
         /// <summary>
         /// BOT system limits. Field introduced in 22.1.1.
         /// </summary>

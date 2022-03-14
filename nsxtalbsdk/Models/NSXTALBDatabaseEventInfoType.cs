@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDatabaseEventInfoType 
     {
-        public NSXTALBDatabaseEventInfoType()
-        {
-        }
         /// <summary>
         /// Component of the database(e.g. metrics). Field introduced in 21.1.1.
         /// </summary>

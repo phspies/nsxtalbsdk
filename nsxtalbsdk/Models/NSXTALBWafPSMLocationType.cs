@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafPSMLocationType 
     {
-        public NSXTALBWafPSMLocationType()
-        {
-        }
         /// <summary>
         /// Free-text comment about this location. Field introduced in 18.2.3.
         /// </summary>

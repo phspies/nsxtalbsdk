@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHostUnavailEventDetailsType 
     {
-        public NSXTALBHostUnavailEventDetailsType()
-        {
-        }
         /// <summary>
         /// Name of the object.
         /// </summary>

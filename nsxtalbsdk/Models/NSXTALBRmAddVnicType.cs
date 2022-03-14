@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRmAddVnicType 
     {
-        public NSXTALBRmAddVnicType()
-        {
-        }
         /// <summary>
         /// mac_addr associated with the network. Field introduced in 21.1.1.
         /// </summary>

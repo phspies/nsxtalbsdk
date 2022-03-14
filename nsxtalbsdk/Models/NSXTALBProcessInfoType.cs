@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBProcessInfoType 
     {
-        public NSXTALBProcessInfoType()
-        {
-        }
         /// <summary>
         /// Current Process ID. Field introduced in 21.1.1.
         /// </summary>

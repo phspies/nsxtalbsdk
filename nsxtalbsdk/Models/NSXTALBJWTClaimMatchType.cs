@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBJWTClaimMatchType 
     {
-        public NSXTALBJWTClaimMatchType()
-        {
-        }
         /// <summary>
         /// Boolean value against which the claim is matched. Field introduced in 20.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtSIEndpointDetailsType 
     {
-        public NSXTALBNsxtSIEndpointDetailsType()
-        {
-        }
         /// <summary>
         /// VirtualEndpoint Path. Field introduced in 21.1.3.
         /// </summary>

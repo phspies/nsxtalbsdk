@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerAutoScaleFailedInfoType 
     {
-        public NSXTALBServerAutoScaleFailedInfoType()
-        {
-        }
         /// <summary>
         /// Number of num_scalein_servers.
         /// </summary>

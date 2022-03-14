@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLinuxConfigurationType 
     {
-        public NSXTALBLinuxConfigurationType()
-        {
-        }
         /// <summary>
         /// Banner displayed before login to ssh, and UI.
         /// </summary>

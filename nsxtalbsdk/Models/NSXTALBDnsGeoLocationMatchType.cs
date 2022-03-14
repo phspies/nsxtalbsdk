@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsGeoLocationMatchType 
     {
-        public NSXTALBDnsGeoLocationMatchType()
-        {
-        }
         /// <summary>
         /// Geographical location of the client IP to be used in the match. This location is of the format Country/State/City e.g.
         /// US/CA/Santa Clara. Field introduced in 17.1.5.

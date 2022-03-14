@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPriorityLabelsApiResponseType 
     {
-        public NSXTALBPriorityLabelsApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPReselectRespCodeType 
     {
-        public NSXTALBHTTPReselectRespCodeType()
-        {
-        }
         /// <summary>
         /// HTTP response code to be matched. Allowed values are 400-599.
         /// </summary>

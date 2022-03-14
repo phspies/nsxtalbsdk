@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUserRoleType 
     {
-        public NSXTALBUserRoleType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property all_tenants of obj type UserRole field type str  type boolean
         /// </summary>

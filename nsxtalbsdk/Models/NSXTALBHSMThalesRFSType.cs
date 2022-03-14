@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHSMThalesRFSType 
     {
-        public NSXTALBHSMThalesRFSType()
-        {
-        }
         /// <summary>
         /// IP address of the RFS server from where to sync the Thales encrypted private key.
         /// </summary>

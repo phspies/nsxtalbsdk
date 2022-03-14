@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafDataFileType 
     {
-        public NSXTALBWafDataFileType()
-        {
-        }
         /// <summary>
         /// Stringified WAF File Data. Field introduced in 17.2.1.
         /// </summary>

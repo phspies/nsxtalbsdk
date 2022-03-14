@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLatencyAuditPropertiesType 
     {
-        public NSXTALBLatencyAuditPropertiesType()
-        {
-        }
         /// <summary>
         /// Audit TCP connection establishment time. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG.
         /// Field introduced in 21.1.1.

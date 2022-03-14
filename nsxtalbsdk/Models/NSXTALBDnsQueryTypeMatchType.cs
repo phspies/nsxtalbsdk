@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsQueryTypeMatchType 
     {
-        public NSXTALBDnsQueryTypeMatchType()
-        {
-        }
         /// <summary>
         /// Criterion to use for matching the DNS query typein the question section. Enum options - IS_IN, IS_NOT_IN. Field
         /// introduced in 17.1.1.

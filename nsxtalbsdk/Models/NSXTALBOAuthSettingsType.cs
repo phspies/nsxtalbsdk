@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOAuthSettingsType 
     {
-        public NSXTALBOAuthSettingsType()
-        {
-        }
         /// <summary>
         /// Application-specific OAuth config. Field introduced in 21.1.3.
         /// </summary>

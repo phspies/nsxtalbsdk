@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDockerConfigurationType 
     {
-        public NSXTALBDockerConfigurationType()
-        {
-        }
         /// <summary>
         /// Sync frequency in seconds with frameworks.
         /// </summary>

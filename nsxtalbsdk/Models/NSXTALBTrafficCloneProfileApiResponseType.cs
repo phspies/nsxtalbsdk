@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTrafficCloneProfileApiResponseType 
     {
-        public NSXTALBTrafficCloneProfileApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

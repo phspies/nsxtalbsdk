@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTCPFastPathProfileType 
     {
-        public NSXTALBTCPFastPathProfileType()
-        {
-        }
         /// <summary>
         /// DSR profile information. Field introduced in 18.2.3. Allowed in Basic edition, Essentials edition, Enterprise edition.
         /// </summary>

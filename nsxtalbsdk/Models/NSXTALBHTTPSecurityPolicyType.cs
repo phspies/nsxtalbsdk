@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPSecurityPolicyType 
     {
-        public NSXTALBHTTPSecurityPolicyType()
-        {
-        }
         /// <summary>
         /// Add rules to the HTTP security policy.
         /// </summary>

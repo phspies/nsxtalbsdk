@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServiceEngineResourcesScoreDataType 
     {
-        public NSXTALBServiceEngineResourcesScoreDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property avg_connection_mem_usage of obj type ServiceEngineResourcesScoreData field type
         /// str  type number

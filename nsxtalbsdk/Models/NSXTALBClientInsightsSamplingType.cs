@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClientInsightsSamplingType 
     {
-        public NSXTALBClientInsightsSamplingType()
-        {
-        }
         /// <summary>
         /// Client IP addresses to check when inserting RUM script.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSipServiceApplicationProfileType 
     {
-        public NSXTALBSipServiceApplicationProfileType()
-        {
-        }
         /// <summary>
         /// SIP transaction timeout in seconds. Allowed values are 2-512. Field introduced in 17.2.8, 18.1.3, 18.2.1. Unit is SEC.
         /// </summary>

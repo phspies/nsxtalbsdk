@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigUpdateDetailsType 
     {
-        public NSXTALBConfigUpdateDetailsType()
-        {
-        }
         /// <summary>
         /// Error message if request failed.
         /// </summary>

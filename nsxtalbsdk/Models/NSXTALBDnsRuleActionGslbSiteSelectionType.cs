@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRuleActionGslbSiteSelectionType 
     {
-        public NSXTALBDnsRuleActionGslbSiteSelectionType()
-        {
-        }
         /// <summary>
         /// GSLB fallback sites to use in case the desired site is down. Field introduced in 17.2.5. Maximum of 64 items allowed.
         /// </summary>

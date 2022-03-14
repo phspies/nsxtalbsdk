@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPodTolerationType 
     {
-        public NSXTALBPodTolerationType()
-        {
-        }
         /// <summary>
         /// Effect to match. Enum options - NO_SCHEDULE, PREFER_NO_SCHEDULE, NO_EXECUTE. Field introduced in 17.2.14, 18.1.5,
         /// 18.2.1.

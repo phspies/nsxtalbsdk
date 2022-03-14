@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBEventDetailsType 
     {
-        public NSXTALBEventDetailsType()
-        {
-        }
         /// <summary>
         /// Adaptive replication event e.g. DNS VS, config version. Field introduced in 21.1.3.
         /// </summary>

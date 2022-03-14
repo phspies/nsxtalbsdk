@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPEncryptionKeysType 
     {
-        public NSXTALBGCPEncryptionKeysType()
-        {
-        }
         /// <summary>
         /// CMEK Resource ID to encrypt Google Cloud Storage Bucket. This Bucket is used to upload Service Engine raw image. Field
         /// introduced in 18.2.10, 20.1.2.

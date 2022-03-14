@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNTPConfigurationType 
     {
-        public NSXTALBNTPConfigurationType()
-        {
-        }
         /// <summary>
         /// NTP Authentication keys.
         /// </summary>

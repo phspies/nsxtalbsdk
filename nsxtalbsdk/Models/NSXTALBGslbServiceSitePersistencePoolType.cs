@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbServiceSitePersistencePoolType 
     {
-        public NSXTALBGslbServiceSitePersistencePoolType()
-        {
-        }
         /// <summary>
         /// Site persistence pool's http2 state. . Field introduced in 20.1.6.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSecureChannelMappingApiResponseType 
     {
-        public NSXTALBSecureChannelMappingApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

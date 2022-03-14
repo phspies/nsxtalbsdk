@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTenantConfigurationType 
     {
-        public NSXTALBTenantConfigurationType()
-        {
-        }
         /// <summary>
         /// Controls the ownership of ServiceEngines. Service Engines can either be exclusively owned by each tenant or owned by the
         /// administrator and shared by all tenants. When ServiceEngines are owned by the administrator, each tenant can have either

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotConfigConsolidatorApiResponseType 
     {
-        public NSXTALBBotConfigConsolidatorApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

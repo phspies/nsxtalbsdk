@@ -17,12 +17,12 @@ namespace nsxtalbsdk.Modules
     {
         RestClient restClient;
         JsonSerializerSettings defaultSerializationSettings;
-        public Anomaly(RestClient Client, JsonSerializerSettings DefaultSerializationSettings)
+        public Anomaly(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken cancellationToken = default(CancellationToken), int timeout, int retry)
         {
             restClient = Client;
             defaultSerializationSettings = DefaultSerializationSettings;
         }
-        public NSXTALBAnomalyzerQueryResponseApiResponseType GetAnalyticsAnomalyPool(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
+        public async Task<NSXTALBAnomalyzerQueryResponseApiResponseType> GetAnalyticsAnomalyPool(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
             NSXTALBAnomalyzerQueryResponseApiResponseType? returnValue = default(NSXTALBAnomalyzerQueryResponseApiResponseType);
             StringBuilder GetAnalyticsAnomalyPoolServiceURL = new StringBuilder("/api/analytics/anomaly/pool/");
@@ -32,59 +32,47 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", AggregateObjId.ToString()); }
-            if (Aggregation != null) { request.AddQueryParameter("aggregation", Aggregation.ToString()); }
-            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", AggregationWindow.ToString()); }
-            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", DetailedHeader.ToString()); }
-            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", DimensionFilterOp.ToString()); }
-            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", EntityUuid.ToString()); }
-            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", IncludeRefs.ToString()); }
-            if (IncludeRelated != null) { request.AddQueryParameter("include_related", IncludeRelated.ToString()); }
-            if (Limit != null) { request.AddQueryParameter("limit", Limit.ToString()); }
-            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", MetricEntity.ToString()); }
-            if (MetricId != null) { request.AddQueryParameter("metric_id", MetricId.ToString()); }
-            if (Model != null) { request.AddQueryParameter("model", Model.ToString()); }
-            if (ObjId != null) { request.AddQueryParameter("obj_id", ObjId.ToString()); }
-            if (OrderBy != null) { request.AddQueryParameter("order_by", OrderBy.ToString()); }
-            if (Page != null) { request.AddQueryParameter("page", Page.ToString()); }
-            if (PageSize != null) { request.AddQueryParameter("page_size", PageSize.ToString()); }
-            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", PoolUuid.ToString()); }
-            if (Priority != null) { request.AddQueryParameter("priority", Priority.ToString()); }
-            if (ResultFormat != null) { request.AddQueryParameter("result_format", ResultFormat.ToString()); }
-            if (Server != null) { request.AddQueryParameter("server", Server.ToString()); }
-            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", ServiceengineUuid.ToString()); }
-            if (Start != null) { request.AddQueryParameter("start", Start.ToString()); }
-            if (Step != null) { request.AddQueryParameter("step", Step.ToString()); }
-            if (Stop != null) { request.AddQueryParameter("stop", Stop.ToString()); }
-            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", TenantUuid.ToString()); }
+            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", JsonConvert.ToString(AggregateObjId).ToLowerString()); }
+            if (Aggregation != null) { request.AddQueryParameter("aggregation", JsonConvert.ToString(Aggregation).ToLowerString()); }
+            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", JsonConvert.ToString(AggregationWindow).ToLowerString()); }
+            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", JsonConvert.ToString(DetailedHeader).ToLowerString()); }
+            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", JsonConvert.ToString(DimensionFilterOp).ToLowerString()); }
+            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", JsonConvert.ToString(EntityUuid).ToLowerString()); }
+            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", JsonConvert.ToString(IncludeRefs).ToLowerString()); }
+            if (IncludeRelated != null) { request.AddQueryParameter("include_related", JsonConvert.ToString(IncludeRelated).ToLowerString()); }
+            if (Limit != null) { request.AddQueryParameter("limit", JsonConvert.ToString(Limit).ToLowerString()); }
+            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", JsonConvert.ToString(MetricEntity).ToLowerString()); }
+            if (MetricId != null) { request.AddQueryParameter("metric_id", JsonConvert.ToString(MetricId).ToLowerString()); }
+            if (Model != null) { request.AddQueryParameter("model", JsonConvert.ToString(Model).ToLowerString()); }
+            if (ObjId != null) { request.AddQueryParameter("obj_id", JsonConvert.ToString(ObjId).ToLowerString()); }
+            if (OrderBy != null) { request.AddQueryParameter("order_by", JsonConvert.ToString(OrderBy).ToLowerString()); }
+            if (Page != null) { request.AddQueryParameter("page", JsonConvert.ToString(Page).ToLowerString()); }
+            if (PageSize != null) { request.AddQueryParameter("page_size", JsonConvert.ToString(PageSize).ToLowerString()); }
+            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", JsonConvert.ToString(PoolUuid).ToLowerString()); }
+            if (Priority != null) { request.AddQueryParameter("priority", JsonConvert.ToString(Priority).ToLowerString()); }
+            if (ResultFormat != null) { request.AddQueryParameter("result_format", JsonConvert.ToString(ResultFormat).ToLowerString()); }
+            if (Server != null) { request.AddQueryParameter("server", JsonConvert.ToString(Server).ToLowerString()); }
+            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", JsonConvert.ToString(ServiceengineUuid).ToLowerString()); }
+            if (Start != null) { request.AddQueryParameter("start", JsonConvert.ToString(Start).ToLowerString()); }
+            if (Step != null) { request.AddQueryParameter("step", JsonConvert.ToString(Step).ToLowerString()); }
+            if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
+            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyPoolServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBAnomalyzerQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyPoolServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBAnomalyzerQueryResponseApiResponseType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBAnomalyzerQueryResponseApiResponseType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBAnomalyzerQueryResponseType GetAnalyticsAnomalyPoolUuid(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
+        public async Task<NSXTALBAnomalyzerQueryResponseType> GetAnalyticsAnomalyPoolUuid(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             NSXTALBAnomalyzerQueryResponseType? returnValue = default(NSXTALBAnomalyzerQueryResponseType);
@@ -95,59 +83,47 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             GetAnalyticsAnomalyPoolUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
-            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", AggregateObjId.ToString()); }
-            if (Aggregation != null) { request.AddQueryParameter("aggregation", Aggregation.ToString()); }
-            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", AggregationWindow.ToString()); }
-            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", DetailedHeader.ToString()); }
-            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", DimensionFilterOp.ToString()); }
-            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", EntityUuid.ToString()); }
-            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", IncludeRefs.ToString()); }
-            if (IncludeRelated != null) { request.AddQueryParameter("include_related", IncludeRelated.ToString()); }
-            if (Limit != null) { request.AddQueryParameter("limit", Limit.ToString()); }
-            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", MetricEntity.ToString()); }
-            if (MetricId != null) { request.AddQueryParameter("metric_id", MetricId.ToString()); }
-            if (Model != null) { request.AddQueryParameter("model", Model.ToString()); }
-            if (ObjId != null) { request.AddQueryParameter("obj_id", ObjId.ToString()); }
-            if (OrderBy != null) { request.AddQueryParameter("order_by", OrderBy.ToString()); }
-            if (Page != null) { request.AddQueryParameter("page", Page.ToString()); }
-            if (PageSize != null) { request.AddQueryParameter("page_size", PageSize.ToString()); }
-            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", PoolUuid.ToString()); }
-            if (Priority != null) { request.AddQueryParameter("priority", Priority.ToString()); }
-            if (ResultFormat != null) { request.AddQueryParameter("result_format", ResultFormat.ToString()); }
-            if (Server != null) { request.AddQueryParameter("server", Server.ToString()); }
-            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", ServiceengineUuid.ToString()); }
-            if (Start != null) { request.AddQueryParameter("start", Start.ToString()); }
-            if (Step != null) { request.AddQueryParameter("step", Step.ToString()); }
-            if (Stop != null) { request.AddQueryParameter("stop", Stop.ToString()); }
-            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", TenantUuid.ToString()); }
+            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", JsonConvert.ToString(AggregateObjId).ToLowerString()); }
+            if (Aggregation != null) { request.AddQueryParameter("aggregation", JsonConvert.ToString(Aggregation).ToLowerString()); }
+            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", JsonConvert.ToString(AggregationWindow).ToLowerString()); }
+            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", JsonConvert.ToString(DetailedHeader).ToLowerString()); }
+            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", JsonConvert.ToString(DimensionFilterOp).ToLowerString()); }
+            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", JsonConvert.ToString(EntityUuid).ToLowerString()); }
+            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", JsonConvert.ToString(IncludeRefs).ToLowerString()); }
+            if (IncludeRelated != null) { request.AddQueryParameter("include_related", JsonConvert.ToString(IncludeRelated).ToLowerString()); }
+            if (Limit != null) { request.AddQueryParameter("limit", JsonConvert.ToString(Limit).ToLowerString()); }
+            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", JsonConvert.ToString(MetricEntity).ToLowerString()); }
+            if (MetricId != null) { request.AddQueryParameter("metric_id", JsonConvert.ToString(MetricId).ToLowerString()); }
+            if (Model != null) { request.AddQueryParameter("model", JsonConvert.ToString(Model).ToLowerString()); }
+            if (ObjId != null) { request.AddQueryParameter("obj_id", JsonConvert.ToString(ObjId).ToLowerString()); }
+            if (OrderBy != null) { request.AddQueryParameter("order_by", JsonConvert.ToString(OrderBy).ToLowerString()); }
+            if (Page != null) { request.AddQueryParameter("page", JsonConvert.ToString(Page).ToLowerString()); }
+            if (PageSize != null) { request.AddQueryParameter("page_size", JsonConvert.ToString(PageSize).ToLowerString()); }
+            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", JsonConvert.ToString(PoolUuid).ToLowerString()); }
+            if (Priority != null) { request.AddQueryParameter("priority", JsonConvert.ToString(Priority).ToLowerString()); }
+            if (ResultFormat != null) { request.AddQueryParameter("result_format", JsonConvert.ToString(ResultFormat).ToLowerString()); }
+            if (Server != null) { request.AddQueryParameter("server", JsonConvert.ToString(Server).ToLowerString()); }
+            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", JsonConvert.ToString(ServiceengineUuid).ToLowerString()); }
+            if (Start != null) { request.AddQueryParameter("start", JsonConvert.ToString(Start).ToLowerString()); }
+            if (Step != null) { request.AddQueryParameter("step", JsonConvert.ToString(Step).ToLowerString()); }
+            if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
+            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyPoolUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBAnomalyzerQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyPoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBAnomalyzerQueryResponseType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBAnomalyzerQueryResponseType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBAnomalyzerQueryResponseApiResponseType GetAnalyticsAnomalyServiceengine(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
+        public async Task<NSXTALBAnomalyzerQueryResponseApiResponseType> GetAnalyticsAnomalyServiceengine(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
             NSXTALBAnomalyzerQueryResponseApiResponseType? returnValue = default(NSXTALBAnomalyzerQueryResponseApiResponseType);
             StringBuilder GetAnalyticsAnomalyServiceengineServiceURL = new StringBuilder("/api/analytics/anomaly/serviceengine/");
@@ -157,59 +133,47 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", AggregateObjId.ToString()); }
-            if (Aggregation != null) { request.AddQueryParameter("aggregation", Aggregation.ToString()); }
-            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", AggregationWindow.ToString()); }
-            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", DetailedHeader.ToString()); }
-            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", DimensionFilterOp.ToString()); }
-            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", EntityUuid.ToString()); }
-            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", IncludeRefs.ToString()); }
-            if (IncludeRelated != null) { request.AddQueryParameter("include_related", IncludeRelated.ToString()); }
-            if (Limit != null) { request.AddQueryParameter("limit", Limit.ToString()); }
-            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", MetricEntity.ToString()); }
-            if (MetricId != null) { request.AddQueryParameter("metric_id", MetricId.ToString()); }
-            if (Model != null) { request.AddQueryParameter("model", Model.ToString()); }
-            if (ObjId != null) { request.AddQueryParameter("obj_id", ObjId.ToString()); }
-            if (OrderBy != null) { request.AddQueryParameter("order_by", OrderBy.ToString()); }
-            if (Page != null) { request.AddQueryParameter("page", Page.ToString()); }
-            if (PageSize != null) { request.AddQueryParameter("page_size", PageSize.ToString()); }
-            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", PoolUuid.ToString()); }
-            if (Priority != null) { request.AddQueryParameter("priority", Priority.ToString()); }
-            if (ResultFormat != null) { request.AddQueryParameter("result_format", ResultFormat.ToString()); }
-            if (Server != null) { request.AddQueryParameter("server", Server.ToString()); }
-            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", ServiceengineUuid.ToString()); }
-            if (Start != null) { request.AddQueryParameter("start", Start.ToString()); }
-            if (Step != null) { request.AddQueryParameter("step", Step.ToString()); }
-            if (Stop != null) { request.AddQueryParameter("stop", Stop.ToString()); }
-            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", TenantUuid.ToString()); }
+            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", JsonConvert.ToString(AggregateObjId).ToLowerString()); }
+            if (Aggregation != null) { request.AddQueryParameter("aggregation", JsonConvert.ToString(Aggregation).ToLowerString()); }
+            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", JsonConvert.ToString(AggregationWindow).ToLowerString()); }
+            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", JsonConvert.ToString(DetailedHeader).ToLowerString()); }
+            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", JsonConvert.ToString(DimensionFilterOp).ToLowerString()); }
+            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", JsonConvert.ToString(EntityUuid).ToLowerString()); }
+            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", JsonConvert.ToString(IncludeRefs).ToLowerString()); }
+            if (IncludeRelated != null) { request.AddQueryParameter("include_related", JsonConvert.ToString(IncludeRelated).ToLowerString()); }
+            if (Limit != null) { request.AddQueryParameter("limit", JsonConvert.ToString(Limit).ToLowerString()); }
+            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", JsonConvert.ToString(MetricEntity).ToLowerString()); }
+            if (MetricId != null) { request.AddQueryParameter("metric_id", JsonConvert.ToString(MetricId).ToLowerString()); }
+            if (Model != null) { request.AddQueryParameter("model", JsonConvert.ToString(Model).ToLowerString()); }
+            if (ObjId != null) { request.AddQueryParameter("obj_id", JsonConvert.ToString(ObjId).ToLowerString()); }
+            if (OrderBy != null) { request.AddQueryParameter("order_by", JsonConvert.ToString(OrderBy).ToLowerString()); }
+            if (Page != null) { request.AddQueryParameter("page", JsonConvert.ToString(Page).ToLowerString()); }
+            if (PageSize != null) { request.AddQueryParameter("page_size", JsonConvert.ToString(PageSize).ToLowerString()); }
+            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", JsonConvert.ToString(PoolUuid).ToLowerString()); }
+            if (Priority != null) { request.AddQueryParameter("priority", JsonConvert.ToString(Priority).ToLowerString()); }
+            if (ResultFormat != null) { request.AddQueryParameter("result_format", JsonConvert.ToString(ResultFormat).ToLowerString()); }
+            if (Server != null) { request.AddQueryParameter("server", JsonConvert.ToString(Server).ToLowerString()); }
+            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", JsonConvert.ToString(ServiceengineUuid).ToLowerString()); }
+            if (Start != null) { request.AddQueryParameter("start", JsonConvert.ToString(Start).ToLowerString()); }
+            if (Step != null) { request.AddQueryParameter("step", JsonConvert.ToString(Step).ToLowerString()); }
+            if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
+            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyServiceengineServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBAnomalyzerQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyServiceengineServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBAnomalyzerQueryResponseApiResponseType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBAnomalyzerQueryResponseApiResponseType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBAnomalyzerQueryResponseType GetAnalyticsAnomalyServiceengineUuid(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
+        public async Task<NSXTALBAnomalyzerQueryResponseType> GetAnalyticsAnomalyServiceengineUuid(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             NSXTALBAnomalyzerQueryResponseType? returnValue = default(NSXTALBAnomalyzerQueryResponseType);
@@ -220,59 +184,47 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             GetAnalyticsAnomalyServiceengineUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
-            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", AggregateObjId.ToString()); }
-            if (Aggregation != null) { request.AddQueryParameter("aggregation", Aggregation.ToString()); }
-            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", AggregationWindow.ToString()); }
-            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", DetailedHeader.ToString()); }
-            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", DimensionFilterOp.ToString()); }
-            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", EntityUuid.ToString()); }
-            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", IncludeRefs.ToString()); }
-            if (IncludeRelated != null) { request.AddQueryParameter("include_related", IncludeRelated.ToString()); }
-            if (Limit != null) { request.AddQueryParameter("limit", Limit.ToString()); }
-            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", MetricEntity.ToString()); }
-            if (MetricId != null) { request.AddQueryParameter("metric_id", MetricId.ToString()); }
-            if (Model != null) { request.AddQueryParameter("model", Model.ToString()); }
-            if (ObjId != null) { request.AddQueryParameter("obj_id", ObjId.ToString()); }
-            if (OrderBy != null) { request.AddQueryParameter("order_by", OrderBy.ToString()); }
-            if (Page != null) { request.AddQueryParameter("page", Page.ToString()); }
-            if (PageSize != null) { request.AddQueryParameter("page_size", PageSize.ToString()); }
-            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", PoolUuid.ToString()); }
-            if (Priority != null) { request.AddQueryParameter("priority", Priority.ToString()); }
-            if (ResultFormat != null) { request.AddQueryParameter("result_format", ResultFormat.ToString()); }
-            if (Server != null) { request.AddQueryParameter("server", Server.ToString()); }
-            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", ServiceengineUuid.ToString()); }
-            if (Start != null) { request.AddQueryParameter("start", Start.ToString()); }
-            if (Step != null) { request.AddQueryParameter("step", Step.ToString()); }
-            if (Stop != null) { request.AddQueryParameter("stop", Stop.ToString()); }
-            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", TenantUuid.ToString()); }
+            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", JsonConvert.ToString(AggregateObjId).ToLowerString()); }
+            if (Aggregation != null) { request.AddQueryParameter("aggregation", JsonConvert.ToString(Aggregation).ToLowerString()); }
+            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", JsonConvert.ToString(AggregationWindow).ToLowerString()); }
+            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", JsonConvert.ToString(DetailedHeader).ToLowerString()); }
+            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", JsonConvert.ToString(DimensionFilterOp).ToLowerString()); }
+            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", JsonConvert.ToString(EntityUuid).ToLowerString()); }
+            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", JsonConvert.ToString(IncludeRefs).ToLowerString()); }
+            if (IncludeRelated != null) { request.AddQueryParameter("include_related", JsonConvert.ToString(IncludeRelated).ToLowerString()); }
+            if (Limit != null) { request.AddQueryParameter("limit", JsonConvert.ToString(Limit).ToLowerString()); }
+            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", JsonConvert.ToString(MetricEntity).ToLowerString()); }
+            if (MetricId != null) { request.AddQueryParameter("metric_id", JsonConvert.ToString(MetricId).ToLowerString()); }
+            if (Model != null) { request.AddQueryParameter("model", JsonConvert.ToString(Model).ToLowerString()); }
+            if (ObjId != null) { request.AddQueryParameter("obj_id", JsonConvert.ToString(ObjId).ToLowerString()); }
+            if (OrderBy != null) { request.AddQueryParameter("order_by", JsonConvert.ToString(OrderBy).ToLowerString()); }
+            if (Page != null) { request.AddQueryParameter("page", JsonConvert.ToString(Page).ToLowerString()); }
+            if (PageSize != null) { request.AddQueryParameter("page_size", JsonConvert.ToString(PageSize).ToLowerString()); }
+            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", JsonConvert.ToString(PoolUuid).ToLowerString()); }
+            if (Priority != null) { request.AddQueryParameter("priority", JsonConvert.ToString(Priority).ToLowerString()); }
+            if (ResultFormat != null) { request.AddQueryParameter("result_format", JsonConvert.ToString(ResultFormat).ToLowerString()); }
+            if (Server != null) { request.AddQueryParameter("server", JsonConvert.ToString(Server).ToLowerString()); }
+            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", JsonConvert.ToString(ServiceengineUuid).ToLowerString()); }
+            if (Start != null) { request.AddQueryParameter("start", JsonConvert.ToString(Start).ToLowerString()); }
+            if (Step != null) { request.AddQueryParameter("step", JsonConvert.ToString(Step).ToLowerString()); }
+            if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
+            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyServiceengineUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBAnomalyzerQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyServiceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBAnomalyzerQueryResponseType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBAnomalyzerQueryResponseType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBAnomalyzerQueryResponseApiResponseType GetAnalyticsAnomalyVirtualservice(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
+        public async Task<NSXTALBAnomalyzerQueryResponseApiResponseType> GetAnalyticsAnomalyVirtualservice(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
             NSXTALBAnomalyzerQueryResponseApiResponseType? returnValue = default(NSXTALBAnomalyzerQueryResponseApiResponseType);
             StringBuilder GetAnalyticsAnomalyVirtualserviceServiceURL = new StringBuilder("/api/analytics/anomaly/virtualservice/");
@@ -282,59 +234,47 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", AggregateObjId.ToString()); }
-            if (Aggregation != null) { request.AddQueryParameter("aggregation", Aggregation.ToString()); }
-            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", AggregationWindow.ToString()); }
-            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", DetailedHeader.ToString()); }
-            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", DimensionFilterOp.ToString()); }
-            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", EntityUuid.ToString()); }
-            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", IncludeRefs.ToString()); }
-            if (IncludeRelated != null) { request.AddQueryParameter("include_related", IncludeRelated.ToString()); }
-            if (Limit != null) { request.AddQueryParameter("limit", Limit.ToString()); }
-            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", MetricEntity.ToString()); }
-            if (MetricId != null) { request.AddQueryParameter("metric_id", MetricId.ToString()); }
-            if (Model != null) { request.AddQueryParameter("model", Model.ToString()); }
-            if (ObjId != null) { request.AddQueryParameter("obj_id", ObjId.ToString()); }
-            if (OrderBy != null) { request.AddQueryParameter("order_by", OrderBy.ToString()); }
-            if (Page != null) { request.AddQueryParameter("page", Page.ToString()); }
-            if (PageSize != null) { request.AddQueryParameter("page_size", PageSize.ToString()); }
-            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", PoolUuid.ToString()); }
-            if (Priority != null) { request.AddQueryParameter("priority", Priority.ToString()); }
-            if (ResultFormat != null) { request.AddQueryParameter("result_format", ResultFormat.ToString()); }
-            if (Server != null) { request.AddQueryParameter("server", Server.ToString()); }
-            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", ServiceengineUuid.ToString()); }
-            if (Start != null) { request.AddQueryParameter("start", Start.ToString()); }
-            if (Step != null) { request.AddQueryParameter("step", Step.ToString()); }
-            if (Stop != null) { request.AddQueryParameter("stop", Stop.ToString()); }
-            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", TenantUuid.ToString()); }
+            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", JsonConvert.ToString(AggregateObjId).ToLowerString()); }
+            if (Aggregation != null) { request.AddQueryParameter("aggregation", JsonConvert.ToString(Aggregation).ToLowerString()); }
+            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", JsonConvert.ToString(AggregationWindow).ToLowerString()); }
+            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", JsonConvert.ToString(DetailedHeader).ToLowerString()); }
+            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", JsonConvert.ToString(DimensionFilterOp).ToLowerString()); }
+            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", JsonConvert.ToString(EntityUuid).ToLowerString()); }
+            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", JsonConvert.ToString(IncludeRefs).ToLowerString()); }
+            if (IncludeRelated != null) { request.AddQueryParameter("include_related", JsonConvert.ToString(IncludeRelated).ToLowerString()); }
+            if (Limit != null) { request.AddQueryParameter("limit", JsonConvert.ToString(Limit).ToLowerString()); }
+            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", JsonConvert.ToString(MetricEntity).ToLowerString()); }
+            if (MetricId != null) { request.AddQueryParameter("metric_id", JsonConvert.ToString(MetricId).ToLowerString()); }
+            if (Model != null) { request.AddQueryParameter("model", JsonConvert.ToString(Model).ToLowerString()); }
+            if (ObjId != null) { request.AddQueryParameter("obj_id", JsonConvert.ToString(ObjId).ToLowerString()); }
+            if (OrderBy != null) { request.AddQueryParameter("order_by", JsonConvert.ToString(OrderBy).ToLowerString()); }
+            if (Page != null) { request.AddQueryParameter("page", JsonConvert.ToString(Page).ToLowerString()); }
+            if (PageSize != null) { request.AddQueryParameter("page_size", JsonConvert.ToString(PageSize).ToLowerString()); }
+            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", JsonConvert.ToString(PoolUuid).ToLowerString()); }
+            if (Priority != null) { request.AddQueryParameter("priority", JsonConvert.ToString(Priority).ToLowerString()); }
+            if (ResultFormat != null) { request.AddQueryParameter("result_format", JsonConvert.ToString(ResultFormat).ToLowerString()); }
+            if (Server != null) { request.AddQueryParameter("server", JsonConvert.ToString(Server).ToLowerString()); }
+            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", JsonConvert.ToString(ServiceengineUuid).ToLowerString()); }
+            if (Start != null) { request.AddQueryParameter("start", JsonConvert.ToString(Start).ToLowerString()); }
+            if (Step != null) { request.AddQueryParameter("step", JsonConvert.ToString(Step).ToLowerString()); }
+            if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
+            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyVirtualserviceServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBAnomalyzerQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyVirtualserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBAnomalyzerQueryResponseApiResponseType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBAnomalyzerQueryResponseApiResponseType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBAnomalyzerQueryResponseType GetAnalyticsAnomalyVirtualserviceUuid(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
+        public async Task<NSXTALBAnomalyzerQueryResponseType> GetAnalyticsAnomalyVirtualserviceUuid(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             NSXTALBAnomalyzerQueryResponseType? returnValue = default(NSXTALBAnomalyzerQueryResponseType);
@@ -345,57 +285,45 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             GetAnalyticsAnomalyVirtualserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
-            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", AggregateObjId.ToString()); }
-            if (Aggregation != null) { request.AddQueryParameter("aggregation", Aggregation.ToString()); }
-            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", AggregationWindow.ToString()); }
-            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", DetailedHeader.ToString()); }
-            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", DimensionFilterOp.ToString()); }
-            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", EntityUuid.ToString()); }
-            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", IncludeRefs.ToString()); }
-            if (IncludeRelated != null) { request.AddQueryParameter("include_related", IncludeRelated.ToString()); }
-            if (Limit != null) { request.AddQueryParameter("limit", Limit.ToString()); }
-            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", MetricEntity.ToString()); }
-            if (MetricId != null) { request.AddQueryParameter("metric_id", MetricId.ToString()); }
-            if (Model != null) { request.AddQueryParameter("model", Model.ToString()); }
-            if (ObjId != null) { request.AddQueryParameter("obj_id", ObjId.ToString()); }
-            if (OrderBy != null) { request.AddQueryParameter("order_by", OrderBy.ToString()); }
-            if (Page != null) { request.AddQueryParameter("page", Page.ToString()); }
-            if (PageSize != null) { request.AddQueryParameter("page_size", PageSize.ToString()); }
-            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", PoolUuid.ToString()); }
-            if (Priority != null) { request.AddQueryParameter("priority", Priority.ToString()); }
-            if (ResultFormat != null) { request.AddQueryParameter("result_format", ResultFormat.ToString()); }
-            if (Server != null) { request.AddQueryParameter("server", Server.ToString()); }
-            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", ServiceengineUuid.ToString()); }
-            if (Start != null) { request.AddQueryParameter("start", Start.ToString()); }
-            if (Step != null) { request.AddQueryParameter("step", Step.ToString()); }
-            if (Stop != null) { request.AddQueryParameter("stop", Stop.ToString()); }
-            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", TenantUuid.ToString()); }
+            if (AggregateObjId != null) { request.AddQueryParameter("aggregate_obj_id", JsonConvert.ToString(AggregateObjId).ToLowerString()); }
+            if (Aggregation != null) { request.AddQueryParameter("aggregation", JsonConvert.ToString(Aggregation).ToLowerString()); }
+            if (AggregationWindow != null) { request.AddQueryParameter("aggregation_window", JsonConvert.ToString(AggregationWindow).ToLowerString()); }
+            if (DetailedHeader != null) { request.AddQueryParameter("detailed_header", JsonConvert.ToString(DetailedHeader).ToLowerString()); }
+            if (DimensionFilterOp != null) { request.AddQueryParameter("dimension_filter_op", JsonConvert.ToString(DimensionFilterOp).ToLowerString()); }
+            if (EntityUuid != null) { request.AddQueryParameter("entity_uuid", JsonConvert.ToString(EntityUuid).ToLowerString()); }
+            if (IncludeRefs != null) { request.AddQueryParameter("include_refs", JsonConvert.ToString(IncludeRefs).ToLowerString()); }
+            if (IncludeRelated != null) { request.AddQueryParameter("include_related", JsonConvert.ToString(IncludeRelated).ToLowerString()); }
+            if (Limit != null) { request.AddQueryParameter("limit", JsonConvert.ToString(Limit).ToLowerString()); }
+            if (MetricEntity != null) { request.AddQueryParameter("metric_entity", JsonConvert.ToString(MetricEntity).ToLowerString()); }
+            if (MetricId != null) { request.AddQueryParameter("metric_id", JsonConvert.ToString(MetricId).ToLowerString()); }
+            if (Model != null) { request.AddQueryParameter("model", JsonConvert.ToString(Model).ToLowerString()); }
+            if (ObjId != null) { request.AddQueryParameter("obj_id", JsonConvert.ToString(ObjId).ToLowerString()); }
+            if (OrderBy != null) { request.AddQueryParameter("order_by", JsonConvert.ToString(OrderBy).ToLowerString()); }
+            if (Page != null) { request.AddQueryParameter("page", JsonConvert.ToString(Page).ToLowerString()); }
+            if (PageSize != null) { request.AddQueryParameter("page_size", JsonConvert.ToString(PageSize).ToLowerString()); }
+            if (PoolUuid != null) { request.AddQueryParameter("pool_uuid", JsonConvert.ToString(PoolUuid).ToLowerString()); }
+            if (Priority != null) { request.AddQueryParameter("priority", JsonConvert.ToString(Priority).ToLowerString()); }
+            if (ResultFormat != null) { request.AddQueryParameter("result_format", JsonConvert.ToString(ResultFormat).ToLowerString()); }
+            if (Server != null) { request.AddQueryParameter("server", JsonConvert.ToString(Server).ToLowerString()); }
+            if (ServiceengineUuid != null) { request.AddQueryParameter("serviceengine_uuid", JsonConvert.ToString(ServiceengineUuid).ToLowerString()); }
+            if (Start != null) { request.AddQueryParameter("start", JsonConvert.ToString(Start).ToLowerString()); }
+            if (Step != null) { request.AddQueryParameter("step", JsonConvert.ToString(Step).ToLowerString()); }
+            if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
+            if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyVirtualserviceUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBAnomalyzerQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyVirtualserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBAnomalyzerQueryResponseType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBAnomalyzerQueryResponseType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
     }
 }

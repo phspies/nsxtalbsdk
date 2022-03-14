@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSecureChannelMetadataType 
     {
-        public NSXTALBSecureChannelMetadataType()
-        {
-        }
         /// <summary>
         /// key of SecureChannelMetadata.
         /// </summary>

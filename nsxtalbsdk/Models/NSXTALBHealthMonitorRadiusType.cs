@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorRadiusType 
     {
-        public NSXTALBHealthMonitorRadiusType()
-        {
-        }
         /// <summary>
         /// Radius monitor will query Radius server with this password. Field introduced in 18.2.3.
         /// </summary>

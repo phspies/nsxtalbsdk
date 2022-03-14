@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAzureMarketplaceType 
     {
-        public NSXTALBAzureMarketplaceType()
-        {
-        }
         /// <summary>
         /// Azure Cloud id. Field introduced in 18.2.2.
         /// </summary>

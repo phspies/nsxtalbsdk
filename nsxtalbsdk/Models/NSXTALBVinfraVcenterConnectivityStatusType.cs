@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraVcenterConnectivityStatusType 
     {
-        public NSXTALBVinfraVcenterConnectivityStatusType()
-        {
-        }
         /// <summary>
         /// cloud of VinfraVcenterConnectivityStatus.
         /// </summary>

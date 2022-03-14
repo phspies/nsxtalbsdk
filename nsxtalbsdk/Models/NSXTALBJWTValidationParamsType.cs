@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBJWTValidationParamsType 
     {
-        public NSXTALBJWTValidationParamsType()
-        {
-        }
         /// <summary>
         /// Audience parameter used for validation using JWT token. Field introduced in 21.1.3.
         /// </summary>

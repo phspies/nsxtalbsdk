@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBResponseMatchTargetType 
     {
-        public NSXTALBResponseMatchTargetType()
-        {
-        }
         /// <summary>
         /// Configure client ip addresses.
         /// </summary>

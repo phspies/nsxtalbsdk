@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBvCenterConfigurationType 
     {
-        public NSXTALBvCenterConfigurationType()
-        {
-        }
         /// <summary>
         /// Datacenter for virtual infrastructure discovery.
         /// </summary>

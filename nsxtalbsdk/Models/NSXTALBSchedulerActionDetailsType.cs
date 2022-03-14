@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSchedulerActionDetailsType 
     {
-        public NSXTALBSchedulerActionDetailsType()
-        {
-        }
         /// <summary>
         /// backup_uri of SchedulerActionDetails.
         /// </summary>

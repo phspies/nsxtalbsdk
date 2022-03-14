@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCRSUpdateDetailsType 
     {
-        public NSXTALBCRSUpdateDetailsType()
-        {
-        }
         /// <summary>
         /// List of all available CRS updates. Field introduced in 20.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeUpgradeMigrateEventDetailsType 
     {
-        public NSXTALBSeUpgradeMigrateEventDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property migrate_params of obj type SeUpgradeMigrateEventDetails field type str  type
         /// object

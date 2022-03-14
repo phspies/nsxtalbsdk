@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsCnameRdataType 
     {
-        public NSXTALBDnsCnameRdataType()
-        {
-        }
         /// <summary>
         /// Canonical name.
         /// </summary>

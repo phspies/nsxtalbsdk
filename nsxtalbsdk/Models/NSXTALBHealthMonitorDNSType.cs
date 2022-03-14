@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorDNSType 
     {
-        public NSXTALBHealthMonitorDNSType()
-        {
-        }
         /// <summary>
         /// Query_Type  Response has atleast one answer of which      the resource record type matches the query type   Any_Type 
         /// Response should contain atleast one answer  AnyThing  An empty answer is enough. Enum options - DNS_QUERY_TYPE,

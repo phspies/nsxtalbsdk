@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCfgStateType 
     {
-        public NSXTALBCfgStateType()
-        {
-        }
         /// <summary>
         /// cfg-version synced to follower. .
         /// </summary>

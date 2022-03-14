@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotMappingRuleMatchTargetType 
     {
-        public NSXTALBBotMappingRuleMatchTargetType()
-        {
-        }
         /// <summary>
         /// How to match the BotClientClass. Field introduced in 21.1.3.
         /// </summary>

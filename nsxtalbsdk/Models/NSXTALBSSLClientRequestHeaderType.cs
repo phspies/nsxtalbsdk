@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLClientRequestHeaderType 
     {
-        public NSXTALBSSLClientRequestHeaderType()
-        {
-        }
         /// <summary>
         /// If this header exists, reset the connection. If the ssl variable is specified, add a header with this value.
         /// </summary>

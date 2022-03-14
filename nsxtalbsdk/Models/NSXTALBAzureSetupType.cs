@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAzureSetupType 
     {
-        public NSXTALBAzureSetupType()
-        {
-        }
         /// <summary>
         /// alb_id of AzureSetup.
         /// </summary>

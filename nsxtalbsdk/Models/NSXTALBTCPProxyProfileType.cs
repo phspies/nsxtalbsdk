@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTCPProxyProfileType 
     {
-        public NSXTALBTCPProxyProfileType()
-        {
-        }
         /// <summary>
         /// Controls the our congestion window to send, normally it's 1 mss, If this option is turned on, we use 10 msses.
         /// </summary>

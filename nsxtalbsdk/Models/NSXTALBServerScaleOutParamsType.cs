@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerScaleOutParamsType 
     {
-        public NSXTALBServerScaleOutParamsType()
-        {
-        }
         /// <summary>
         /// Reason for the manual scale-out.
         /// </summary>

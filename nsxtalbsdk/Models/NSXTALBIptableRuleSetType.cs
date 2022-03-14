@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIptableRuleSetType 
     {
-        public NSXTALBIptableRuleSetType()
-        {
-        }
         /// <summary>
         /// chain of IptableRuleSet.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClusterNodeStartedEventType 
     {
-        public NSXTALBClusterNodeStartedEventType()
-        {
-        }
         /// <summary>
         /// IP address of the controller VM.
         /// </summary>

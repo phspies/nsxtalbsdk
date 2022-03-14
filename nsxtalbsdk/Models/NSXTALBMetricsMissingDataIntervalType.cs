@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsMissingDataIntervalType 
     {
-        public NSXTALBMetricsMissingDataIntervalType()
-        {
-        }
         /// <summary>
         /// end of MetricsMissingDataInterval.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafExcludeListEntryType 
     {
-        public NSXTALBWafExcludeListEntryType()
-        {
-        }
         /// <summary>
         /// Client IP Subnet to exclude for WAF rules. Field introduced in 17.2.1.
         /// </summary>

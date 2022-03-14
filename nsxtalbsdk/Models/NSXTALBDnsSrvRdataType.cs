@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsSrvRdataType 
     {
-        public NSXTALBDnsSrvRdataType()
-        {
-        }
         /// <summary>
         /// Service port. Allowed values are 0-65535.
         /// </summary>

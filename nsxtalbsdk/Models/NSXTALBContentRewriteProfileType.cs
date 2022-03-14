@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBContentRewriteProfileType 
     {
-        public NSXTALBContentRewriteProfileType()
-        {
-        }
         /// <summary>
         /// Strings to be matched and replaced with on the request body. This should be configured when request_rewrite_enabled is
         /// set to true. This is currently not supported. Field deprecated in 21.1.3.

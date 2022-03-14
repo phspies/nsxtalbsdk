@@ -17,13 +17,13 @@ namespace nsxtalbsdk.Modules
     {
         RestClient restClient;
         JsonSerializerSettings defaultSerializationSettings;
-        public {{module}}(RestClient Client, JsonSerializerSettings DefaultSerializationSettings)
+        public {{module}}(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken cancellationToken = default(CancellationToken), int timeout, int retry)
         {
             restClient = Client;
             defaultSerializationSettings = DefaultSerializationSettings;
         }
         {{#operations}}
-        public {{GetOperationReturnType . "full"}} {{GetMethodName .}}({{GetOperationPathParams .}})
+        public async Task<{{GetOperationReturnType . "full"}}> {{GetMethodName .}}({{GetOperationPathParams .}})
         {
             {{#operation.parameters}}
             {{#isRequired}}
@@ -42,11 +42,11 @@ namespace nsxtalbsdk.Modules
             {{GetOperationPathInjectionCode . operations.Current }}
             {{/operation.parameters}}
             request.Resource = {{GetMethodName .}}ServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<{{GetOperationReturnType . "bare"}}> response = await restClient.ExecuteTaskAsyncWithPolicy<{{GetOperationReturnType . "bare"}}>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP {{GetOperationHttpMethod .}} operation to " + {{GetMethodName .}}ServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
             {{GetOperationReturnType . "return"}}
         }

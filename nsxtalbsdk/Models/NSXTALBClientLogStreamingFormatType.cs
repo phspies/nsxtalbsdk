@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClientLogStreamingFormatType 
     {
-        public NSXTALBClientLogStreamingFormatType()
-        {
-        }
         /// <summary>
         /// Format for the streamed logs. Enum options - LOG_STREAMING_FORMAT_JSON_FULL, LOG_STREAMING_FORMAT_JSON_SELECTED. Field
         /// introduced in 18.2.5.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClusterCloudDetailsApiResponseType 
     {
-        public NSXTALBClusterCloudDetailsApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

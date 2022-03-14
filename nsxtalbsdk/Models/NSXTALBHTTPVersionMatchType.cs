@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPVersionMatchType 
     {
-        public NSXTALBHTTPVersionMatchType()
-        {
-        }
         /// <summary>
         /// Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBALBServicesAccountUserType 
     {
-        public NSXTALBALBServicesAccountUserType()
-        {
-        }
         /// <summary>
         /// Field introduced in 20.1.1.
         /// </summary>

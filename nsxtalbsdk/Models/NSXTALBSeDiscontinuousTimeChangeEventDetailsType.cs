@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeDiscontinuousTimeChangeEventDetailsType 
     {
-        public NSXTALBSeDiscontinuousTimeChangeEventDetailsType()
-        {
-        }
         /// <summary>
         /// Relative time drift between SE and controller in terms of microseconds.
         /// </summary>

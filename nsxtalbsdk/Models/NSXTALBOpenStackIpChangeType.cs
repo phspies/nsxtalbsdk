@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackIpChangeType 
     {
-        public NSXTALBOpenStackIpChangeType()
-        {
-        }
         /// <summary>
         /// error_string of OpenStackIpChange.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxConfigurationType 
     {
-        public NSXTALBNsxConfigurationType()
-        {
-        }
         /// <summary>
         /// This prefix will be added to the names of all NSX objects created by Avi Controller. It should be unique across all the
         /// Avi Controller clusters. Field deprecated in 21.1.1. Field introduced in 17.1.1.

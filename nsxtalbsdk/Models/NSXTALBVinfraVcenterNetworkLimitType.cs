@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraVcenterNetworkLimitType 
     {
-        public NSXTALBVinfraVcenterNetworkLimitType()
-        {
-        }
         /// <summary>
         /// additional_reason of VinfraVcenterNetworkLimit.
         /// </summary>

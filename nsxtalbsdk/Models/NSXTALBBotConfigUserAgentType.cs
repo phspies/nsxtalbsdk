@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotConfigUserAgentType 
     {
-        public NSXTALBBotConfigUserAgentType()
-        {
-        }
         /// <summary>
         /// Whether User Agent-based Bot detection is enabled. Field introduced in 21.1.1.
         /// </summary>

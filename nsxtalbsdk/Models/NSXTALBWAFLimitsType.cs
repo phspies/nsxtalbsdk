@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWAFLimitsType 
     {
-        public NSXTALBWAFLimitsType()
-        {
-        }
         /// <summary>
         /// Number of WAF allowed Content Types. Field introduced in 21.1.3.
         /// </summary>

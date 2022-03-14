@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsSeVnicType 
     {
-        public NSXTALBVsSeVnicType()
-        {
-        }
         /// <summary>
         /// lif of VsSeVnic.
         /// </summary>

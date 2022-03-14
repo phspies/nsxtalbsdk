@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtCredentialsType 
     {
-        public NSXTALBNsxtCredentialsType()
-        {
-        }
         /// <summary>
         /// Password to talk to Nsx-t manager. Field introduced in 20.1.1.
         /// </summary>

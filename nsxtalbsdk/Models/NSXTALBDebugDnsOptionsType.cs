@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugDnsOptionsType 
     {
-        public NSXTALBDebugDnsOptionsType()
-        {
-        }
         /// <summary>
         /// This field filters the FQDN for Dns debug. Field introduced in 18.2.1. Maximum of 1 items allowed.
         /// </summary>

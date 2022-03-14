@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackRoleMappingType 
     {
-        public NSXTALBOpenStackRoleMappingType()
-        {
-        }
         /// <summary>
         /// Role name in Avi.
         /// </summary>

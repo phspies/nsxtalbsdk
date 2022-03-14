@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotAllowRuleType 
     {
-        public NSXTALBBotAllowRuleType()
-        {
-        }
         /// <summary>
         /// The action to take. Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE. Field introduced in 21.1.1.
         /// </summary>

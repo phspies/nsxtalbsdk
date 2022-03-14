@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVcenterDatastoreType 
     {
-        public NSXTALBVcenterDatastoreType()
-        {
-        }
         /// <summary>
         /// datastore_name of VcenterDatastore.
         /// </summary>

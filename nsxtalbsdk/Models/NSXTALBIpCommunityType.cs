@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpCommunityType 
     {
-        public NSXTALBIpCommunityType()
-        {
-        }
         /// <summary>
         /// Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet.
         /// Field introduced in 17.1.3. Minimum of 1 items required. Maximum of 16 items allowed.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAzureServicePrincipalCredentialsType 
     {
-        public NSXTALBAzureServicePrincipalCredentialsType()
-        {
-        }
         /// <summary>
         /// Application Id created for Avi Controller. Required for application id based authentication only. Field introduced in
         /// 17.2.1.

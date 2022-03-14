@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsResponseType 
     {
-        public NSXTALBDnsResponseType()
-        {
-        }
         /// <summary>
         /// Number of additional records.
         /// </summary>

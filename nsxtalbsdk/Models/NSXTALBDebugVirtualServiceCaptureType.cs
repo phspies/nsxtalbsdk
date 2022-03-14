@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugVirtualServiceCaptureType 
     {
-        public NSXTALBDebugVirtualServiceCaptureType()
-        {
-        }
         /// <summary>
         /// Maximum allowed size of PCAP Capture File per SE. Max(absolute_size, percentage_size) will be final value. Set both to 0
         /// for avi default size. DOS, IPC and DROP pcaps not applicaple. Field introduced in 18.2.8.

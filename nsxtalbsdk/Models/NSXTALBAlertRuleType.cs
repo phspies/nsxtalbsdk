@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertRuleType 
     {
-        public NSXTALBAlertRuleType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property conn_app_log_rule of obj type AlertRule field type str  type object
         /// </summary>

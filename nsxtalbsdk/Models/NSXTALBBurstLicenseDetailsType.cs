@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBurstLicenseDetailsType 
     {
-        public NSXTALBBurstLicenseDetailsType()
-        {
-        }
         /// <summary>
         /// Number of cores.
         /// </summary>

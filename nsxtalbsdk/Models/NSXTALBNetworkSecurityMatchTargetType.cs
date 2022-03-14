@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNetworkSecurityMatchTargetType 
     {
-        public NSXTALBNetworkSecurityMatchTargetType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property client_ip of obj type NetworkSecurityMatchTarget field type str  type object
         /// </summary>

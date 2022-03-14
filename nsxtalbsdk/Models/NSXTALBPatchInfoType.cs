@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPatchInfoType 
     {
-        public NSXTALBPatchInfoType()
-        {
-        }
         /// <summary>
         /// Patch type describes the controller or se patch type. Field introduced in 18.2.6.
         /// </summary>

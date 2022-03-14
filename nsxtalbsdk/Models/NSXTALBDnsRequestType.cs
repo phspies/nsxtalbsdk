@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRequestType 
     {
-        public NSXTALBDnsRequestType()
-        {
-        }
         /// <summary>
         /// Number of additional records. Field introduced in 17.1.1.
         /// </summary>

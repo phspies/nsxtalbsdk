@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIMgrDCRuntimeApiResponseType 
     {
-        public NSXTALBVIMgrDCRuntimeApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBEventGenParamsType 
     {
-        public NSXTALBEventGenParamsType()
-        {
-        }
         /// <summary>
         /// cluster of EventGenParams.
         /// </summary>

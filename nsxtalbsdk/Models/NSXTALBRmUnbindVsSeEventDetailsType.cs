@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRmUnbindVsSeEventDetailsType 
     {
-        public NSXTALBRmUnbindVsSeEventDetailsType()
-        {
-        }
         /// <summary>
         /// ip of RmUnbindVsSeEventDetails.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsServiceDomainType 
     {
-        public NSXTALBDnsServiceDomainType()
-        {
-        }
         /// <summary>
         /// Service domain string used for FQDN.
         /// </summary>

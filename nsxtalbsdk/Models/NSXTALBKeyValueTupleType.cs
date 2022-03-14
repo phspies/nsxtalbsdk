@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBKeyValueTupleType 
     {
-        public NSXTALBKeyValueTupleType()
-        {
-        }
         /// <summary>
         /// Key. Field introduced in 20.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIRetrievePGNamesType 
     {
-        public NSXTALBVIRetrievePGNamesType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of cloud.
         /// </summary>

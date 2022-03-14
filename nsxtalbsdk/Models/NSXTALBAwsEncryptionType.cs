@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAwsEncryptionType 
     {
-        public NSXTALBAwsEncryptionType()
-        {
-        }
         /// <summary>
         /// AWS KMS ARN ID of the master key for encryption. Field introduced in 17.2.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBScheduledScalingType 
     {
-        public NSXTALBScheduledScalingType()
-        {
-        }
         /// <summary>
         /// Scheduled autoscale duration (in hours). Allowed values are 1-24. Field introduced in 21.1.1. Unit is HOURS.
         /// </summary>

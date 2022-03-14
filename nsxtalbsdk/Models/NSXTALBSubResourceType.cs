@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSubResourceType 
     {
-        public NSXTALBSubResourceType()
-        {
-        }
         /// <summary>
         /// Allows modification of all fields except for the specified subresources. Field introduced in 20.1.5.
         /// </summary>

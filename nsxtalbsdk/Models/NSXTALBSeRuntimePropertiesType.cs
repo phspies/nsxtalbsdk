@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeRuntimePropertiesType 
     {
-        public NSXTALBSeRuntimePropertiesType()
-        {
-        }
         /// <summary>
         /// Allow admin user ssh access to SE. Field introduced in 18.2.5.
         /// </summary>

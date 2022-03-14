@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSecureChannelAvailableLocalIPsApiResponseType 
     {
-        public NSXTALBSecureChannelAvailableLocalIPsApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

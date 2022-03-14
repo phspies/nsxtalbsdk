@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVcenterInventoryDiagReqType 
     {
-        public NSXTALBVcenterInventoryDiagReqType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of cloud.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGeoDBFileType 
     {
-        public NSXTALBGeoDBFileType()
-        {
-        }
         /// <summary>
         /// If set to false, this file is ignored. Field introduced in 21.1.1.
         /// </summary>

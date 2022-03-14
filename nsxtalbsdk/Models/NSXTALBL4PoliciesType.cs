@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL4PoliciesType 
     {
-        public NSXTALBL4PoliciesType()
-        {
-        }
         /// <summary>
         /// Index of the virtual service L4 policy set. Field introduced in 17.2.7.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLdapAuthSettingsType 
     {
-        public NSXTALBLdapAuthSettingsType()
-        {
-        }
         /// <summary>
         /// The LDAP base DN.  For example, avinetworks.com would be DC=avinetworks,DC=com.
         /// </summary>

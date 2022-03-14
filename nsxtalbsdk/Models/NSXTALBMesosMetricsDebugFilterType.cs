@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMesosMetricsDebugFilterType 
     {
-        public NSXTALBMesosMetricsDebugFilterType()
-        {
-        }
         /// <summary>
         /// mesos_master of MesosMetricsDebugFilter.
         /// </summary>

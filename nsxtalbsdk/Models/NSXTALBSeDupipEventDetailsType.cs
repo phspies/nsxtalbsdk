@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeDupipEventDetailsType 
     {
-        public NSXTALBSeDupipEventDetailsType()
-        {
-        }
         /// <summary>
         /// Mac Address.
         /// </summary>

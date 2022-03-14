@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsCollectionApiReqType 
     {
-        public NSXTALBMetricsCollectionApiReqType()
-        {
-        }
         /// <summary>
         /// list of metrics queries
         /// </summary>

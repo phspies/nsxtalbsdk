@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAutoScaleMesosSettingsType 
     {
-        public NSXTALBAutoScaleMesosSettingsType()
-        {
-        }
         /// <summary>
         /// Apply scale-out even when there are deployments inprogress.
         /// </summary>

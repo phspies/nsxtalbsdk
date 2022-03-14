@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAWSLoginType 
     {
-        public NSXTALBAWSLoginType()
-        {
-        }
         /// <summary>
         /// access_key_id of AWSLogin.
         /// </summary>

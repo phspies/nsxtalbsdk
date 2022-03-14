@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSEFaultInjectExhaustParamType 
     {
-        public NSXTALBSEFaultInjectExhaustParamType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property leak of obj type SEFaultInjectExhaustParam field type str  type boolean
         /// </summary>

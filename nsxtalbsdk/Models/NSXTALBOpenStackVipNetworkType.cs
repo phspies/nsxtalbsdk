@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackVipNetworkType 
     {
-        public NSXTALBOpenStackVipNetworkType()
-        {
-        }
         /// <summary>
         /// Neutron network UUID. Field introduced in 18.1.2.
         /// </summary>

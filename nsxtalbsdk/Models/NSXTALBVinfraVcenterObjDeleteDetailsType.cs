@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraVcenterObjDeleteDetailsType 
     {
-        public NSXTALBVinfraVcenterObjDeleteDetailsType()
-        {
-        }
         /// <summary>
         /// obj_name of VinfraVcenterObjDeleteDetails.
         /// </summary>

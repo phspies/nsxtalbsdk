@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDNSRegisterInfoType 
     {
-        public NSXTALBDNSRegisterInfoType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property dns_info of obj type DNSRegisterInfo field type str  type object
         /// </summary>

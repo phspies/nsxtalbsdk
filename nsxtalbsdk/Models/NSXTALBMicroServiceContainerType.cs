@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMicroServiceContainerType 
     {
-        public NSXTALBMicroServiceContainerType()
-        {
-        }
         /// <summary>
         /// ID of the container.
         /// </summary>

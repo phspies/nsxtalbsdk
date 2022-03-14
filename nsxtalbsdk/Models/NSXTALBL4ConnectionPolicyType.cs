@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL4ConnectionPolicyType 
     {
-        public NSXTALBL4ConnectionPolicyType()
-        {
-        }
         /// <summary>
         /// Rules to apply when a new transport connection is setup. Field introduced in 17.2.7.
         /// </summary>

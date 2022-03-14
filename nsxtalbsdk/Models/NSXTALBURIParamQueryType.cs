@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBURIParamQueryType 
     {
-        public NSXTALBURIParamQueryType()
-        {
-        }
         /// <summary>
         /// Concatenate a string to the query of the incoming request URI and then use it in the request URI going to the backend
         /// server.

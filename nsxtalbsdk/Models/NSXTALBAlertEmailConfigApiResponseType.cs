@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertEmailConfigApiResponseType 
     {
-        public NSXTALBAlertEmailConfigApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

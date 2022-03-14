@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCRLType 
     {
-        public NSXTALBCRLType()
-        {
-        }
         /// <summary>
         /// Certificate Revocation list from a given issuer in PEM format. This can either be configured directly or via the
         /// server_url. .

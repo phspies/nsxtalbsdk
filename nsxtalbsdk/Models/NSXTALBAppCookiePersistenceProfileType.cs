@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAppCookiePersistenceProfileType 
     {
-        public NSXTALBAppCookiePersistenceProfileType()
-        {
-        }
         /// <summary>
         /// Key to use for cookie encryption.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudIpChangeType 
     {
-        public NSXTALBCloudIpChangeType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudIpChange.
         /// </summary>

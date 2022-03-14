@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFlowtableProfileType 
     {
-        public NSXTALBFlowtableProfileType()
-        {
-        }
         /// <summary>
         /// Idle timeout in seconds for ICMP flows. Allowed values are 1-36000. Field introduced in 20.1.3. Unit is SECONDS.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBInfobloxSubnetType 
     {
-        public NSXTALBInfobloxSubnetType()
-        {
-        }
         /// <summary>
         /// IPv4 subnet to use for Infoblox allocation. Field introduced in 18.2.8, 20.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsEventThresholdType 
     {
-        public NSXTALBMetricsEventThresholdType()
-        {
-        }
         /// <summary>
         /// Type of the metrics event threshold. This value will decide which metric rule (or rules) use configured thresholds. Enum
         /// options - THRESHOLD_TYPE_STATIC, SE_CPU_THRESHOLD, SE_MEM_THRESHOLD, SE_DISK_THRESHOLD, CONTROLLER_CPU_THRESHOLD,

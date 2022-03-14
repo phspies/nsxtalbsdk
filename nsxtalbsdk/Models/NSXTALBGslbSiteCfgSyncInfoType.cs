@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbSiteCfgSyncInfoType 
     {
-        public NSXTALBGslbSiteCfgSyncInfoType()
-        {
-        }
         /// <summary>
         /// Objects that could NOT be synced to the site .
         /// </summary>

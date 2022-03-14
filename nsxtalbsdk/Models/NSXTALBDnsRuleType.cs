@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRuleType 
     {
-        public NSXTALBDnsRuleType()
-        {
-        }
         /// <summary>
         /// Action to be performed upon successful matching. Field introduced in 17.1.1.
         /// </summary>

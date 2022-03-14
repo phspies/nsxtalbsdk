@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVirtualserviceFaultsType 
     {
-        public NSXTALBVirtualserviceFaultsType()
-        {
-        }
         /// <summary>
         /// Enable debug faults. Field introduced in 20.1.6.
         /// </summary>

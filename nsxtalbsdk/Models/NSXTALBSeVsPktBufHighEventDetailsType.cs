@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeVsPktBufHighEventDetailsType 
     {
-        public NSXTALBSeVsPktBufHighEventDetailsType()
-        {
-        }
         /// <summary>
         /// Current packet buffer usage of the VS.
         /// </summary>

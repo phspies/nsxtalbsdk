@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCompressionFilterType 
     {
-        public NSXTALBCompressionFilterType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type StringGroup.
         /// </summary>

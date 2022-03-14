@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSePersistenceEventDetailsType 
     {
-        public NSXTALBSePersistenceEventDetailsType()
-        {
-        }
         /// <summary>
         /// Current number of entries in the client ip persistence table.
         /// </summary>

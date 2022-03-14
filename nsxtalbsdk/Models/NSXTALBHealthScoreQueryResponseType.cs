@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthScoreQueryResponseType 
     {
-        public NSXTALBHealthScoreQueryResponseType()
-        {
-        }
         /// <summary>
         /// uuid of the entity type.
         /// </summary>

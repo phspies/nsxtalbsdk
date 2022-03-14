@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVirtualServiceAnomalyScoreDataType 
     {
-        public NSXTALBVirtualServiceAnomalyScoreDataType()
-        {
-        }
         /// <summary>
         /// anomalous_l4_metrics of VirtualServiceAnomalyScoreData.
         /// </summary>

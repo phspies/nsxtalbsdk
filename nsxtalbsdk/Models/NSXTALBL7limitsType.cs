@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL7limitsType 
     {
-        public NSXTALBL7limitsType()
-        {
-        }
         /// <summary>
         /// Number of HTTPPolicies attached to a VS. Field introduced in 21.1.1.
         /// </summary>

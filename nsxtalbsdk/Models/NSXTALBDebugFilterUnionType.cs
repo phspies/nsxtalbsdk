@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugFilterUnionType 
     {
-        public NSXTALBDebugFilterUnionType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property alert_debug_filter of obj type DebugFilterUnion field type str  type object
         /// </summary>

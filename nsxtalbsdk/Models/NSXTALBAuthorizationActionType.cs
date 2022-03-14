@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthorizationActionType 
     {
-        public NSXTALBAuthorizationActionType()
-        {
-        }
         /// <summary>
         /// HTTP status code to use for local response when an policy rule is matched. Enum options - HTTP_RESPONSE_STATUS_CODE_401,
         /// HTTP_RESPONSE_STATUS_CODE_403. Field introduced in 18.2.5.

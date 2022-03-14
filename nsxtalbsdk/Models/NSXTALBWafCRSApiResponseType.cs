@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafCRSApiResponseType 
     {
-        public NSXTALBWafCRSApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

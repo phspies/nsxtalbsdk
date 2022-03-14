@@ -17,12 +17,12 @@ namespace nsxtalbsdk.Modules
     {
         RestClient restClient;
         JsonSerializerSettings defaultSerializationSettings;
-        public MicroService(RestClient Client, JsonSerializerSettings DefaultSerializationSettings)
+        public MicroService(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken cancellationToken = default(CancellationToken), int timeout, int retry)
         {
             restClient = Client;
             defaultSerializationSettings = DefaultSerializationSettings;
         }
-        public NSXTALBMicroServiceApiResponseType GetMicroservice(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBMicroServiceApiResponseType> GetMicroservice(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             NSXTALBMicroServiceApiResponseType? returnValue = default(NSXTALBMicroServiceApiResponseType);
@@ -33,39 +33,27 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
-            if (RefersTo != null) { request.AddQueryParameter("refers_to", RefersTo.ToString()); }
-            if (ReferredBy != null) { request.AddQueryParameter("referred_by", ReferredBy.ToString()); }
-            if (Fields != null) { request.AddQueryParameter("fields", Fields.ToString()); }
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
-            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JoinSubresources.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
+            if (RefersTo != null) { request.AddQueryParameter("refers_to", JsonConvert.ToString(RefersTo).ToLowerString()); }
+            if (ReferredBy != null) { request.AddQueryParameter("referred_by", JsonConvert.ToString(ReferredBy).ToLowerString()); }
+            if (Fields != null) { request.AddQueryParameter("fields", JsonConvert.ToString(Fields).ToLowerString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
+            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetMicroserviceServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBMicroServiceApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetMicroserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBMicroServiceApiResponseType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBMicroServiceApiResponseType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBMicroServiceType PostMicroservice(string XAviVersion, NSXTALBMicroServiceType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBMicroServiceType> PostMicroservice(string XAviVersion, NSXTALBMicroServiceType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
@@ -83,27 +71,15 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostMicroserviceServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBMicroServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP POST operation to " + PostMicroserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBMicroServiceType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBMicroServiceType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBMicroServiceType GetMicroserviceUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
+        public async Task<NSXTALBMicroServiceType> GetMicroserviceUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
@@ -115,38 +91,26 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             GetMicroserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
-            if (Fields != null) { request.AddQueryParameter("fields", Fields.ToString()); }
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
-            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JoinSubresources.ToString()); }
+            if (Fields != null) { request.AddQueryParameter("fields", JsonConvert.ToString(Fields).ToLowerString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
+            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetMicroserviceUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBMicroServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetMicroserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBMicroServiceType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBMicroServiceType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBMicroServiceType PutMicroserviceUuid(string XAviVersion, NSXTALBMicroServiceType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBMicroServiceType> PutMicroserviceUuid(string XAviVersion, NSXTALBMicroServiceType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
@@ -159,7 +123,7 @@ namespace nsxtalbsdk.Modules
                 Method = Method.PUT
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
@@ -167,27 +131,15 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PutMicroserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutMicroserviceUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBMicroServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP PUT operation to " + PutMicroserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBMicroServiceType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBMicroServiceType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBMicroServiceType PatchMicroserviceUuid(string XAviVersion, NSXTALBMicroServiceType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBMicroServiceType> PatchMicroserviceUuid(string XAviVersion, NSXTALBMicroServiceType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
@@ -200,7 +152,7 @@ namespace nsxtalbsdk.Modules
                 Method = Method.PATCH
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
@@ -208,27 +160,15 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PatchMicroserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchMicroserviceUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBMicroServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP PATCH operation to " + PatchMicroserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBMicroServiceType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBMicroServiceType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public string DeleteMicroserviceUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> DeleteMicroserviceUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
@@ -240,34 +180,22 @@ namespace nsxtalbsdk.Modules
                 Method = Method.DELETE
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteMicroserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteMicroserviceUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP DELETE operation to " + DeleteMicroserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = (string)response.Content;
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(string).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public string GetMicroserviceUuidRuntimeInternal(string XAviVersion, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> GetMicroserviceUuidRuntimeInternal(string XAviVersion, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
@@ -285,27 +213,15 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetMicroserviceUuidRuntimeInternalServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetMicroserviceUuidRuntimeInternalServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetMicroserviceUuidRuntimeInternalServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = (string)response.Content;
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(string).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public string GetMicroserviceUuidRuntimeDetail(string XAviVersion, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> GetMicroserviceUuidRuntimeDetail(string XAviVersion, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
@@ -323,25 +239,13 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetMicroserviceUuidRuntimeDetailServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetMicroserviceUuidRuntimeDetailServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetMicroserviceUuidRuntimeDetailServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = (string)response.Content;
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(string).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
     }
 }

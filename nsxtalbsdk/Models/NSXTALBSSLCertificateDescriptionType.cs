@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLCertificateDescriptionType 
     {
-        public NSXTALBSSLCertificateDescriptionType()
-        {
-        }
         /// <summary>
         /// common_name of SSLCertificateDescription.
         /// </summary>

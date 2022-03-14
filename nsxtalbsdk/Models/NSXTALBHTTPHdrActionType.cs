@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPHdrActionType 
     {
-        public NSXTALBHTTPHdrActionType()
-        {
-        }
         /// <summary>
         /// ADD  A new header with the new value is added irrespective of the existence of an HTTP header of the given name. REPLACE
         /// A new header with the new value is added if no header of the given name exists, else existing headers with the given

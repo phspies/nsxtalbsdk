@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBALBServicesConfigApiResponseType 
     {
-        public NSXTALBALBServicesConfigApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

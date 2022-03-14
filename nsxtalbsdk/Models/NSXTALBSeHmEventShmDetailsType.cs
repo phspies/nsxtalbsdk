@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeHmEventShmDetailsType 
     {
-        public NSXTALBSeHmEventShmDetailsType()
-        {
-        }
         /// <summary>
         /// Average health monitor response time from server in milli-seconds.
         /// </summary>

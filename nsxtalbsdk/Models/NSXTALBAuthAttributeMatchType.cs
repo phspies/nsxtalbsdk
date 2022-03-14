@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthAttributeMatchType 
     {
-        public NSXTALBAuthAttributeMatchType()
-        {
-        }
         /// <summary>
         /// Attribute name whose values will be looked up in the access lists. Field introduced in 18.2.5.
         /// </summary>

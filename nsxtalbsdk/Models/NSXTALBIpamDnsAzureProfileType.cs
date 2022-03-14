@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamDnsAzureProfileType 
     {
-        public NSXTALBIpamDnsAzureProfileType()
-        {
-        }
         /// <summary>
         /// Service principal based credentials for azure. Only one of azure_userpass or azure_serviceprincipal is allowed. Field
         /// introduced in 17.2.1.

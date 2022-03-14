@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNatRuleType 
     {
-        public NSXTALBNatRuleType()
-        {
-        }
         /// <summary>
         /// Nat rule Action Information. Field introduced in 18.2.3.
         /// </summary>

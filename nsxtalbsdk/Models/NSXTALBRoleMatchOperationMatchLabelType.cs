@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRoleMatchOperationMatchLabelType 
     {
-        public NSXTALBRoleMatchOperationMatchLabelType()
-        {
-        }
         /// <summary>
         /// List of labels allowed for the tenant. Field introduced in 20.1.5.
         /// </summary>

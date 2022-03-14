@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDNSConfigType 
     {
-        public NSXTALBDNSConfigType()
-        {
-        }
         /// <summary>
         /// GSLB subdomain used for GSLB service FQDN match and placement. .
         /// </summary>

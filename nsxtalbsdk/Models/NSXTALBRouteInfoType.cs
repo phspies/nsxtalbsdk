@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRouteInfoType 
     {
-        public NSXTALBRouteInfoType()
-        {
-        }
         /// <summary>
         /// Host interface name. Field introduced in 18.2.6.
         /// </summary>

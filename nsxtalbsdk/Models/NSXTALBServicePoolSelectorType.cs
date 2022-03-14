@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServicePoolSelectorType 
     {
-        public NSXTALBServicePoolSelectorType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type PoolGroup.
         /// </summary>

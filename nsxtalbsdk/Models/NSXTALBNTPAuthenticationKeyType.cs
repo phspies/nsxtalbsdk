@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNTPAuthenticationKeyType 
     {
-        public NSXTALBNTPAuthenticationKeyType()
-        {
-        }
         /// <summary>
         /// Message Digest Algorithm used for NTP authentication. Default is NTP_AUTH_ALGORITHM_MD5. Enum options -
         /// NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1.

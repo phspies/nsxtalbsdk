@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSCPoolServerStateInfoApiResponseType 
     {
-        public NSXTALBSCPoolServerStateInfoApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

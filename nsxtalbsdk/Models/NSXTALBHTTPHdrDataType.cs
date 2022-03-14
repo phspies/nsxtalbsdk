@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPHdrDataType 
     {
-        public NSXTALBHTTPHdrDataType()
-        {
-        }
         /// <summary>
         /// HTTP header name.
         /// </summary>

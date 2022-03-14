@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIGuestvNicIPAddrType 
     {
-        public NSXTALBVIGuestvNicIPAddrType()
-        {
-        }
         /// <summary>
         /// ip_addr of VIGuestvNicIPAddr.
         /// </summary>

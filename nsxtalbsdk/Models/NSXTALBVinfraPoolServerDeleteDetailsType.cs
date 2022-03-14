@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraPoolServerDeleteDetailsType 
     {
-        public NSXTALBVinfraPoolServerDeleteDetailsType()
-        {
-        }
         /// <summary>
         /// pool_name of VinfraPoolServerDeleteDetails.
         /// </summary>

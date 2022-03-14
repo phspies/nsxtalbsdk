@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSummarizedSubnetInfoType 
     {
-        public NSXTALBSummarizedSubnetInfoType()
-        {
-        }
         /// <summary>
         /// cidr_prefix of SummarizedSubnetInfo.
         /// </summary>

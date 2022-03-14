@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSamlLogType 
     {
-        public NSXTALBSamlLogType()
-        {
-        }
         /// <summary>
         /// Set to True if SAML Authentication is used. Field introduced in 20.1.1.
         /// </summary>

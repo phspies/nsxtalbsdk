@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDSRequestLogType 
     {
-        public NSXTALBDSRequestLogType()
-        {
-        }
         /// <summary>
         /// Name of the DataScript where this request was called. Field introduced in 20.1.3.
         /// </summary>

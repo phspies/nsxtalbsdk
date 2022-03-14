@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBContentLibConfigType 
     {
-        public NSXTALBContentLibConfigType()
-        {
-        }
         /// <summary>
         /// Content Library Id. Field introduced in 20.1.1.
         /// </summary>

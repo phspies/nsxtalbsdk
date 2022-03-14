@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLExpireDetailsType 
     {
-        public NSXTALBSSLExpireDetailsType()
-        {
-        }
         /// <summary>
         /// Number of days until certificate is expired.
         /// </summary>

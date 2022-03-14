@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbSiteRuntimeType 
     {
-        public NSXTALBGslbSiteRuntimeType()
-        {
-        }
         /// <summary>
         /// This field shadows glb_cfg.clear_on_max_retries. Field introduced in 17.2.5.
         /// </summary>

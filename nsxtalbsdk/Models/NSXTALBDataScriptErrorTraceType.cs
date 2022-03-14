@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDataScriptErrorTraceType 
     {
-        public NSXTALBDataScriptErrorTraceType()
-        {
-        }
         /// <summary>
         /// error of DataScriptErrorTrace.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloneServerType 
     {
-        public NSXTALBCloneServerType()
-        {
-        }
         /// <summary>
         /// IP Address of the Clone Server. Field introduced in 17.1.1.
         /// </summary>

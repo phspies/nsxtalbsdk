@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbSiteRuntimeInfoType 
     {
-        public NSXTALBGslbSiteRuntimeInfoType()
-        {
-        }
         /// <summary>
         /// The Leader-IP/VIP/FQDN of the site-cluster.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConnErrorInfoType 
     {
-        public NSXTALBConnErrorInfoType()
-        {
-        }
         /// <summary>
         /// Number of num_syn_retransmit.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsZoneType 
     {
-        public NSXTALBDnsZoneType()
-        {
-        }
         /// <summary>
         /// Email address of the administrator responsible for this zone. This field is used in SOA records as rname (RFC 1035). If
         /// not configured, it is inherited from the DNS service profile. Field introduced in 18.2.6.

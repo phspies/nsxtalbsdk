@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRmSpawnSeEventDetailsType 
     {
-        public NSXTALBRmSpawnSeEventDetailsType()
-        {
-        }
         /// <summary>
         /// availability_zone of RmSpawnSeEventDetails.
         /// </summary>

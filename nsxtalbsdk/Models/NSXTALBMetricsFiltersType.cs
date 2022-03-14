@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsFiltersType 
     {
-        public NSXTALBMetricsFiltersType()
-        {
-        }
         /// <summary>
         /// Enum options - EQ, GT, GE, LT, LE, NE.
         /// </summary>

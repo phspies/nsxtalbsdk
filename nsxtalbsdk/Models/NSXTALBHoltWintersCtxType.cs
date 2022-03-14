@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHoltWintersCtxType 
     {
-        public NSXTALBHoltWintersCtxType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property deviation of obj type HoltWintersCtx field type str  type number
         /// </summary>

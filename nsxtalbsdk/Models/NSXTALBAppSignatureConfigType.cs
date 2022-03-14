@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAppSignatureConfigType 
     {
-        public NSXTALBAppSignatureConfigType()
-        {
-        }
         /// <summary>
         /// Application Signature db sync interval in minutes. Allowed values are 60-10080. Field introduced in 20.1.4. Unit is MIN.
         /// Allowed in Basic edition, Essentials edition, Enterprise edition. Special default for Basic edition is 1440, Essentials

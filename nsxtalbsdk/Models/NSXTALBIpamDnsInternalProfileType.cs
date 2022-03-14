@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamDnsInternalProfileType 
     {
-        public NSXTALBIpamDnsInternalProfileType()
-        {
-        }
         /// <summary>
         /// List of service domains.
         /// </summary>

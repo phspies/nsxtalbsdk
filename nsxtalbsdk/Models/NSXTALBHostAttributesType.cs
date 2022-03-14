@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHostAttributesType 
     {
-        public NSXTALBHostAttributesType()
-        {
-        }
         /// <summary>
         /// attr_key of HostAttributes.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthenticationPolicyType 
     {
-        public NSXTALBAuthenticationPolicyType()
-        {
-        }
         /// <summary>
         /// Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field deprecated in
         /// 18.2.3. Field introduced in 18.2.1.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBApicAgentGenericEventDetailsType 
     {
-        public NSXTALBApicAgentGenericEventDetailsType()
-        {
-        }
         /// <summary>
         /// Field deprecated in 21.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLicenseExpiryDetailsType 
     {
-        public NSXTALBLicenseExpiryDetailsType()
-        {
-        }
         /// <summary>
         /// Number of backend_servers.
         /// </summary>

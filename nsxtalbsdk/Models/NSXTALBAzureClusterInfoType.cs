@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAzureClusterInfoType 
     {
-        public NSXTALBAzureClusterInfoType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type CloudConnectorUser. Field introduced in 17.2.5.
         /// </summary>

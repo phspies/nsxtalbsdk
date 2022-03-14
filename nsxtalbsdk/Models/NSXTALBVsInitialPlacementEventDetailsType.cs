@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsInitialPlacementEventDetailsType 
     {
-        public NSXTALBVsInitialPlacementEventDetailsType()
-        {
-        }
         /// <summary>
         /// error_message of VsInitialPlacementEventDetails.
         /// </summary>

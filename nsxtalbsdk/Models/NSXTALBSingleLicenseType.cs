@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSingleLicenseType 
     {
-        public NSXTALBSingleLicenseType()
-        {
-        }
         /// <summary>
         /// Total number of Service Engine burst cores for core based licenses. Field introduced in 17.2.5.
         /// </summary>

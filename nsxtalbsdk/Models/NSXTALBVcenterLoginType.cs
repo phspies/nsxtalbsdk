@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVcenterLoginType 
     {
-        public NSXTALBVcenterLoginType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of cloud.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPerformanceLimitsType 
     {
-        public NSXTALBPerformanceLimitsType()
-        {
-        }
         /// <summary>
         /// The maximum number of concurrent client conections allowed to the Virtual Service.
         /// </summary>

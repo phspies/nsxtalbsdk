@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugControllerApiResponseType 
     {
-        public NSXTALBDebugControllerApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

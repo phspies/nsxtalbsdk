@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAttachIpStatusEventDetailsType 
     {
-        public NSXTALBAttachIpStatusEventDetailsType()
-        {
-        }
         /// <summary>
         /// Reason if Attach IP failed. Field introduced in 21.1.3.
         /// </summary>

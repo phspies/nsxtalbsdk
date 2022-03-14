@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLKeyRSAParamsType 
     {
-        public NSXTALBSSLKeyRSAParamsType()
-        {
-        }
         /// <summary>
         /// Number of exponent.
         /// </summary>

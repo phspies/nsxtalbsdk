@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeHmEventGslbPoolDetailsType 
     {
-        public NSXTALBSeHmEventGslbPoolDetailsType()
-        {
-        }
         /// <summary>
         /// GslbService Pool name.
         /// </summary>

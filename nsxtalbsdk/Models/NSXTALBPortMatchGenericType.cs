@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPortMatchGenericType 
     {
-        public NSXTALBPortMatchGenericType()
-        {
-        }
         /// <summary>
         /// Criterion to use for src/dest port in a TCP/UDP packet. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.3.
         /// </summary>

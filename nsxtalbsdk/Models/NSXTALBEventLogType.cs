@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBEventLogType 
     {
-        public NSXTALBEventLogType()
-        {
-        }
         /// <summary>
         /// Enum options - EVENT_CONTEXT_SYSTEM, EVENT_CONTEXT_CONFIG, EVENT_CONTEXT_APP, EVENT_CONTEXT_ALL.
         /// </summary>

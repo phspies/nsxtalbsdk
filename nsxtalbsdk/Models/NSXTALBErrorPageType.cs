@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBErrorPageType 
     {
-        public NSXTALBErrorPageType()
-        {
-        }
         /// <summary>
         /// Enable or disable the error page. Field introduced in 17.2.4.
         /// </summary>

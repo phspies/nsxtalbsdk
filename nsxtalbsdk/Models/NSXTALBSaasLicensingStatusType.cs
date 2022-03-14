@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSaasLicensingStatusType 
     {
-        public NSXTALBSaasLicensingStatusType()
-        {
-        }
         /// <summary>
         /// Portal connectivity status. Field introduced in 21.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbPerDnsStateType 
     {
-        public NSXTALBGslbPerDnsStateType()
-        {
-        }
         /// <summary>
         /// This field describes the GeoDbProfile download status to the dns-vs. Field introduced in 17.1.1.
         /// </summary>

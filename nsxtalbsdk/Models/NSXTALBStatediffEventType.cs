@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBStatediffEventType 
     {
-        public NSXTALBStatediffEventType()
-        {
-        }
         /// <summary>
         /// Time taken to complete Statediff event in seconds. Field introduced in 21.1.3. Unit is SEC.
         /// </summary>

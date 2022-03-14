@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafRuleGroupType 
     {
-        public NSXTALBWafRuleGroupType()
-        {
-        }
         /// <summary>
         /// Enable or disable WAF Rule Group. Field introduced in 17.2.1.
         /// </summary>

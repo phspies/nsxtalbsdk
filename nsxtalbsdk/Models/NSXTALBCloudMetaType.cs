@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudMetaType 
     {
-        public NSXTALBCloudMetaType()
-        {
-        }
         /// <summary>
         /// key of CloudMeta.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafPSMMatchElementType 
     {
-        public NSXTALBWafPSMMatchElementType()
-        {
-        }
         /// <summary>
         /// Mark this element excluded, like in '!ARGS password'. Field introduced in 18.2.3.
         /// </summary>

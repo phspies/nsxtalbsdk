@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeRpcProxyDebugFilterType 
     {
-        public NSXTALBSeRpcProxyDebugFilterType()
-        {
-        }
         /// <summary>
         /// Method name of RPC. Field introduced in 18.1.5, 18.2.1.
         /// </summary>

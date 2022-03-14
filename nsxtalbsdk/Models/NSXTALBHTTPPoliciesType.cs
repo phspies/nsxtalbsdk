@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPPoliciesType 
     {
-        public NSXTALBHTTPPoliciesType()
-        {
-        }
         /// <summary>
         /// UUID of the virtual service HTTP policy collection. It is a reference to an object of type HTTPPolicySet.
         /// </summary>

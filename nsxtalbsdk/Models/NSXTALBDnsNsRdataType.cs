@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsNsRdataType 
     {
-        public NSXTALBDnsNsRdataType()
-        {
-        }
         /// <summary>
         /// IPv6 address for Name Server. Field introduced in 18.1.1.
         /// </summary>

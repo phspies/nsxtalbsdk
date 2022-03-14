@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAttackMetaDataApiResponseType 
     {
-        public NSXTALBAttackMetaDataApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

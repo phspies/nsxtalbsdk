@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigActionDetailsType 
     {
-        public NSXTALBConfigActionDetailsType()
-        {
-        }
         /// <summary>
         /// Name of the action.
         /// </summary>

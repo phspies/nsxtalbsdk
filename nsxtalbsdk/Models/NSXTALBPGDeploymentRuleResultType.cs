@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPGDeploymentRuleResultType 
     {
-        public NSXTALBPGDeploymentRuleResultType()
-        {
-        }
         /// <summary>
         /// Metric value that is used as the pass fail. If it is not provided then it will simply compare it with current pool vs
         /// new pool.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCustomParamsType 
     {
-        public NSXTALBCustomParamsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property is_dynamic of obj type CustomParams field type str  type boolean
         /// </summary>

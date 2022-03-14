@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNetworkSecurityRuleType 
     {
-        public NSXTALBNetworkSecurityRuleType()
-        {
-        }
         /// <summary>
         /// Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY,
         /// NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT. Allowed in Basic(Allowed values-

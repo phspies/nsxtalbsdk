@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBfdProfileType 
     {
-        public NSXTALBBfdProfileType()
-        {
-        }
         /// <summary>
         /// Default required minimum receive interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in
         /// 20.1.1. Unit is MILLISECONDS.

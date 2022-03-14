@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLicenseTierUsageType 
     {
-        public NSXTALBLicenseTierUsageType()
-        {
-        }
         /// <summary>
         /// Specifies the license tier. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS,
         /// ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 20.1.1.

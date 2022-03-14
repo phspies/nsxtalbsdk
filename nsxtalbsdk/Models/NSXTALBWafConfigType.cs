@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafConfigType 
     {
-        public NSXTALBWafConfigType()
-        {
-        }
         /// <summary>
         /// WAF allowed HTTP Versions. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Field introduced in 17.2.1. Maximum of
         /// 8 items allowed.

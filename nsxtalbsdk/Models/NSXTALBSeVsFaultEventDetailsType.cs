@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeVsFaultEventDetailsType 
     {
-        public NSXTALBSeVsFaultEventDetailsType()
-        {
-        }
         /// <summary>
         /// Name of the object responsible for the fault.
         /// </summary>

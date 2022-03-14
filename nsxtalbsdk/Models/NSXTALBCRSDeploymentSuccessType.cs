@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCRSDeploymentSuccessType 
     {
-        public NSXTALBCRSDeploymentSuccessType()
-        {
-        }
         /// <summary>
         /// List of all installed CRS updates. Field introduced in 20.1.1.
         /// </summary>

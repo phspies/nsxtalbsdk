@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSecurityMgrRuntimeType 
     {
-        public NSXTALBSecurityMgrRuntimeType()
-        {
-        }
         /// <summary>
         /// Field introduced in 18.2.5.
         /// </summary>

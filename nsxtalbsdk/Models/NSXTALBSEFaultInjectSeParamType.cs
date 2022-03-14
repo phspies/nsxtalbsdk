@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSEFaultInjectSeParamType 
     {
-        public NSXTALBSEFaultInjectSeParamType()
-        {
-        }
         /// <summary>
         /// Inject fault in specific core. Field introduced in 18.1.5,18.2.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtSegmentRuntimeApiResponseType 
     {
-        public NSXTALBNsxtSegmentRuntimeApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

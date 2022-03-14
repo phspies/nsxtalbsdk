@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBContainerCloudSetupType 
     {
-        public NSXTALBContainerCloudSetupType()
-        {
-        }
         /// <summary>
         /// cc_id of ContainerCloudSetup.
         /// </summary>

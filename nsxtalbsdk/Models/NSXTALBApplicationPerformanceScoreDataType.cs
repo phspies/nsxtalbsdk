@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBApplicationPerformanceScoreDataType 
     {
-        public NSXTALBApplicationPerformanceScoreDataType()
-        {
-        }
         /// <summary>
         /// Reason for the Health Score.
         /// </summary>

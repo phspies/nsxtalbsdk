@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTimeStampType 
     {
-        public NSXTALBTimeStampType()
-        {
-        }
         /// <summary>
         /// Number of secs.
         /// </summary>

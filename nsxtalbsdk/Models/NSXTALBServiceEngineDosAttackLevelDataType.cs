@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServiceEngineDosAttackLevelDataType 
     {
-        public NSXTALBServiceEngineDosAttackLevelDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property avg_connections of obj type ServiceEngineDosAttackLevelData field type str  type
         /// number

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPRewriteLocHdrActionType 
     {
-        public NSXTALBHTTPRewriteLocHdrActionType()
-        {
-        }
         /// <summary>
         /// Host config.
         /// </summary>

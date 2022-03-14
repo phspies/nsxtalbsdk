@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRmBindVsSeEventDetailsType 
     {
-        public NSXTALBRmBindVsSeEventDetailsType()
-        {
-        }
         /// <summary>
         /// ip of RmBindVsSeEventDetails.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricLogType 
     {
-        public NSXTALBMetricLogType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property end_timestamp of obj type MetricLog field type str  type number
         /// </summary>

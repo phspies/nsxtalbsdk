@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerDiscontinuousTimeChangeEventDetailsType 
     {
-        public NSXTALBControllerDiscontinuousTimeChangeEventDetailsType()
-        {
-        }
         /// <summary>
         /// Time stamp before the discontinuous jump in time.
         /// </summary>

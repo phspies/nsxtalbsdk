@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCustomerPortalInfoType 
     {
-        public NSXTALBCustomerPortalInfoType()
-        {
-        }
         /// <summary>
         /// url
         /// </summary>

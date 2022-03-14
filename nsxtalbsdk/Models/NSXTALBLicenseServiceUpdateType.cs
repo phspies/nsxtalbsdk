@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLicenseServiceUpdateType 
     {
-        public NSXTALBLicenseServiceUpdateType()
-        {
-        }
         /// <summary>
         /// Name. Field introduced in 21.1.4.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAwsZoneConfigType 
     {
-        public NSXTALBAwsZoneConfigType()
-        {
-        }
         /// <summary>
         /// Availability zone.
         /// </summary>

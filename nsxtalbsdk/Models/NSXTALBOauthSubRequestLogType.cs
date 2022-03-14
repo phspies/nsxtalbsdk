@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOauthSubRequestLogType 
     {
-        public NSXTALBOauthSubRequestLogType()
-        {
-        }
         /// <summary>
         /// Error code. Field introduced in 21.1.3.
         /// </summary>

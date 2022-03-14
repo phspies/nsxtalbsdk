@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace nsxtalbsdk
 {
-    public partial class NSXTALBException : System.Exception
+    public partial class NSXTALBException : Exception
     {
         public int StatusCode { get; private set; }
 
@@ -12,7 +12,7 @@ namespace nsxtalbsdk
 
         public IList<Parameter> Headers { get; private set; }
 
-        public NSXTALBException(string message, int statusCode, string response, IList<Parameter> headers, Exception innerException)
+        public NSXTALBException(string message, int statusCode, string response, IList<Parameter> headers, Exception innerException = null)
             : base(message + "\n\nStatus: " + statusCode + "\nResponse: \n" + response.Substring(0, response.Length >= 512 ? 512 : response.Length), innerException)
         {
             StatusCode = statusCode;

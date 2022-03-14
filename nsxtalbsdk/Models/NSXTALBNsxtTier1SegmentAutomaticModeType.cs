@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtTier1SegmentAutomaticModeType 
     {
-        public NSXTALBNsxtTier1SegmentAutomaticModeType()
-        {
-        }
         /// <summary>
         /// Uber IP subnet for the logical segments created automatically by Avi controller. Field introduced in 20.1.1.
         /// </summary>

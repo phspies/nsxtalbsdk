@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbGeoLocationType 
     {
-        public NSXTALBGslbGeoLocationType()
-        {
-        }
         /// <summary>
         /// Geographic location of the site. Field introduced in 17.1.1.
         /// </summary>

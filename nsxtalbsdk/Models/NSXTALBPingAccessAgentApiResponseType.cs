@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPingAccessAgentApiResponseType 
     {
-        public NSXTALBPingAccessAgentApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

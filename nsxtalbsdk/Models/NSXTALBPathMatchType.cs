@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPathMatchType 
     {
-        public NSXTALBPathMatchType()
-        {
-        }
         /// <summary>
         /// Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE.
         /// </summary>

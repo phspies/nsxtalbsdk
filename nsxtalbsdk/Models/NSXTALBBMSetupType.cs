@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBMSetupType 
     {
-        public NSXTALBBMSetupType()
-        {
-        }
         /// <summary>
         /// cc_id of BMSetup.
         /// </summary>

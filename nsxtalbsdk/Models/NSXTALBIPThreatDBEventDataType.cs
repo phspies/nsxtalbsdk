@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIPThreatDBEventDataType 
     {
-        public NSXTALBIPThreatDBEventDataType()
-        {
-        }
         /// <summary>
         /// Reason for IPThreatDb transaction failure. Field introduced in 20.1.1.
         /// </summary>

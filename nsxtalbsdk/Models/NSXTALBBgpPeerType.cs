@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBgpPeerType 
     {
-        public NSXTALBBgpPeerType()
-        {
-        }
         /// <summary>
         /// Advertise SNAT IP to this Peer.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRuleMatchTargetType 
     {
-        public NSXTALBDnsRuleMatchTargetType()
-        {
-        }
         /// <summary>
         /// IP addresses to match against client IP. From 17.1.6 release onwards, IP addresses needs to be configured in the
         /// client_ip_address field of this message. Field deprecated in 17.1.6,17.2.2. Field introduced in 17.1.1.

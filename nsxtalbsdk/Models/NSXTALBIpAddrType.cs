@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpAddrType 
     {
-        public NSXTALBIpAddrType()
-        {
-        }
         /// <summary>
         /// IP address.
         /// </summary>

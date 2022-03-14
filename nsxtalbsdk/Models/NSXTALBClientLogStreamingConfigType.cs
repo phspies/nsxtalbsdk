@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClientLogStreamingConfigType 
     {
-        public NSXTALBClientLogStreamingConfigType()
-        {
-        }
         /// <summary>
         /// IP address or hostnames (FQDNs) of destination servers. If an FQDN is provided, this should be resolvable on Avi Service
         /// Engines. Multiple servers are supported by furnishing a comma-separated list of IP addresses or host names, for example,

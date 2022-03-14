@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPoolDeploymentFailureInfoType 
     {
-        public NSXTALBPoolDeploymentFailureInfoType()
-        {
-        }
         /// <summary>
         /// Curent in-service pool. It is a reference to an object of type Pool.
         /// </summary>

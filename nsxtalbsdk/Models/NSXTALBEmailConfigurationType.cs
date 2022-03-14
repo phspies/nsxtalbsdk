@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBEmailConfigurationType 
     {
-        public NSXTALBEmailConfigurationType()
-        {
-        }
         /// <summary>
         /// Password for mail server.
         /// </summary>

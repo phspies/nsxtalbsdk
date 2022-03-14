@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtSetupType 
     {
-        public NSXTALBNsxtSetupType()
-        {
-        }
         /// <summary>
         /// cc_id of NsxtSetup.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMatchReplacePairType 
     {
-        public NSXTALBMatchReplacePairType()
-        {
-        }
         /// <summary>
         /// String to be matched. Field deprecated in 21.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertSyslogServerType 
     {
-        public NSXTALBAlertSyslogServerType()
-        {
-        }
         /// <summary>
         /// Enable anonymous authentication of Syslog Serverwhich will disable server certificate authentication. Field introduced
         /// in 17.2.17, 18.2.5.

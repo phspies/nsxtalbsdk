@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsScaleoutParamsType 
     {
-        public NSXTALBVsScaleoutParamsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property admin_up of obj type VsScaleoutParams field type str  type boolean
         /// </summary>

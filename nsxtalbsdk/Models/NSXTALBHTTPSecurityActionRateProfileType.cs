@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPSecurityActionRateProfileType 
     {
-        public NSXTALBHTTPSecurityActionRateProfileType()
-        {
-        }
         /// <summary>
         /// The action to take when the rate limit has been reached. Field introduced in 18.2.9.
         /// </summary>

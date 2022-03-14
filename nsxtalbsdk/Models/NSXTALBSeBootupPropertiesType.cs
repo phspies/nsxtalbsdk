@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeBootupPropertiesType 
     {
-        public NSXTALBSeBootupPropertiesType()
-        {
-        }
         /// <summary>
         /// Deprecated. Field deprecated in 17.2.8. Field introduced in 17.1.1.
         /// </summary>

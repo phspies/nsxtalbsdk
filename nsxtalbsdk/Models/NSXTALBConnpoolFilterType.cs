@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConnpoolFilterType 
     {
-        public NSXTALBConnpoolFilterType()
-        {
-        }
         /// <summary>
         /// Backend or SE IP address.
         /// </summary>

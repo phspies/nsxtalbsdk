@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthScoreAnomalyDataType 
     {
-        public NSXTALBHealthScoreAnomalyDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property application_anomaly of obj type HealthScoreAnomalyData field type str  type
         /// object

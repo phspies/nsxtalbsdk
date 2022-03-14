@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOAuthVSConfigType 
     {
-        public NSXTALBOAuthVSConfigType()
-        {
-        }
         /// <summary>
         /// HTTP cookie name for authorized session. Field introduced in 21.1.3.
         /// </summary>

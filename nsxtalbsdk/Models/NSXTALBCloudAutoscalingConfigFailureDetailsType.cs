@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudAutoscalingConfigFailureDetailsType 
     {
-        public NSXTALBCloudAutoscalingConfigFailureDetailsType()
-        {
-        }
         /// <summary>
         /// Cloud UUID. Field introduced in 20.1.1.
         /// </summary>

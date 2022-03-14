@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMesosConfigurationType 
     {
-        public NSXTALBMesosConfigurationType()
-        {
-        }
         /// <summary>
         /// Consider all Virtualservices as Front End Proxies. Front End proxies are placed on specific SEs as opposed to Back End
         /// proxies placed on all SEs. Applicable where each service has its own VIP and VIP is reachable from anywhere.

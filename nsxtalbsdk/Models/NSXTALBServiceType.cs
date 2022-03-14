@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServiceType 
     {
-        public NSXTALBServiceType()
-        {
-        }
         /// <summary>
         /// Enable HTTP2 on this port. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition,
         /// Essentials(Allowed values- false) edition, Enterprise edition.

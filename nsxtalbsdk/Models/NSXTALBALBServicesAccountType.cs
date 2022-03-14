@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBALBServicesAccountType 
     {
-        public NSXTALBALBServicesAccountType()
-        {
-        }
         /// <summary>
         /// ID of an Account in the customer portal. Field introduced in 20.1.1.
         /// </summary>

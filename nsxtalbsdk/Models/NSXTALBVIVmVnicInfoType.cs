@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIVmVnicInfoType 
     {
-        public NSXTALBVIVmVnicInfoType()
-        {
-        }
         /// <summary>
         /// mac_addr of VIVmVnicInfo.
         /// </summary>

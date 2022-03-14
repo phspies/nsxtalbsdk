@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOCICredentialsType 
     {
-        public NSXTALBOCICredentialsType()
-        {
-        }
         /// <summary>
         /// API key with respect to the Public Key. Field introduced in 18.2.1,18.1.3.
         /// </summary>

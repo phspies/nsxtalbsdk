@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpaqueTokenValidationParamsType 
     {
-        public NSXTALBOpaqueTokenValidationParamsType()
-        {
-        }
         /// <summary>
         /// Resource server specific identifier used to validate against introspection endpoint when access token is opaque. Field
         /// introduced in 21.1.3.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerAutoScalePolicyApiResponseType 
     {
-        public NSXTALBServerAutoScalePolicyApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

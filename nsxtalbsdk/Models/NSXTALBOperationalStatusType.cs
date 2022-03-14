@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOperationalStatusType 
     {
-        public NSXTALBOperationalStatusType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property last_changed_time of obj type OperationalStatus field type str  type object
         /// </summary>

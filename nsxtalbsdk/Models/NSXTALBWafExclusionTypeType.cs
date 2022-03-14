@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafExclusionTypeType 
     {
-        public NSXTALBWafExclusionTypeType()
-        {
-        }
         /// <summary>
         /// Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Field introduced in 17.2.8.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeHBEventDetailsType 
     {
-        public NSXTALBSeHBEventDetailsType()
-        {
-        }
         /// <summary>
         /// HB Request/Response not received.
         /// </summary>

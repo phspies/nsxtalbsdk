@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBApplicationAnomalyScoreDataType 
     {
-        public NSXTALBApplicationAnomalyScoreDataType()
-        {
-        }
         /// <summary>
         /// Reason for the Health Score.
         /// </summary>

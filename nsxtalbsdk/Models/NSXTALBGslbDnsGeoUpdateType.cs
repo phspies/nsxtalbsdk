@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbDnsGeoUpdateType 
     {
-        public NSXTALBGslbDnsGeoUpdateType()
-        {
-        }
         /// <summary>
         /// GslbGeoDbProfile object that is pushed on on a per Dns basis. Field deprecated in 18.1.5, 18.2.1. Field introduced in
         /// 17.1.1.

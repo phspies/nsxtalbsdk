@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUpgradeOpsEntryType 
     {
-        public NSXTALBUpgradeOpsEntryType()
-        {
-        }
         /// <summary>
         /// Name of the system such as cluster name, se group name and se name. Field introduced in 18.2.6.
         /// </summary>

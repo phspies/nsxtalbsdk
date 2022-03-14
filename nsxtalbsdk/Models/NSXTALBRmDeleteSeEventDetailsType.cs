@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRmDeleteSeEventDetailsType 
     {
-        public NSXTALBRmDeleteSeEventDetailsType()
-        {
-        }
         /// <summary>
         /// cloud_name of RmDeleteSeEventDetails.
         /// </summary>

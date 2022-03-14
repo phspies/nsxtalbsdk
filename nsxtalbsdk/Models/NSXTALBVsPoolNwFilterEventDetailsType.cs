@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsPoolNwFilterEventDetailsType 
     {
-        public NSXTALBVsPoolNwFilterEventDetailsType()
-        {
-        }
         /// <summary>
         /// filter of VsPoolNwFilterEventDetails.
         /// </summary>

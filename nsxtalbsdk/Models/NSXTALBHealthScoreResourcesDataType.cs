@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthScoreResourcesDataType 
     {
-        public NSXTALBHealthScoreResourcesDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property application_resources of obj type HealthScoreResourcesData field type str  type
         /// object

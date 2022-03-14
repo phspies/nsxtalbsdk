@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpAddrPortType 
     {
-        public NSXTALBIpAddrPortType()
-        {
-        }
         /// <summary>
         /// Hostname of server. One of IP address or hostname should be set.
         /// </summary>

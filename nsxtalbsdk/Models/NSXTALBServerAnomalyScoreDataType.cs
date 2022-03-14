@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerAnomalyScoreDataType 
     {
-        public NSXTALBServerAnomalyScoreDataType()
-        {
-        }
         /// <summary>
         /// anomalous_l4_metrics of ServerAnomalyScoreData.
         /// </summary>

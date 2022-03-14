@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPOneArmModeType 
     {
-        public NSXTALBGCPOneArmModeType()
-        {
-        }
         /// <summary>
         /// Service Engine Data Network Name. Field introduced in 18.2.2.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLogAgentEventDetailType 
     {
-        public NSXTALBLogAgentEventDetailType()
-        {
-        }
         /// <summary>
         /// Protocol used for communication to the external entity. Enum options - TCP_CONN. Field introduced in 20.1.3.
         /// </summary>

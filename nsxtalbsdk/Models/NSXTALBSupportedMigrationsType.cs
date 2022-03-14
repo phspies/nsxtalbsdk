@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSupportedMigrationsType 
     {
-        public NSXTALBSupportedMigrationsType()
-        {
-        }
         /// <summary>
         /// Minimum accepted API version. Field introduced in 18.2.6.
         /// </summary>

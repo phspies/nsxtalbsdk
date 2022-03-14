@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMesosSeResourcesType 
     {
-        public NSXTALBMesosSeResourcesType()
-        {
-        }
         /// <summary>
         /// Attribute (Fleet or Mesos) key of Hosts.
         /// </summary>

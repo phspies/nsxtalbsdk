@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbGeoDbFileType 
     {
-        public NSXTALBGslbGeoDbFileType()
-        {
-        }
         /// <summary>
         /// File checksum is internally computed. Field introduced in 17.1.1.
         /// </summary>

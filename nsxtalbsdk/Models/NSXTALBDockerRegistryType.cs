@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDockerRegistryType 
     {
-        public NSXTALBDockerRegistryType()
-        {
-        }
         /// <summary>
         /// Openshift integrated registry config.
         /// </summary>

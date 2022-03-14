@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafApplicationSignatureProviderApiResponseType 
     {
-        public NSXTALBWafApplicationSignatureProviderApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

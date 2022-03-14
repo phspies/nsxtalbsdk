@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMicroServiceMatchType 
     {
-        public NSXTALBMicroServiceMatchType()
-        {
-        }
         /// <summary>
         /// UUID of Micro Service group(s). It is a reference to an object of type MicroServiceGroup.
         /// </summary>

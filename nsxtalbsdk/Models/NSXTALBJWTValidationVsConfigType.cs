@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBJWTValidationVsConfigType 
     {
-        public NSXTALBJWTValidationVsConfigType()
-        {
-        }
         /// <summary>
         /// Uniquely identifies a resource server. This is used to validate against the aud claim. Field introduced in 20.1.3.
         /// </summary>

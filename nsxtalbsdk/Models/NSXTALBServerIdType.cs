@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerIdType 
     {
-        public NSXTALBServerIdType()
-        {
-        }
         /// <summary>
         /// This is the external cloud uuid of the Pool server.
         /// </summary>

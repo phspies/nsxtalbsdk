@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudVipParkingIntfType 
     {
-        public NSXTALBCloudVipParkingIntfType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudVipParkingIntf.
         /// </summary>

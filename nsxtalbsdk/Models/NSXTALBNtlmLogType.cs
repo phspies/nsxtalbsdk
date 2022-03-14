@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNtlmLogType 
     {
-        public NSXTALBNtlmLogType()
-        {
-        }
         /// <summary>
         /// Set to true, if request is detected to be NTLM. Field introduced in 20.1.3.
         /// </summary>

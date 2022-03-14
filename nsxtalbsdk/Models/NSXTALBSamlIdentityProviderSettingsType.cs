@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSamlIdentityProviderSettingsType 
     {
-        public NSXTALBSamlIdentityProviderSettingsType()
-        {
-        }
         /// <summary>
         /// SAML IDP metadata. Field introduced in 17.2.3.
         /// </summary>

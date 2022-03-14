@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsDbDiskEventDetailsType 
     {
-        public NSXTALBMetricsDbDiskEventDetailsType()
-        {
-        }
         /// <summary>
         /// metrics_deleted_tables of MetricsDbDiskEventDetails.
         /// </summary>

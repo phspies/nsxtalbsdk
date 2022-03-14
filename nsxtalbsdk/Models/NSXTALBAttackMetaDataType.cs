@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAttackMetaDataType 
     {
-        public NSXTALBAttackMetaDataType()
-        {
-        }
         /// <summary>
         /// DNS amplification attack record. Field introduced in 21.1.1.
         /// </summary>

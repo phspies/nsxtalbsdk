@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVipRuntimeType 
     {
-        public NSXTALBVipRuntimeType()
-        {
-        }
         /// <summary>
         /// ev of VipRuntime.
         /// </summary>

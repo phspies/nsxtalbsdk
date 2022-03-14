@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRebalanceMigrateEventDetailsType 
     {
-        public NSXTALBRebalanceMigrateEventDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property migrate_params of obj type RebalanceMigrateEventDetails field type str  type
         /// object

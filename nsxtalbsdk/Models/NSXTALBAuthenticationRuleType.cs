@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthenticationRuleType 
     {
-        public NSXTALBAuthenticationRuleType()
-        {
-        }
         /// <summary>
         /// Enable or disable authentication for matched targets. Field introduced in 18.2.5.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServiceMatchType 
     {
-        public NSXTALBServiceMatchType()
-        {
-        }
         /// <summary>
         /// Destination Port of the packet. Field introduced in 18.2.5.
         /// </summary>

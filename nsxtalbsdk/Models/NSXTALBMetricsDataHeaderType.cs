@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsDataHeaderType 
     {
-        public NSXTALBMetricsDataHeaderType()
-        {
-        }
         /// <summary>
         /// Metrics derivation info.
         /// </summary>

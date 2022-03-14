@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVipScaleDetailsType 
     {
-        public NSXTALBVipScaleDetailsType()
-        {
-        }
         /// <summary>
         /// availability_zone of VipScaleDetails.
         /// </summary>

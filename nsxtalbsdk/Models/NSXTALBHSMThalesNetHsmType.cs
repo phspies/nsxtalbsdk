@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHSMThalesNetHsmType 
     {
-        public NSXTALBHSMThalesNetHsmType()
-        {
-        }
         /// <summary>
         /// Electronic serial number of the netHSM device. Use Thales anonkneti utility to find the netHSM ESN.
         /// </summary>

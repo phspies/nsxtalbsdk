@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudVnicChangeType 
     {
-        public NSXTALBCloudVnicChangeType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudVnicChange.
         /// </summary>

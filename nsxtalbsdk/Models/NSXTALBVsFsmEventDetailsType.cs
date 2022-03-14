@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsFsmEventDetailsType 
     {
-        public NSXTALBVsFsmEventDetailsType()
-        {
-        }
         /// <summary>
         /// vip_id of VsFsmEventDetails.
         /// </summary>

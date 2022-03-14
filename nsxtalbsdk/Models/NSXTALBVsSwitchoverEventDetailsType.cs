@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsSwitchoverEventDetailsType 
     {
-        public NSXTALBVsSwitchoverEventDetailsType()
-        {
-        }
         /// <summary>
         /// Error messages associated with this Event. Field introduced in 21.1.3.
         /// </summary>

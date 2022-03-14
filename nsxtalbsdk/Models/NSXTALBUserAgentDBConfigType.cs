@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUserAgentDBConfigType 
     {
-        public NSXTALBUserAgentDBConfigType()
-        {
-        }
         /// <summary>
         /// Batch query limit. Allowed values are 1-500. Field introduced in 21.1.1. Allowed in Basic(Allowed values- 500) edition,
         /// Essentials(Allowed values- 500) edition, Enterprise edition.

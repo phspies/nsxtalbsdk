@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNatPolicyActionType 
     {
-        public NSXTALBNatPolicyActionType()
-        {
-        }
         /// <summary>
         /// Pool of IP Addresses used for Nat. Field introduced in 18.2.5.
         /// </summary>

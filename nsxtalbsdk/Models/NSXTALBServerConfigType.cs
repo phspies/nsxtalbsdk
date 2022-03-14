@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerConfigType 
     {
-        public NSXTALBServerConfigType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property def_port of obj type ServerConfig field type str  type boolean
         /// </summary>

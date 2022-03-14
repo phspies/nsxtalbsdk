@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClusterConfigFailedEventType 
     {
-        public NSXTALBClusterConfigFailedEventType()
-        {
-        }
         /// <summary>
         /// Failure reason.
         /// </summary>

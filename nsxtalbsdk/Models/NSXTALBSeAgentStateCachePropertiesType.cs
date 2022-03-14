@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeAgentStateCachePropertiesType 
     {
-        public NSXTALBSeAgentStateCachePropertiesType()
-        {
-        }
         /// <summary>
         /// Max elements to flush in one shot from the internal buffer by the statecache thread. Allowed values are 1-10000. Field
         /// introduced in 18.2.5.

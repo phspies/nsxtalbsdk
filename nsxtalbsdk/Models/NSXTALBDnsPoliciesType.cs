@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsPoliciesType 
     {
-        public NSXTALBDnsPoliciesType()
-        {
-        }
         /// <summary>
         /// UUID of the dns policy. It is a reference to an object of type DnsPolicy. Field introduced in 17.1.1.
         /// </summary>

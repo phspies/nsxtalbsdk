@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServiceEngineDosAttackLevelType 
     {
-        public NSXTALBServiceEngineDosAttackLevelType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property hs_entity of obj type ServiceEngineDosAttackLevel field type str  type object
         /// </summary>

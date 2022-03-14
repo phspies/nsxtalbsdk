@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthScoreQueryType 
     {
-        public NSXTALBHealthScoreQueryType()
-        {
-        }
         /// <summary>
         /// Return detailed header with information like contributors etc.?.
         /// </summary>

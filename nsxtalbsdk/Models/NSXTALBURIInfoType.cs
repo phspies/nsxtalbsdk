@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBURIInfoType 
     {
-        public NSXTALBURIInfoType()
-        {
-        }
         /// <summary>
         /// Information about various params under a URI. Field introduced in 20.1.1.
         /// </summary>

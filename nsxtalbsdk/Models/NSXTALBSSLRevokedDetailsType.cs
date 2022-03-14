@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLRevokedDetailsType 
     {
-        public NSXTALBSSLRevokedDetailsType()
-        {
-        }
         /// <summary>
         /// Name of SSL Certificate. Field introduced in 20.1.1.
         /// </summary>

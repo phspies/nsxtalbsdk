@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCertificateAuthorityType 
     {
-        public NSXTALBCertificateAuthorityType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type SSLKeyAndCertificate.
         /// </summary>

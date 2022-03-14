@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeGroupStatusType 
     {
-        public NSXTALBSeGroupStatusType()
-        {
-        }
         /// <summary>
         /// Controller version. Field introduced in 18.2.6.
         /// </summary>

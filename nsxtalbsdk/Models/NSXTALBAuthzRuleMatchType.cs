@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthzRuleMatchType 
     {
-        public NSXTALBAuthzRuleMatchType()
-        {
-        }
         /// <summary>
         /// Name of the executed Authorization rule Action. Enum options - ALLOW_ACCESS, CLOSE_CONNECTION, HTTP_LOCAL_RESPONSE.
         /// Field introduced in 20.1.3.

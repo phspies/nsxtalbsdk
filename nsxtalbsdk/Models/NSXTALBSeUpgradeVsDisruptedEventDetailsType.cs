@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeUpgradeVsDisruptedEventDetailsType 
     {
-        public NSXTALBSeUpgradeVsDisruptedEventDetailsType()
-        {
-        }
         /// <summary>
         /// ip of SeUpgradeVsDisruptedEventDetails.
         /// </summary>

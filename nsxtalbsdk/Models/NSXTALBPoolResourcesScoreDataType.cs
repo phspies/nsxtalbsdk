@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPoolResourcesScoreDataType 
     {
-        public NSXTALBPoolResourcesScoreDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property avg_server_resources_score of obj type PoolResourcesScoreData field type str 
         /// type number

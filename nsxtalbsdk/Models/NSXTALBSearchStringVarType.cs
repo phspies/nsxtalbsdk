@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSearchStringVarType 
     {
-        public NSXTALBSearchStringVarType()
-        {
-        }
         /// <summary>
         /// Type of search string - can be a variable exposed from datascript, value of an HTTP variable, a custom user-input
         /// literal string, or a regular expression. Enum options - SEARCH_DATASCRIPT_VAR, SEARCH_AVI_VAR, SEARCH_LITERAL_STRING,

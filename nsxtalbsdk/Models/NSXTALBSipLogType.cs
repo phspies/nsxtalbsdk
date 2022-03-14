@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSipLogType 
     {
-        public NSXTALBSipLogType()
-        {
-        }
         /// <summary>
         /// Server connection protocol type. Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP. Field introduced in 17.2.12,
         /// 18.1.3, 18.2.1.

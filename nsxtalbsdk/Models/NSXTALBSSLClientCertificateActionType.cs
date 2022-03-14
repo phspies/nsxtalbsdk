@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLClientCertificateActionType 
     {
-        public NSXTALBSSLClientCertificateActionType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property close_connection of obj type SSLClientCertificateAction field type str  type
         /// boolean

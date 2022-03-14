@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotManagementLogType 
     {
-        public NSXTALBBotManagementLogType()
-        {
-        }
         /// <summary>
         /// The final classification of the bot management module. Field introduced in 21.1.1.
         /// </summary>

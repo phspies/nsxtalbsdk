@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPoolDeploymentSuccessInfoType 
     {
-        public NSXTALBPoolDeploymentSuccessInfoType()
-        {
-        }
         /// <summary>
         /// Previous pool in service. Field introduced in 18.1.1.
         /// </summary>

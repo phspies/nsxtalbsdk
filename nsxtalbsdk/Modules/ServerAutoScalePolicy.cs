@@ -17,12 +17,12 @@ namespace nsxtalbsdk.Modules
     {
         RestClient restClient;
         JsonSerializerSettings defaultSerializationSettings;
-        public ServerAutoScalePolicy(RestClient Client, JsonSerializerSettings DefaultSerializationSettings)
+        public ServerAutoScalePolicy(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken cancellationToken = default(CancellationToken), int timeout, int retry)
         {
             restClient = Client;
             defaultSerializationSettings = DefaultSerializationSettings;
         }
-        public NSXTALBServerAutoScalePolicyApiResponseType GetServerautoscalepolicy(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBServerAutoScalePolicyApiResponseType> GetServerautoscalepolicy(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             NSXTALBServerAutoScalePolicyApiResponseType? returnValue = default(NSXTALBServerAutoScalePolicyApiResponseType);
@@ -33,39 +33,27 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
-            if (RefersTo != null) { request.AddQueryParameter("refers_to", RefersTo.ToString()); }
-            if (ReferredBy != null) { request.AddQueryParameter("referred_by", ReferredBy.ToString()); }
-            if (Fields != null) { request.AddQueryParameter("fields", Fields.ToString()); }
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
-            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JoinSubresources.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
+            if (RefersTo != null) { request.AddQueryParameter("refers_to", JsonConvert.ToString(RefersTo).ToLowerString()); }
+            if (ReferredBy != null) { request.AddQueryParameter("referred_by", JsonConvert.ToString(ReferredBy).ToLowerString()); }
+            if (Fields != null) { request.AddQueryParameter("fields", JsonConvert.ToString(Fields).ToLowerString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
+            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetServerautoscalepolicyServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBServerAutoScalePolicyApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServerAutoScalePolicyApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetServerautoscalepolicyServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBServerAutoScalePolicyApiResponseType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBServerAutoScalePolicyApiResponseType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBServerAutoScalePolicyType PostServerautoscalepolicy(string XAviVersion, NSXTALBServerAutoScalePolicyType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBServerAutoScalePolicyType> PostServerautoscalepolicy(string XAviVersion, NSXTALBServerAutoScalePolicyType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
@@ -83,27 +71,15 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostServerautoscalepolicyServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBServerAutoScalePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServerAutoScalePolicyType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP POST operation to " + PostServerautoscalepolicyServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBServerAutoScalePolicyType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBServerAutoScalePolicyType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBServerAutoScalePolicyType GetServerautoscalepolicyUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
+        public async Task<NSXTALBServerAutoScalePolicyType> GetServerautoscalepolicyUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
@@ -115,38 +91,26 @@ namespace nsxtalbsdk.Modules
                 Method = Method.GET
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             GetServerautoscalepolicyUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
-            if (Fields != null) { request.AddQueryParameter("fields", Fields.ToString()); }
-            if (IncludeName != null) { request.AddQueryParameter("include_name", IncludeName.ToString()); }
-            if (SkipDefault != null) { request.AddQueryParameter("skip_default", SkipDefault.ToString()); }
-            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JoinSubresources.ToString()); }
+            if (Fields != null) { request.AddQueryParameter("fields", JsonConvert.ToString(Fields).ToLowerString()); }
+            if (IncludeName != null) { request.AddQueryParameter("include_name", JsonConvert.ToString(IncludeName).ToLowerString()); }
+            if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
+            if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetServerautoscalepolicyUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBServerAutoScalePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServerAutoScalePolicyType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP GET operation to " + GetServerautoscalepolicyUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBServerAutoScalePolicyType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBServerAutoScalePolicyType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBServerAutoScalePolicyType PutServerautoscalepolicyUuid(string XAviVersion, NSXTALBServerAutoScalePolicyType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBServerAutoScalePolicyType> PutServerautoscalepolicyUuid(string XAviVersion, NSXTALBServerAutoScalePolicyType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
@@ -159,7 +123,7 @@ namespace nsxtalbsdk.Modules
                 Method = Method.PUT
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
@@ -167,27 +131,15 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PutServerautoscalepolicyUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutServerautoscalepolicyUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBServerAutoScalePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServerAutoScalePolicyType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP PUT operation to " + PutServerautoscalepolicyUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBServerAutoScalePolicyType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBServerAutoScalePolicyType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public NSXTALBServerAutoScalePolicyType PatchServerautoscalepolicyUuid(string XAviVersion, NSXTALBServerAutoScalePolicyType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBServerAutoScalePolicyType> PatchServerautoscalepolicyUuid(string XAviVersion, NSXTALBServerAutoScalePolicyType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
@@ -200,7 +152,7 @@ namespace nsxtalbsdk.Modules
                 Method = Method.PATCH
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
@@ -208,27 +160,15 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PatchServerautoscalepolicyUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchServerautoscalepolicyUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<NSXTALBServerAutoScalePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServerAutoScalePolicyType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP PATCH operation to " + PatchServerautoscalepolicyUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = JsonConvert.DeserializeObject<NSXTALBServerAutoScalePolicyType>(response.Content, defaultSerializationSettings);
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(NSXTALBServerAutoScalePolicyType).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
-        public string DeleteServerautoscalepolicyUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> DeleteServerautoscalepolicyUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
             if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
@@ -240,32 +180,20 @@ namespace nsxtalbsdk.Modules
                 Method = Method.DELETE
             };
             request.AddHeader("Content-type", "application/json");
-            if (Name != null) { request.AddQueryParameter("name", Name.ToString()); }
+            if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteServerautoscalepolicyUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteServerautoscalepolicyUuidServiceURL.ToString();
-            var response = restClient.Execute(request);
+            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
                 var message = "HTTP DELETE operation to " + DeleteServerautoscalepolicyUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, null);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
 			}
-            else
-			{
-				try
-				{
-					returnValue = (string)response.Content;
-				}
-				catch (Exception ex)
-				{
-					var message = "Could not deserialize the response body string as " + typeof(string).FullName + ".";
-					throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers, ex.InnerException);
-				}
-			}
-			return returnValue;
+            return response.Data;
         }
     }
 }

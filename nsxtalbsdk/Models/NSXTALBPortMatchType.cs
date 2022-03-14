@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPortMatchType 
     {
-        public NSXTALBPortMatchType()
-        {
-        }
         /// <summary>
         /// Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN.
         /// </summary>

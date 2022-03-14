@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTacacsPlusAuthSettingsType 
     {
-        public NSXTALBTacacsPlusAuthSettingsType()
-        {
-        }
         /// <summary>
         /// TACACS+ authorization attribute value pairs.
         /// </summary>

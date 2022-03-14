@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerAutoScaleOutInfoType 
     {
-        public NSXTALBServerAutoScaleOutInfoType()
-        {
-        }
         /// <summary>
         /// alertconfig_name of ServerAutoScaleOutInfo.
         /// </summary>

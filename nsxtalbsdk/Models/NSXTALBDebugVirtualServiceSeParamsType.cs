@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugVirtualServiceSeParamsType 
     {
-        public NSXTALBDebugVirtualServiceSeParamsType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type ServiceEngine.
         /// </summary>

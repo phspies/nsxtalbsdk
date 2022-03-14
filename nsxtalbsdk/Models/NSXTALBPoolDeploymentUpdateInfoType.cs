@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPoolDeploymentUpdateInfoType 
     {
-        public NSXTALBPoolDeploymentUpdateInfoType()
-        {
-        }
         /// <summary>
         /// Pool deployment state used with the PG deployment policy. Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE,
         /// OUT_OF_SERVICE, EVALUATION_FAILED.

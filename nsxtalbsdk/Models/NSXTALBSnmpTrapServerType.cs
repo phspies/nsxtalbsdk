@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSnmpTrapServerType 
     {
-        public NSXTALBSnmpTrapServerType()
-        {
-        }
         /// <summary>
         /// The community string to communicate with the trap server.
         /// </summary>

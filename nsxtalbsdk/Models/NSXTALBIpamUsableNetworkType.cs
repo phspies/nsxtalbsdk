@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamUsableNetworkType 
     {
-        public NSXTALBIpamUsableNetworkType()
-        {
-        }
         /// <summary>
         /// Labels as key value pairs, used for selection of IPAM networks. Field introduced in 20.1.3. Maximum of 1 items allowed.
         /// </summary>

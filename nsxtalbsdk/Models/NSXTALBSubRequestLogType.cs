@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSubRequestLogType 
     {
-        public NSXTALBSubRequestLogType()
-        {
-        }
         /// <summary>
         /// Response headers received from the server. Field introduced in 21.1.3.
         /// </summary>

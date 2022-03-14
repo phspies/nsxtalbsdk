@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPortRangeType 
     {
-        public NSXTALBPortRangeType()
-        {
-        }
         /// <summary>
         /// TCP/UDP port range end (inclusive). Allowed values are 1-65535.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudClusterVipType 
     {
-        public NSXTALBCloudClusterVipType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudClusterVip.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNatAddrInfoType 
     {
-        public NSXTALBNatAddrInfoType()
-        {
-        }
         /// <summary>
         /// Nat IP address. Field introduced in 18.2.3.
         /// </summary>

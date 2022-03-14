@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerLicenseReconcileDetailsType 
     {
-        public NSXTALBControllerLicenseReconcileDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property new_available_service_cores of obj type ControllerLicenseReconcileDetails field
         /// type str  type number

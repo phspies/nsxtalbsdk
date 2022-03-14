@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAnomalyzerQueryResponseType 
     {
-        public NSXTALBAnomalyzerQueryResponseType()
-        {
-        }
         /// <summary>
         /// metric_id of AnomalyzerQueryResponse.
         /// </summary>

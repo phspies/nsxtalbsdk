@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafPolicyAllowlistType 
     {
-        public NSXTALBWafPolicyAllowlistType()
-        {
-        }
         /// <summary>
         /// Rules to bypass WAF. Field introduced in 20.1.3.
         /// </summary>

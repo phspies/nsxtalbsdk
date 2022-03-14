@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOutOfBandRequestLogType 
     {
-        public NSXTALBOutOfBandRequestLogType()
-        {
-        }
         /// <summary>
         /// Logs for out-of-band requests sent from the DataScript. Field introduced in 20.1.3.
         /// </summary>

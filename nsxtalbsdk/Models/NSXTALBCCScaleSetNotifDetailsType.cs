@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCCScaleSetNotifDetailsType 
     {
-        public NSXTALBCCScaleSetNotifDetailsType()
-        {
-        }
         /// <summary>
         /// Cloud id. Field introduced in 18.2.5.
         /// </summary>

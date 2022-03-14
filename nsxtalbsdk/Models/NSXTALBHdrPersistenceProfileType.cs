@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHdrPersistenceProfileType 
     {
-        public NSXTALBHdrPersistenceProfileType()
-        {
-        }
         /// <summary>
         /// Header name for custom header persistence.
         /// </summary>

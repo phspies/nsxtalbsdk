@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAwsConfigurationType 
     {
-        public NSXTALBAwsConfigurationType()
-        {
-        }
         /// <summary>
         /// AWS access key ID.
         /// </summary>

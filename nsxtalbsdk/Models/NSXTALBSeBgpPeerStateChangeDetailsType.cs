@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeBgpPeerStateChangeDetailsType 
     {
-        public NSXTALBSeBgpPeerStateChangeDetailsType()
-        {
-        }
         /// <summary>
         /// IP address of BGP peer. Field introduced in 17.2.1.
         /// </summary>

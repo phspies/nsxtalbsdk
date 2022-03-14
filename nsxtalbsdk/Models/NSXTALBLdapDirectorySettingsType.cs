@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLdapDirectorySettingsType 
     {
-        public NSXTALBLdapDirectorySettingsType()
-        {
-        }
         /// <summary>
         /// LDAP Admin User DN. Administrator credentials are required to search for users under user search DN or groups under
         /// group search DN.

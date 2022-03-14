@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDetachIpStatusEventDetailsType 
     {
-        public NSXTALBDetachIpStatusEventDetailsType()
-        {
-        }
         /// <summary>
         /// Reason if Detach IP failed. Field introduced in 21.1.3.
         /// </summary>

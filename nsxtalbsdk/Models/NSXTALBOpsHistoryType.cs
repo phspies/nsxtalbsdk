@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpsHistoryType 
     {
-        public NSXTALBOpsHistoryType()
-        {
-        }
         /// <summary>
         /// Duration of Upgrade operation in seconds. Field introduced in 20.1.4. Unit is SEC.
         /// </summary>

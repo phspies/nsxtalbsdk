@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVICreateSEReqType 
     {
-        public NSXTALBVICreateSEReqType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of cloud.
         /// </summary>

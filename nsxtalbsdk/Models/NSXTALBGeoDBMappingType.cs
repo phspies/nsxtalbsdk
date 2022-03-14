@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGeoDBMappingType 
     {
-        public NSXTALBGeoDBMappingType()
-        {
-        }
         /// <summary>
         /// Description of the mapping. Field introduced in 21.1.1.
         /// </summary>

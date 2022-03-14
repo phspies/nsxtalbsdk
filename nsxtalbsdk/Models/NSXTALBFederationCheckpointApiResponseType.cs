@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFederationCheckpointApiResponseType 
     {
-        public NSXTALBFederationCheckpointApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

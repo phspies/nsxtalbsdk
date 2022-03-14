@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtConfigurationType 
     {
-        public NSXTALBNsxtConfigurationType()
-        {
-        }
         /// <summary>
         /// Automatically create DFW rules for VirtualService in NSX-T Manager. Field introduced in 20.1.1. Allowed in Basic(Allowed
         /// values- false) edition, Enterprise edition.

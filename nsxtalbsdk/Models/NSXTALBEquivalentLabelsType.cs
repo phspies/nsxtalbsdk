@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBEquivalentLabelsType 
     {
-        public NSXTALBEquivalentLabelsType()
-        {
-        }
         /// <summary>
         /// Equivalent labels.
         /// </summary>

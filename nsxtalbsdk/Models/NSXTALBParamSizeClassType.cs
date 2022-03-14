@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBParamSizeClassType 
     {
-        public NSXTALBParamSizeClassType()
-        {
-        }
         /// <summary>
         /// Field introduced in 20.1.1.
         /// </summary>

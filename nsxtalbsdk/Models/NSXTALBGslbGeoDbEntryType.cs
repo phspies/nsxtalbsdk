@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbGeoDbEntryType 
     {
-        public NSXTALBGslbGeoDbEntryType()
-        {
-        }
         /// <summary>
         /// This field describes the GeoDb file. Field introduced in 17.1.1.
         /// </summary>

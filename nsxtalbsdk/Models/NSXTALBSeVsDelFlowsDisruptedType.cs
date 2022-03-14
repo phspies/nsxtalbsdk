@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeVsDelFlowsDisruptedType 
     {
-        public NSXTALBSeVsDelFlowsDisruptedType()
-        {
-        }
         /// <summary>
         /// Name of the VS which was deleted from the SE. It is a reference to an object of type VirtualService. Field introduced in
         /// 22.1.1.

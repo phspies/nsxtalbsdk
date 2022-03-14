@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeMemoryLimitEventDetailsType 
     {
-        public NSXTALBSeMemoryLimitEventDetailsType()
-        {
-        }
         /// <summary>
         /// Current status of config memory. Field introduced in 18.2.2.
         /// </summary>

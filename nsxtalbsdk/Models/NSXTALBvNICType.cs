@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBvNICType 
     {
-        public NSXTALBvNICType()
-        {
-        }
         /// <summary>
         /// adapter of vNIC.
         /// </summary>

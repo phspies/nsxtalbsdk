@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDockerUCPSetupType 
     {
-        public NSXTALBDockerUCPSetupType()
-        {
-        }
         /// <summary>
         /// cc_id of DockerUCPSetup.
         /// </summary>

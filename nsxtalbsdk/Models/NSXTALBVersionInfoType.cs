@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVersionInfoType 
     {
-        public NSXTALBVersionInfoType()
-        {
-        }
         /// <summary>
         /// Identifies the datastore table . Field introduced in 17.2.7.
         /// </summary>

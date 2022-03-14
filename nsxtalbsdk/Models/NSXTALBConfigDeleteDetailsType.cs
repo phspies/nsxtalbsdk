@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigDeleteDetailsType 
     {
-        public NSXTALBConfigDeleteDetailsType()
-        {
-        }
         /// <summary>
         /// Error message if request failed.
         /// </summary>

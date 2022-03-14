@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTestSeDatastoreLevel3ApiResponseType 
     {
-        public NSXTALBTestSeDatastoreLevel3ApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

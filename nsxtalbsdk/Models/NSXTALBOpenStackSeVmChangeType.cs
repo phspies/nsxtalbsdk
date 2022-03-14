@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackSeVmChangeType 
     {
-        public NSXTALBOpenStackSeVmChangeType()
-        {
-        }
         /// <summary>
         /// error_string of OpenStackSeVmChange.
         /// </summary>

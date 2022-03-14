@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLKeyECParamsType 
     {
-        public NSXTALBSSLKeyECParamsType()
-        {
-        }
         /// <summary>
         /// Enum options - SSL_KEY_EC_CURVE_SECP256R1, SSL_KEY_EC_CURVE_SECP384R1, SSL_KEY_EC_CURVE_SECP521R1.
         /// </summary>

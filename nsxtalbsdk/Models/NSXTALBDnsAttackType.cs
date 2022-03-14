@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsAttackType 
     {
-        public NSXTALBDnsAttackType()
-        {
-        }
         /// <summary>
         /// The DNS attack vector. Enum options - DNS_REFLECTION, DNS_NXDOMAIN, DNS_AMPLIFICATION_EGRESS. Field introduced in
         /// 18.2.1.

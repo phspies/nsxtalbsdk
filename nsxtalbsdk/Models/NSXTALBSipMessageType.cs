@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSipMessageType 
     {
-        public NSXTALBSipMessageType()
-        {
-        }
         /// <summary>
         /// Contents up to first 128 bytes of a SIP message for which could not be parsed. Field introduced in 17.2.12, 18.1.3,
         /// 18.2.1.

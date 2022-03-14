@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudASGNotifDetailsType 
     {
-        public NSXTALBCloudASGNotifDetailsType()
-        {
-        }
         /// <summary>
         /// Autoscale Group name. Field introduced in 20.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHSMAwsCloudHsmType 
     {
-        public NSXTALBHSMAwsCloudHsmType()
-        {
-        }
         /// <summary>
         /// Field introduced in 17.2.7.
         /// </summary>

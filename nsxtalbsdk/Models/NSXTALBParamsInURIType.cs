@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBParamsInURIType 
     {
-        public NSXTALBParamsInURIType()
-        {
-        }
         /// <summary>
         /// Params info in hitted signature rule which has ARGS match element. Field introduced in 21.1.1.
         /// </summary>

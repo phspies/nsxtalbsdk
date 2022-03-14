@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafRuleMatchDataType 
     {
-        public NSXTALBWafRuleMatchDataType()
-        {
-        }
         /// <summary>
         /// The match_element is an internal variable. It is not possible to add exclusions for this element. Field introduced in
         /// 17.2.4.

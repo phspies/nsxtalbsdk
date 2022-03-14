@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAnomalyzerQueryType 
     {
-        public NSXTALBAnomalyzerQueryType()
-        {
-        }
         /// <summary>
         /// Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a
         /// dimension. Field introduced in 17.2.1.

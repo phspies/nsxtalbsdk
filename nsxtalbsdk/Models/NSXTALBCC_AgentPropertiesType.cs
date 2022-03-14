@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCC_AgentPropertiesType 
     {
-        public NSXTALBCC_AgentPropertiesType()
-        {
-        }
         /// <summary>
         /// Maximum polls to check for async jobs to finish.
         /// </summary>

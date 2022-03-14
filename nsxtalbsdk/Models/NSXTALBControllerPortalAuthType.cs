@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerPortalAuthType 
     {
-        public NSXTALBControllerPortalAuthType()
-        {
-        }
         /// <summary>
         /// Access Token to authenticate Customer Portal REST calls. Field introduced in 18.2.6.
         /// </summary>

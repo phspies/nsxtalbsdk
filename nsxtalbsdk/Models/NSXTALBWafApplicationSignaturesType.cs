@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafApplicationSignaturesType 
     {
-        public NSXTALBWafApplicationSignaturesType()
-        {
-        }
         /// <summary>
         /// The external provide for the rules. It is a reference to an object of type WafApplicationSignatureProvider. Field
         /// introduced in 20.1.1.

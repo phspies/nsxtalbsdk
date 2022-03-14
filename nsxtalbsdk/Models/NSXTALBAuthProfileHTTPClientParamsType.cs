@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthProfileHTTPClientParamsType 
     {
-        public NSXTALBAuthProfileHTTPClientParamsType()
-        {
-        }
         /// <summary>
         /// The max allowed length of time a clients authentication is cached. Allowed values are 1-30. Unit is SEC.
         /// </summary>

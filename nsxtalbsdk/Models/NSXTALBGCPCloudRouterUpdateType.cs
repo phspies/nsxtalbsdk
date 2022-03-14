@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPCloudRouterUpdateType 
     {
-        public NSXTALBGCPCloudRouterUpdateType()
-        {
-        }
         /// <summary>
         /// Action performed  Action can be either Route Added or Route Removed from Router. Field introduced in 18.2.5.
         /// </summary>

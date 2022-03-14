@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigSeGrpFlvUpdateType 
     {
-        public NSXTALBConfigSeGrpFlvUpdateType()
-        {
-        }
         /// <summary>
         /// New Flavor Name.
         /// </summary>

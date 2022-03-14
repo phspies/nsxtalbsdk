@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPPolicySetApiResponseType 
     {
-        public NSXTALBHTTPPolicySetApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

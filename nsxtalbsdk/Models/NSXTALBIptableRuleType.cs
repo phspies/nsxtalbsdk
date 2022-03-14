@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIptableRuleType 
     {
-        public NSXTALBIptableRuleType()
-        {
-        }
         /// <summary>
         /// Enum options - ACCEPT, DROP, REJECT, DNAT, MASQUERADE.
         /// </summary>

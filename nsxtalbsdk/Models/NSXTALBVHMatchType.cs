@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVHMatchType 
     {
-        public NSXTALBVHMatchType()
-        {
-        }
         /// <summary>
         /// Host/domain name match configuration. Must be configured along with at least one path match criteria. Field introduced
         /// in 20.1.3.

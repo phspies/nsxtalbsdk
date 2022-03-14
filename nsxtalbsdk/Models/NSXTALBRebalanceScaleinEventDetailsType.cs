@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRebalanceScaleinEventDetailsType 
     {
-        public NSXTALBRebalanceScaleinEventDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property scalein_params of obj type RebalanceScaleinEventDetails field type str  type
         /// object

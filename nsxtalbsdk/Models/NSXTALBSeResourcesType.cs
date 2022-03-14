@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeResourcesType 
     {
-        public NSXTALBSeResourcesType()
-        {
-        }
         /// <summary>
         /// Number of cores_per_socket.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsMgrDebugFilterType 
     {
-        public NSXTALBMetricsMgrDebugFilterType()
-        {
-        }
         /// <summary>
         /// Set to ignore skip_eval_period field in metrics_anomaly_option. Field introduced in 20.1.4.
         /// </summary>

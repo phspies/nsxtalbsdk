@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBurstResourceType 
     {
-        public NSXTALBBurstResourceType()
-        {
-        }
         /// <summary>
         /// License ID against which this burst has been accounted. Field introduced in 17.2.5.
         /// </summary>

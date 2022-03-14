@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSePoolLbEventDetailsType 
     {
-        public NSXTALBSePoolLbEventDetailsType()
-        {
-        }
         /// <summary>
         /// Reason code for load balancing failure. Enum options - PERSISTENT_SERVER_INVALID, PERSISTENT_SERVER_DOWN, SRVR_DOWN,
         /// ADD_PENDING, SLOW_START_MAX_CONN, MAX_CONN, NO_LPORT, SUSPECT_STATE, MAX_CONN_RATE, CAPEST_RAND_MAX_CONN, GET_NEXT.

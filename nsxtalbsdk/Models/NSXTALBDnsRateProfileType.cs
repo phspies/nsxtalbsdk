@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRateProfileType 
     {
-        public NSXTALBDnsRateProfileType()
-        {
-        }
         /// <summary>
         /// Action to perform upon rate limiting. Field deprecated in 20.1.1. Field introduced in 18.2.5.
         /// </summary>

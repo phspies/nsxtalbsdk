@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSidebandProfileType 
     {
-        public NSXTALBSidebandProfileType()
-        {
-        }
         /// <summary>
         /// IP Address of the sideband server.
         /// </summary>

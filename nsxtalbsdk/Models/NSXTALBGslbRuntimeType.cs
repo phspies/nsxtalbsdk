@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbRuntimeType 
     {
-        public NSXTALBGslbRuntimeType()
-        {
-        }
         /// <summary>
         /// Field introduced in 17.1.3.
         /// </summary>

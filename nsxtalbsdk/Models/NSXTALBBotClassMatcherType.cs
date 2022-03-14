@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotClassMatcherType 
     {
-        public NSXTALBBotClassMatcherType()
-        {
-        }
         /// <summary>
         /// The list of client classes. Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1.
         /// Minimum of 1 items required.

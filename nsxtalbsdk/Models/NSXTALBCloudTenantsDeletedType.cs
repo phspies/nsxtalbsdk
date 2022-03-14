@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudTenantsDeletedType 
     {
-        public NSXTALBCloudTenantsDeletedType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudTenantsDeleted.
         /// </summary>

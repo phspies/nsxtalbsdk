@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBContainerCloudBatchSetupType 
     {
-        public NSXTALBContainerCloudBatchSetupType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property ccs of obj type ContainerCloudBatchSetup field type str  type object
         /// </summary>

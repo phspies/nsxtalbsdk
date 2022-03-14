@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConnectionEventDetailsType 
     {
-        public NSXTALBConnectionEventDetailsType()
-        {
-        }
         /// <summary>
         /// Destinaton host name to be connected. Field introduced in 21.1.3.
         /// </summary>

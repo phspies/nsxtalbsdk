@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSecureKeyExchangeDetailsType 
     {
-        public NSXTALBSecureKeyExchangeDetailsType()
-        {
-        }
         /// <summary>
         /// Controller managememt IP for secure key exchange between controller and SE. Field introduced in 20.1.3.
         /// </summary>

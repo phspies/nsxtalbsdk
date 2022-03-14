@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUpgradeEventType 
     {
-        public NSXTALBUpgradeEventType()
-        {
-        }
         /// <summary>
         /// Time taken to complete upgrade event in seconds. Field introduced in 18.2.6. Unit is SEC.
         /// </summary>

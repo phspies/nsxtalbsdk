@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbDnsGsStatusType 
     {
-        public NSXTALBGslbDnsGsStatusType()
-        {
-        }
         /// <summary>
         /// Field introduced in 17.1.1.
         /// </summary>

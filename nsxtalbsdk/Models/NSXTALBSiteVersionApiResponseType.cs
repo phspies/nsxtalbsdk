@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSiteVersionApiResponseType 
     {
-        public NSXTALBSiteVersionApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

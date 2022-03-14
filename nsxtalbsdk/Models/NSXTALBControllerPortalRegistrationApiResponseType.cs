@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerPortalRegistrationApiResponseType 
     {
-        public NSXTALBControllerPortalRegistrationApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

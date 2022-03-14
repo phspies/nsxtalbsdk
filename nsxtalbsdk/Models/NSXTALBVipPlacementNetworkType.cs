@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVipPlacementNetworkType 
     {
-        public NSXTALBVipPlacementNetworkType()
-        {
-        }
         /// <summary>
         /// Network to use for vip placement. It is a reference to an object of type Network. Field introduced in 18.2.5.
         /// </summary>

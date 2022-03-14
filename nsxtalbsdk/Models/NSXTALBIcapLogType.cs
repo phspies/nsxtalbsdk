@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIcapLogType 
     {
-        public NSXTALBIcapLogType()
-        {
-        }
         /// <summary>
         /// Denotes whether the content was processed by ICAP server and an action was taken. Enum options - ICAP_DISABLED,
         /// ICAP_PASSED, ICAP_MODIFIED, ICAP_BLOCKED, ICAP_FAILED. Field introduced in 20.1.1.

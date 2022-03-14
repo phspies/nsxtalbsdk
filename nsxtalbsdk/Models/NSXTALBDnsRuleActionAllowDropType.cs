@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRuleActionAllowDropType 
     {
-        public NSXTALBDnsRuleActionAllowDropType()
-        {
-        }
         /// <summary>
         /// Allow the DNS query. Field introduced in 17.1.1.
         /// </summary>

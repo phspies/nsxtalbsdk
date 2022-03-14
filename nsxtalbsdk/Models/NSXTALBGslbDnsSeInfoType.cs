@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbDnsSeInfoType 
     {
-        public NSXTALBGslbDnsSeInfoType()
-        {
-        }
         /// <summary>
         /// This field describes the fd download status to the SE. Field deprecated in 18.2.3. Field introduced in 17.1.1.
         /// </summary>

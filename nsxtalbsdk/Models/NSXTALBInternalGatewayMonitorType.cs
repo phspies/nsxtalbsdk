@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBInternalGatewayMonitorType 
     {
-        public NSXTALBInternalGatewayMonitorType()
-        {
-        }
         /// <summary>
         /// Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1.
         /// </summary>

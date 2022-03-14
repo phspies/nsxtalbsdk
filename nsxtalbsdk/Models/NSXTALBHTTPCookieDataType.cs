@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPCookieDataType 
     {
-        public NSXTALBHTTPCookieDataType()
-        {
-        }
         /// <summary>
         /// Cookie name.
         /// </summary>

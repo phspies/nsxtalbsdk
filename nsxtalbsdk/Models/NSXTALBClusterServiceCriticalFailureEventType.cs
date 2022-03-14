@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClusterServiceCriticalFailureEventType 
     {
-        public NSXTALBClusterServiceCriticalFailureEventType()
-        {
-        }
         /// <summary>
         /// Name of controller node.
         /// </summary>

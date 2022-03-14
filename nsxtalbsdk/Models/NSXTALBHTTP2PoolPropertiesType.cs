@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTP2PoolPropertiesType 
     {
-        public NSXTALBHTTP2PoolPropertiesType()
-        {
-        }
         /// <summary>
         /// The max number of control frames that server can send over an HTTP/2 connection. '0' means unlimited. Allowed values are
         /// 0-10000. Special values are 0- Unlimited control frames on a server side HTTP/2 connection. Field introduced in 21.1.1.

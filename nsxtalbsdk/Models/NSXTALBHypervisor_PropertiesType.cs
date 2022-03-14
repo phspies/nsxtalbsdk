@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHypervisor_PropertiesType 
     {
-        public NSXTALBHypervisor_PropertiesType()
-        {
-        }
         /// <summary>
         /// Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
         /// </summary>

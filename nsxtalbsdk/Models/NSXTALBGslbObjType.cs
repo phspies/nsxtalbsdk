@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbObjType 
     {
-        public NSXTALBGslbObjType()
-        {
-        }
         /// <summary>
         /// Field introduced in 18.1.5, 18.2.1.
         /// </summary>

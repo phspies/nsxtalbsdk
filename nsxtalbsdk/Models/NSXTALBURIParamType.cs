@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBURIParamType 
     {
-        public NSXTALBURIParamType()
-        {
-        }
         /// <summary>
         /// Token config either for the URI components or a constant string. Minimum of 1 items required.
         /// </summary>

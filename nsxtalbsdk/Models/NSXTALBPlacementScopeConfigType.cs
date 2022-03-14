@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPlacementScopeConfigType 
     {
-        public NSXTALBPlacementScopeConfigType()
-        {
-        }
         /// <summary>
         /// Cluster vSphere HA configuration. Field introduced in 20.1.7, 21.1.3. Allowed in Basic edition, Enterprise edition.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeGatewayHeartbeatSuccessDetailsType 
     {
-        public NSXTALBSeGatewayHeartbeatSuccessDetailsType()
-        {
-        }
         /// <summary>
         /// IP address of gateway monitored.
         /// </summary>

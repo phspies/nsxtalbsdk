@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBErrorPageBodyApiResponseType 
     {
-        public NSXTALBErrorPageBodyApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

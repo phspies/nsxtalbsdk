@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBImageApiResponseType 
     {
-        public NSXTALBImageApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

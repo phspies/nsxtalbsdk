@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDataNetworkConfigType 
     {
-        public NSXTALBDataNetworkConfigType()
-        {
-        }
         /// <summary>
         /// Nsxt tier1 segment configuration for Avi Service Engine data path. This should be set only when transport zone is of
         /// type OVERLAY. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition.

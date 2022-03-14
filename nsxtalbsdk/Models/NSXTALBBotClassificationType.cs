@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotClassificationType 
     {
-        public NSXTALBBotClassificationType()
-        {
-        }
         /// <summary>
         /// One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT,
         /// USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraVcenterBadCredentialsType 
     {
-        public NSXTALBVinfraVcenterBadCredentialsType()
-        {
-        }
         /// <summary>
         /// Name of the object.
         /// </summary>

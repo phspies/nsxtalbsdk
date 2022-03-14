@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOCSPResponseInfoType 
     {
-        public NSXTALBOCSPResponseInfoType()
-        {
-        }
         /// <summary>
         /// Revocation status of the certificate. Enum options - OCSP_CERTSTATUS_GOOD, OCSP_CERTSTATUS_REVOKED,
         /// OCSP_CERTSTATUS_UNKNOWN. Field introduced in 20.1.1.

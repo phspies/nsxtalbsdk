@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTrueClientIPConfigType 
     {
-        public NSXTALBTrueClientIPConfigType()
-        {
-        }
         /// <summary>
         /// Denotes the end from which to count the IPs in the specified header value. Enum options - LEFT, RIGHT. Field introduced
         /// in 21.1.3.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamDnsInfobloxProfileType 
     {
-        public NSXTALBIpamDnsInfobloxProfileType()
-        {
-        }
         /// <summary>
         /// DNS view.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRuleInfoType 
     {
-        public NSXTALBRuleInfoType()
-        {
-        }
         /// <summary>
         /// URI hitted signature rule matches. Field introduced in 21.1.1.
         /// </summary>

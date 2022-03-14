@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVISetvNicNwReqType 
     {
-        public NSXTALBVISetvNicNwReqType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of cloud.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFloatingIpSubnetType 
     {
-        public NSXTALBFloatingIpSubnetType()
-        {
-        }
         /// <summary>
         /// FloatingIp subnet name if available, else uuid. Field introduced in 17.2.1.
         /// </summary>

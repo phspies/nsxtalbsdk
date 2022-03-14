@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbHealthMonitorProxyType 
     {
-        public NSXTALBGslbHealthMonitorProxyType()
-        {
-        }
         /// <summary>
         /// This field identifies the health monitor proxy behavior. The designated site for health monitor proxy can monitor public
         /// or private or all the members of a given site. . Enum options - GSLB_HEALTH_MONITOR_PROXY_ALL_MEMBERS,

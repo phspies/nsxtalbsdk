@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotConfigIPLocationType 
     {
-        public NSXTALBBotConfigIPLocationType()
-        {
-        }
         /// <summary>
         /// If this is enabled, IP location information is used to determine if a client is a known search engine bot, comes from
         /// the cloud, etc. Field introduced in 21.1.1.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVirtualServiceAnomalyScoreType 
     {
-        public NSXTALBVirtualServiceAnomalyScoreType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property hs_entity of obj type VirtualServiceAnomalyScore field type str  type object
         /// </summary>

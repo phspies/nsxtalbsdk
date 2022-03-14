@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeUpgradeScaleoutEventDetailsType 
     {
-        public NSXTALBSeUpgradeScaleoutEventDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property scaleout_params of obj type SeUpgradeScaleoutEventDetails field type str  type
         /// object

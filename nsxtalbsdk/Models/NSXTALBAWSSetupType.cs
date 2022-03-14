@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAWSSetupType 
     {
-        public NSXTALBAWSSetupType()
-        {
-        }
         /// <summary>
         /// access_key_id of AWSSetup.
         /// </summary>

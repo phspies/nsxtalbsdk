@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLRatingType 
     {
-        public NSXTALBSSLRatingType()
-        {
-        }
         /// <summary>
         /// Enum options - SSL_SCORE_NOT_SECURE, SSL_SCORE_VERY_BAD, SSL_SCORE_BAD, SSL_SCORE_AVERAGE, SSL_SCORE_GOOD,
         /// SSL_SCORE_EXCELLENT.

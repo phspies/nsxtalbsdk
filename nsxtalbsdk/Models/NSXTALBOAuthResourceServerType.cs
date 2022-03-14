@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOAuthResourceServerType 
     {
-        public NSXTALBOAuthResourceServerType()
-        {
-        }
         /// <summary>
         /// Access token type. Enum options - ACCESS_TOKEN_TYPE_JWT, ACCESS_TOKEN_TYPE_OPAQUE. Field introduced in 21.1.3.
         /// </summary>

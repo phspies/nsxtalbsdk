@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNetworkSubnetInfoType 
     {
-        public NSXTALBNetworkSubnetInfoType()
-        {
-        }
         /// <summary>
         /// Number of free.
         /// </summary>

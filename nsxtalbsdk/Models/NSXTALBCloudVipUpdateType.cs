@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudVipUpdateType 
     {
-        public NSXTALBCloudVipUpdateType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudVipUpdate.
         /// </summary>

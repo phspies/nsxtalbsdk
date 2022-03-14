@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVISetMgmtIpSEReqType 
     {
-        public NSXTALBVISetMgmtIpSEReqType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property admin of obj type VISetMgmtIpSEReq field type str  type object
         /// </summary>

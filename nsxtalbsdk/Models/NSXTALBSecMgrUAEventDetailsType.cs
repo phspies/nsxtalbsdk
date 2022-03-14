@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSecMgrUAEventDetailsType 
     {
-        public NSXTALBSecMgrUAEventDetailsType()
-        {
-        }
         /// <summary>
         /// Error descibing UA cache status in controller. Field introduced in 21.1.2.
         /// </summary>

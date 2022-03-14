@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafRuleLogType 
     {
-        public NSXTALBWafRuleLogType()
-        {
-        }
         /// <summary>
         /// Transaction data that matched the rule. Field introduced in 17.2.1.
         /// </summary>

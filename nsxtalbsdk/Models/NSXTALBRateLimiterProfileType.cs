@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRateLimiterProfileType 
     {
-        public NSXTALBRateLimiterProfileType()
-        {
-        }
         /// <summary>
         /// Rate Limit all connections made from any single client IP address to the Virtual Service.
         /// </summary>

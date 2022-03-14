@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHttpCookiePersistenceProfileType 
     {
-        public NSXTALBHttpCookiePersistenceProfileType()
-        {
-        }
         /// <summary>
         /// If no persistence cookie was received from the client, always send it.
         /// </summary>

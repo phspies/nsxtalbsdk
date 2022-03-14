@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeAgentPropertiesType 
     {
-        public NSXTALBSeAgentPropertiesType()
-        {
-        }
         /// <summary>
         /// Aggressive Count of HB misses for se health check failure. Allowed values are 1-1000.
         /// </summary>

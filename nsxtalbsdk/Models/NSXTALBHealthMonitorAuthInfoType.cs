@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorAuthInfoType 
     {
-        public NSXTALBHealthMonitorAuthInfoType()
-        {
-        }
         /// <summary>
         /// Password for server authentication. Field introduced in 20.1.1.
         /// </summary>

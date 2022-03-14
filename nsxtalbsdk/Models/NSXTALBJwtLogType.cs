@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBJwtLogType 
     {
-        public NSXTALBJwtLogType()
-        {
-        }
         /// <summary>
         /// Authentication policy rule match. Field introduced in 20.1.3.
         /// </summary>

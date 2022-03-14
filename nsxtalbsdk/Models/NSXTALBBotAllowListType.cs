@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotAllowListType 
     {
-        public NSXTALBBotAllowListType()
-        {
-        }
         /// <summary>
         /// Allow rules to control which requests undergo BOT detection. Field introduced in 21.1.1.
         /// </summary>

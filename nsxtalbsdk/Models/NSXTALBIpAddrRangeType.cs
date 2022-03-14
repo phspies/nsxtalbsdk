@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpAddrRangeType 
     {
-        public NSXTALBIpAddrRangeType()
-        {
-        }
         /// <summary>
         /// Starting IP address of the range.
         /// </summary>

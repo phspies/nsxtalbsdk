@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVserverL7MetricsObjType 
     {
-        public NSXTALBVserverL7MetricsObjType()
-        {
-        }
         /// <summary>
         /// Client Apdex measures quality of server response based on latency.
         /// </summary>

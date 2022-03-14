@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCaptureIPCType 
     {
-        public NSXTALBCaptureIPCType()
-        {
-        }
         /// <summary>
         /// Flow del probe filter for SE IPC. Field introduced in 18.2.5.
         /// </summary>

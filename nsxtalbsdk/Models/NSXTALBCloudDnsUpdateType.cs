@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudDnsUpdateType 
     {
-        public NSXTALBCloudDnsUpdateType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudDnsUpdate.
         /// </summary>

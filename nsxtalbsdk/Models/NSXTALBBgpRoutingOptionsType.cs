@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBgpRoutingOptionsType 
     {
-        public NSXTALBBgpRoutingOptionsType()
-        {
-        }
         /// <summary>
         /// Advertise self as default router to the BGP peer. Field introduced in 20.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbPoolRuntimeType 
     {
-        public NSXTALBGslbPoolRuntimeType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property members of obj type GslbPoolRuntime field type str  type object
         /// </summary>

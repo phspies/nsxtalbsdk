@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMesosAttributeType 
     {
-        public NSXTALBMesosAttributeType()
-        {
-        }
         /// <summary>
         /// Attribute to match.
         /// </summary>

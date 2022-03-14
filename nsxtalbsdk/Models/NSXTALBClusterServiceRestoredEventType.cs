@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClusterServiceRestoredEventType 
     {
-        public NSXTALBClusterServiceRestoredEventType()
-        {
-        }
         /// <summary>
         /// Name of controller node.
         /// </summary>

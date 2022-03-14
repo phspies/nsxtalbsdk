@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSummarizedInfoType 
     {
-        public NSXTALBSummarizedInfoType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property subnet_info of obj type SummarizedInfo field type str  type object
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOCSPConfigType 
     {
-        public NSXTALBOCSPConfigType()
-        {
-        }
         /// <summary>
         /// Describes the Time Interval after which the next OCSP job needs to be scheduled in case of the OCSP job failures.
         /// Allowed values are 60-86400. Field introduced in 20.1.1. Unit is SEC.

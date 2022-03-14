@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafLogType 
     {
-        public NSXTALBWafLogType()
-        {
-        }
         /// <summary>
         /// Set to true if there are allowlist rules in the policy. Field introduced in 20.1.3.
         /// </summary>

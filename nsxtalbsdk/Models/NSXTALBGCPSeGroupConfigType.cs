@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPSeGroupConfigType 
     {
-        public NSXTALBGCPSeGroupConfigType()
-        {
-        }
         /// <summary>
         /// Service Engine Backend Data Network Name, used only for GCP cloud.Overrides the cloud level setting for Backend Data
         /// Network in GCP Two Arm Mode. Field introduced in 20.1.3.

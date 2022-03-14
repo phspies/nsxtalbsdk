@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAppInfoType 
     {
-        public NSXTALBAppInfoType()
-        {
-        }
         /// <summary>
         /// app_hdr_name of AppInfo.
         /// </summary>

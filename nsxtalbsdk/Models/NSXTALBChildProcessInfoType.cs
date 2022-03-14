@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBChildProcessInfoType 
     {
-        public NSXTALBChildProcessInfoType()
-        {
-        }
         /// <summary>
         /// Amount of memory (in MB) used by the sub process.
         /// </summary>

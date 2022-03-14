@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenstackLoginType 
     {
-        public NSXTALBOpenstackLoginType()
-        {
-        }
         /// <summary>
         /// admin_tenant of OpenstackLogin.
         /// </summary>

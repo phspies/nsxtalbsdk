@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsRealTimeUpdateType 
     {
-        public NSXTALBMetricsRealTimeUpdateType()
-        {
-        }
         /// <summary>
         /// Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - infinite. Unit is MIN.
         /// </summary>

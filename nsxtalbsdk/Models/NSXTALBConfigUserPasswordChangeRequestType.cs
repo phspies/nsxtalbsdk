@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigUserPasswordChangeRequestType 
     {
-        public NSXTALBConfigUserPasswordChangeRequestType()
-        {
-        }
         /// <summary>
         /// client ip.
         /// </summary>

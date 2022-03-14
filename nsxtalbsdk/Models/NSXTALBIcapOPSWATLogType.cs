@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIcapOPSWATLogType 
     {
-        public NSXTALBIcapOPSWATLogType()
-        {
-        }
         /// <summary>
         /// Blocking reason for the content. It is available only if content was scanned by ICAP server and some violations were
         /// found. Field introduced in 21.1.1.

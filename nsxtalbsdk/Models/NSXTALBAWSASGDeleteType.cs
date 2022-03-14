@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAWSASGDeleteType 
     {
-        public NSXTALBAWSASGDeleteType()
-        {
-        }
         /// <summary>
         /// List of Autoscale groups deleted from AWS. Field introduced in 17.2.10,18.1.2.
         /// </summary>

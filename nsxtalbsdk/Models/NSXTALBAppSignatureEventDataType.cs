@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAppSignatureEventDataType 
     {
-        public NSXTALBAppSignatureEventDataType()
-        {
-        }
         /// <summary>
         /// Last Successful updated time of the AppSignature. Field introduced in 20.1.4.
         /// </summary>

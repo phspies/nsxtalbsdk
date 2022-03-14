@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerSizingCloudLimitsType 
     {
-        public NSXTALBControllerSizingCloudLimitsType()
-        {
-        }
         /// <summary>
         /// Maximum number of clouds of a given type. Field introduced in 20.1.1.
         /// </summary>

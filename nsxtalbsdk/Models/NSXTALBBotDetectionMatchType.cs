@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotDetectionMatchType 
     {
-        public NSXTALBBotDetectionMatchType()
-        {
-        }
         /// <summary>
         /// Bot classification types. Field introduced in 21.1.1.
         /// </summary>

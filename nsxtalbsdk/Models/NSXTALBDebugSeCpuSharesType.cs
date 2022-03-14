@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugSeCpuSharesType 
     {
-        public NSXTALBDebugSeCpuSharesType()
-        {
-        }
         /// <summary>
         /// Number of cpu.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMarathonServicePortConflictType 
     {
-        public NSXTALBMarathonServicePortConflictType()
-        {
-        }
         /// <summary>
         /// app_name of MarathonServicePortConflict.
         /// </summary>

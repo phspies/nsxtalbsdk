@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbServiceDownResponseType 
     {
-        public NSXTALBGslbServiceDownResponseType()
-        {
-        }
         /// <summary>
         /// Fallback IP address to use in A response to the client query when the GSLB service is DOWN.
         /// </summary>

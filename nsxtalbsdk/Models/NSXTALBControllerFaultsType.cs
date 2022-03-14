@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerFaultsType 
     {
-        public NSXTALBControllerFaultsType()
-        {
-        }
         /// <summary>
         /// Enable backup scheduler faults. Field introduced in 20.1.6.
         /// </summary>

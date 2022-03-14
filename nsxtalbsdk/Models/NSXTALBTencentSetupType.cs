@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTencentSetupType 
     {
-        public NSXTALBTencentSetupType()
-        {
-        }
         /// <summary>
         /// Tencent Cloud id. Field introduced in 18.2.3.
         /// </summary>

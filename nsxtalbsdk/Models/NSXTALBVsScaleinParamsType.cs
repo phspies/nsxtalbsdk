@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsScaleinParamsType 
     {
-        public NSXTALBVsScaleinParamsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property admin_down of obj type VsScaleinParams field type str  type boolean
         /// </summary>

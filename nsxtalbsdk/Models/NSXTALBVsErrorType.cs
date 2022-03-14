@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsErrorType 
     {
-        public NSXTALBVsErrorType()
-        {
-        }
         /// <summary>
         /// The time at which the error occurred. Field introduced in 18.2.10, 20.1.1.
         /// </summary>

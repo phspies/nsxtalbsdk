@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIMgrIPSubnetRuntimeType 
     {
-        public NSXTALBVIMgrIPSubnetRuntimeType()
-        {
-        }
         /// <summary>
         /// If true, capable of floating/elastic IP association.
         /// </summary>

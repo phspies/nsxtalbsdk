@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServiceengineFaultsType 
     {
-        public NSXTALBServiceengineFaultsType()
-        {
-        }
         /// <summary>
         /// Enable debug faults. Field introduced in 20.1.6.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAllSeUpgradeEventDetailsType 
     {
-        public NSXTALBAllSeUpgradeEventDetailsType()
-        {
-        }
         /// <summary>
         /// notes of AllSeUpgradeEventDetails.
         /// </summary>

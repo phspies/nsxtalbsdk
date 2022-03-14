@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVserverL4MetricsObjType 
     {
-        public NSXTALBVserverL4MetricsObjType()
-        {
-        }
         /// <summary>
         /// apdex measuring quality of network connections to servers.
         /// </summary>

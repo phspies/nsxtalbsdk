@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPVIPAllocationType 
     {
-        public NSXTALBGCPVIPAllocationType()
-        {
-        }
         /// <summary>
         /// Configure Google Cloud Internal LoadBalancer for VIP. The VIP will be auto allocated from a Google Cloud VPC Subnet.
         /// Field introduced in 18.2.9, 20.1.1.

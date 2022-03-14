@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBKniPortRangeType 
     {
-        public NSXTALBKniPortRangeType()
-        {
-        }
         /// <summary>
         /// Protocol associated with port range. Enum options - KNI_PROTO_TCP, KNI_PROTO_UDP. Field introduced in 21.1.3.
         /// </summary>

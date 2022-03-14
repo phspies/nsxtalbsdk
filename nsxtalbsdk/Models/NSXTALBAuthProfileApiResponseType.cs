@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthProfileApiResponseType 
     {
-        public NSXTALBAuthProfileApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

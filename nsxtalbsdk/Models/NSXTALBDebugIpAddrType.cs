@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugIpAddrType 
     {
-        public NSXTALBDebugIpAddrType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property addrs of obj type DebugIpAddr field type str  type object
         /// </summary>

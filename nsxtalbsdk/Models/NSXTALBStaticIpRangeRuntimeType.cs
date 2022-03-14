@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBStaticIpRangeRuntimeType 
     {
-        public NSXTALBStaticIpRangeRuntimeType()
-        {
-        }
         /// <summary>
         /// Allocated IPs. Field introduced in 20.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRuleActionResponseType 
     {
-        public NSXTALBDnsRuleActionResponseType()
-        {
-        }
         /// <summary>
         /// DNS response is authoritative. Field introduced in 17.1.1.
         /// </summary>

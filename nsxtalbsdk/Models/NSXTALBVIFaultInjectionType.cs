@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIFaultInjectionType 
     {
-        public NSXTALBVIFaultInjectionType()
-        {
-        }
         /// <summary>
         /// Enum options - INITIAL_VALUE, CREATE_SE, MODIFY_VNIC, VM_MONITOR, RESOURCE_MONITOR, PERF_MONITOR, SET_MGMT_IP,
         /// MODIFY_MGMT_IP, SIM_VM_BULK_NOTIF, RESYNC_ERROR, SIMULATE_OVA_ERR, VCENTER_NO_OBJECTS, CREATE_VM_RUNTIME_ERR,

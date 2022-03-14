@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudGenericType 
     {
-        public NSXTALBCloudGenericType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudGeneric.
         /// </summary>

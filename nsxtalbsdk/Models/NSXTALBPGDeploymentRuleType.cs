@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPGDeploymentRuleType 
     {
-        public NSXTALBPGDeploymentRuleType()
-        {
-        }
         /// <summary>
         /// metric_id of PGDeploymentRule.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHardwareSecurityModuleGroupApiResponseType 
     {
-        public NSXTALBHardwareSecurityModuleGroupApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

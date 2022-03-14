@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorImapType 
     {
-        public NSXTALBHealthMonitorImapType()
-        {
-        }
         /// <summary>
         /// Folder to access. Field introduced in 21.1.1.
         /// </summary>

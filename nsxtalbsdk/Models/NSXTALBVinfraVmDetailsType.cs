@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraVmDetailsType 
     {
-        public NSXTALBVinfraVmDetailsType()
-        {
-        }
         /// <summary>
         /// datacenter of VinfraVmDetails.
         /// </summary>

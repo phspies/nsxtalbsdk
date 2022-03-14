@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorTcpType 
     {
-        public NSXTALBHealthMonitorTcpType()
-        {
-        }
         /// <summary>
         /// Match or look for this keyword in the first 2KB of server's response indicating server maintenance.  A successful match
         /// results in the server being marked down.

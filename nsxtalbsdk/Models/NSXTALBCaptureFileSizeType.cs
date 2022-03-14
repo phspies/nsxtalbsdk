@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCaptureFileSizeType 
     {
-        public NSXTALBCaptureFileSizeType()
-        {
-        }
         /// <summary>
         /// Maximum size in MB. Set 0 for avi default size. Allowed values are 100-512000. Special values are 0 - AVI_DEFAULT. Field
         /// introduced in 18.2.8. Unit is MB.

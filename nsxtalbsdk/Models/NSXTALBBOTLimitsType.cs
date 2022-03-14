@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBOTLimitsType 
     {
-        public NSXTALBBOTLimitsType()
-        {
-        }
         /// <summary>
         /// Maximum number of rules to control which requests undergo BOT detection. Field introduced in 22.1.1.
         /// </summary>

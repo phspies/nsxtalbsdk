@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthScorePerformanceDataType 
     {
-        public NSXTALBHealthScorePerformanceDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property application_performance of obj type HealthScorePerformanceData field type str 
         /// type object

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPaaLogType 
     {
-        public NSXTALBPaaLogType()
-        {
-        }
         /// <summary>
         /// PingAccess Agent cache was used for authentication. Field introduced in 18.2.3.
         /// </summary>

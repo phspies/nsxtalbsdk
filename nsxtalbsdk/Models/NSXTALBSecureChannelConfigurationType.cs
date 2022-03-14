@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSecureChannelConfigurationType 
     {
-        public NSXTALBSecureChannelConfigurationType()
-        {
-        }
         /// <summary>
         /// Boolean which allowed force update of secure channel certificate. Forced updating has been disallowed. Field deprecated
         /// in 18.2.8. Field introduced in 18.2.5.

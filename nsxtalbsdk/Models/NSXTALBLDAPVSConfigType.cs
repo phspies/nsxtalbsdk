@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLDAPVSConfigType 
     {
-        public NSXTALBLDAPVSConfigType()
-        {
-        }
         /// <summary>
         /// Basic authentication realm to present to a user along with the prompt for credentials. Field introduced in 21.1.1.
         /// </summary>

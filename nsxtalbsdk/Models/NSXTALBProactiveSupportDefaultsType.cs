@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBProactiveSupportDefaultsType 
     {
-        public NSXTALBProactiveSupportDefaultsType()
-        {
-        }
         /// <summary>
         /// Opt-in to attach core dump with support case. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false)
         /// edition, Essentials(Allowed values- false) edition, Enterprise edition.

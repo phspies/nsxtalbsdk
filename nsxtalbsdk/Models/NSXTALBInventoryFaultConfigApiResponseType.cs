@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBInventoryFaultConfigApiResponseType 
     {
-        public NSXTALBInventoryFaultConfigApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

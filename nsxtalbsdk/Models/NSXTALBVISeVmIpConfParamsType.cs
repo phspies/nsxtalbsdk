@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVISeVmIpConfParamsType 
     {
-        public NSXTALBVISeVmIpConfParamsType()
-        {
-        }
         /// <summary>
         /// default_gw of VISeVmIpConfParams.
         /// </summary>

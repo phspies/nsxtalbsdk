@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertRuleMetricType 
     {
-        public NSXTALBAlertRuleMetricType()
-        {
-        }
         /// <summary>
         /// Evaluation window for the Metrics. Unit is SEC.
         /// </summary>

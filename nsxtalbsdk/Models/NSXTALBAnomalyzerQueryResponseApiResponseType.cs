@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAnomalyzerQueryResponseApiResponseType 
     {
-        public NSXTALBAnomalyzerQueryResponseApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

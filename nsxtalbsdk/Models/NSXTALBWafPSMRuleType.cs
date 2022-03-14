@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafPSMRuleType 
     {
-        public NSXTALBWafPSMRuleType()
-        {
-        }
         /// <summary>
         /// Free-text comment about this rule. Field introduced in 18.2.3.
         /// </summary>

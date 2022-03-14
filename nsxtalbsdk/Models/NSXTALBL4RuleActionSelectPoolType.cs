@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL4RuleActionSelectPoolType 
     {
-        public NSXTALBL4RuleActionSelectPoolType()
-        {
-        }
         /// <summary>
         /// Indicates action to take on rule match. Enum options - L4_RULE_ACTION_SELECT_POOL, L4_RULE_ACTION_SELECT_POOLGROUP.
         /// Field introduced in 17.2.7. Allowed in Basic(Allowed values- L4_RULE_ACTION_SELECT_POOL) edition, Essentials(Allowed

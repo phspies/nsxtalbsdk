@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClientLogConfigurationType 
     {
-        public NSXTALBClientLogConfigurationType()
-        {
-        }
         /// <summary>
         /// Enable significant log collection. By default, this flag is enabled, which means that Avi SEs collect significant logs
         /// and forward them to Controller for further processing. For example, these logs correspond to error conditions such as

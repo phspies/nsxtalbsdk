@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPStatusRangeType 
     {
-        public NSXTALBHTTPStatusRangeType()
-        {
-        }
         /// <summary>
         /// Starting HTTP response status code.
         /// </summary>

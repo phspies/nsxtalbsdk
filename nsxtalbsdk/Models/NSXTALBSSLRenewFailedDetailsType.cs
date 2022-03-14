@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLRenewFailedDetailsType 
     {
-        public NSXTALBSSLRenewFailedDetailsType()
-        {
-        }
         /// <summary>
         /// Error when renewing certificate.
         /// </summary>

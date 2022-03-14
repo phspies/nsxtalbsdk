@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRecordType 
     {
-        public NSXTALBDnsRecordType()
-        {
-        }
         /// <summary>
         /// Specifies the algorithm to pick the IP address(es) to be returned, when multiple entries are configured. This does not
         /// apply if num_records_in_response is 0. Default is round-robin. Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN,

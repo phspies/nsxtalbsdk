@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLinuxServerConfigurationType 
     {
-        public NSXTALBLinuxServerConfigurationType()
-        {
-        }
         /// <summary>
         /// Private docker registry for SE image storage. Field deprecated in 17.1.2.
         /// </summary>

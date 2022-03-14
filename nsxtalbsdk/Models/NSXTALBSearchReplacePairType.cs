@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSearchReplacePairType 
     {
-        public NSXTALBSearchReplacePairType()
-        {
-        }
         /// <summary>
         /// String to replace the searched value. Field introduced in 21.1.3.
         /// </summary>

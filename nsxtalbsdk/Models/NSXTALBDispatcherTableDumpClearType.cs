@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDispatcherTableDumpClearType 
     {
-        public NSXTALBDispatcherTableDumpClearType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of se.
         /// </summary>

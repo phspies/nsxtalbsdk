@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotIPReputationTypeMappingApiResponseType 
     {
-        public NSXTALBBotIPReputationTypeMappingApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

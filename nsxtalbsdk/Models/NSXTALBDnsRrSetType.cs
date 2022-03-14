@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRrSetType 
     {
-        public NSXTALBDnsRrSetType()
-        {
-        }
         /// <summary>
         /// Canonical name in CNAME record. Field introduced in 17.2.12, 18.1.2.
         /// </summary>

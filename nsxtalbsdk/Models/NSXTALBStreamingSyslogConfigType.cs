@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBStreamingSyslogConfigType 
     {
-        public NSXTALBStreamingSyslogConfigType()
-        {
-        }
         /// <summary>
         /// Facility value, as defined in RFC5424, must be between 0 and 23 inclusive. Allowed values are 0-23. Field introduced in
         /// 18.1.1.

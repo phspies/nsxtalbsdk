@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIMgrInterestedEntityType 
     {
-        public NSXTALBVIMgrInterestedEntityType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of interested.
         /// </summary>

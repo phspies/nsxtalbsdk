@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBReplaceStringVarType 
     {
-        public NSXTALBReplaceStringVarType()
-        {
-        }
         /// <summary>
         /// Type of replacement string - can be a variable exposed from datascript, value of an HTTP variable, a custom user-input
         /// literal string, or a string with all three combined. Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING,

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbSiteHealthStatusType 
     {
-        public NSXTALBGslbSiteHealthStatusType()
-        {
-        }
         /// <summary>
         /// Controller retrieved GSLB service operational info based of virtual service state. .
         /// </summary>

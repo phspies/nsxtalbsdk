@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsARdataType 
     {
-        public NSXTALBDnsARdataType()
-        {
-        }
         /// <summary>
         /// IP address for FQDN.
         /// </summary>

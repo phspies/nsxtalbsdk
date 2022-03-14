@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRelationalOperatorsParamsType 
     {
-        public NSXTALBRelationalOperatorsParamsType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of entity.
         /// </summary>

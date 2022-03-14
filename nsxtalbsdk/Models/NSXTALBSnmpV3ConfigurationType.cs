@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSnmpV3ConfigurationType 
     {
-        public NSXTALBSnmpV3ConfigurationType()
-        {
-        }
         /// <summary>
         /// Engine Id of the Avi Controller SNMP. Field introduced in 17.2.3.
         /// </summary>

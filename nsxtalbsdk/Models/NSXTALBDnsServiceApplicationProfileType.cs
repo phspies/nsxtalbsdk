@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsServiceApplicationProfileType 
     {
-        public NSXTALBDnsServiceApplicationProfileType()
-        {
-        }
         /// <summary>
         /// Respond to AAAA queries with empty response when there are only IPV4 records.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorApiResponseType 
     {
-        public NSXTALBHealthMonitorApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

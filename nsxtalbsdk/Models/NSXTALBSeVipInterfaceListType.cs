@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeVipInterfaceListType 
     {
-        public NSXTALBSeVipInterfaceListType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property is_portchannel of obj type SeVipInterfaceList field type str  type boolean
         /// </summary>

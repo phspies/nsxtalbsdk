@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPSwitchingActionType 
     {
-        public NSXTALBHTTPSwitchingActionType()
-        {
-        }
         /// <summary>
         /// Content switching action type. Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL,
         /// HTTP_SWITCHING_SELECT_POOLGROUP. Allowed in Essentials(Allowed values-

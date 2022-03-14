@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOIDCConfigType 
     {
-        public NSXTALBOIDCConfigType()
-        {
-        }
         /// <summary>
         /// Adds openid as one of the scopes enabling OpenID Connect flow. Field introduced in 21.1.3.
         /// </summary>

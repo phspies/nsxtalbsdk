@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSamlAuthnRuleMatchType 
     {
-        public NSXTALBSamlAuthnRuleMatchType()
-        {
-        }
         /// <summary>
         /// Name of the executed SAML Authentication rule Action. Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
         /// Field introduced in 20.1.1.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthScoreHeaderType 
     {
-        public NSXTALBHealthScoreHeaderType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property anomaly_penalty_statistics of obj type HealthScoreHeader field type str  type
         /// object

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtClustersType 
     {
-        public NSXTALBNsxtClustersType()
-        {
-        }
         /// <summary>
         /// List of transport node clusters. Field introduced in 20.1.6. Allowed in Basic edition, Enterprise edition.
         /// </summary>

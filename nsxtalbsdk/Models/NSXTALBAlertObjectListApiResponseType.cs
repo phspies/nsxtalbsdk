@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertObjectListApiResponseType 
     {
-        public NSXTALBAlertObjectListApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

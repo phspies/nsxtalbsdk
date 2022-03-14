@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsQueryType 
     {
-        public NSXTALBMetricsQueryType()
-        {
-        }
         /// <summary>
         /// Required if the metrics need to be aggregated across multiple entities like virtualservice.
         /// </summary>

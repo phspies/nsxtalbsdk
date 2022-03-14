@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBProtocolMatchType 
     {
-        public NSXTALBProtocolMatchType()
-        {
-        }
         /// <summary>
         /// Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN.
         /// </summary>

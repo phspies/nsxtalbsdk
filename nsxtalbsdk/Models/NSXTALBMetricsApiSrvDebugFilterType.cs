@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsApiSrvDebugFilterType 
     {
-        public NSXTALBMetricsApiSrvDebugFilterType()
-        {
-        }
         /// <summary>
         /// uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPropertyType 
     {
-        public NSXTALBPropertyType()
-        {
-        }
         /// <summary>
         /// Property name. Field introduced in 17.2.1.
         /// </summary>

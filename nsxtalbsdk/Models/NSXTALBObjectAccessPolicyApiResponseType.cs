@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBObjectAccessPolicyApiResponseType 
     {
-        public NSXTALBObjectAccessPolicyApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

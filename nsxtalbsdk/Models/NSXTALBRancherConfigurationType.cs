@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRancherConfigurationType 
     {
-        public NSXTALBRancherConfigurationType()
-        {
-        }
         /// <summary>
         /// Access key.
         /// </summary>

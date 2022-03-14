@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCdpLldpInfoType 
     {
-        public NSXTALBCdpLldpInfoType()
-        {
-        }
         /// <summary>
         /// chassis of CdpLldpInfo.
         /// </summary>

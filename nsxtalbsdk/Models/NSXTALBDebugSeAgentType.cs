@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugSeAgentType 
     {
-        public NSXTALBDebugSeAgentType()
-        {
-        }
         /// <summary>
         /// Log every nth message. Field introduced in 17.2.7.
         /// </summary>

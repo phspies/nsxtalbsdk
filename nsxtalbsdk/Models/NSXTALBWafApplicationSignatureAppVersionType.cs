@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafApplicationSignatureAppVersionType 
     {
-        public NSXTALBWafApplicationSignatureAppVersionType()
-        {
-        }
         /// <summary>
         /// Name of an application in the rule set. Field introduced in 20.1.1.
         /// </summary>

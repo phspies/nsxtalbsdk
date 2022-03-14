@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsOptRecordType 
     {
-        public NSXTALBDnsOptRecordType()
-        {
-        }
         /// <summary>
         /// Flag indicating client is DNSSEC aware. Field introduced in 17.1.1.
         /// </summary>

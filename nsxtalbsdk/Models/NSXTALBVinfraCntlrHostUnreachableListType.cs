@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraCntlrHostUnreachableListType 
     {
-        public NSXTALBVinfraCntlrHostUnreachableListType()
-        {
-        }
         /// <summary>
         /// host_name of VinfraCntlrHostUnreachableList.
         /// </summary>

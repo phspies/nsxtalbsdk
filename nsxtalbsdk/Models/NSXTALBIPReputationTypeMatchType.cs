@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIPReputationTypeMatchType 
     {
-        public NSXTALBIPReputationTypeMatchType()
-        {
-        }
         /// <summary>
         /// Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1.
         /// </summary>

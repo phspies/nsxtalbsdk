@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudTenantCleanupType 
     {
-        public NSXTALBCloudTenantCleanupType()
-        {
-        }
         /// <summary>
         /// id of CloudTenantCleanup.
         /// </summary>

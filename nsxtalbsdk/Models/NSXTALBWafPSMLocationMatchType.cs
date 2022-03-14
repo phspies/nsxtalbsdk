@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafPSMLocationMatchType 
     {
-        public NSXTALBWafPSMLocationMatchType()
-        {
-        }
         /// <summary>
         /// Apply the rules only to requests that match the specified Host header. If this is not set, the host header will not be
         /// checked. Field introduced in 18.2.3.

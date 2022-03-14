@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpAllocInfoType 
     {
-        public NSXTALBIpAllocInfoType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property ip of obj type IpAllocInfo field type str  type object
         /// </summary>

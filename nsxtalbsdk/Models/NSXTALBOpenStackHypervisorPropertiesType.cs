@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackHypervisorPropertiesType 
     {
-        public NSXTALBOpenStackHypervisorPropertiesType()
-        {
-        }
         /// <summary>
         /// Hypervisor type. Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN. Field introduced in 17.2.1.
         /// </summary>

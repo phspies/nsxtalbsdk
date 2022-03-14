@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafPolicyPSMGroupApiResponseType 
     {
-        public NSXTALBWafPolicyPSMGroupApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

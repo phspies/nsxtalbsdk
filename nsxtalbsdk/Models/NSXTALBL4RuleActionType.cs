@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL4RuleActionType 
     {
-        public NSXTALBL4RuleActionType()
-        {
-        }
         /// <summary>
         /// Indicates pool or pool-group selection on rule match. Field introduced in 17.2.7.
         /// </summary>

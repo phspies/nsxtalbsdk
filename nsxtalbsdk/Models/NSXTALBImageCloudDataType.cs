@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBImageCloudDataType 
     {
-        public NSXTALBImageCloudDataType()
-        {
-        }
         /// <summary>
         /// Cloud Data specific to a particular cloud. Field introduced in 20.1.1.
         /// </summary>

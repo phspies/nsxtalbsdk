@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertTestSyslogSnmpParamsType 
     {
-        public NSXTALBAlertTestSyslogSnmpParamsType()
-        {
-        }
         /// <summary>
         /// The contents of the Syslog message/SNMP Trap contents.
         /// </summary>

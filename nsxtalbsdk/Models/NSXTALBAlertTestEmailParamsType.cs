@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertTestEmailParamsType 
     {
-        public NSXTALBAlertTestEmailParamsType()
-        {
-        }
         /// <summary>
         /// The Subject line of the originating email from  Avi Controller.
         /// </summary>

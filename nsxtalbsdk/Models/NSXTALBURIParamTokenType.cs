@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBURIParamTokenType 
     {
-        public NSXTALBURIParamTokenType()
-        {
-        }
         /// <summary>
         /// Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string.
         /// </summary>

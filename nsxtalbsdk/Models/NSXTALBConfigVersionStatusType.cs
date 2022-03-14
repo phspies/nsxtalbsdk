@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigVersionStatusType 
     {
-        public NSXTALBConfigVersionStatusType()
-        {
-        }
         /// <summary>
         /// Type of replication event. Enum options - DNSVS, OBJECT_CONFIG_VERSION. Field introduced in 21.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMatchesType 
     {
-        public NSXTALBMatchesType()
-        {
-        }
         /// <summary>
         /// Matches in signature rule. Field introduced in 21.1.1.
         /// </summary>

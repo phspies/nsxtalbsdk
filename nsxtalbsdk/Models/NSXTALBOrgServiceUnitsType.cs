@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOrgServiceUnitsType 
     {
-        public NSXTALBOrgServiceUnitsType()
-        {
-        }
         /// <summary>
         /// Available service units on pulse portal. Field introduced in 21.1.4.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDNSQueryErrorType 
     {
-        public NSXTALBDNSQueryErrorType()
-        {
-        }
         /// <summary>
         /// error of DNSQueryError.
         /// </summary>

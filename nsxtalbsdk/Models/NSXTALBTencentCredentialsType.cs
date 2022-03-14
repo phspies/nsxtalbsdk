@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTencentCredentialsType 
     {
-        public NSXTALBTencentCredentialsType()
-        {
-        }
         /// <summary>
         /// Tencent secret ID. Field introduced in 18.2.3.
         /// </summary>

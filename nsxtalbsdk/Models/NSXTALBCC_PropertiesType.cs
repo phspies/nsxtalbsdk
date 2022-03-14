@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCC_PropertiesType 
     {
-        public NSXTALBCC_PropertiesType()
-        {
-        }
         /// <summary>
         /// Unit is SEC.
         /// </summary>

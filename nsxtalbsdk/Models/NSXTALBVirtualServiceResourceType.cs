@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVirtualServiceResourceType 
     {
-        public NSXTALBVirtualServiceResourceType()
-        {
-        }
         /// <summary>
         /// This field is not being used. Field deprecated in 18.1.5, 18.2.1.
         /// </summary>

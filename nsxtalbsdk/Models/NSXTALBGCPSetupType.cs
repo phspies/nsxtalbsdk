@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPSetupType 
     {
-        public NSXTALBGCPSetupType()
-        {
-        }
         /// <summary>
         /// cc_id of GCPSetup.
         /// </summary>

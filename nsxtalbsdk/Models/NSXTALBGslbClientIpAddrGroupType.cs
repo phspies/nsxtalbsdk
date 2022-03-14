@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbClientIpAddrGroupType 
     {
-        public NSXTALBGslbClientIpAddrGroupType()
-        {
-        }
         /// <summary>
         /// Configure IP address(es). Field introduced in 17.1.2.
         /// </summary>

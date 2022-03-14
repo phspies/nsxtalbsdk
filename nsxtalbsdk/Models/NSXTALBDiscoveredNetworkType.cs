@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDiscoveredNetworkType 
     {
-        public NSXTALBDiscoveredNetworkType()
-        {
-        }
         /// <summary>
         /// Discovered network for this IP. It is a reference to an object of type Network.
         /// </summary>

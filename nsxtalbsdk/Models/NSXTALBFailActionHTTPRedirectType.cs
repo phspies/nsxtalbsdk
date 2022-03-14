@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFailActionHTTPRedirectType 
     {
-        public NSXTALBFailActionHTTPRedirectType()
-        {
-        }
         /// <summary>
         /// The host to which the redirect request is sent.
         /// </summary>

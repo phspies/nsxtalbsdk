@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPoolServerType 
     {
-        public NSXTALBPoolServerType()
-        {
-        }
         /// <summary>
         /// DNS resolvable name of the server.  May be used in place of the IP address.
         /// </summary>

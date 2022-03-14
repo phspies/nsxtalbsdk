@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthScoreSecurityDataType 
     {
-        public NSXTALBHealthScoreSecurityDataType()
-        {
-        }
         /// <summary>
         /// Threat associated with VirtualService DoS infrastructure.
         /// </summary>

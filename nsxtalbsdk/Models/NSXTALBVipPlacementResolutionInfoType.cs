@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVipPlacementResolutionInfoType 
     {
-        public NSXTALBVipPlacementResolutionInfoType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property ip of obj type VipPlacementResolutionInfo field type str  type object
         /// </summary>

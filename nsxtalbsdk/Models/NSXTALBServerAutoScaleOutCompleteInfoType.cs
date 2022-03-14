@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerAutoScaleOutCompleteInfoType 
     {
-        public NSXTALBServerAutoScaleOutCompleteInfoType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of launch_config.
         /// </summary>

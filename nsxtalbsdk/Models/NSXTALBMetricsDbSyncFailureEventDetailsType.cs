@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsDbSyncFailureEventDetailsType 
     {
-        public NSXTALBMetricsDbSyncFailureEventDetailsType()
-        {
-        }
         /// <summary>
         /// Name of the node responsible for this event.
         /// </summary>

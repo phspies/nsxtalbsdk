@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbObjectInfoType 
     {
-        public NSXTALBGslbObjectInfoType()
-        {
-        }
         /// <summary>
         /// Indicates the object uuid. Field introduced in 18.1.5, 18.2.1.
         /// </summary>

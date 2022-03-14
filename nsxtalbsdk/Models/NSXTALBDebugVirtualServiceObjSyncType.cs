@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugVirtualServiceObjSyncType 
     {
-        public NSXTALBDebugVirtualServiceObjSyncType()
-        {
-        }
         /// <summary>
         /// Triggers Initial Sync on all the SEs of this VS. Field introduced in 20.1.3.
         /// </summary>

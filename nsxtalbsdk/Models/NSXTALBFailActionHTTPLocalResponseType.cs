@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFailActionHTTPLocalResponseType 
     {
-        public NSXTALBFailActionHTTPLocalResponseType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property file of obj type FailActionHTTPLocalResponse field type str  type object
         /// </summary>

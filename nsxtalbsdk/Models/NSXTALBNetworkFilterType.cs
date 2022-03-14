@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNetworkFilterType 
     {
-        public NSXTALBNetworkFilterType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type VIMgrNWRuntime.
         /// </summary>

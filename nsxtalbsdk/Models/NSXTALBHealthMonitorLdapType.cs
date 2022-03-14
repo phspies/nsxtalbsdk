@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorLdapType 
     {
-        public NSXTALBHealthMonitorLdapType()
-        {
-        }
         /// <summary>
         /// Attributes which will be retrieved. commas can be used to delimit more than one attributes (example- cn,address,email).
         /// Field introduced in 21.1.3.

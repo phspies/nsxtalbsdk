@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthenticationActionType 
     {
-        public NSXTALBAuthenticationActionType()
-        {
-        }
         /// <summary>
         /// Authentication Action to be taken for a matched Rule. Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
         /// Field introduced in 18.2.5.

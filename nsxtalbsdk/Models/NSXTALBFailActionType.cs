@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFailActionType 
     {
-        public NSXTALBFailActionType()
-        {
-        }
         /// <summary>
         /// Backup Pool when pool experiences a failure. Field deprecated in 18.1.2.
         /// </summary>

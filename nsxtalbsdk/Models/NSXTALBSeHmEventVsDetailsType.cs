@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeHmEventVsDetailsType 
     {
-        public NSXTALBSeHmEventVsDetailsType()
-        {
-        }
         /// <summary>
         /// HA Compromised reason.
         /// </summary>

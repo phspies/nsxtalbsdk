@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeGeoDbDetailsType 
     {
-        public NSXTALBSeGeoDbDetailsType()
-        {
-        }
         /// <summary>
         /// Geo Db file name.
         /// </summary>

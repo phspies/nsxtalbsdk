@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBObjSyncConfigType 
     {
-        public NSXTALBObjSyncConfigType()
-        {
-        }
         /// <summary>
         /// SE CPU limit for InterSE Object Distribution. Allowed values are 15-80. Field introduced in 20.1.3. Unit is PERCENT.
         /// </summary>

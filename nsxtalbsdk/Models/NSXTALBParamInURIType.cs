@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBParamInURIType 
     {
-        public NSXTALBParamInURIType()
-        {
-        }
         /// <summary>
         /// Param name in hitted signature rule match_element. Field introduced in 21.1.1.
         /// </summary>

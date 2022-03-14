@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudInfoType 
     {
-        public NSXTALBCloudInfoType()
-        {
-        }
         /// <summary>
         /// CloudConnectorAgent properties specific to this cloud type.
         /// </summary>

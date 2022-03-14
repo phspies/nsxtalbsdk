@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPortalFeatureOptInType 
     {
-        public NSXTALBPortalFeatureOptInType()
-        {
-        }
         /// <summary>
         /// Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed in Basic(Allowed values-
         /// false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise

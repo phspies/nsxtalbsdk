@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPrimaryPoolType 
     {
-        public NSXTALBPrimaryPoolType()
-        {
-        }
         /// <summary>
         /// Pool's ID. Field introduced in 20.1.7, 21.1.2, 21.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPClientAuthenticationParamsType 
     {
-        public NSXTALBHTTPClientAuthenticationParamsType()
-        {
-        }
         /// <summary>
         /// Auth Profile to use for validating users. It is a reference to an object of type AuthProfile.
         /// </summary>

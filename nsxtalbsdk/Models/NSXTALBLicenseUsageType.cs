@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLicenseUsageType 
     {
-        public NSXTALBLicenseUsageType()
-        {
-        }
         /// <summary>
         /// Total license cores available for consumption. Field introduced in 20.1.1.
         /// </summary>

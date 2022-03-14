@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRmAddNetworksEventDetailsType 
     {
-        public NSXTALBRmAddNetworksEventDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property networks of obj type RmAddNetworksEventDetails field type str  type object
         /// </summary>

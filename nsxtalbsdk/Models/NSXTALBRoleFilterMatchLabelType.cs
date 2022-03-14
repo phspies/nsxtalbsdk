@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRoleFilterMatchLabelType 
     {
-        public NSXTALBRoleFilterMatchLabelType()
-        {
-        }
         /// <summary>
         /// Key for filter match. Field introduced in 20.1.3.
         /// </summary>

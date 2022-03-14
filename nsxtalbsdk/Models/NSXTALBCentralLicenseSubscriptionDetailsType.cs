@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCentralLicenseSubscriptionDetailsType 
     {
-        public NSXTALBCentralLicenseSubscriptionDetailsType()
-        {
-        }
         /// <summary>
         /// Message. Field introduced in 21.1.4.
         /// </summary>

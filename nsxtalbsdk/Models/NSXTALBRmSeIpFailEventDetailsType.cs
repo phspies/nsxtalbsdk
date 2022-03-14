@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRmSeIpFailEventDetailsType 
     {
-        public NSXTALBRmSeIpFailEventDetailsType()
-        {
-        }
         /// <summary>
         /// host_name of RmSeIpFailEventDetails.
         /// </summary>

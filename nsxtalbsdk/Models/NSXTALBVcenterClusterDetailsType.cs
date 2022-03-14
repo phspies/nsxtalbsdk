@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVcenterClusterDetailsType 
     {
-        public NSXTALBVcenterClusterDetailsType()
-        {
-        }
         /// <summary>
         /// Cloud Id. Field introduced in 20.1.7, 21.1.3.
         /// </summary>

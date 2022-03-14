@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLKeyParamsType 
     {
-        public NSXTALBSSLKeyParamsType()
-        {
-        }
         /// <summary>
         /// Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
         /// </summary>

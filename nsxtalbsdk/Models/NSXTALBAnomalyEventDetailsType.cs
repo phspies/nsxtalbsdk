@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAnomalyEventDetailsType 
     {
-        public NSXTALBAnomalyEventDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property deviation of obj type AnomalyEventDetails field type str  type number
         /// </summary>

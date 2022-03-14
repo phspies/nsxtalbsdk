@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSslScoreDataType 
     {
-        public NSXTALBSslScoreDataType()
-        {
-        }
         /// <summary>
         /// Chains for all certificates are verified.
         /// </summary>

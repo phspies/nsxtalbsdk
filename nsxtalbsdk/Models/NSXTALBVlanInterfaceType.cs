@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVlanInterfaceType 
     {
-        public NSXTALBVlanInterfaceType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property dhcp_enabled of obj type VlanInterface field type str  type boolean
         /// </summary>

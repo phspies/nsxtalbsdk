@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPVIPILBType 
     {
-        public NSXTALBGCPVIPILBType()
-        {
-        }
         /// <summary>
         /// Google Cloud Router Names to advertise BYOIP. Field introduced in 18.2.9, 20.1.1.
         /// </summary>

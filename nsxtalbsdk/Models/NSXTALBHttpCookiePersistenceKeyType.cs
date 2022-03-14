@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHttpCookiePersistenceKeyType 
     {
-        public NSXTALBHttpCookiePersistenceKeyType()
-        {
-        }
         /// <summary>
         /// aes_key of HttpCookiePersistenceKey.
         /// </summary>

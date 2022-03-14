@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamDnsOpenstackProfileType 
     {
-        public NSXTALBIpamDnsOpenstackProfileType()
-        {
-        }
         /// <summary>
         /// Keystone's hostname or IP address.
         /// </summary>

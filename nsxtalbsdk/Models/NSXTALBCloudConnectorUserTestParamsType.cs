@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudConnectorUserTestParamsType 
     {
-        public NSXTALBCloudConnectorUserTestParamsType()
-        {
-        }
         /// <summary>
         /// host of CloudConnectorUserTestParams.
         /// </summary>

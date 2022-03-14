@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAppLearningParamsType 
     {
-        public NSXTALBAppLearningParamsType()
-        {
-        }
         /// <summary>
         /// Learn the params per URI path. Field introduced in 18.2.3.
         /// </summary>

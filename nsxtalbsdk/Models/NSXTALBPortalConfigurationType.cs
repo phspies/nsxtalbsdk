@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPortalConfigurationType 
     {
-        public NSXTALBPortalConfigurationType()
-        {
-        }
         /// <summary>
         /// Enable/Disable HTTP basic authentication.
         /// </summary>

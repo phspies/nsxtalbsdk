@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbPoolType 
     {
-        public NSXTALBGslbPoolType()
-        {
-        }
         /// <summary>
         /// The load balancing algorithm will pick a local member within the GSLB service list of available Members. Enum options -
         /// GSLB_ALGORITHM_ROUND_ROBIN, GSLB_ALGORITHM_CONSISTENT_HASH, GSLB_ALGORITHM_GEO, GSLB_ALGORITHM_TOPOLOGY.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBKeyValueType 
     {
-        public NSXTALBKeyValueType()
-        {
-        }
         /// <summary>
         /// Key.
         /// </summary>

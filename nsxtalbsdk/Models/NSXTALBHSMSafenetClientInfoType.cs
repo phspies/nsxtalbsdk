@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHSMSafenetClientInfoType 
     {
-        public NSXTALBHSMSafenetClientInfoType()
-        {
-        }
         /// <summary>
         /// Generated File - Chrystoki.conf .
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeFaultType 
     {
-        public NSXTALBSeFaultType()
-        {
-        }
         /// <summary>
         /// Optional 64 bit unsigned integer that can be used within the enabled fault. Field introduced in 20.1.1.
         /// </summary>

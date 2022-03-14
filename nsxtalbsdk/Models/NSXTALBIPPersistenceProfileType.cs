@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIPPersistenceProfileType 
     {
-        public NSXTALBIPPersistenceProfileType()
-        {
-        }
         /// <summary>
         /// Mask to be applied on client IP. This may be used to persist clients from a subnet to the same server. When set to 0,
         /// all requests are sent to the same server. Allowed values are 0-128. Field introduced in 18.2.7. Allowed in Basic

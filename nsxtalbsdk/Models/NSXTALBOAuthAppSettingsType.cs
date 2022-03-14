@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOAuthAppSettingsType 
     {
-        public NSXTALBOAuthAppSettingsType()
-        {
-        }
         /// <summary>
         /// Application specific identifier. Field introduced in 21.1.3.
         /// </summary>

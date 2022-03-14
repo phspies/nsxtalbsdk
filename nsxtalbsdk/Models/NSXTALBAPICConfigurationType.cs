@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAPICConfigurationType 
     {
-        public NSXTALBAPICConfigurationType()
-        {
-        }
         /// <summary>
         /// Name of the Avi specific tenant created within APIC. Field deprecated in 21.1.1.
         /// </summary>

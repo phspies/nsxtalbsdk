@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMicroServiceGroupApiResponseType 
     {
-        public NSXTALBMicroServiceGroupApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

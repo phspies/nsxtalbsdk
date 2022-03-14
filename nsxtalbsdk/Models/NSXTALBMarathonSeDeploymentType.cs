@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMarathonSeDeploymentType 
     {
-        public NSXTALBMarathonSeDeploymentType()
-        {
-        }
         /// <summary>
         /// Docker image to be used for Avi SE installation e.g. fedora, ubuntu.
         /// </summary>

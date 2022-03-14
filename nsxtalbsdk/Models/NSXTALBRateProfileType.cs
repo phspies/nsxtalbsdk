@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRateProfileType 
     {
-        public NSXTALBRateProfileType()
-        {
-        }
         /// <summary>
         /// Action to perform upon rate limiting.
         /// </summary>

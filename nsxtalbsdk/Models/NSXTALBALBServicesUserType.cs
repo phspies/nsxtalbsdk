@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBALBServicesUserType 
     {
-        public NSXTALBALBServicesUserType()
-        {
-        }
         /// <summary>
         /// ID of primary account of the portal user. Field introduced in 20.1.1.
         /// </summary>

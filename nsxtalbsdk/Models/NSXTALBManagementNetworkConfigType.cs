@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBManagementNetworkConfigType 
     {
-        public NSXTALBManagementNetworkConfigType()
-        {
-        }
         /// <summary>
         /// Management overlay segment to use for Avi Service Engines. This should be set only when transport zone is of type
         /// OVERLAY. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition.

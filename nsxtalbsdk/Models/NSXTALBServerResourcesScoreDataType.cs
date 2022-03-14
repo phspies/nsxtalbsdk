@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerResourcesScoreDataType 
     {
-        public NSXTALBServerResourcesScoreDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property avg_cpu_usage of obj type ServerResourcesScoreData field type str  type number
         /// </summary>

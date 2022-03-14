@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorSIPType 
     {
-        public NSXTALBHealthMonitorSIPType()
-        {
-        }
         /// <summary>
         /// Specify the transport protocol TCP or UDP, to be used for SIP health monitor. The default transport is UDP. Enum options
         /// - SIP_UDP_PROTO, SIP_TCP_PROTO. Field introduced in 17.2.14, 18.1.5, 18.2.1.

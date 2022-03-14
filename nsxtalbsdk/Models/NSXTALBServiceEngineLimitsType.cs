@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServiceEngineLimitsType 
     {
-        public NSXTALBServiceEngineLimitsType()
-        {
-        }
         /// <summary>
         /// Maximum number of virtualservices per serviceengine, including east-west virtualservices. Field introduced in 20.1.1.
         /// </summary>

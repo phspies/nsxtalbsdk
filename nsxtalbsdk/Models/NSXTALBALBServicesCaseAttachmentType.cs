@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBALBServicesCaseAttachmentType 
     {
-        public NSXTALBALBServicesCaseAttachmentType()
-        {
-        }
         /// <summary>
         /// Field introduced in 18.2.6.
         /// </summary>

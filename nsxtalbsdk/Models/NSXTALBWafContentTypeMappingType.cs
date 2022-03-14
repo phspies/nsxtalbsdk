@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafContentTypeMappingType 
     {
-        public NSXTALBWafContentTypeMappingType()
-        {
-        }
         /// <summary>
         /// Request Content-Type. When it is equal to request Content-Type header value, the specified request_body_parser is used.
         /// Field introduced in 21.1.3.

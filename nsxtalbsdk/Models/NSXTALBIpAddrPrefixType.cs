@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpAddrPrefixType 
     {
-        public NSXTALBIpAddrPrefixType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object
         /// </summary>

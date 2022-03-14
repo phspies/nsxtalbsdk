@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRmRebootSeEventDetailsType 
     {
-        public NSXTALBRmRebootSeEventDetailsType()
-        {
-        }
         /// <summary>
         /// reason of RmRebootSeEventDetails.
         /// </summary>

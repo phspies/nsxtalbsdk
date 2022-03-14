@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBApiVersionDeprecatedType 
     {
-        public NSXTALBApiVersionDeprecatedType()
-        {
-        }
         /// <summary>
         /// API version used. Field introduced in 21.1.1.
         /// </summary>

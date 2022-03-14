@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorHttpType 
     {
-        public NSXTALBHealthMonitorHttpType()
-        {
-        }
         /// <summary>
         /// Type of the authentication method. Enum options - AUTH_BASIC, AUTH_NTLM. Field introduced in 20.1.1. Allowed in Basic
         /// edition, Essentials edition, Enterprise edition.

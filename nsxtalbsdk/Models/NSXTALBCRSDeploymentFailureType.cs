@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCRSDeploymentFailureType 
     {
-        public NSXTALBCRSDeploymentFailureType()
-        {
-        }
         /// <summary>
         /// List of all CRS updates that failed to install. Field introduced in 20.1.1.
         /// </summary>

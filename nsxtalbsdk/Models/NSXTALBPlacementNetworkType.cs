@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPlacementNetworkType 
     {
-        public NSXTALBPlacementNetworkType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type Network.
         /// </summary>

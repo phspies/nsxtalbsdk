@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbStatusType 
     {
-        public NSXTALBGslbStatusType()
-        {
-        }
         /// <summary>
         /// details of GslbStatus.
         /// </summary>

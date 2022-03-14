@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDosThresholdProfileType 
     {
-        public NSXTALBDosThresholdProfileType()
-        {
-        }
         /// <summary>
         /// Attack type, min and max values for DoS attack detection.
         /// </summary>

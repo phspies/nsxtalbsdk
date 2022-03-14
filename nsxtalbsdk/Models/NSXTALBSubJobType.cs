@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSubJobType 
     {
-        public NSXTALBSubJobType()
-        {
-        }
         /// <summary>
         /// Field introduced in 18.1.1.
         /// </summary>

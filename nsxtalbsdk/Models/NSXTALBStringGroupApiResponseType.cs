@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBStringGroupApiResponseType 
     {
-        public NSXTALBStringGroupApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

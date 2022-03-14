@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBALBServicesFileUploadApiResponseType 
     {
-        public NSXTALBALBServicesFileUploadApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

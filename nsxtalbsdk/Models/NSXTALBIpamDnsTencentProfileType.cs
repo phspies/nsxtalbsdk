@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamDnsTencentProfileType 
     {
-        public NSXTALBIpamDnsTencentProfileType()
-        {
-        }
         /// <summary>
         /// Credentials to access Tencent cloud. It is a reference to an object of type CloudConnectorUser. Field introduced in
         /// 18.2.3.

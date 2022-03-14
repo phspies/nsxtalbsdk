@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthTacacsPlusAttributeValuePairType 
     {
-        public NSXTALBAuthTacacsPlusAttributeValuePairType()
-        {
-        }
         /// <summary>
         /// mandatory.
         /// </summary>

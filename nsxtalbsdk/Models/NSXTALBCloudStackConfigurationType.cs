@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudStackConfigurationType 
     {
-        public NSXTALBCloudStackConfigurationType()
-        {
-        }
         /// <summary>
         /// CloudStack API Key.
         /// </summary>

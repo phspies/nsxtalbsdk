@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotEvaluationResultType 
     {
-        public NSXTALBBotEvaluationResultType()
-        {
-        }
         /// <summary>
         /// The component of the bot module that made this evaluation. Enum options - BOT_DECIDER_CONSOLIDATION,
         /// BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.1.

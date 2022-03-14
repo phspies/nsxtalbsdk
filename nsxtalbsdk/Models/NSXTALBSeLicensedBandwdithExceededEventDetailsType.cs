@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeLicensedBandwdithExceededEventDetailsType 
     {
-        public NSXTALBSeLicensedBandwdithExceededEventDetailsType()
-        {
-        }
         /// <summary>
         /// Number of packets dropped since the last event.
         /// </summary>

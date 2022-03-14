@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsDebugFilterType 
     {
-        public NSXTALBVsDebugFilterType()
-        {
-        }
         /// <summary>
         /// Name of the object.
         /// </summary>

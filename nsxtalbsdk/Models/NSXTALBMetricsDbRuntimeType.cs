@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsDbRuntimeType 
     {
-        public NSXTALBMetricsDbRuntimeType()
-        {
-        }
         /// <summary>
         /// Number of db_num_client_queries.
         /// </summary>

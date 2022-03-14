@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsRuleRLActionType 
     {
-        public NSXTALBDnsRuleRLActionType()
-        {
-        }
         /// <summary>
         /// Type of action to be enforced upon hitting the rate limit. Enum options - DNS_RL_ACTION_NONE, DNS_RL_ACTION_DROP_REQ.
         /// Field introduced in 18.2.5.

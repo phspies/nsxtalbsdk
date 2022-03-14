@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVipSymmetryDetailsType 
     {
-        public NSXTALBVipSymmetryDetailsType()
-        {
-        }
         /// <summary>
         /// Maximum number of SEs assigned across all Virtual Services sharing this VIP. Field introduced in 21.1.3.
         /// </summary>

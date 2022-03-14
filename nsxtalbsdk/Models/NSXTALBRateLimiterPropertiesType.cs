@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRateLimiterPropertiesType 
     {
-        public NSXTALBRateLimiterPropertiesType()
-        {
-        }
         /// <summary>
         /// Number of stages in msf rate limiter. Allowed values are 1-2. Field introduced in 20.1.1.
         /// </summary>

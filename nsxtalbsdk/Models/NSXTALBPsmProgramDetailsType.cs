@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPsmProgramDetailsType 
     {
-        public NSXTALBPsmProgramDetailsType()
-        {
-        }
         /// <summary>
         /// error of PsmProgramDetails.
         /// </summary>

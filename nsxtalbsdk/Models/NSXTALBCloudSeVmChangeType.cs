@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudSeVmChangeType 
     {
-        public NSXTALBCloudSeVmChangeType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudSeVmChange.
         /// </summary>

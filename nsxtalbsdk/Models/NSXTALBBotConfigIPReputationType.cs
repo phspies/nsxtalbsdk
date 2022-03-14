@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotConfigIPReputationType 
     {
-        public NSXTALBBotConfigIPReputationType()
-        {
-        }
         /// <summary>
         /// Whether IP reputation-based Bot detection is enabled. Field introduced in 21.1.1.
         /// </summary>

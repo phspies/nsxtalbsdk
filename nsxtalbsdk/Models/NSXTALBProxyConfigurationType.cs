@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBProxyConfigurationType 
     {
-        public NSXTALBProxyConfigurationType()
-        {
-        }
         /// <summary>
         /// Proxy hostname or IP address.
         /// </summary>

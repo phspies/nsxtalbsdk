@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOShiftK8SConfigurationType 
     {
-        public NSXTALBOShiftK8SConfigurationType()
-        {
-        }
         /// <summary>
         /// Sync frequency in seconds with frameworks.
         /// </summary>

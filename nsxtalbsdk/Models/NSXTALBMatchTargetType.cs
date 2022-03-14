@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMatchTargetType 
     {
-        public NSXTALBMatchTargetType()
-        {
-        }
         /// <summary>
         /// Configure the bot classification result. Field introduced in 21.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLicenseTierSwitchDetiailsType 
     {
-        public NSXTALBLicenseTierSwitchDetiailsType()
-        {
-        }
         /// <summary>
         /// destination_tier of LicenseTierSwitchDetiails.
         /// </summary>

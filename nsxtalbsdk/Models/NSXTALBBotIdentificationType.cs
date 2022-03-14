@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotIdentificationType 
     {
-        public NSXTALBBotIdentificationType()
-        {
-        }
         /// <summary>
         /// The Bot Client Class of this identification. Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT. Field
         /// introduced in 21.1.1.

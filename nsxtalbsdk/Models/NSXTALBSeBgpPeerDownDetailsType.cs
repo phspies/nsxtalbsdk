@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeBgpPeerDownDetailsType 
     {
-        public NSXTALBSeBgpPeerDownDetailsType()
-        {
-        }
         /// <summary>
         /// Message specific to the down condition. Field introduced in 20.1.1.
         /// </summary>

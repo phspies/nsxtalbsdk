@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCRSDetailsType 
     {
-        public NSXTALBCRSDetailsType()
-        {
-        }
         /// <summary>
         /// Name of the CRS release. Field introduced in 18.2.6.
         /// </summary>

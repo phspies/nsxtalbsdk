@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClusterNodeDbFailedEventType 
     {
-        public NSXTALBClusterNodeDbFailedEventType()
-        {
-        }
         /// <summary>
         /// Number of failures.
         /// </summary>

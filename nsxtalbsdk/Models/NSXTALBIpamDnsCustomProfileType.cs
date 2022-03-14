@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamDnsCustomProfileType 
     {
-        public NSXTALBIpamDnsCustomProfileType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type CustomIpamDnsProfile. Field introduced in 17.1.1.
         /// </summary>

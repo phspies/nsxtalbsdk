@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDbAppLearningInfoType 
     {
-        public NSXTALBDbAppLearningInfoType()
-        {
-        }
         /// <summary>
         /// Application UUID. Combination of Virtualservice UUID and WAF Policy UUID. Field introduced in 20.1.1.
         /// </summary>

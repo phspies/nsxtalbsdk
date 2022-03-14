@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVcenterHostsType 
     {
-        public NSXTALBVcenterHostsType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type VIMgrHostRuntime.
         /// </summary>

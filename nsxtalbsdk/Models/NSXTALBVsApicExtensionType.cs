@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsApicExtensionType 
     {
-        public NSXTALBVsApicExtensionType()
-        {
-        }
         /// <summary>
         /// Field deprecated in 21.1.1.
         /// </summary>

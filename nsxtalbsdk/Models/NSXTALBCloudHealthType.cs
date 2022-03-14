@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudHealthType 
     {
-        public NSXTALBCloudHealthType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudHealth.
         /// </summary>

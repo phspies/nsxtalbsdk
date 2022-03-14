@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRspContentRewriteRuleType 
     {
-        public NSXTALBRspContentRewriteRuleType()
-        {
-        }
         /// <summary>
         /// Enable rewrite rule on response body. Field introduced in 21.1.3.
         /// </summary>

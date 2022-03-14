@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPConfigurationType 
     {
-        public NSXTALBGCPConfigurationType()
-        {
-        }
         /// <summary>
         /// Credentials to access Google Cloud Platform APIs. It is a reference to an object of type CloudConnectorUser. Field
         /// introduced in 18.2.1.

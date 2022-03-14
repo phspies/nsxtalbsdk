@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBObjectAccessPolicyRuleType 
     {
-        public NSXTALBObjectAccessPolicyRuleType()
-        {
-        }
         /// <summary>
         /// Match criteria for the rule. Field introduced in 18.2.7, 20.1.1.
         /// </summary>

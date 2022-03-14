@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAutoScaleOpenStackSettingsType 
     {
-        public NSXTALBAutoScaleOpenStackSettingsType()
-        {
-        }
         /// <summary>
         /// Avi Controller will use this URL to scale downthe pool. Cloud connector will automatically update the membership. This
         /// is an alpha feature. Field introduced in 17.1.1.

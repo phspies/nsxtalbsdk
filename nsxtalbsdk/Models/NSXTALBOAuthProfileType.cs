@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOAuthProfileType 
     {
-        public NSXTALBOAuthProfileType()
-        {
-        }
         /// <summary>
         /// URL of authorization server. Field introduced in 21.1.3.
         /// </summary>

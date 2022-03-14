@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDosAttackLevelDataType 
     {
-        public NSXTALBDosAttackLevelDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property avg_dos_total_req of obj type DosAttackLevelData field type str  type number
         /// </summary>

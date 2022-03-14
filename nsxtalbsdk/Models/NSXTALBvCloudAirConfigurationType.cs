@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBvCloudAirConfigurationType 
     {
-        public NSXTALBvCloudAirConfigurationType()
-        {
-        }
         /// <summary>
         /// vCloudAir access mode. Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
         /// </summary>

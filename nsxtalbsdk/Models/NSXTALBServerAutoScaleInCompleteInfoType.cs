@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerAutoScaleInCompleteInfoType 
     {
-        public NSXTALBServerAutoScaleInCompleteInfoType()
-        {
-        }
         /// <summary>
         /// Number of nscalein.
         /// </summary>

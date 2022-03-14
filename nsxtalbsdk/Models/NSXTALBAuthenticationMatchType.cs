@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthenticationMatchType 
     {
-        public NSXTALBAuthenticationMatchType()
-        {
-        }
         /// <summary>
         /// Configure client ip addresses. Field introduced in 18.2.5.
         /// </summary>

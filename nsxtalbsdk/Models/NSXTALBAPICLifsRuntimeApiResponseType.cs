@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAPICLifsRuntimeApiResponseType 
     {
-        public NSXTALBAPICLifsRuntimeApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

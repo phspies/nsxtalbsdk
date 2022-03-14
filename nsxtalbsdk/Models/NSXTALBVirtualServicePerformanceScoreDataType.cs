@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVirtualServicePerformanceScoreDataType 
     {
-        public NSXTALBVirtualServicePerformanceScoreDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property apdexc of obj type VirtualServicePerformanceScoreData field type str  type
         /// number

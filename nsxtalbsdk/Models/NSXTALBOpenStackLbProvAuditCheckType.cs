@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackLbProvAuditCheckType 
     {
-        public NSXTALBOpenStackLbProvAuditCheckType()
-        {
-        }
         /// <summary>
         /// cc_id of OpenStackLbProvAuditCheck.
         /// </summary>

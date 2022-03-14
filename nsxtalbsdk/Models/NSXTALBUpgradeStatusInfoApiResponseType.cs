@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUpgradeStatusInfoApiResponseType 
     {
-        public NSXTALBUpgradeStatusInfoApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

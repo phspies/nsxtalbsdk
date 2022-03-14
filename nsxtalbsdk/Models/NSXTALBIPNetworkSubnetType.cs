@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIPNetworkSubnetType 
     {
-        public NSXTALBIPNetworkSubnetType()
-        {
-        }
         /// <summary>
         /// Network for VirtualService IP allocation with Vantage as the IPAM provider. Network should be created before this is
         /// configured. It is a reference to an object of type Network.

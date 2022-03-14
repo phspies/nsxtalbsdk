@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsMxRdataType 
     {
-        public NSXTALBDnsMxRdataType()
-        {
-        }
         /// <summary>
         /// Fully qualified domain name of a mailserver . The host name maps directly to one or more address records in the DNS
         /// table, and must not point to any CNAME records (RFC 2181). Field introduced in 18.2.9, 20.1.1.

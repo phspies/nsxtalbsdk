@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBExponentialMovingAverageCtxType 
     {
-        public NSXTALBExponentialMovingAverageCtxType()
-        {
-        }
         /// <summary>
         /// Average value for the metric.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSwitchoverEventDetailsType 
     {
-        public NSXTALBSwitchoverEventDetailsType()
-        {
-        }
         /// <summary>
         /// from_se_name of SwitchoverEventDetails.
         /// </summary>

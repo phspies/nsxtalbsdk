@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCustomIpamDnsProfileApiResponseType 
     {
-        public NSXTALBCustomIpamDnsProfileApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

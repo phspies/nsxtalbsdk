@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRediscoverVcenterParamType 
     {
-        public NSXTALBRediscoverVcenterParamType()
-        {
-        }
         /// <summary>
         /// cloud of RediscoverVcenterParam.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackVnicChangeType 
     {
-        public NSXTALBOpenStackVnicChangeType()
-        {
-        }
         /// <summary>
         /// error_string of OpenStackVnicChange.
         /// </summary>

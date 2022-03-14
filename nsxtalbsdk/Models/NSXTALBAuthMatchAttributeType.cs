@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthMatchAttributeType 
     {
-        public NSXTALBAuthMatchAttributeType()
-        {
-        }
         /// <summary>
         /// rule match criteria. Enum options - AUTH_MATCH_CONTAINS, AUTH_MATCH_DOES_NOT_CONTAIN, AUTH_MATCH_REGEX.
         /// </summary>

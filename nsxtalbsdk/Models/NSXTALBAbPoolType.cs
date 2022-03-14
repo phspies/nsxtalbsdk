@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAbPoolType 
     {
-        public NSXTALBAbPoolType()
-        {
-        }
         /// <summary>
         /// Pool configured as B pool for A/B testing. It is a reference to an object of type Pool.
         /// </summary>

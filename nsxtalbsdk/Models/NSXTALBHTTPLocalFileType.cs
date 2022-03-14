@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPLocalFileType 
     {
-        public NSXTALBHTTPLocalFileType()
-        {
-        }
         /// <summary>
         /// Mime-type of the content in the file.
         /// </summary>

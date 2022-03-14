@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsMigrateEventDetailsType 
     {
-        public NSXTALBVsMigrateEventDetailsType()
-        {
-        }
         /// <summary>
         /// error_message of VsMigrateEventDetails.
         /// </summary>

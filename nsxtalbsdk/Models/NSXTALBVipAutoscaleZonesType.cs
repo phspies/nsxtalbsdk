@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVipAutoscaleZonesType 
     {
-        public NSXTALBVipAutoscaleZonesType()
-        {
-        }
         /// <summary>
         /// Availability zone associated with the subnet. Field introduced in 17.2.12, 18.1.2.
         /// </summary>

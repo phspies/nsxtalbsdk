@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsAttacksType 
     {
-        public NSXTALBDnsAttacksType()
-        {
-        }
         /// <summary>
         /// Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks. Field introduced in
         /// 18.2.1.

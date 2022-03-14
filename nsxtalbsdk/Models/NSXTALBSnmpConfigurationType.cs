@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSnmpConfigurationType 
     {
-        public NSXTALBSnmpConfigurationType()
-        {
-        }
         /// <summary>
         /// Community string for SNMP v2c.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRetryPlacementParamsType 
     {
-        public NSXTALBRetryPlacementParamsType()
-        {
-        }
         /// <summary>
         /// Retry placement operations for all East-West services. Field introduced in 17.1.6,17.2.2.
         /// </summary>

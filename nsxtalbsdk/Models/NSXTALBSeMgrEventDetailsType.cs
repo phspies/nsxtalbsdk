@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeMgrEventDetailsType 
     {
-        public NSXTALBSeMgrEventDetailsType()
-        {
-        }
         /// <summary>
         /// cloud_name of SeMgrEventDetails.
         /// </summary>

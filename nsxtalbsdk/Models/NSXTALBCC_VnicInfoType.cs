@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCC_VnicInfoType 
     {
-        public NSXTALBCC_VnicInfoType()
-        {
-        }
         /// <summary>
         /// mac_address of CC_VnicInfo.
         /// </summary>

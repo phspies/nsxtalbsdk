@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPCredentialsType 
     {
-        public NSXTALBGCPCredentialsType()
-        {
-        }
         /// <summary>
         /// Google Cloud Platform Service Account keyfile data in JSON format. Field introduced in 18.2.1.
         /// </summary>

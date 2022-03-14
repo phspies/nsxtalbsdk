@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeMigrateEventDetailsType 
     {
-        public NSXTALBSeMigrateEventDetailsType()
-        {
-        }
         /// <summary>
         /// Number of num_vs.
         /// </summary>

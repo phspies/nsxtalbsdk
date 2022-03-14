@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAppHdrType 
     {
-        public NSXTALBAppHdrType()
-        {
-        }
         /// <summary>
         /// Enum options - SENSITIVE, INSENSITIVE.
         /// </summary>

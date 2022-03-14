@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSensitiveLogProfileType 
     {
-        public NSXTALBSensitiveLogProfileType()
-        {
-        }
         /// <summary>
         /// Match sensitive header fields in HTTP application log. Field introduced in 17.2.10, 18.1.2.
         /// </summary>

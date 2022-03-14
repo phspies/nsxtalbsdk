@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRateLimiterEventDetailsType 
     {
-        public NSXTALBRateLimiterEventDetailsType()
-        {
-        }
         /// <summary>
         /// Rate limiter error message. Field introduced in 20.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSubnetType 
     {
-        public NSXTALBSubnetType()
-        {
-        }
         /// <summary>
         /// Specify an IP subnet prefix for this Network.
         /// </summary>

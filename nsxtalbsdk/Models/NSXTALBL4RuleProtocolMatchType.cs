@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL4RuleProtocolMatchType 
     {
-        public NSXTALBL4RuleProtocolMatchType()
-        {
-        }
         /// <summary>
         /// Criterion to use for transport protocol matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7.
         /// </summary>

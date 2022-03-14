@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMethodMatchType 
     {
-        public NSXTALBMethodMatchType()
-        {
-        }
         /// <summary>
         /// Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN.
         /// </summary>

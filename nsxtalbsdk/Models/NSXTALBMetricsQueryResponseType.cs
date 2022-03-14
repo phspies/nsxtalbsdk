@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsQueryResponseType 
     {
-        public NSXTALBMetricsQueryResponseType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of entity.
         /// </summary>

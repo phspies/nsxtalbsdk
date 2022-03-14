@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCustomIpamSubnetType 
     {
-        public NSXTALBCustomIpamSubnetType()
-        {
-        }
         /// <summary>
         /// Network to use for Custom IPAM IP allocation. Field introduced in 21.1.1.
         /// </summary>

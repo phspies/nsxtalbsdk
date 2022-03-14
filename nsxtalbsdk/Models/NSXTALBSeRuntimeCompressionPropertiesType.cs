@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeRuntimeCompressionPropertiesType 
     {
-        public NSXTALBSeRuntimeCompressionPropertiesType()
-        {
-        }
         /// <summary>
         /// If client RTT is higher than this threshold, enable normal compression on the response. Unit is MILLISECONDS.
         /// </summary>

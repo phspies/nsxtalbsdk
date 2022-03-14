@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDNSVsSyncInfoType 
     {
-        public NSXTALBDNSVsSyncInfoType()
-        {
-        }
         /// <summary>
         /// error of DNSVsSyncInfo.
         /// </summary>

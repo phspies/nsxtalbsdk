@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAzureUserPassCredentialsType 
     {
-        public NSXTALBAzureUserPassCredentialsType()
-        {
-        }
         /// <summary>
         /// Password for Azure subscription. Required only if username is provided. Field introduced in 17.2.1.
         /// </summary>

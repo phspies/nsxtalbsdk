@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafCrsConfigType 
     {
-        public NSXTALBWafCrsConfigType()
-        {
-        }
         /// <summary>
         /// Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed
         /// in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false)

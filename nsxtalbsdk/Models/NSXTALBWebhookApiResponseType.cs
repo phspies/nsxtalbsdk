@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWebhookApiResponseType 
     {
-        public NSXTALBWebhookApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

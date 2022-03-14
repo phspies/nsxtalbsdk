@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsVipApiResponseType 
     {
-        public NSXTALBVsVipApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

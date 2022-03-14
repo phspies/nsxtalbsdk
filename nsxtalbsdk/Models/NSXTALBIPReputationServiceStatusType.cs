@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIPReputationServiceStatusType 
     {
-        public NSXTALBIPReputationServiceStatusType()
-        {
-        }
         /// <summary>
         /// If the last attempted update failed, this is a more detailed error message. Field introduced in 20.1.1.
         /// </summary>

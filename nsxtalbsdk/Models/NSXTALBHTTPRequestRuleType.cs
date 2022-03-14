@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPRequestRuleType 
     {
-        public NSXTALBHTTPRequestRuleType()
-        {
-        }
         /// <summary>
         /// Log all HTTP headers upon rule match.
         /// </summary>

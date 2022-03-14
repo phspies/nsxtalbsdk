@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConnPoolPropertiesType 
     {
-        public NSXTALBConnPoolPropertiesType()
-        {
-        }
         /// <summary>
         /// Connection idle timeout. Allowed values are 0-86400000. Special values are 0- Infinite idle time.. Field introduced in
         /// 18.2.1. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 60000) edition, Essentials(Allowed values- 60000)

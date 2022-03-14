@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPRedirectActionType 
     {
-        public NSXTALBHTTPRedirectActionType()
-        {
-        }
         /// <summary>
         /// Add a query string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming
         /// request. Field introduced in 21.1.1.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBACUserIdentityType 
     {
-        public NSXTALBACUserIdentityType()
-        {
-        }
         /// <summary>
         /// User identity type for audit event (e.g. username, organization, component). Field introduced in 20.1.3.
         /// </summary>

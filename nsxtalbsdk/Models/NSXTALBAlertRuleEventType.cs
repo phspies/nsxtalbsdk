@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertRuleEventType 
     {
-        public NSXTALBAlertRuleEventType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property event_details of obj type AlertRuleEvent field type str  type object
         /// </summary>

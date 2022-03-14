@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHdrMatchType 
     {
-        public NSXTALBHdrMatchType()
-        {
-        }
         /// <summary>
         /// Name of the HTTP header whose value is to be matched.
         /// </summary>

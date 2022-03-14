@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTP2ApplicationProfileType 
     {
-        public NSXTALBHTTP2ApplicationProfileType()
-        {
-        }
         /// <summary>
         /// The initial flow control window size in KB for HTTP/2 streams. Allowed values are 64-32768. Field introduced in 18.2.10,
         /// 20.1.1. Unit is KB.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsDataType 
     {
-        public NSXTALBMetricsDataType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property application_response_time of obj type MetricsData field type str  type number
         /// </summary>

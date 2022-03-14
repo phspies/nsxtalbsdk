@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVcenterClustersType 
     {
-        public NSXTALBVcenterClustersType()
-        {
-        }
         /// <summary>
         /// It is a reference to an object of type VIMgrClusterRuntime.
         /// </summary>

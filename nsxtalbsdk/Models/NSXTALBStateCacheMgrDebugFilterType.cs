@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBStateCacheMgrDebugFilterType 
     {
-        public NSXTALBStateCacheMgrDebugFilterType()
-        {
-        }
         /// <summary>
         /// Pool UUID. It is a reference to an object of type Pool.
         /// </summary>

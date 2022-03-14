@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamDnsGCPProfileType 
     {
-        public NSXTALBIpamDnsGCPProfileType()
-        {
-        }
         /// <summary>
         /// Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 17.1.1.
         /// </summary>

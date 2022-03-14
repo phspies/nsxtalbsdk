@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsClientPortMatchType 
     {
-        public NSXTALBDnsClientPortMatchType()
-        {
-        }
         /// <summary>
         /// Port number to match against client port number in request. Field introduced in 21.1.1.
         /// </summary>

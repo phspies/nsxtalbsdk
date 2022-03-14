@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackClusterSetupType 
     {
-        public NSXTALBOpenStackClusterSetupType()
-        {
-        }
         /// <summary>
         /// admin_tenant of OpenStackClusterSetup.
         /// </summary>

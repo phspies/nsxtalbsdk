@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBStatediffSnapshotApiResponseType 
     {
-        public NSXTALBStatediffSnapshotApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

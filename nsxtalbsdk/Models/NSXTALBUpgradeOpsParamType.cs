@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUpgradeOpsParamType 
     {
-        public NSXTALBUpgradeOpsParamType()
-        {
-        }
         /// <summary>
         /// Image uuid for identifying base image. It is a reference to an object of type Image. Field introduced in 18.2.6.
         /// </summary>

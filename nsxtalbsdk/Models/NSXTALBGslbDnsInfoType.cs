@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbDnsInfoType 
     {
-        public NSXTALBGslbDnsInfoType()
-        {
-        }
         /// <summary>
         /// This field indicates that atleast one DNS is active at the site.
         /// </summary>

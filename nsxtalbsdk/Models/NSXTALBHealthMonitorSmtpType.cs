@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorSmtpType 
     {
-        public NSXTALBHealthMonitorSmtpType()
-        {
-        }
         /// <summary>
         /// Sender domain name. Field introduced in 21.1.1.
         /// </summary>

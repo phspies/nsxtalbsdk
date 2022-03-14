@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCaptureFiltersType 
     {
-        public NSXTALBCaptureFiltersType()
-        {
-        }
         /// <summary>
         /// Per packet IP filter. Matches with source and destination address. Curently not applicable for DebugServiceEngine. Field
         /// introduced in 18.2.5.

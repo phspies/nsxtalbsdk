@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL4RulePortMatchType 
     {
-        public NSXTALBL4RulePortMatchType()
-        {
-        }
         /// <summary>
         /// Criterion to use for Virtual Service port matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7.
         /// </summary>

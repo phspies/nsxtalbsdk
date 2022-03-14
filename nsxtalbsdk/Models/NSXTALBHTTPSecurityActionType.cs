@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPSecurityActionType 
     {
-        public NSXTALBHTTPSecurityActionType()
-        {
-        }
         /// <summary>
         /// Type of the security action to perform. Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN,
         /// HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW, HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS,

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeIpfailureEventDetailsType 
     {
-        public NSXTALBSeIpfailureEventDetailsType()
-        {
-        }
         /// <summary>
         /// Mac Address.
         /// </summary>

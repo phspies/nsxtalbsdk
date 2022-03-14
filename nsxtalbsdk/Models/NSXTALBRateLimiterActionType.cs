@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRateLimiterActionType 
     {
-        public NSXTALBRateLimiterActionType()
-        {
-        }
         /// <summary>
         /// File to be used for HTTP Local response rate limit action.
         /// </summary>

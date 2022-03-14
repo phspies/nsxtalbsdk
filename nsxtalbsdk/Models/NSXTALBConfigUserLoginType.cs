@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigUserLoginType 
     {
-        public NSXTALBConfigUserLoginType()
-        {
-        }
         /// <summary>
         /// client ip.
         /// </summary>

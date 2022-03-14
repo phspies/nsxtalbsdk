@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBImageUploadOpsStatusType 
     {
-        public NSXTALBImageUploadOpsStatusType()
-        {
-        }
         /// <summary>
         /// The last time the state changed. Field introduced in 21.1.3.
         /// </summary>

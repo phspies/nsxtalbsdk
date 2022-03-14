@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConnectionClearFilterType 
     {
-        public NSXTALBConnectionClearFilterType()
-        {
-        }
         /// <summary>
         /// IP address in dotted decimal notation.
         /// </summary>

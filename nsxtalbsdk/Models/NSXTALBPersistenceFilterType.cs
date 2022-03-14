@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPersistenceFilterType 
     {
-        public NSXTALBPersistenceFilterType()
-        {
-        }
         /// <summary>
         /// Persistence cookie.
         /// </summary>

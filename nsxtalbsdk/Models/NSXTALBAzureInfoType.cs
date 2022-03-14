@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAzureInfoType 
     {
-        public NSXTALBAzureInfoType()
-        {
-        }
         /// <summary>
         /// Name of the availability set of which the VM is a part of. Field introduced in 17.2.1.
         /// </summary>

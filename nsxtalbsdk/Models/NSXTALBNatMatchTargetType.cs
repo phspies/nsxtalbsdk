@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNatMatchTargetType 
     {
-        public NSXTALBNatMatchTargetType()
-        {
-        }
         /// <summary>
         /// Destination IP of the packet. Field introduced in 18.2.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerInfoType 
     {
-        public NSXTALBControllerInfoType()
-        {
-        }
         /// <summary>
         /// Total controller memory usage in GBs. Field introduced in 21.1.1.
         /// </summary>

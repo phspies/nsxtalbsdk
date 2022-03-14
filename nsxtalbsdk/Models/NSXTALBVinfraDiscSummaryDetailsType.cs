@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraDiscSummaryDetailsType 
     {
-        public NSXTALBVinfraDiscSummaryDetailsType()
-        {
-        }
         /// <summary>
         /// Number of num_clusters.
         /// </summary>

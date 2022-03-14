@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAuthorizationRuleType 
     {
-        public NSXTALBAuthorizationRuleType()
-        {
-        }
         /// <summary>
         /// Authorization action when rule is matched. Field introduced in 18.2.5.
         /// </summary>

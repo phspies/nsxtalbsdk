@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAdaptReplEventInfoType 
     {
-        public NSXTALBAdaptReplEventInfoType()
-        {
-        }
         /// <summary>
         /// Object config version info. Field introduced in 21.1.3.
         /// </summary>

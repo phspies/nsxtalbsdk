@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBvNICNetworkType 
     {
-        public NSXTALBvNICNetworkType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property ctlr_alloc of obj type vNICNetwork field type str  type boolean
         /// </summary>

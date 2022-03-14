@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPoolAnomalyScoreType 
     {
-        public NSXTALBPoolAnomalyScoreType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property hs_entity of obj type PoolAnomalyScore field type str  type object
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAvgUptimeChangeDetailsType 
     {
-        public NSXTALBAvgUptimeChangeDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property current_value of obj type AvgUptimeChangeDetails field type str  type number
         /// </summary>

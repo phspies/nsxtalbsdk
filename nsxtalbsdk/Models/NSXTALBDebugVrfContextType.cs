@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDebugVrfContextType 
     {
-        public NSXTALBDebugVrfContextType()
-        {
-        }
         /// <summary>
         /// Vrf config command buffer process interval. Allowed values are 1-4. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is
         /// SECONDS.

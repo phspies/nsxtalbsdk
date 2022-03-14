@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServiceEngineResourcesScoreType 
     {
-        public NSXTALBServiceEngineResourcesScoreType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property hs_entity of obj type ServiceEngineResourcesScore field type str  type object
         /// </summary>

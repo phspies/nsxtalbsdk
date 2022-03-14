@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFeProxyRoutePublishConfigType 
     {
-        public NSXTALBFeProxyRoutePublishConfigType()
-        {
-        }
         /// <summary>
         /// Publish ECMP route to upstream router for VIP. Enum options - FE_PROXY_ROUTE_PUBLISH_NONE,
         /// FE_PROXY_ROUTE_PUBLISH_QUAGGA_WEBAPP.

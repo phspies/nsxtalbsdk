@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBImageEventType 
     {
-        public NSXTALBImageEventType()
-        {
-        }
         /// <summary>
         /// Time taken to complete event in seconds. Field introduced in 21.1.3. Unit is SEC.
         /// </summary>

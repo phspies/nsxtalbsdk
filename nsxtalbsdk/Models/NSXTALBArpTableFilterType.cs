@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBArpTableFilterType 
     {
-        public NSXTALBArpTableFilterType()
-        {
-        }
         /// <summary>
         /// IP address.
         /// </summary>

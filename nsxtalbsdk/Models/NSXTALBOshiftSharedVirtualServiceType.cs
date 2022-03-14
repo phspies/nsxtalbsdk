@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOshiftSharedVirtualServiceType 
     {
-        public NSXTALBOshiftSharedVirtualServiceType()
-        {
-        }
         /// <summary>
         /// Name of shared virtualservice. VirtualService will be created automatically by Cloud Connector. Field introduced in
         /// 17.1.1.

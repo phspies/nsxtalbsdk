@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafRuleGroupOverridesType 
     {
-        public NSXTALBWafRuleGroupOverridesType()
-        {
-        }
         /// <summary>
         /// Override the enable flag for this group. Field introduced in 20.1.6.
         /// </summary>

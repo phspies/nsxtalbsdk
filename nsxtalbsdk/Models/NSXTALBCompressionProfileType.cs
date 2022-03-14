@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCompressionProfileType 
     {
-        public NSXTALBCompressionProfileType()
-        {
-        }
         /// <summary>
         /// Number of buffers to use for compression output. Field introduced in 21.1.1.
         /// </summary>

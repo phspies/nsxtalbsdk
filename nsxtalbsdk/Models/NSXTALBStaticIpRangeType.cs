@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBStaticIpRangeType 
     {
-        public NSXTALBStaticIpRangeType()
-        {
-        }
         /// <summary>
         /// IP range. Field introduced in 20.1.3.
         /// </summary>

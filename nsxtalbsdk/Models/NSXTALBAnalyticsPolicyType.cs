@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAnalyticsPolicyType 
     {
-        public NSXTALBAnalyticsPolicyType()
-        {
-        }
         /// <summary>
         /// Log all headers. Field introduced in 18.1.4, 18.2.1.
         /// </summary>

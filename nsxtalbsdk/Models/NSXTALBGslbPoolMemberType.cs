@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbPoolMemberType 
     {
-        public NSXTALBGslbPoolMemberType()
-        {
-        }
         /// <summary>
         /// The Cloud UUID of the Site. Field introduced in 17.1.2.
         /// </summary>

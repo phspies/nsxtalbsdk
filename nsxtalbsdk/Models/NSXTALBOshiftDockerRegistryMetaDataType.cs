@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOshiftDockerRegistryMetaDataType 
     {
-        public NSXTALBOshiftDockerRegistryMetaDataType()
-        {
-        }
         /// <summary>
         /// Namespace for the ServiceEngine image to be hosted in Openshift Integrated registry.
         /// </summary>

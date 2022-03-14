@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudStackSetupType 
     {
-        public NSXTALBCloudStackSetupType()
-        {
-        }
         /// <summary>
         /// access_key_id of CloudStackSetup.
         /// </summary>

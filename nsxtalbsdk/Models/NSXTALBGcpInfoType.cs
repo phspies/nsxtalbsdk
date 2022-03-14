@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGcpInfoType 
     {
-        public NSXTALBGcpInfoType()
-        {
-        }
         /// <summary>
         /// Hostname of this SE.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIcapNsxDefenderConfigType 
     {
-        public NSXTALBIcapNsxDefenderConfigType()
-        {
-        }
         /// <summary>
         /// URL to get details from NSXDefender using task_uuid for a particular request. Field introduced in 21.1.1.
         /// </summary>

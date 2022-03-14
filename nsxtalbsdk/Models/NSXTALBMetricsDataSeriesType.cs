@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsDataSeriesType 
     {
-        public NSXTALBMetricsDataSeriesType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property data of obj type MetricsDataSeries field type str  type object
         /// </summary>

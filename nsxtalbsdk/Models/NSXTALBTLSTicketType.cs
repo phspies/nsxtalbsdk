@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTLSTicketType 
     {
-        public NSXTALBTLSTicketType()
-        {
-        }
         /// <summary>
         /// aes_key of TLSTicket.
         /// </summary>

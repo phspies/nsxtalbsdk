@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBL4RuleMatchTargetType 
     {
-        public NSXTALBL4RuleMatchTargetType()
-        {
-        }
         /// <summary>
         /// IP addresses to match against client IP. Field introduced in 17.2.7. Allowed in Basic edition, Essentials edition,
         /// Enterprise edition.

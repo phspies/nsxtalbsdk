@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVipAutoscaleConfigurationType 
     {
-        public NSXTALBVipAutoscaleConfigurationType()
-        {
-        }
         /// <summary>
         /// This is the list of AZ+Subnet in which Vips will be spawned. Field introduced in 17.2.12, 18.1.2.
         /// </summary>

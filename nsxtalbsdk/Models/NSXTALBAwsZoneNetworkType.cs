@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAwsZoneNetworkType 
     {
-        public NSXTALBAwsZoneNetworkType()
-        {
-        }
         /// <summary>
         /// Availability zone. Field introduced in 17.1.3.
         /// </summary>

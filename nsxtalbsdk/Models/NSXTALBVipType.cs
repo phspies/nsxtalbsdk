@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVipType 
     {
-        public NSXTALBVipType()
-        {
-        }
         /// <summary>
         /// Auto-allocate floating/elastic IP from the Cloud infrastructure. Field introduced in 17.1.1. Allowed in Basic(Allowed
         /// values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.

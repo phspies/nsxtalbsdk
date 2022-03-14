@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMarathonConfigurationType 
     {
-        public NSXTALBMarathonConfigurationType()
-        {
-        }
         /// <summary>
         /// Framework tag to be used in Virtualservice name. Default is framework name from Mesos. If this tag is altered atruntime,
         /// Virtualservices will be deleted and re-created.

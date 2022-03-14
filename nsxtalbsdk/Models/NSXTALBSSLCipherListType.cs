@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLCipherListType 
     {
-        public NSXTALBSSLCipherListType()
-        {
-        }
         /// <summary>
         /// List of ciphers from the client's SSL cipher list that could be identified. The ciphers are represented by their RFC
         /// name. Enum options - AVI_TLS_NULL_WITH_NULL_NULL, AVI_TLS_RSA_WITH_NULL_MD5, AVI_TLS_RSA_WITH_NULL_SHA,

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFalsePositiveResultType 
     {
-        public NSXTALBFalsePositiveResultType()
-        {
-        }
         /// <summary>
         /// Whether this URI is always fail. Field introduced in 21.1.1.
         /// </summary>

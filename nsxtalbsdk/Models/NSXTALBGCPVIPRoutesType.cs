@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPVIPRoutesType 
     {
-        public NSXTALBGCPVIPRoutesType()
-        {
-        }
         /// <summary>
         /// Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 18.2.9, 20.1.1.
         /// </summary>

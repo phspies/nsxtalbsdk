@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIPAddrLimitsType 
     {
-        public NSXTALBIPAddrLimitsType()
-        {
-        }
         /// <summary>
         /// Number of IP address groups for match criteria. Field introduced in 21.1.3.
         /// </summary>

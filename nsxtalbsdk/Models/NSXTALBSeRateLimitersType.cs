@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeRateLimitersType 
     {
-        public NSXTALBSeRateLimitersType()
-        {
-        }
         /// <summary>
         /// Rate limiter for ARP packets in pps.
         /// </summary>

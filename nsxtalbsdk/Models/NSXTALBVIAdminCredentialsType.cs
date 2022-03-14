@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIAdminCredentialsType 
     {
-        public NSXTALBVIAdminCredentialsType()
-        {
-        }
         /// <summary>
         /// Name of the object.
         /// </summary>

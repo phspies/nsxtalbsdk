@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSubnetRuntimeType 
     {
-        public NSXTALBSubnetRuntimeType()
-        {
-        }
         /// <summary>
         /// Moved to StaticIpRangeRuntime. Field deprecated in 20.1.3.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClientLogFilterType 
     {
-        public NSXTALBClientLogFilterType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property all_headers of obj type ClientLogFilter field type str  type boolean
         /// </summary>

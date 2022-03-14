@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOpenStackConfigurationType 
     {
-        public NSXTALBOpenStackConfigurationType()
-        {
-        }
         /// <summary>
         /// OpenStack admin tenant (or project) information. For Keystone v3, provide the project information in project@domain
         /// format. Domain need not be specified if the project belongs to the 'Default' domain.

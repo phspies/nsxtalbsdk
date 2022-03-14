@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudSyncServicesType 
     {
-        public NSXTALBCloudSyncServicesType()
-        {
-        }
         /// <summary>
         /// cc_id of CloudSyncServices.
         /// </summary>

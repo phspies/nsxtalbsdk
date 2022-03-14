@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVCASetupType 
     {
-        public NSXTALBVCASetupType()
-        {
-        }
         /// <summary>
         /// cc_id of VCASetup.
         /// </summary>

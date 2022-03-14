@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAzureConfigurationType 
     {
-        public NSXTALBAzureConfigurationType()
-        {
-        }
         /// <summary>
         /// Availability zones to be used in Azure. Field introduced in 17.2.5.
         /// </summary>

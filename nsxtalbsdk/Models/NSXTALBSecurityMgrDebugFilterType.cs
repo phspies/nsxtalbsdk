@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSecurityMgrDebugFilterType 
     {
-        public NSXTALBSecurityMgrDebugFilterType()
-        {
-        }
         /// <summary>
         /// Dynamically adapt configuration parameters for Application Learning feature. Field introduced in 20.1.1.
         /// </summary>

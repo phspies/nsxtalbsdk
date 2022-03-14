@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFailActionBackupPoolType 
     {
-        public NSXTALBFailActionBackupPoolType()
-        {
-        }
         /// <summary>
         /// Specifies the UUID of the Pool acting as backup pool. It is a reference to an object of type Pool.
         /// </summary>

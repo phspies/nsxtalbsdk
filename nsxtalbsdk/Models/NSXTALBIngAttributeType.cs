@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIngAttributeType 
     {
-        public NSXTALBIngAttributeType()
-        {
-        }
         /// <summary>
         /// Attribute to match. Field introduced in 17.2.15, 18.1.5, 18.2.1.
         /// </summary>

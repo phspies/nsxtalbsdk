@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbSubDomainPlacementRuntimeType 
     {
-        public NSXTALBGslbSubDomainPlacementRuntimeType()
-        {
-        }
         /// <summary>
         /// This field describes the placement status of fqdns mapping to the above Subdomain.  If placement allowed is true, then
         /// the fqdn/GslbService will be placed on the DNS-VS. Otherwise, it shall not be placed on the DNS-VS. . Field introduced

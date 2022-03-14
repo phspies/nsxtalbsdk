@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTagType 
     {
-        public NSXTALBTagType()
-        {
-        }
         /// <summary>
         /// Enum options - AVI_DEFINED, USER_DEFINED, VCENTER_DEFINED.
         /// </summary>

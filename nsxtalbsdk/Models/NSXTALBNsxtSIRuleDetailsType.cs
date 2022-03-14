@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtSIRuleDetailsType 
     {
-        public NSXTALBNsxtSIRuleDetailsType()
-        {
-        }
         /// <summary>
         /// Rule Action. Field introduced in 21.1.3.
         /// </summary>

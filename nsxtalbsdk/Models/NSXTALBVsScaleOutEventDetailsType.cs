@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsScaleOutEventDetailsType 
     {
-        public NSXTALBVsScaleOutEventDetailsType()
-        {
-        }
         /// <summary>
         /// error_message of VsScaleOutEventDetails.
         /// </summary>

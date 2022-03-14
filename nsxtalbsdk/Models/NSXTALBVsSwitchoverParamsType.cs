@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsSwitchoverParamsType 
     {
-        public NSXTALBVsSwitchoverParamsType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of se.
         /// </summary>

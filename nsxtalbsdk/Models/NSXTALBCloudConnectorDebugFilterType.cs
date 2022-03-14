@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudConnectorDebugFilterType 
     {
-        public NSXTALBCloudConnectorDebugFilterType()
-        {
-        }
         /// <summary>
         /// filter debugs for an app.
         /// </summary>

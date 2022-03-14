@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHTTPApplicationProfileType 
     {
-        public NSXTALBHTTPApplicationProfileType()
-        {
-        }
         /// <summary>
         /// Allow use of dot (.) in HTTP header names, for instance Header.app.special  PickAppVersionX. Allowed in Basic(Allowed
         /// values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBACSubjectInfoType 
     {
-        public NSXTALBACSubjectInfoType()
-        {
-        }
         /// <summary>
         /// Subject type for the audit event (e.g. DNS Hostname, IP address, URI). Field introduced in 20.1.3.
         /// </summary>

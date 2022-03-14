@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSamlSettingsType 
     {
-        public NSXTALBSamlSettingsType()
-        {
-        }
         /// <summary>
         /// Configure remote Identity provider settings. Field introduced in 17.2.3.
         /// </summary>

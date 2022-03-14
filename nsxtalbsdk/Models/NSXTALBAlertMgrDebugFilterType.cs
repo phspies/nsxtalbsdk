@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertMgrDebugFilterType 
     {
-        public NSXTALBAlertMgrDebugFilterType()
-        {
-        }
         /// <summary>
         /// filter debugs for entity uuid.
         /// </summary>

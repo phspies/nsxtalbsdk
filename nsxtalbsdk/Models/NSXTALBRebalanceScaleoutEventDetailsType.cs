@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBRebalanceScaleoutEventDetailsType 
     {
-        public NSXTALBRebalanceScaleoutEventDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property scaleout_params of obj type RebalanceScaleoutEventDetails field type str  type
         /// object

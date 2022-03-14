@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPInBandManagementType 
     {
-        public NSXTALBGCPInBandManagementType()
-        {
-        }
         /// <summary>
         /// Service Engine Network Name. Field introduced in 18.2.2.
         /// </summary>

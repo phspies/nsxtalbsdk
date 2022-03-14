@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHSMgrDebugFilterType 
     {
-        public NSXTALBHSMgrDebugFilterType()
-        {
-        }
         /// <summary>
         /// entity of HSMgrDebugFilter.
         /// </summary>

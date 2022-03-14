@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraMgmtNwChangeDetailsType 
     {
-        public NSXTALBVinfraMgmtNwChangeDetailsType()
-        {
-        }
         /// <summary>
         /// existing_nw of VinfraMgmtNwChangeDetails.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeVnicTxQueueStallEventDetailsType 
     {
-        public NSXTALBSeVnicTxQueueStallEventDetailsType()
-        {
-        }
         /// <summary>
         /// Vnic name.
         /// </summary>

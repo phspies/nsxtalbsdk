@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMesosSetupType 
     {
-        public NSXTALBMesosSetupType()
-        {
-        }
         /// <summary>
         /// cc_id of MesosSetup.
         /// </summary>

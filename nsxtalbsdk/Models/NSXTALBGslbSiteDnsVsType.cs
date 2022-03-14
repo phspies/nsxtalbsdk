@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbSiteDnsVsType 
     {
-        public NSXTALBGslbSiteDnsVsType()
-        {
-        }
         /// <summary>
         /// This field identifies the DNS VS uuid for this site. Field introduced in 17.2.3.
         /// </summary>

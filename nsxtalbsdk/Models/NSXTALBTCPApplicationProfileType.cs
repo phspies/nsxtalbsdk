@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTCPApplicationProfileType 
     {
-        public NSXTALBTCPApplicationProfileType()
-        {
-        }
         /// <summary>
         /// Select the PKI profile to be associated with the Virtual Service. This profile defines the Certificate Authority and
         /// Revocation List. It is a reference to an object of type PKIProfile. Field introduced in 18.2.3. Allowed in Basic

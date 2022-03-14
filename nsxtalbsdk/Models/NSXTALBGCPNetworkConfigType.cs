@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPNetworkConfigType 
     {
-        public NSXTALBGCPNetworkConfigType()
-        {
-        }
         /// <summary>
         /// Config Mode for Google Cloud network configuration. Enum options - INBAND_MANAGEMENT, ONE_ARM_MODE, TWO_ARM_MODE. Field
         /// introduced in 18.2.1.

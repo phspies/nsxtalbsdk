@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertMetricThresholdType 
     {
-        public NSXTALBAlertMetricThresholdType()
-        {
-        }
         /// <summary>
         /// Enum options - ALERT_OP_LT, ALERT_OP_LE, ALERT_OP_EQ, ALERT_OP_NE, ALERT_OP_GE, ALERT_OP_GT.
         /// </summary>

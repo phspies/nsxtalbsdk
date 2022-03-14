@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBWafLearningType 
     {
-        public NSXTALBWafLearningType()
-        {
-        }
         /// <summary>
         /// Suffix Summarization threshold used to compress args. Allowed values are 3-255. Field deprecated in 18.2.3. Field
         /// introduced in 18.1.2.

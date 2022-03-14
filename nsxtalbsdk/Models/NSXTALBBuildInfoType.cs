@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBuildInfoType 
     {
-        public NSXTALBBuildInfoType()
-        {
-        }
         /// <summary>
         /// Build number for easy identification. Field introduced in 18.2.6.
         /// </summary>

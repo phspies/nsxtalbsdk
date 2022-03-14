@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVcenterCloudStatusReqType 
     {
-        public NSXTALBVcenterCloudStatusReqType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of cloud.
         /// </summary>

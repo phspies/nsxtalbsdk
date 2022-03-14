@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsDbQueueFullEventDetailsType 
     {
-        public NSXTALBMetricsDbQueueFullEventDetailsType()
-        {
-        }
         /// <summary>
         /// Number of high.
         /// </summary>

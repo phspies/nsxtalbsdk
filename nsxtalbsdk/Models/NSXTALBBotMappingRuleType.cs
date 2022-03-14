@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBBotMappingRuleType 
     {
-        public NSXTALBBotMappingRuleType()
-        {
-        }
         /// <summary>
         /// How to match the BotClientClass. Field deprecated in 21.1.3. Field introduced in 21.1.1.
         /// </summary>

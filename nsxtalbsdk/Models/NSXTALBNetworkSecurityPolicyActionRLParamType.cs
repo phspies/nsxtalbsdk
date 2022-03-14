@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNetworkSecurityPolicyActionRLParamType 
     {
-        public NSXTALBNetworkSecurityPolicyActionRLParamType()
-        {
-        }
         /// <summary>
         /// Maximum number of connections or requests or packets to be rate limited instantaneously.
         /// </summary>

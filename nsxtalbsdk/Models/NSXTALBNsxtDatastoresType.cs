@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtDatastoresType 
     {
-        public NSXTALBNsxtDatastoresType()
-        {
-        }
         /// <summary>
         /// List of shared datastores. Field introduced in 20.1.2. Allowed in Basic edition, Enterprise edition.
         /// </summary>

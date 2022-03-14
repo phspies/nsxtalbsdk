@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsResourceRecordType 
     {
-        public NSXTALBDnsResourceRecordType()
-        {
-        }
         /// <summary>
         /// IPv6 address of the requested FQDN. Field introduced in 18.1.1.
         /// </summary>

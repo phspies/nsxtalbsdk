@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBALBServicesJobApiResponseType 
     {
-        public NSXTALBALBServicesJobApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

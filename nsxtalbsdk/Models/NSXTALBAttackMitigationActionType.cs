@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAttackMitigationActionType 
     {
-        public NSXTALBAttackMitigationActionType()
-        {
-        }
         /// <summary>
         /// Deny the attack packets further processing and drop them. Field introduced in 18.2.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVSDataScriptsType 
     {
-        public NSXTALBVSDataScriptsType()
-        {
-        }
         /// <summary>
         /// Index of the virtual service datascript collection.
         /// </summary>

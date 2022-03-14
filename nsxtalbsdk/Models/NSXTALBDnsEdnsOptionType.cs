@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsEdnsOptionType 
     {
-        public NSXTALBDnsEdnsOptionType()
-        {
-        }
         /// <summary>
         /// Address family. Field introduced in 17.1.1.
         /// </summary>

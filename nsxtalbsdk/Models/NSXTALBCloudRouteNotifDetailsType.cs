@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBCloudRouteNotifDetailsType 
     {
-        public NSXTALBCloudRouteNotifDetailsType()
-        {
-        }
         /// <summary>
         /// Cloud id. Field introduced in 20.1.3.
         /// </summary>

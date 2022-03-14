@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAdminAuthConfigurationType 
     {
-        public NSXTALBAdminAuthConfigurationType()
-        {
-        }
         /// <summary>
         /// Allow any user created locally to login with local credentials. Field introduced in 17.1.1.
         /// </summary>

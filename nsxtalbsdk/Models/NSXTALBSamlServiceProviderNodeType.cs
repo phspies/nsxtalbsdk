@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSamlServiceProviderNodeType 
     {
-        public NSXTALBSamlServiceProviderNodeType()
-        {
-        }
         /// <summary>
         /// Globally unique entityID for this node. Entity ID on the IDP should match this. Field introduced in 17.2.3.
         /// </summary>

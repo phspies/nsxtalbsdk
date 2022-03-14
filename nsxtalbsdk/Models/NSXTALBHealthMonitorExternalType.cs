@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorExternalType 
     {
-        public NSXTALBHealthMonitorExternalType()
-        {
-        }
         /// <summary>
         /// Command script provided inline.
         /// </summary>

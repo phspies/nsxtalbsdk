@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServiceEngineAnomalyScoreType 
     {
-        public NSXTALBServiceEngineAnomalyScoreType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property hs_entity of obj type ServiceEngineAnomalyScore field type str  type object
         /// </summary>

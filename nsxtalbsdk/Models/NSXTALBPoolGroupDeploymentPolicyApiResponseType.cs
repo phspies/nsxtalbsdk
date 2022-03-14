@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPoolGroupDeploymentPolicyApiResponseType 
     {
-        public NSXTALBPoolGroupDeploymentPolicyApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

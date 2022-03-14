@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeListType 
     {
-        public NSXTALBSeListType()
-        {
-        }
         /// <summary>
         /// Vip is Active on Cloud. Field introduced in 21.1.3.
         /// </summary>

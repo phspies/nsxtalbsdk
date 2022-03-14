@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBALBServicesCaseType 
     {
-        public NSXTALBALBServicesCaseType()
-        {
-        }
         /// <summary>
         /// Field introduced in 18.2.6.
         /// </summary>

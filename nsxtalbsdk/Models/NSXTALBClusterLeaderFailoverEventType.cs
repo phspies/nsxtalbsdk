@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBClusterLeaderFailoverEventType 
     {
-        public NSXTALBClusterLeaderFailoverEventType()
-        {
-        }
         /// <summary>
         /// Details of the new controller cluster leader node.
         /// </summary>

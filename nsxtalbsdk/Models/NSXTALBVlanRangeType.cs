@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVlanRangeType 
     {
-        public NSXTALBVlanRangeType()
-        {
-        }
         /// <summary>
         /// Number of end.
         /// </summary>

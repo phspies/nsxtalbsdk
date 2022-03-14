@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthScoreEntityType 
     {
-        public NSXTALBHealthScoreEntityType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of entity.
         /// </summary>

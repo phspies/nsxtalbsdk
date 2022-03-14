@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeHighIngressProcLatencyEventDetailsType 
     {
-        public NSXTALBSeHighIngressProcLatencyEventDetailsType()
-        {
-        }
         /// <summary>
         /// Dispatcher core which received the packet.
         /// </summary>

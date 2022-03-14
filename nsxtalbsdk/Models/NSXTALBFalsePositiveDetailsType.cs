@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBFalsePositiveDetailsType 
     {
-        public NSXTALBFalsePositiveDetailsType()
-        {
-        }
         /// <summary>
         /// false positive result details. Field introduced in 21.1.1.
         /// </summary>

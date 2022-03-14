@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBApplicationLogType 
     {
-        public NSXTALBApplicationLogType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property adf of obj type ApplicationLog field type str  type boolean
         /// </summary>

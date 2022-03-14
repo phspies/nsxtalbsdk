@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGCPTwoArmModeType 
     {
-        public NSXTALBGCPTwoArmModeType()
-        {
-        }
         /// <summary>
         /// Service Engine Backend Data Network Name. Field introduced in 18.2.2.
         /// </summary>

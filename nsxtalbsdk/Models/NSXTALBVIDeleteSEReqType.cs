@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIDeleteSEReqType 
     {
-        public NSXTALBVIDeleteSEReqType()
-        {
-        }
         /// <summary>
         /// Unique object identifier of cloud.
         /// </summary>

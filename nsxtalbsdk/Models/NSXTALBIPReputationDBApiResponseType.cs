@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIPReputationDBApiResponseType 
     {
-        public NSXTALBIPReputationDBApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

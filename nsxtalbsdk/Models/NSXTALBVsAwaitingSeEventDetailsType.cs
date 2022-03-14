@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsAwaitingSeEventDetailsType 
     {
-        public NSXTALBVsAwaitingSeEventDetailsType()
-        {
-        }
         /// <summary>
         /// Number of awaitingse_timeout.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVCenterCredentialsType 
     {
-        public NSXTALBVCenterCredentialsType()
-        {
-        }
         /// <summary>
         /// Password to talk to VCenter server. Field introduced in 20.1.1.
         /// </summary>

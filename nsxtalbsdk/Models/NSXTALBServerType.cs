@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBServerType 
     {
-        public NSXTALBServerType()
-        {
-        }
         /// <summary>
         /// Name of autoscaling group this server belongs to. Field introduced in 17.1.2. Allowed in Essentials edition, Enterprise
         /// edition.

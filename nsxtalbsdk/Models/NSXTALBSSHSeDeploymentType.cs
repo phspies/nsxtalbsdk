@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSHSeDeploymentType 
     {
-        public NSXTALBSSHSeDeploymentType()
-        {
-        }
         /// <summary>
         /// Host OS distribution e.g. COREOS, UBUNTU, REDHAT. Field deprecated in 17.1.1.
         /// </summary>

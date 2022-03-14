@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsScaleInEventDetailsType 
     {
-        public NSXTALBVsScaleInEventDetailsType()
-        {
-        }
         /// <summary>
         /// error_message of VsScaleInEventDetails.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVsErrorEventDetailsType 
     {
-        public NSXTALBVsErrorEventDetailsType()
-        {
-        }
         /// <summary>
         /// error_message of VsErrorEventDetails.
         /// </summary>

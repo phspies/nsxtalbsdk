@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeHmEventServerDetailsType 
     {
-        public NSXTALBSeHmEventServerDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property app_info of obj type SeHmEventServerDetails field type str  type object
         /// </summary>

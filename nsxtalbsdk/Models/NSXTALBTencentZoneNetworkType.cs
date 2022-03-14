@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBTencentZoneNetworkType 
     {
-        public NSXTALBTencentZoneNetworkType()
-        {
-        }
         /// <summary>
         /// Availability zone. Field introduced in 18.2.3.
         /// </summary>

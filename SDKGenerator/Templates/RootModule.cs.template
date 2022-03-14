@@ -5,16 +5,22 @@ using RestSharp.Serializers.NewtonsoftJson;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using nsxtalbsdk.Modules;
+using System.Threading;
 
 namespace nsxtalbapi
 {
     public class NSXTALBClient
     {
-        public string EndPoint { get; set; }
         public RestClient restClient { get; set; }
-        JsonSerializerSettings defaultSerializationSettings;
-        public NSXTALBClient(string host, string Username, string Password, bool? remoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, int Port = 443)
+        private JsonSerializerSettings defaultSerializationSettings;
+        private CancellationToken cancellationToken;
+        private int timeout;
+        private int retry;
+        public NSXTALBClient(string host, string Username, string Password, bool? remoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2)
         {
+            cancellationToken = _cancellationToken;
+            timeout = _timeout;
+            retry = _retry;
             var uri = new UriBuilder(host)
             {
                 Scheme = Uri.UriSchemeHttps,
@@ -45,7 +51,7 @@ namespace nsxtalbapi
             restClient.UseNewtonsoftJson(defaultSerializationSettings);
         }
         {{#modules}}
-        public {{.}} {{.}}Module => new {{.}}(restClient, defaultSerializationSettings);
+        public {{.}} {{.}}Module => new(restClient, defaultSerializationSettings, cancellationToken, timeout, retry);
         {{/modules}}
     }
 }

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHttpCacheConfigType 
     {
-        public NSXTALBHttpCacheConfigType()
-        {
-        }
         /// <summary>
         /// Add an Age header to content served from cache, which indicates to the client the number of seconds the object has been
         /// in the cache.

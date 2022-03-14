@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtSIServiceDetailsType 
     {
-        public NSXTALBNsxtSIServiceDetailsType()
-        {
-        }
         /// <summary>
         /// Error message. Field introduced in 21.1.3.
         /// </summary>

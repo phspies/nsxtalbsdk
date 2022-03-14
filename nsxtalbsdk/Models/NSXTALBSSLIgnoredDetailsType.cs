@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSSLIgnoredDetailsType 
     {
-        public NSXTALBSSLIgnoredDetailsType()
-        {
-        }
         /// <summary>
         /// Name of SSL Certificate.
         /// </summary>

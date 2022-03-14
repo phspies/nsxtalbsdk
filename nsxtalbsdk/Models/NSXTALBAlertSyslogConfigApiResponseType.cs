@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlertSyslogConfigApiResponseType 
     {
-        public NSXTALBAlertSyslogConfigApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHorizonProfileType 
     {
-        public NSXTALBHorizonProfileType()
-        {
-        }
         /// <summary>
         /// Horizon blast port of the UAG server. Field introduced in 21.1.3.
         /// </summary>

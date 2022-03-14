@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLicenseInfoType 
     {
-        public NSXTALBLicenseInfoType()
-        {
-        }
         /// <summary>
         /// Last updated time. Field introduced in 20.1.1.
         /// </summary>

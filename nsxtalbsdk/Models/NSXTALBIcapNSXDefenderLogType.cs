@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIcapNSXDefenderLogType 
     {
-        public NSXTALBIcapNSXDefenderLogType()
-        {
-        }
         /// <summary>
         /// Score associated with the uploaded file, if known, value is in between 0 and 100. Field introduced in 21.1.1.
         /// </summary>

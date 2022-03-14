@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAlternateAuthConfigurationType 
     {
-        public NSXTALBAlternateAuthConfigurationType()
-        {
-        }
         /// <summary>
         /// UUID of the authprofile. It is a reference to an object of type AuthProfile. Field introduced in 20.1.6.
         /// </summary>

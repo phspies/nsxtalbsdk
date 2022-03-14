@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSysTestEmailParamsType 
     {
-        public NSXTALBSysTestEmailParamsType()
-        {
-        }
         /// <summary>
         /// Alerts are copied to the comma separated list of  email recipients.
         /// </summary>

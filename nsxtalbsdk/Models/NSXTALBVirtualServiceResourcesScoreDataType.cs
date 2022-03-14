@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVirtualServiceResourcesScoreDataType 
     {
-        public NSXTALBVirtualServiceResourcesScoreDataType()
-        {
-        }
         /// <summary>
         /// Resources of the virtual service with respect to max_throughput.
         /// </summary>

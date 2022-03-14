@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeReconcileDetailsType 
     {
-        public NSXTALBSeReconcileDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property new_service_cores of obj type SeReconcileDetails field type str  type number
         /// </summary>

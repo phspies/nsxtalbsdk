@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSeHmEventGslbPoolMemberDetailsType 
     {
-        public NSXTALBSeHmEventGslbPoolMemberDetailsType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property app_info of obj type SeHmEventGslbPoolMemberDetails field type str  type object
         /// </summary>

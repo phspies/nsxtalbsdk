@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthMonitorFtpType 
     {
-        public NSXTALBHealthMonitorFtpType()
-        {
-        }
         /// <summary>
         /// Filename to download with full path. Field introduced in 21.1.3.
         /// </summary>

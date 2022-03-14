@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAWSASGNotifDetailsType 
     {
-        public NSXTALBAWSASGNotifDetailsType()
-        {
-        }
         /// <summary>
         /// asg_name of AWSASGNotifDetails.
         /// </summary>

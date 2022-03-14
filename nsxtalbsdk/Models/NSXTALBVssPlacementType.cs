@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVssPlacementType 
     {
-        public NSXTALBVssPlacementType()
-        {
-        }
         /// <summary>
         /// Degree of core non-affinity for VS placement. Allowed values are 1-256. Field introduced in 17.2.5.
         /// </summary>

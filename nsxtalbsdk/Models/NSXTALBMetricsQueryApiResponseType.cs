@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMetricsQueryApiResponseType 
     {
-        public NSXTALBMetricsQueryApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

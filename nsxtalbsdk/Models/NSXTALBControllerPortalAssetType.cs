@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBControllerPortalAssetType 
     {
-        public NSXTALBControllerPortalAssetType()
-        {
-        }
         /// <summary>
         /// Asset ID corresponding to this Controller Cluster, returned on a successful registration. Field introduced in 18.2.6.
         /// </summary>

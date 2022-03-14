@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBOCISetupType 
     {
-        public NSXTALBOCISetupType()
-        {
-        }
         /// <summary>
         /// cc_id of OCISetup.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVinfraVcenterDiscoveryFailureType 
     {
-        public NSXTALBVinfraVcenterDiscoveryFailureType()
-        {
-        }
         /// <summary>
         /// state of VinfraVcenterDiscoveryFailure.
         /// </summary>

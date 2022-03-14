@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMemoryBalancerInfoType 
     {
-        public NSXTALBMemoryBalancerInfoType()
-        {
-        }
         /// <summary>
         /// Child process information.
         /// </summary>

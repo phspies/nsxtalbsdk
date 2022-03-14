@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGslbDnsUpdateType 
     {
-        public NSXTALBGslbDnsUpdateType()
-        {
-        }
         /// <summary>
         /// Number of clear_on_max_retries.
         /// </summary>

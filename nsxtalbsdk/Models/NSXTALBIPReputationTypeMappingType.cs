@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIPReputationTypeMappingType 
     {
-        public NSXTALBIPReputationTypeMappingType()
-        {
-        }
         /// <summary>
         /// The Bot Identification to which the IP reputation type is mapped. Field introduced in 21.1.1.
         /// </summary>

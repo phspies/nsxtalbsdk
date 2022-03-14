@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNuageSDNControllerType 
     {
-        public NSXTALBNuageSDNControllerType()
-        {
-        }
         /// <summary>
         /// nuage_organization of NuageSDNController.
         /// </summary>

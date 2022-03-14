@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBConfigUserLogoutType 
     {
-        public NSXTALBConfigUserLogoutType()
-        {
-        }
         /// <summary>
         /// client ip.
         /// </summary>

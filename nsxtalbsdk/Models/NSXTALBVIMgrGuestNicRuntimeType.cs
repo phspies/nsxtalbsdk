@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVIMgrGuestNicRuntimeType 
     {
-        public NSXTALBVIMgrGuestNicRuntimeType()
-        {
-        }
         /// <summary>
         /// Placeholder for description of property avi_internal_network of obj type VIMgrGuestNicRuntime field type str  type
         /// boolean

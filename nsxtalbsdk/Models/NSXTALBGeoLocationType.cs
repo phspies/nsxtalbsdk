@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBGeoLocationType 
     {
-        public NSXTALBGeoLocationType()
-        {
-        }
         /// <summary>
         /// Latitude of the location. This is represented as degrees.minutes. The range is from -90.0 (south) to +90.0 (north).
         /// Allowed values are -90.0-+90.0. Field introduced in 17.1.1.

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBNsxtImageDetailsType 
     {
-        public NSXTALBNsxtImageDetailsType()
-        {
-        }
         /// <summary>
         /// Cloud Id. Field introduced in 20.1.1.
         /// </summary>

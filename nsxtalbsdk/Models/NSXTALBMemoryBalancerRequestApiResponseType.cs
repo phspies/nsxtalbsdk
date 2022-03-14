@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBMemoryBalancerRequestApiResponseType 
     {
-        public NSXTALBMemoryBalancerRequestApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

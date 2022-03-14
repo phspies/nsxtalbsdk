@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLogAgentTCPClientEventDetailType 
     {
-        public NSXTALBLogAgentTCPClientEventDetailType()
-        {
-        }
         /// <summary>
         /// Field introduced in 20.1.3.
         /// </summary>

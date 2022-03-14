@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBSamlAttributeType 
     {
-        public NSXTALBSamlAttributeType()
-        {
-        }
         /// <summary>
         /// SAML Attribute name. Field introduced in 20.1.1.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUserAgentCacheConfigType 
     {
-        public NSXTALBUserAgentCacheConfigType()
-        {
-        }
         /// <summary>
         /// How many unknown User-Agents to batch up before querying Controller - unless max_wait_time is reached first. Allowed
         /// values are 1-500. Field introduced in 21.1.1.

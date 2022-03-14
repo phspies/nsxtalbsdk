@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBPaaRequestLogType 
     {
-        public NSXTALBPaaRequestLogType()
-        {
-        }
         /// <summary>
         /// Response headers received from PingAccess server. Field introduced in 18.2.3.
         /// </summary>

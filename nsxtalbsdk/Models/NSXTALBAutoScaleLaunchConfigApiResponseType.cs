@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBAutoScaleLaunchConfigApiResponseType 
     {
-        public NSXTALBAutoScaleLaunchConfigApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

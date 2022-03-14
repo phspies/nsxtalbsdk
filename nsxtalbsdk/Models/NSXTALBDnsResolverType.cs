@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBDnsResolverType 
     {
-        public NSXTALBDnsResolverType()
-        {
-        }
         /// <summary>
         /// If configured, this value used for refreshing the DNS entries.Overrides both received_ttl and min_ttl. The entries are
         /// refreshed only on fixed_ttleven when received_ttl is less than fixed_ttl. Allowed values are 5-2147483647. Field

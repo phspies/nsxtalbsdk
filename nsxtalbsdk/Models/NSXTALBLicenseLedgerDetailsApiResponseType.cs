@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBLicenseLedgerDetailsApiResponseType 
     {
-        public NSXTALBLicenseLedgerDetailsApiResponseType()
-        {
-        }
         /// <summary>
         /// 
         /// </summary>

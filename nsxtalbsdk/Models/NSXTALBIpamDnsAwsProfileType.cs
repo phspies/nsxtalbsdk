@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBIpamDnsAwsProfileType 
     {
-        public NSXTALBIpamDnsAwsProfileType()
-        {
-        }
         /// <summary>
         /// AWS access key ID.
         /// </summary>

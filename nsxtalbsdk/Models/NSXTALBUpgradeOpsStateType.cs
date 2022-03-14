@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBUpgradeOpsStateType 
     {
-        public NSXTALBUpgradeOpsStateType()
-        {
-        }
         /// <summary>
         /// The last time the state changed. Field introduced in 18.2.6.
         /// </summary>

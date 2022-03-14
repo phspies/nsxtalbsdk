@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBHealthScoreDetailsType 
     {
-        public NSXTALBHealthScoreDetailsType()
-        {
-        }
         /// <summary>
         /// Number of anomaly_penalty.
         /// </summary>

@@ -13,9 +13,6 @@ namespace nsxtalbsdk.Models
     /// </summary>
     public class NSXTALBVipAutoscalePolicyType 
     {
-        public NSXTALBVipAutoscalePolicyType()
-        {
-        }
         /// <summary>
         /// The amount of time, in seconds, when a Vip is withdrawn before a scaling activity starts. Field introduced in 17.2.12,
         /// 18.1.2. Unit is SECONDS.
