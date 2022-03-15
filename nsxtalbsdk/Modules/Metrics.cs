@@ -17,10 +17,16 @@ namespace nsxtalbsdk.Modules
     {
         RestClient restClient;
         JsonSerializerSettings defaultSerializationSettings;
-        public Metrics(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken cancellationToken = default(CancellationToken), int timeout, int retry)
+        CancellationToken cancellationToken;
+        int timeout;
+        int retry;
+        public Metrics(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
         {
             restClient = Client;
             defaultSerializationSettings = DefaultSerializationSettings;
+            cancellationToken = _cancellationToken;
+            retry = _retry;
+            timeout = _timeout;
         }
         public async Task<NSXTALBMetricsCollectionApiRspType> PostAnalyticsMetricsCollection(NSXTALBMetricsCollectionApiReqType Body, bool? IncludeName = null, bool? IncludeRefs = null, int? Limit = null, bool? PadMissingData = null, string? Start = null, int? Step = null, string? Stop = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {

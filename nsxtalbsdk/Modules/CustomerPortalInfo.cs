@@ -17,10 +17,16 @@ namespace nsxtalbsdk.Modules
     {
         RestClient restClient;
         JsonSerializerSettings defaultSerializationSettings;
-        public CustomerPortalInfo(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken cancellationToken = default(CancellationToken), int timeout, int retry)
+        CancellationToken cancellationToken;
+        int timeout;
+        int retry;
+        public CustomerPortalInfo(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
         {
             restClient = Client;
             defaultSerializationSettings = DefaultSerializationSettings;
+            cancellationToken = _cancellationToken;
+            retry = _retry;
+            timeout = _timeout;
         }
         public async Task<NSXTALBCustomerPortalInfoType> PostCustomerportalinfo(string XAviVersion, NSXTALBCustomerPortalInfoType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {

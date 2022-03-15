@@ -17,10 +17,16 @@ namespace nsxtalbsdk.Modules
     {
         RestClient restClient;
         JsonSerializerSettings defaultSerializationSettings;
-        public Image(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken cancellationToken = default(CancellationToken), int timeout, int retry)
+        CancellationToken cancellationToken;
+        int timeout;
+        int retry;
+        public Image(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
         {
             restClient = Client;
             defaultSerializationSettings = DefaultSerializationSettings;
+            cancellationToken = _cancellationToken;
+            retry = _retry;
+            timeout = _timeout;
         }
         public async Task<NSXTALBImageApiResponseType> GetImage(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
