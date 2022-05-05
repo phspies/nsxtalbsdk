@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The command to be triggered by the albservicesjob. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "command", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "command")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Command { get; set; }
         /// <summary>
@@ -37,7 +36,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The name of the albservicesjob. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -139,7 +138,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Type of SMTP Mail Service. Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER.
         /// </summary>
-        [JsonProperty(PropertyName = "smtp_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "smtp_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SmtpType { get; set; }
     }

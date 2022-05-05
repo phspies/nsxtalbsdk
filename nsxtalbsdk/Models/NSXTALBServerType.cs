@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -69,7 +68,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IP Address of the server.  Required if there is no resolvable host name.
         /// </summary>
-        [JsonProperty(PropertyName = "ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType Ip { get; set; }
         /// <summary>

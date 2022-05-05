@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of nscalein.
         /// </summary>
-        [JsonProperty(PropertyName = "nscalein", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "nscalein")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Nscalein { get; set; }
         /// <summary>
         /// UUID of the Pool. It is a reference to an object of type Pool.
         /// </summary>
-        [JsonProperty(PropertyName = "pool_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "pool_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PoolRef { get; set; }
         /// <summary>
@@ -300,7 +299,7 @@ namespace nsxtalbsdk.Models
         /// SYSERR_LIC_RESERVE_LEDGER_METADATA_REQ_UNIDENTIFIED, SYSERR_LIC_CONVERT_FORMULA_NOT_DEFINED,
         /// SYSERR_LIC_CONVERT_MALFORMED_PAYLOAD, SYSERR_FILE_CONTENT_DECODE_FAILED, SYSERR_SVC_FAILURE, SYSERR_SVC_SUCCESS.
         /// </summary>
-        [JsonProperty(PropertyName = "reason_code", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "reason_code")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ReasonCode { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -165,7 +164,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -257,7 +256,7 @@ namespace nsxtalbsdk.Models
         /// Basic(Allowed values- CLOUD_NONE,CLOUD_NSXT) edition, Essentials(Allowed values- CLOUD_NONE,CLOUD_VCENTER) edition,
         /// Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "vtype", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vtype")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Vtype { get; set; }
     }

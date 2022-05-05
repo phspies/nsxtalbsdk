@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - SENSITIVE, INSENSITIVE.
         /// </summary>
-        [JsonProperty(PropertyName = "hdr_match_case", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "hdr_match_case")]
         [System.ComponentModel.DataAnnotations.Required]
         public string HdrMatchCase { get; set; }
         /// <summary>
         /// hdr_name of AppHdr.
         /// </summary>
-        [JsonProperty(PropertyName = "hdr_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "hdr_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string HdrName { get; set; }
         /// <summary>
@@ -33,7 +32,7 @@ namespace nsxtalbsdk.Models
         /// BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition,
         /// Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "hdr_string_op", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "hdr_string_op")]
         [System.ComponentModel.DataAnnotations.Required]
         public string HdrStringOp { get; set; }
     }

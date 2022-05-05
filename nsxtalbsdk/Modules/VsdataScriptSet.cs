@@ -1,4 +1,3 @@
-
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
-
 namespace nsxtalbsdk.Modules
 {
     public class VsdataScriptSet
@@ -20,18 +18,31 @@ namespace nsxtalbsdk.Modules
         CancellationToken cancellationToken;
         int timeout;
         int retry;
-        public VsdataScriptSet(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
+        string defaultXAviVerion;
+        RestResponseCookie sessionCookie;
+        public VsdataScriptSet(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = DefaultSerializationSettings;
+            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
+            defaultXAviVerion = _defaultXAviVerion;
+            sessionCookie = _sessionCookie;
         }
-        public async Task<NSXTALBVSDataScriptSetApiResponseType> GetVsdatascriptset(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBVSDataScriptSetApiResponseType> GetVsdatascriptset(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
-            NSXTALBVSDataScriptSetApiResponseType? returnValue = default(NSXTALBVSDataScriptSetApiResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             StringBuilder GetVsdatascriptsetServiceURL = new StringBuilder("/api/vsdatascriptset");
             var request = new RestRequest
             {              
@@ -51,6 +62,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetVsdatascriptsetServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVSDataScriptSetApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVSDataScriptSetApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -59,11 +72,13 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBVSDataScriptSetType> PostVsdatascriptset(string XAviVersion, NSXTALBVSDataScriptSetType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBVSDataScriptSetType> PostVsdatascriptset(NSXTALBVSDataScriptSetType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
-            NSXTALBVSDataScriptSetType? returnValue = default(NSXTALBVSDataScriptSetType);
             StringBuilder PostVsdatascriptsetServiceURL = new StringBuilder("/api/vsdatascriptset");
             var request = new RestRequest
             {              
@@ -77,6 +92,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostVsdatascriptsetServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVSDataScriptSetType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVSDataScriptSetType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -85,11 +102,18 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBVSDataScriptSetType> GetVsdatascriptsetUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
+        public async Task<NSXTALBVSDataScriptSetType> GetVsdatascriptsetUuid(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBVSDataScriptSetType? returnValue = default(NSXTALBVSDataScriptSetType);
+            
+            
+            
+            
             StringBuilder GetVsdatascriptsetUuidServiceURL = new StringBuilder("/api/vsdatascriptset/{uuid}");
             var request = new RestRequest
             {              
@@ -108,6 +132,8 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetVsdatascriptsetUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVSDataScriptSetType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVSDataScriptSetType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -116,12 +142,15 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBVSDataScriptSetType> PutVsdatascriptsetUuid(string XAviVersion, NSXTALBVSDataScriptSetType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBVSDataScriptSetType> PutVsdatascriptsetUuid(NSXTALBVSDataScriptSetType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBVSDataScriptSetType? returnValue = default(NSXTALBVSDataScriptSetType);
             StringBuilder PutVsdatascriptsetUuidServiceURL = new StringBuilder("/api/vsdatascriptset/{uuid}");
             var request = new RestRequest
             {              
@@ -137,6 +166,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PutVsdatascriptsetUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutVsdatascriptsetUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVSDataScriptSetType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVSDataScriptSetType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -145,12 +176,15 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBVSDataScriptSetType> PatchVsdatascriptsetUuid(string XAviVersion, NSXTALBVSDataScriptSetType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBVSDataScriptSetType> PatchVsdatascriptsetUuid(NSXTALBVSDataScriptSetType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBVSDataScriptSetType? returnValue = default(NSXTALBVSDataScriptSetType);
             StringBuilder PatchVsdatascriptsetUuidServiceURL = new StringBuilder("/api/vsdatascriptset/{uuid}");
             var request = new RestRequest
             {              
@@ -166,6 +200,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PatchVsdatascriptsetUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchVsdatascriptsetUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVSDataScriptSetType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVSDataScriptSetType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -174,11 +210,14 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<string> DeleteVsdatascriptsetUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> DeleteVsdatascriptsetUuid(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            string? returnValue  = default(string);
             StringBuilder DeleteVsdatascriptsetUuidServiceURL = new StringBuilder("/api/vsdatascriptset/{uuid}");
             var request = new RestRequest
             {              
@@ -193,6 +232,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteVsdatascriptsetUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteVsdatascriptsetUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -41,13 +40,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// managed_object_id of VIMgrClusterRuntime.
         /// </summary>
-        [JsonProperty(PropertyName = "managed_object_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "managed_object_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ManagedObjectId { get; set; }
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -59,7 +58,7 @@ namespace nsxtalbsdk.Models
         /// Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS,
         /// CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
         /// <summary>

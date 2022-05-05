@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// obj_name of VinfraVcenterObjDeleteDetails.
         /// </summary>
-        [JsonProperty(PropertyName = "obj_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "obj_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ObjName { get; set; }
         /// <summary>
         /// vcenter of VinfraVcenterObjDeleteDetails.
         /// </summary>
-        [JsonProperty(PropertyName = "vcenter", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vcenter")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Vcenter { get; set; }
     }

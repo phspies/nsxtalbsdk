@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// attr_key of HostAttributes.
         /// </summary>
-        [JsonProperty(PropertyName = "attr_key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "attr_key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AttrKey { get; set; }
         /// <summary>

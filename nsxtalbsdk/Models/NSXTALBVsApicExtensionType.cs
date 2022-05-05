@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Field deprecated in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "txn_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "txn_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string TxnUuid { get; set; }
         /// <summary>

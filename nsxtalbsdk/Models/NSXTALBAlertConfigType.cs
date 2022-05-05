@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -27,7 +26,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// list of filters matching on events or client logs used for triggering alerts.
         /// </summary>
-        [JsonProperty(PropertyName = "alert_rule", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "alert_rule")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBAlertRuleType AlertRule { get; set; }
         /// <summary>
@@ -39,7 +38,7 @@ namespace nsxtalbsdk.Models
         /// Determines whether an alert is raised immediately when event occurs (realtime) or after specified number of events
         /// occurs within rolling time window. Enum options - REALTIME, ROLLINGWINDOW, WATERMARK.
         /// </summary>
-        [JsonProperty(PropertyName = "category", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "category")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Category { get; set; }
         /// <summary>
@@ -66,7 +65,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the alert configuration.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -164,7 +163,7 @@ namespace nsxtalbsdk.Models
         /// Signifies system events or the type of client logsused in this alert configuration. Enum options - CONN_LOGS, APP_LOGS,
         /// EVENT_LOGS, METRICS.
         /// </summary>
-        [JsonProperty(PropertyName = "source", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "source")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Source { get; set; }
         /// <summary>

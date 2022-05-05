@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Uber IP subnet for the logical segments created automatically by Avi controller. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "nsxt_segment_subnet", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "nsxt_segment_subnet")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrPrefixType NsxtSegmentSubnet { get; set; }
         /// <summary>

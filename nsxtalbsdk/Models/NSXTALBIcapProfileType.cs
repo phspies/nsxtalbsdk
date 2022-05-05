@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -71,7 +70,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the ICAP profile. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -83,7 +82,7 @@ namespace nsxtalbsdk.Models
         /// The pool group which is used to connect to ICAP servers. It is a reference to an object of type PoolGroup. Field
         /// introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "pool_group_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "pool_group_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PoolGroupRef { get; set; }
         /// <summary>
@@ -105,7 +104,7 @@ namespace nsxtalbsdk.Models
         /// The path and query component of the ICAP URL. Host name and port will be taken from the pool. Field introduced in
         /// 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "service_uri", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "service_uri")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ServiceUri { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -33,7 +32,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Compress HTTP response content if it wasn't already compressed.
         /// </summary>
-        [JsonProperty(PropertyName = "compression", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "compression")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Compression { get; set; }
         /// <summary>
@@ -82,14 +81,14 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Offload compression from the servers to AVI. Saves compute cycles on the servers.
         /// </summary>
-        [JsonProperty(PropertyName = "remove_accept_encoding_header", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "remove_accept_encoding_header")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool RemoveAcceptEncodingHeader { get; set; }
         /// <summary>
         /// Compress content automatically or add custom filters to define compressible content and compression levels. Enum options
         /// - AUTO_COMPRESSION, CUSTOM_COMPRESSION.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
         /// <summary>

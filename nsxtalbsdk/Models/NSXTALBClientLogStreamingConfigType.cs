@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -19,7 +18,7 @@ namespace nsxtalbsdk.Models
         /// 11.11.11.11,23.12.12.4. Optionally, a separate port can be specified for each external server in the list, for example,
         /// 11.11.11.11 234,12.12.12.12 343. Field introduced in 17.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "external_server", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "external_server")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ExternalServer { get; set; }
         /// <summary>

@@ -1,4 +1,3 @@
-
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
-
 namespace nsxtalbsdk.Modules
 {
     public class ControllerProperties
@@ -20,18 +18,31 @@ namespace nsxtalbsdk.Modules
         CancellationToken cancellationToken;
         int timeout;
         int retry;
-        public ControllerProperties(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
+        string defaultXAviVerion;
+        RestResponseCookie sessionCookie;
+        public ControllerProperties(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = DefaultSerializationSettings;
+            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
+            defaultXAviVerion = _defaultXAviVerion;
+            sessionCookie = _sessionCookie;
         }
-        public async Task<NSXTALBControllerPropertiesType> GetControllerproperties(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBControllerPropertiesType> GetControllerproperties(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
-            NSXTALBControllerPropertiesType? returnValue = default(NSXTALBControllerPropertiesType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             StringBuilder GetControllerpropertiesServiceURL = new StringBuilder("/api/controllerproperties");
             var request = new RestRequest
             {              
@@ -51,6 +62,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetControllerpropertiesServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBControllerPropertiesType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBControllerPropertiesType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -59,11 +72,14 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBControllerPropertiesType> PutControllerproperties(string XAviVersion, NSXTALBControllerPropertiesType Body, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBControllerPropertiesType> PutControllerproperties(NSXTALBControllerPropertiesType Body, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
-            NSXTALBControllerPropertiesType? returnValue = default(NSXTALBControllerPropertiesType);
             StringBuilder PutControllerpropertiesServiceURL = new StringBuilder("/api/controllerproperties");
             var request = new RestRequest
             {              
@@ -78,6 +94,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PutControllerpropertiesServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBControllerPropertiesType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBControllerPropertiesType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -86,11 +104,14 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBControllerPropertiesType> PatchControllerproperties(string XAviVersion, NSXTALBControllerPropertiesType Body, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBControllerPropertiesType> PatchControllerproperties(NSXTALBControllerPropertiesType Body, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
-            NSXTALBControllerPropertiesType? returnValue = default(NSXTALBControllerPropertiesType);
             StringBuilder PatchControllerpropertiesServiceURL = new StringBuilder("/api/controllerproperties");
             var request = new RestRequest
             {              
@@ -105,6 +126,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PatchControllerpropertiesServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBControllerPropertiesType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBControllerPropertiesType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{

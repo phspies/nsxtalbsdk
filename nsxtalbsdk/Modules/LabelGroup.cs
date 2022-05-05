@@ -1,4 +1,3 @@
-
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
-
 namespace nsxtalbsdk.Modules
 {
     public class LabelGroup
@@ -20,18 +18,31 @@ namespace nsxtalbsdk.Modules
         CancellationToken cancellationToken;
         int timeout;
         int retry;
-        public LabelGroup(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
+        string defaultXAviVerion;
+        RestResponseCookie sessionCookie;
+        public LabelGroup(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = DefaultSerializationSettings;
+            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
+            defaultXAviVerion = _defaultXAviVerion;
+            sessionCookie = _sessionCookie;
         }
-        public async Task<NSXTALBLabelGroupApiResponseType> GetLabelgroup(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBLabelGroupApiResponseType> GetLabelgroup(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
-            NSXTALBLabelGroupApiResponseType? returnValue = default(NSXTALBLabelGroupApiResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             StringBuilder GetLabelgroupServiceURL = new StringBuilder("/api/labelgroup");
             var request = new RestRequest
             {              
@@ -51,6 +62,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetLabelgroupServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBLabelGroupApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBLabelGroupApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -59,11 +72,13 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBLabelGroupType> PostLabelgroup(string XAviVersion, NSXTALBLabelGroupType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBLabelGroupType> PostLabelgroup(NSXTALBLabelGroupType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
-            NSXTALBLabelGroupType? returnValue = default(NSXTALBLabelGroupType);
             StringBuilder PostLabelgroupServiceURL = new StringBuilder("/api/labelgroup");
             var request = new RestRequest
             {              
@@ -77,6 +92,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostLabelgroupServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBLabelGroupType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBLabelGroupType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -85,11 +102,18 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBLabelGroupType> GetLabelgroupUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
+        public async Task<NSXTALBLabelGroupType> GetLabelgroupUuid(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBLabelGroupType? returnValue = default(NSXTALBLabelGroupType);
+            
+            
+            
+            
             StringBuilder GetLabelgroupUuidServiceURL = new StringBuilder("/api/labelgroup/{uuid}");
             var request = new RestRequest
             {              
@@ -108,6 +132,8 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetLabelgroupUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBLabelGroupType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBLabelGroupType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -116,12 +142,15 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBLabelGroupType> PutLabelgroupUuid(string XAviVersion, NSXTALBLabelGroupType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBLabelGroupType> PutLabelgroupUuid(NSXTALBLabelGroupType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBLabelGroupType? returnValue = default(NSXTALBLabelGroupType);
             StringBuilder PutLabelgroupUuidServiceURL = new StringBuilder("/api/labelgroup/{uuid}");
             var request = new RestRequest
             {              
@@ -137,6 +166,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PutLabelgroupUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutLabelgroupUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBLabelGroupType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBLabelGroupType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -145,12 +176,15 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBLabelGroupType> PatchLabelgroupUuid(string XAviVersion, NSXTALBLabelGroupType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBLabelGroupType> PatchLabelgroupUuid(NSXTALBLabelGroupType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBLabelGroupType? returnValue = default(NSXTALBLabelGroupType);
             StringBuilder PatchLabelgroupUuidServiceURL = new StringBuilder("/api/labelgroup/{uuid}");
             var request = new RestRequest
             {              
@@ -166,6 +200,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PatchLabelgroupUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchLabelgroupUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBLabelGroupType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBLabelGroupType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -174,11 +210,14 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<string> DeleteLabelgroupUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> DeleteLabelgroupUuid(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            string? returnValue  = default(string);
             StringBuilder DeleteLabelgroupUuidServiceURL = new StringBuilder("/api/labelgroup/{uuid}");
             var request = new RestRequest
             {              
@@ -193,6 +232,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteLabelgroupUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteLabelgroupUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{

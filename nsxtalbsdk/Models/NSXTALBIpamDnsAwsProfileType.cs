@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -74,7 +73,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// VPC ID.
         /// </summary>
-        [JsonProperty(PropertyName = "vpc_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vpc_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VpcId { get; set; }
         /// <summary>

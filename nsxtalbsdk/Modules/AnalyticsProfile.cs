@@ -1,4 +1,3 @@
-
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
-
 namespace nsxtalbsdk.Modules
 {
     public class AnalyticsProfile
@@ -20,18 +18,31 @@ namespace nsxtalbsdk.Modules
         CancellationToken cancellationToken;
         int timeout;
         int retry;
-        public AnalyticsProfile(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
+        string defaultXAviVerion;
+        RestResponseCookie sessionCookie;
+        public AnalyticsProfile(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = DefaultSerializationSettings;
+            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
+            defaultXAviVerion = _defaultXAviVerion;
+            sessionCookie = _sessionCookie;
         }
-        public async Task<NSXTALBAnalyticsProfileApiResponseType> GetAnalyticsprofile(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBAnalyticsProfileApiResponseType> GetAnalyticsprofile(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
-            NSXTALBAnalyticsProfileApiResponseType? returnValue = default(NSXTALBAnalyticsProfileApiResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             StringBuilder GetAnalyticsprofileServiceURL = new StringBuilder("/api/analyticsprofile");
             var request = new RestRequest
             {              
@@ -51,6 +62,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetAnalyticsprofileServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnalyticsProfileApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnalyticsProfileApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -59,11 +72,13 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBAnalyticsProfileType> PostAnalyticsprofile(string XAviVersion, NSXTALBAnalyticsProfileType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBAnalyticsProfileType> PostAnalyticsprofile(NSXTALBAnalyticsProfileType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
-            NSXTALBAnalyticsProfileType? returnValue = default(NSXTALBAnalyticsProfileType);
             StringBuilder PostAnalyticsprofileServiceURL = new StringBuilder("/api/analyticsprofile");
             var request = new RestRequest
             {              
@@ -77,6 +92,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostAnalyticsprofileServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnalyticsProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnalyticsProfileType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -85,11 +102,18 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBAnalyticsProfileType> GetAnalyticsprofileUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
+        public async Task<NSXTALBAnalyticsProfileType> GetAnalyticsprofileUuid(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBAnalyticsProfileType? returnValue = default(NSXTALBAnalyticsProfileType);
+            
+            
+            
+            
             StringBuilder GetAnalyticsprofileUuidServiceURL = new StringBuilder("/api/analyticsprofile/{uuid}");
             var request = new RestRequest
             {              
@@ -108,6 +132,8 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetAnalyticsprofileUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnalyticsProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnalyticsProfileType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -116,12 +142,15 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBAnalyticsProfileType> PutAnalyticsprofileUuid(string XAviVersion, NSXTALBAnalyticsProfileType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBAnalyticsProfileType> PutAnalyticsprofileUuid(NSXTALBAnalyticsProfileType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBAnalyticsProfileType? returnValue = default(NSXTALBAnalyticsProfileType);
             StringBuilder PutAnalyticsprofileUuidServiceURL = new StringBuilder("/api/analyticsprofile/{uuid}");
             var request = new RestRequest
             {              
@@ -137,6 +166,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PutAnalyticsprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutAnalyticsprofileUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnalyticsProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnalyticsProfileType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -145,12 +176,15 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBAnalyticsProfileType> PatchAnalyticsprofileUuid(string XAviVersion, NSXTALBAnalyticsProfileType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBAnalyticsProfileType> PatchAnalyticsprofileUuid(NSXTALBAnalyticsProfileType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBAnalyticsProfileType? returnValue = default(NSXTALBAnalyticsProfileType);
             StringBuilder PatchAnalyticsprofileUuidServiceURL = new StringBuilder("/api/analyticsprofile/{uuid}");
             var request = new RestRequest
             {              
@@ -166,6 +200,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PatchAnalyticsprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchAnalyticsprofileUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnalyticsProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnalyticsProfileType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -174,11 +210,14 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<string> DeleteAnalyticsprofileUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> DeleteAnalyticsprofileUuid(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            string? returnValue  = default(string);
             StringBuilder DeleteAnalyticsprofileUuidServiceURL = new StringBuilder("/api/analyticsprofile/{uuid}");
             var request = new RestRequest
             {              
@@ -193,6 +232,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteAnalyticsprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteAnalyticsprofileUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -201,11 +242,13 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<string> GetAnalyticsprofileUuidRuntimeInternal(string XAviVersion, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> GetAnalyticsprofileUuidRuntimeInternal(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            string? returnValue  = default(string);
             StringBuilder GetAnalyticsprofileUuidRuntimeInternalServiceURL = new StringBuilder("/api/analyticsprofile/{uuid}/runtime/internal/");
             var request = new RestRequest
             {              
@@ -219,6 +262,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetAnalyticsprofileUuidRuntimeInternalServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetAnalyticsprofileUuidRuntimeInternalServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{

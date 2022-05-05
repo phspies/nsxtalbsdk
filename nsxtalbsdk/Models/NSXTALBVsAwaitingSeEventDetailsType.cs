@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of awaitingse_timeout.
         /// </summary>
-        [JsonProperty(PropertyName = "awaitingse_timeout", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "awaitingse_timeout")]
         [System.ComponentModel.DataAnnotations.Required]
         public int AwaitingseTimeout { get; set; }
         /// <summary>
@@ -37,7 +36,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unique object identifier of vs.
         /// </summary>
-        [JsonProperty(PropertyName = "vs_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vs_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VsUuid { get; set; }
     }

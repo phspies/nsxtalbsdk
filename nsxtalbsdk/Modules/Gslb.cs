@@ -1,4 +1,3 @@
-
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
-
 namespace nsxtalbsdk.Modules
 {
     public class Gslb
@@ -20,18 +18,31 @@ namespace nsxtalbsdk.Modules
         CancellationToken cancellationToken;
         int timeout;
         int retry;
-        public Gslb(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
+        string defaultXAviVerion;
+        RestResponseCookie sessionCookie;
+        public Gslb(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = DefaultSerializationSettings;
+            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
+            defaultXAviVerion = _defaultXAviVerion;
+            sessionCookie = _sessionCookie;
         }
-        public async Task<NSXTALBGslbApiResponseType> GetGslb(string XAviVersion, string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBGslbApiResponseType> GetGslb(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
-            NSXTALBGslbApiResponseType? returnValue = default(NSXTALBGslbApiResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             StringBuilder GetGslbServiceURL = new StringBuilder("/api/gslb");
             var request = new RestRequest
             {              
@@ -51,6 +62,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetGslbServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -59,11 +72,13 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBGslbType> PostGslb(string XAviVersion, NSXTALBGslbType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBGslbType> PostGslb(NSXTALBGslbType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
-            NSXTALBGslbType? returnValue = default(NSXTALBGslbType);
             StringBuilder PostGslbServiceURL = new StringBuilder("/api/gslb");
             var request = new RestRequest
             {              
@@ -77,6 +92,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostGslbServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -85,11 +102,18 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBGslbType> GetGslbUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null)
+        public async Task<NSXTALBGslbType> GetGslbUuid(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBGslbType? returnValue = default(NSXTALBGslbType);
+            
+            
+            
+            
             StringBuilder GetGslbUuidServiceURL = new StringBuilder("/api/gslb/{uuid}");
             var request = new RestRequest
             {              
@@ -108,6 +132,8 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetGslbUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -116,12 +142,15 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBGslbType> PutGslbUuid(string XAviVersion, NSXTALBGslbType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBGslbType> PutGslbUuid(NSXTALBGslbType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBGslbType? returnValue = default(NSXTALBGslbType);
             StringBuilder PutGslbUuidServiceURL = new StringBuilder("/api/gslb/{uuid}");
             var request = new RestRequest
             {              
@@ -137,6 +166,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PutGslbUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutGslbUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -145,12 +176,15 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<NSXTALBGslbType> PatchGslbUuid(string XAviVersion, NSXTALBGslbType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<NSXTALBGslbType> PatchGslbUuid(NSXTALBGslbType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBGslbType? returnValue = default(NSXTALBGslbType);
             StringBuilder PatchGslbUuidServiceURL = new StringBuilder("/api/gslb/{uuid}");
             var request = new RestRequest
             {              
@@ -166,6 +200,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PatchGslbUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchGslbUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -174,11 +210,14 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<string> DeleteGslbUuid(string XAviVersion, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> DeleteGslbUuid(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            string? returnValue  = default(string);
             StringBuilder DeleteGslbUuidServiceURL = new StringBuilder("/api/gslb/{uuid}");
             var request = new RestRequest
             {              
@@ -193,6 +232,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteGslbUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteGslbUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -201,11 +242,13 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<string> GetGslbUuidRuntime(string XAviVersion, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> GetGslbUuidRuntime(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            string? returnValue  = default(string);
             StringBuilder GetGslbUuidRuntimeServiceURL = new StringBuilder("/api/gslb/{uuid}/runtime/");
             var request = new RestRequest
             {              
@@ -219,6 +262,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetGslbUuidRuntimeServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetGslbUuidRuntimeServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -227,11 +272,13 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<string> GetGslbUuidRuntimeDetail(string XAviVersion, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> GetGslbUuidRuntimeDetail(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            string? returnValue  = default(string);
             StringBuilder GetGslbUuidRuntimeDetailServiceURL = new StringBuilder("/api/gslb/{uuid}/runtime/detail/");
             var request = new RestRequest
             {              
@@ -245,6 +292,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetGslbUuidRuntimeDetailServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetGslbUuidRuntimeDetailServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -253,11 +302,13 @@ namespace nsxtalbsdk.Modules
 			}
             return response.Data;
         }
-        public async Task<string> GetGslbUuidRuntimeInternal(string XAviVersion, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
+        public async Task<string> GetGslbUuidRuntimeInternal(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            if (XAviVersion == null) { throw new ArgumentNullException("XAviVersion cannot be null"); }
+            
+            
+            
+            if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            string? returnValue  = default(string);
             StringBuilder GetGslbUuidRuntimeInternalServiceURL = new StringBuilder("/api/gslb/{uuid}/runtime/internal/");
             var request = new RestRequest
             {              
@@ -271,6 +322,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetGslbUuidRuntimeInternalServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetGslbUuidRuntimeInternalServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{

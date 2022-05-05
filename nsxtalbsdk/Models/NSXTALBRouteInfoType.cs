@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -32,7 +31,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Host subnet address. Field introduced in 18.2.6.
         /// </summary>
-        [JsonProperty(PropertyName = "subnet", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "subnet")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrPrefixType Subnet { get; set; }
     }

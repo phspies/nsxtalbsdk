@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// It is a reference to an object of type AlertConfig.
         /// </summary>
-        [JsonProperty(PropertyName = "alert_config_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "alert_config_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AlertConfigRef { get; set; }
         /// <summary>
@@ -62,7 +61,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Resolved Alert Type. Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
         /// </summary>
-        [JsonProperty(PropertyName = "level", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "level")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Level { get; set; }
         /// <summary>
@@ -73,13 +72,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
         /// UUID of the resource.
         /// </summary>
-        [JsonProperty(PropertyName = "obj_key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "obj_key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ObjKey { get; set; }
         /// <summary>
@@ -90,13 +89,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// UUID of the resource.
         /// </summary>
-        [JsonProperty(PropertyName = "obj_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "obj_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ObjUuid { get; set; }
         /// <summary>
         /// reason of Alert.
         /// </summary>
-        [JsonProperty(PropertyName = "reason", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "reason")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Reason { get; set; }
         /// <summary>
@@ -109,13 +108,13 @@ namespace nsxtalbsdk.Models
         /// State of the alert. It would be active when createdIt would be changed to state read when read by the admin. Enum
         /// options - ALERT_STATE_ON, ALERT_STATE_DISMISSED, ALERT_STATE_THROTTLED.
         /// </summary>
-        [JsonProperty(PropertyName = "state", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "state")]
         [System.ComponentModel.DataAnnotations.Required]
         public string State { get; set; }
         /// <summary>
         /// summary of alert based on alert config.
         /// </summary>
-        [JsonProperty(PropertyName = "summary", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "summary")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Summary { get; set; }
         /// <summary>
@@ -136,7 +135,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unix Timestamp of the last throttling in seconds.
         /// </summary>
-        [JsonProperty(PropertyName = "timestamp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "timestamp")]
         [System.ComponentModel.DataAnnotations.Required]
         public double Timestamp { get; set; }
         /// <summary>

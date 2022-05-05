@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of secs.
         /// </summary>
-        [JsonProperty(PropertyName = "secs", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "secs")]
         [System.ComponentModel.DataAnnotations.Required]
         public long Secs { get; set; }
         /// <summary>
         /// Number of usecs.
         /// </summary>
-        [JsonProperty(PropertyName = "usecs", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "usecs")]
         [System.ComponentModel.DataAnnotations.Required]
         public long Usecs { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// tag_key of CustomTag.
         /// </summary>
-        [JsonProperty(PropertyName = "tag_key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "tag_key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string TagKey { get; set; }
         /// <summary>

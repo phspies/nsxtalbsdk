@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The action to take when the rate limit has been reached. Field introduced in 18.2.9.
         /// </summary>
-        [JsonProperty(PropertyName = "action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "action")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBRateLimiterActionType Action { get; set; }
         /// <summary>
@@ -32,7 +31,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The rate limiter used when this action is triggered. Field introduced in 18.2.9.
         /// </summary>
-        [JsonProperty(PropertyName = "rate_limiter", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rate_limiter")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBRateLimiterType RateLimiter { get; set; }
     }

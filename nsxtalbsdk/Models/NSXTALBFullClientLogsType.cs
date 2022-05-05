@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -29,7 +28,7 @@ namespace nsxtalbsdk.Models
         /// Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for
         /// Basic edition is false, Essentials edition is false, Enterprise is False.
         /// </summary>
-        [JsonProperty(PropertyName = "enabled", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "enabled")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Enabled { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -32,7 +31,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The rule_id of the rule where attributes are overridden. Field introduced in 20.1.6.
         /// </summary>
-        [JsonProperty(PropertyName = "rule_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rule_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string RuleId { get; set; }
     }

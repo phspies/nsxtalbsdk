@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// This field identifies the DNS VS uuid for this site. Field introduced in 17.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "dns_vs_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "dns_vs_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string DnsVsUuid { get; set; }
         /// <summary>

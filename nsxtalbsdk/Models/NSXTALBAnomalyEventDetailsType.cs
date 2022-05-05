@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,13 +20,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// metric_id of AnomalyEventDetails.
         /// </summary>
-        [JsonProperty(PropertyName = "metric_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "metric_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MetricId { get; set; }
         /// <summary>
         /// metric_timestamp of AnomalyEventDetails.
         /// </summary>
-        [JsonProperty(PropertyName = "metric_timestamp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "metric_timestamp")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MetricTimestamp { get; set; }
         /// <summary>
@@ -77,7 +76,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
         /// </summary>
-        [JsonProperty(PropertyName = "priority", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "priority")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Priority { get; set; }
         /// <summary>
@@ -88,7 +87,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property value of obj type AnomalyEventDetails field type str  type number
         /// </summary>
-        [JsonProperty(PropertyName = "value", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "value")]
         [System.ComponentModel.DataAnnotations.Required]
         public double Value { get; set; }
     }

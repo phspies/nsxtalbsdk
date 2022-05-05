@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Network. It is a reference to an object of type Network. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "nw_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "nw_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string NwRef { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -34,7 +33,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unique name for resolver config. Field introduced in 20.1.5.
         /// </summary>
-        [JsonProperty(PropertyName = "resolver_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "resolver_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ResolverName { get; set; }
         /// <summary>

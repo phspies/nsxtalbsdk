@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Service Engine Network Name. Field introduced in 18.2.2.
         /// </summary>
-        [JsonProperty(PropertyName = "vpc_network_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vpc_network_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VpcNetworkName { get; set; }
         /// <summary>
@@ -28,7 +27,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Service Engine Network Subnet Name. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "vpc_subnet_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vpc_subnet_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VpcSubnetName { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The host to which the redirect request is sent.
         /// </summary>
-        [JsonProperty(PropertyName = "host", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "host")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Host { get; set; }
         /// <summary>

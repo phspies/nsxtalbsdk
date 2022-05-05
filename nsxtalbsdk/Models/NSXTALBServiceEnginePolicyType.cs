@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -27,7 +26,7 @@ namespace nsxtalbsdk.Models
         /// Service Engine Group to which the policy is applied. It is a reference to an object of type ServiceEngineGroup. Field
         /// introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "se_group_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "se_group_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SeGroupRef { get; set; }
         /// <summary>
@@ -38,14 +37,14 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the Service Engine Policy. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
         /// VRF context to which the policy is scoped. It is a reference to an object of type VrfContext. Field introduced in
         /// 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "vrf_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vrf_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VrfRef { get; set; }
         /// <summary>

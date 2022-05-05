@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,13 +30,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// VCenter template to create Service Engine. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "content_lib", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "content_lib")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBContentLibConfigType ContentLib { get; set; }
         /// <summary>
         /// Availabilty zone where VCenter list belongs to. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -58,13 +57,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Credentials to access VCenter. It is a reference to an object of type CloudConnectorUser. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "vcenter_credentials_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vcenter_credentials_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VcenterCredentialsRef { get; set; }
         /// <summary>
         /// VCenter hostname or IP address. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "vcenter_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vcenter_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VcenterUrl { get; set; }
     }

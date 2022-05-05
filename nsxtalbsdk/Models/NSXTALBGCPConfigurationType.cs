@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -62,32 +61,32 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Google Cloud Platform VPC Network configuration for the Service Engines. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "network_config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "network_config")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBGCPNetworkConfigType NetworkConfig { get; set; }
         /// <summary>
         /// Google Cloud Platform Region Name where Service Engines will be spawned. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "region_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "region_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string RegionName { get; set; }
         /// <summary>
         /// Google Cloud Platform Project ID where Service Engines will be spawned. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "se_project_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "se_project_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SeProjectId { get; set; }
         /// <summary>
         /// VIP allocation strategy defines how the VIPs will be created in Google Cloud. Field introduced in 18.2.9, 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "vip_allocation_strategy", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vip_allocation_strategy")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBGCPVIPAllocationType VipAllocationStrategy { get; set; }
         /// <summary>
         /// Google Cloud Platform Zones where Service Engines will be distributed for HA. Field introduced in 18.2.1. Minimum of 1
         /// items required.
         /// </summary>
-        [JsonProperty(PropertyName = "zones", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "zones")]
         [System.ComponentModel.DataAnnotations.Required]
         public IList<string> Zones { get; set; }
     }

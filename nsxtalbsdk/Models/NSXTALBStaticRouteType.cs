@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,19 +30,19 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property next_hop of obj type StaticRoute field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "next_hop", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "next_hop")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType NextHop { get; set; }
         /// <summary>
         /// Placeholder for description of property prefix of obj type StaticRoute field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "prefix", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "prefix")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrPrefixType Prefix { get; set; }
         /// <summary>
         /// route_id of StaticRoute.
         /// </summary>
-        [JsonProperty(PropertyName = "route_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "route_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string RouteId { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// It is a reference to an object of type VIMgrNWRuntime.
         /// </summary>
-        [JsonProperty(PropertyName = "network_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "network_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string NetworkRef { get; set; }
         /// <summary>

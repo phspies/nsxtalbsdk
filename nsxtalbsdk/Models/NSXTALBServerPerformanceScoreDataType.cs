@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -33,13 +32,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unique object identifier of pool.
         /// </summary>
-        [JsonProperty(PropertyName = "pool_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "pool_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PoolUuid { get; set; }
         /// <summary>
         /// Reason for the Health Score.
         /// </summary>
-        [JsonProperty(PropertyName = "reason", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "reason")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Reason { get; set; }
         /// <summary>
@@ -55,7 +54,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// server of ServerPerformanceScoreData.
         /// </summary>
-        [JsonProperty(PropertyName = "server", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Server { get; set; }
         /// <summary>

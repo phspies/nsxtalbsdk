@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
         /// </summary>
-        [JsonProperty(PropertyName = "htype", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "htype")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Htype { get; set; }
         /// <summary>

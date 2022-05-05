@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Access token type. Enum options - ACCESS_TOKEN_TYPE_JWT, ACCESS_TOKEN_TYPE_OPAQUE. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "access_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "access_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AccessType { get; set; }
         /// <summary>

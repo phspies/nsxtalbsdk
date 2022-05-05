@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property certificate of obj type SSLKeyAndCertificate field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "certificate", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "certificate")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBSSLCertificateType Certificate { get; set; }
         /// <summary>
@@ -115,7 +114,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

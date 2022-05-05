@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// UUID of Micro Service group(s). It is a reference to an object of type MicroServiceGroup.
         /// </summary>
-        [JsonProperty(PropertyName = "group_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "group_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string GroupRef { get; set; }
         /// <summary>
         /// Criterion to use for Micro Service matching the HTTP request. Enum options - IS_IN, IS_NOT_IN.
         /// </summary>
-        [JsonProperty(PropertyName = "match_criteria", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match_criteria")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MatchCriteria { get; set; }
     }

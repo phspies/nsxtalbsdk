@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -32,7 +31,7 @@ namespace nsxtalbsdk.Models
         /// Specify whether this client IP address range is public or private. Enum options - GSLB_IP_PUBLIC, GSLB_IP_PRIVATE. Field
         /// introduced in 17.1.2.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
     }

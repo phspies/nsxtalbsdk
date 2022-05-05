@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property ip of obj type CloudIpChange field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType Ip { get; set; }
         /// <summary>

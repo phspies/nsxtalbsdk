@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -180,7 +179,7 @@ namespace nsxtalbsdk.Models
         /// LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR,
         /// DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS.
         /// </summary>
-        [JsonProperty(PropertyName = "event_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "event_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string EventId { get; set; }
         /// <summary>
@@ -209,7 +208,7 @@ namespace nsxtalbsdk.Models
         /// STATEDBCACHE, STATEDBCACHEHA, APIC_AGENT, AUTOSCALE_MGR, GLB_MGR, SEC_MGR, PORTAL_CONNECTOR, SE_UPGRADE,
         /// CONTROLLER_UPGRADE, AUDIT_MGR, DNS_MGR, WEBAPP_IPAM, ADAPT_REPL.
         /// </summary>
-        [JsonProperty(PropertyName = "module", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "module")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Module { get; set; }
         /// <summary>
@@ -577,7 +576,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of report_timestamp.
         /// </summary>
-        [JsonProperty(PropertyName = "report_timestamp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "report_timestamp")]
         [System.ComponentModel.DataAnnotations.Required]
         public long ReportTimestamp { get; set; }
         /// <summary>

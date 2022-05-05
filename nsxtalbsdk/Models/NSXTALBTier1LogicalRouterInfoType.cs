@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -30,7 +29,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Tier1 logical router path. Example- /infra/tier-1s/T1-01. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "tier1_lr_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "tier1_lr_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Tier1LrId { get; set; }
     }

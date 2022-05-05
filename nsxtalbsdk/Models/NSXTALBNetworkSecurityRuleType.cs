@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -19,7 +18,7 @@ namespace nsxtalbsdk.Models
         /// NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY) edition, Essentials(Allowed values- NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY)
         /// edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "action")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Action { get; set; }
         /// <summary>
@@ -37,13 +36,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property enable of obj type NetworkSecurityRule field type str  type boolean
         /// </summary>
-        [JsonProperty(PropertyName = "enable", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "enable")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Enable { get; set; }
         /// <summary>
         /// Number of index.
         /// </summary>
-        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Index { get; set; }
         /// <summary>
@@ -54,13 +53,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property match of obj type NetworkSecurityRule field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "match", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBNetworkSecurityMatchTargetType Match { get; set; }
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

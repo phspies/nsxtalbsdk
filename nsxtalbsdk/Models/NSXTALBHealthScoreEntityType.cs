@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,14 +15,14 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unique object identifier of entity.
         /// </summary>
-        [JsonProperty(PropertyName = "entity_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "entity_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string EntityUuid { get; set; }
         /// <summary>
         /// Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY,
         /// APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
         /// </summary>
-        [JsonProperty(PropertyName = "metrics_entity", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "metrics_entity")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MetricsEntity { get; set; }
         /// <summary>

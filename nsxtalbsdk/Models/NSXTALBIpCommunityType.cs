@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,7 +21,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Beginning of IP address range. Field introduced in 17.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "ip_begin", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip_begin")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType IpBegin { get; set; }
         /// <summary>

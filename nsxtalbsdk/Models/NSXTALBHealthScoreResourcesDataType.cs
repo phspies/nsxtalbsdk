@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -33,7 +32,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Reason for Resources Score.
         /// </summary>
-        [JsonProperty(PropertyName = "reason", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "reason")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Reason { get; set; }
         /// <summary>
@@ -56,7 +55,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property value of obj type HealthScoreResourcesData field type str  type number
         /// </summary>
-        [JsonProperty(PropertyName = "value", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "value")]
         [System.ComponentModel.DataAnnotations.Required]
         public double Value { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -36,7 +35,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// A user-friendly name of the email notification service.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -47,7 +46,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Alerts are sent to the comma separated list of  email recipients.
         /// </summary>
-        [JsonProperty(PropertyName = "to_emails", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "to_emails")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ToEmails { get; set; }
         /// <summary>

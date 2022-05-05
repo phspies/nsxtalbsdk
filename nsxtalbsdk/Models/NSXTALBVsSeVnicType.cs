@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,13 +20,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// mac of VsSeVnic.
         /// </summary>
-        [JsonProperty(PropertyName = "mac", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mac")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Mac { get; set; }
         /// <summary>
         /// Enum options - VNIC_TYPE_FE, VNIC_TYPE_BE.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
     }

@@ -11,7 +11,7 @@ using System.Net;
 using System.Web;
 using System.Text;
 using NSwag.Collections;
-
+using System.Linq;
 namespace nsxtapi
 {
     class Program
@@ -22,8 +22,6 @@ namespace nsxtapi
         static string swaggerFilesDirectory = @"C:\Users\Phillip\source\repos\nsxtalbsdk\SDKGenerator\swagger";
         static void Main(string[] args)
         {
-
-
             Helpers.Register(nameof(ToXmlDoc), ToXmlDoc);
             Helpers.Register(nameof(GetMethodName), GetMethodName);
             Helpers.Register(nameof(GetDotNetName), GetDotNetName);
@@ -44,32 +42,24 @@ namespace nsxtapi
             Helpers.Register(nameof(GetResponseName), GetResponseName);
             Helpers.Register(nameof(GetParameterPascalCase), GetParameterPascalCase);
             Helpers.Register(nameof(SetDefaultValue), SetDefaultValue);
-
-
+            Helpers.Register(nameof(GetRequiredLine), GetRequiredLine);
             List<apiSpecification> modules = new List<apiSpecification>();
             List<string> swaggerFiles = Directory.GetFiles(swaggerFilesDirectory, "*.json").ToList();
             swaggerFiles.ForEach(file =>
             {
-
                 apiSpecification spec = new apiSpecification() { Name = PascalCase(Path.GetFileNameWithoutExtension(file)), ApiDocument = OpenApiDocument.FromFileAsync(file).Result };
                 JsonSchemaReferenceUtilities.UpdateSchemaReferencePaths(spec.ApiDocument);
                 modules.Add(spec);
-
             });
-
-
-
             Directory.CreateDirectory(Path.Combine(projectDirectory, "Models"));
             Directory.CreateDirectory(Path.Combine(projectDirectory, "Models", "Enums"));
             Directory.CreateDirectory(Path.Combine(projectDirectory, "Modules"));
-
             //Generate root api objects
             Render.FileToFile(Path.Combine(generatorDirectory, "Templates", "RootModule.cs.template"), new
             {
                 rootURL = modules.First().ApiDocument.BaseUrl,
                 modules = modules.Select(x => x.Name),
             }, Path.Combine(projectDirectory, $"NSXTALBClient.cs"));
-
             modules.ForEach(module =>
             {
                 Render.FileToFile(Path.Combine(generatorDirectory, "Templates", "Module.cs.template"), new
@@ -78,7 +68,6 @@ namespace nsxtapi
                     operations = module.ApiDocument.Operations,
                 }, Path.Combine(projectDirectory, "Modules", $"{module.Name}.cs"));
             });
-
             modules.ForEach(module =>
             {
                 module.ApiDocument.Definitions.ToList().ForEach(def =>
@@ -91,7 +80,6 @@ namespace nsxtapi
                         def = def.Value,
                         properties = def.Value.Properties.Values,
                     }, Path.Combine(projectDirectory, "Models", $"NSXTALB{clz}Type.cs"));
-
                     foreach (var prop in def.Value.Properties)
                     {
                         if (prop.Value.Enumeration.Count > 0)
@@ -117,14 +105,12 @@ namespace nsxtapi
                 });
             });
         }
-
         private string ConvertToString(object value, System.Globalization.CultureInfo cultureInfo)
         {
             if (value == null)
             {
                 return "";
             }
-
             if (value is System.Enum)
             {
                 var name = System.Enum.GetName(value.GetType(), value);
@@ -140,7 +126,6 @@ namespace nsxtapi
                             return attribute.Value != null ? attribute.Value : name;
                         }
                     }
-
                     var converted = System.Convert.ToString(System.Convert.ChangeType(value, System.Enum.GetUnderlyingType(value.GetType()), cultureInfo));
                     return converted == null ? string.Empty : converted;
                 }
@@ -158,7 +143,6 @@ namespace nsxtapi
                 var array = System.Linq.Enumerable.OfType<object>((System.Array)value);
                 return string.Join(",", System.Linq.Enumerable.Select(array, o => ConvertToString(o, cultureInfo)));
             }
-
             var result = System.Convert.ToString(value, cultureInfo);
             return result == null ? "" : result;
         }
@@ -221,7 +205,6 @@ namespace nsxtapi
                                 {
                                     first = false;
                                 }
-
                                 context.Write(HttpUtility.HtmlDecode(wline));
                             }
                         }
@@ -233,18 +216,46 @@ namespace nsxtapi
                 }
             }
         }
-
+        private static void GetRequiredLine(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
+        {
+            var param = ((OpenApiParameter)arguments[0]);
+            if (param.IsRequired)
+            {
+                if (PascalCase(param.Name) == "XAviVersion")
+                {
+                    context.Write("if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }");
+                }
+                else
+                {
+                    context.Write($"if (" + PascalCase(param.Name) + " == null) {" + " throw new ArgumentNullException(\"" + PascalCase(param.Name) + " cannot be null\"); }");
+                }
+            }
+        }
         private static void GetOperationPathParams(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             var operation = ((OpenApiOperationDescription)arguments[0]).Operation;
             List<string> returnList = new();
-            foreach (var parameter in operation.Parameters.OrderByDescending(x => x.IsRequired))
+            var operations = operation.Parameters.OrderByDescending(x => x.IsRequired).ToList();
+            if (operations.Any(x => x.Name == "X-Avi-Version"))
             {
-                returnList.Add($"{GetDotNetType(parameter)} {PascalCase(parameter.Name)}" + (parameter.IsRequired ? "" : " = null"));
+                int versionIndex = operations.IndexOf(operations.First(x => x.Name == "X-Avi-Version"));
+                var verionobject = operations[versionIndex];
+                operations.RemoveAt(versionIndex);
+                operations.Add(verionobject);
+            }
+            foreach (var parameter in operations)
+            {
+                if (parameter.Name.ToLower() == "X-Avi-Version".ToLower())
+                {
+                    returnList.Add($"{GetDotNetType(parameter)}? {PascalCase(parameter.Name)} = null");
+                }
+                else
+                {
+                    returnList.Add($"{GetDotNetType(parameter)} {PascalCase(parameter.Name)}" + (parameter.IsRequired ? "" : " = null"));
+                }
             }
             context.Write(string.Join(", ", returnList));
         }
-
         private static void GetOperationReturnType(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             var operation = ((OpenApiOperationDescription)arguments[0]).Operation;
@@ -358,7 +369,6 @@ namespace nsxtapi
                 }
                 else if (arguments[1] as string == "cmdlet")
                 {
-
                 }
                 else if (arguments[1] as string == "cmdletreturn")
                 {
@@ -372,18 +382,15 @@ namespace nsxtapi
                     context.Write($"object returnobject = null; _client.{module}Module.{PascalCase(operationId)}({string.Join(", ", returnList)});");
                 }
             }
-
         }
         private static void GetOperationHttpMethod(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             context.Write((arguments[0] as OpenApiOperationDescription).Method.ToUpper());
-
         }
         private static void GetResponseType(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             ObservableDictionary<string, OpenApiResponse> responseList = arguments[0] as ObservableDictionary<string, OpenApiResponse>;
             var okResponse = responseList.FirstOrDefault(x => x.Key.StartsWith("20"));
-
             if (okResponse.Value.Schema != null)
             {
                 if (okResponse.Value.Schema?.Reference != null)
@@ -395,9 +402,7 @@ namespace nsxtapi
                     context.Write($"returnValue = JsonConvert.DeserializeObject<{okResponse.Value.Schema.Type.ToString().ToLower()}>(response.Content, defaultSerializationSettings);");
                 }
             }
-
         }
-
         private static void GetOperationPathInjectionCode(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             var parameter = (arguments[0] as OpenApiParameter);
@@ -431,7 +436,6 @@ namespace nsxtapi
                 throw new NotSupportedException(parameter.Kind.ToString());
             }
         }
-
         private static void GetLowerCase(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             var test = arguments[0];
@@ -451,27 +455,21 @@ namespace nsxtapi
                 context.Write(value.ToString());
             }
         }
-
         private static void GetMethodName(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             var operation = ((OpenApiOperationDescription)arguments[0]);
-
             context.Write(PascalCase($"{operation.Method} {operation.Path.Replace("/", " ").Replace("{", " ").Replace("}", " ")}"));
-
         }
         private static void GetResponseName(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             var (response, operation) = ((KeyValuePair<string, OpenApiResponse>)arguments[0]);
             context.Write(PascalCase(response));
         }
-
-
         private static void GetDotNetType(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             if (arguments != null && arguments.Count > 0 && arguments[0] != null && arguments[0] is JsonSchemaProperty)
             {
                 var parameter = arguments[0] as JsonSchemaProperty;
-
                 if (parameter.Reference != null)
                 {
                     context.Write(GetDotNetType(parameter, arguments));
@@ -533,14 +531,12 @@ namespace nsxtapi
                     //throw new NotSupportedException();
                     Console.WriteLine($"{parameter.Type} for {parameter.Name} not handeled");
                     return "object";
-
             }
         }
         private static string GetDotNetType(JsonSchemaProperty jsonType, IList<object> arguments)
         {
             if (jsonType.Name == "nodes")
             {
-
             }
             switch (jsonType.Type)
             {
@@ -553,7 +549,6 @@ namespace nsxtapi
                     {
                         return "bool?";
                     }
-
                 case JsonObjectType.Integer:
                     switch (jsonType.Format)
                     {
@@ -577,7 +572,6 @@ namespace nsxtapi
                                 return "int?";
                             }
                     }
-
                 case JsonObjectType.Number:
                     if (jsonType.IsRequired)
                     {
@@ -587,7 +581,6 @@ namespace nsxtapi
                     {
                         return "double?";
                     }
-
                 case JsonObjectType.String:
                     if (jsonType.Enumeration != null && jsonType.Enumeration.Count > 0)
                     {
@@ -672,7 +665,6 @@ namespace nsxtapi
                         else
                         {
                             throw new NotSupportedException();
-
                         }
                     }
                 case JsonObjectType.Object:
@@ -707,9 +699,6 @@ namespace nsxtapi
                     throw new NotSupportedException();
             }
         }
-
-
-
         private static void GetDotNetName(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
             if (arguments != null && arguments.Count > 0 && arguments[0] != null && arguments[0] is JsonSchemaProperty)
@@ -733,7 +722,6 @@ namespace nsxtapi
                 {
                     style = arguments[1] as string;
                 }
-
                 context.Write(GetDotNetName((string)arguments[0], style));
             }
             else
@@ -741,7 +729,6 @@ namespace nsxtapi
                 context.Write("fieldname");
             }
         }
-
         private static string GetDotNetName(string jsonName, string style = "parameter")
         {
             switch (style)
@@ -755,9 +742,7 @@ namespace nsxtapi
                     {
                         return "continueParameter";
                     }
-
                     break;
-
                 case "fieldctor":
                     if (jsonName == "namespace")
                     {
@@ -805,9 +790,6 @@ namespace nsxtapi
             }
             return jsonName.ToCamelCase();
         }
-
-
-
         private static string ToPascalCase(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -831,20 +813,17 @@ namespace nsxtapi
             }
             return str;
         }
-
         public static IEnumerable<string> WordWrap(string text, int width)
         {
             var lines = text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
             foreach (var line in lines)
             {
                 var processedLine = line.Trim();
-
                 // yield empty lines as they are (probably) intensional
                 if (processedLine.Length == 0)
                 {
                     yield return processedLine;
                 }
-
                 // feast on the line until it's gone
                 while (processedLine.Length > 0)
                 {
@@ -856,10 +835,8 @@ namespace nsxtapi
                         .Cast<int?>();
                     var preWidthWrapAt = whitespacePositions.LastOrDefault(i => i <= width);
                     var postWidthWrapAt = whitespacePositions.FirstOrDefault(i => i > width);
-
                     // choose preferred wrapping point
                     var wrapAt = preWidthWrapAt ?? postWidthWrapAt ?? processedLine.Length;
-
                     // wrap
                     yield return processedLine.Substring(0, wrapAt);
                     processedLine = processedLine.Substring(wrapAt).Trim();
@@ -871,7 +848,6 @@ namespace nsxtapi
             List<string> result = new List<string>();
             bool wasPreviousUppercase = false;
             StringBuilder current = new StringBuilder();
-
             foreach (char c in stringToSplit)
             {
                 if (char.IsUpper(c))
@@ -887,10 +863,8 @@ namespace nsxtapi
                             result.Add(current.ToString());
                             current.Length = 0;
                         }
-
                         current.Append(c);
                     }
-
                     wasPreviousUppercase = true;
                 }
                 else  // lowercase
@@ -906,9 +880,7 @@ namespace nsxtapi
                             current.Append(carried);
                         }
                     }
-
                     wasPreviousUppercase = false;
-
                     if (current.Length == 0)
                     {
                         current.Append(char.ToUpper(c));
@@ -919,12 +891,10 @@ namespace nsxtapi
                     }
                 }
             }
-
             if (current.Length > 0)
             {
                 result.Add(current.ToString());
             }
-
             return result;
         }
         public class EnumType

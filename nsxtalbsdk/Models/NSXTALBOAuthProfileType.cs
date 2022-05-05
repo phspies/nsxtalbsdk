@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// URL of authorization server. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "authorization_endpoint", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "authorization_endpoint")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AuthorizationEndpoint { get; set; }
         /// <summary>
@@ -54,7 +53,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// URL of token exchange server. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "token_endpoint", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "token_endpoint")]
         [System.ComponentModel.DataAnnotations.Required]
         public string TokenEndpoint { get; set; }
         /// <summary>

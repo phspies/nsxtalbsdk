@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// GSLB subdomain used for GSLB service FQDN match and placement. .
         /// </summary>
-        [JsonProperty(PropertyName = "domain_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "domain_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string DomainName { get; set; }
     }

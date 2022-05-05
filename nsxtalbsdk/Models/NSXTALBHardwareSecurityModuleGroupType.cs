@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Hardware Security Module configuration.
         /// </summary>
-        [JsonProperty(PropertyName = "hsm", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "hsm")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBHardwareSecurityModuleType Hsm { get; set; }
         /// <summary>
@@ -44,7 +43,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the HSM Group configuration object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

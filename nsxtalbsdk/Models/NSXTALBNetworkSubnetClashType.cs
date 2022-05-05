@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// ip_nw of NetworkSubnetClash.
         /// </summary>
-        [JsonProperty(PropertyName = "ip_nw", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip_nw")]
         [System.ComponentModel.DataAnnotations.Required]
         public string IpNw { get; set; }
         /// <summary>

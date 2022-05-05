@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -46,7 +45,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Virtual Service UUID. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "vs_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vs_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VsUuid { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// Config Mode for Google Cloud network configuration. Enum options - INBAND_MANAGEMENT, ONE_ARM_MODE, TWO_ARM_MODE. Field
         /// introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "config")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Config { get; set; }
         /// <summary>

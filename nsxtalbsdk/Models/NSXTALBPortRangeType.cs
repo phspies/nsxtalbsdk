@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// TCP/UDP port range end (inclusive). Allowed values are 1-65535.
         /// </summary>
-        [JsonProperty(PropertyName = "end", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "end")]
         [System.ComponentModel.DataAnnotations.Required]
         public int End { get; set; }
         /// <summary>
         /// TCP/UDP port range start (inclusive). Allowed values are 1-65535.
         /// </summary>
-        [JsonProperty(PropertyName = "start", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "start")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Start { get; set; }
     }

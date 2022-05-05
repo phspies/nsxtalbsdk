@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// Format for the streamed logs. Enum options - LOG_STREAMING_FORMAT_JSON_FULL, LOG_STREAMING_FORMAT_JSON_SELECTED. Field
         /// introduced in 18.2.5.
         /// </summary>
-        [JsonProperty(PropertyName = "format", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "format")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Format { get; set; }
         /// <summary>

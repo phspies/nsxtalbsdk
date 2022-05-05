@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -36,7 +35,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// HTTP protocol type. Enum options - HTTP, HTTPS.
         /// </summary>
-        [JsonProperty(PropertyName = "protocol", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "protocol")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Protocol { get; set; }
     }

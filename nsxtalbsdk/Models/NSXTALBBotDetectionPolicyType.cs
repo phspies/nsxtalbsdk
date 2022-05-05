@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,19 +30,19 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The IP location configuration used in this policy. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "ip_location_detector", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip_location_detector")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBBotConfigIPLocationType IpLocationDetector { get; set; }
         /// <summary>
         /// The IP reputation configuration used in this policy. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "ip_reputation_detector", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip_reputation_detector")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBBotConfigIPReputationType IpReputationDetector { get; set; }
         /// <summary>
         /// The name of this Bot Detection Policy. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -71,7 +70,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The User-Agent configuration used in this policy. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "user_agent_detector", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "user_agent_detector")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBBotConfigUserAgentType UserAgentDetector { get; set; }
         /// <summary>

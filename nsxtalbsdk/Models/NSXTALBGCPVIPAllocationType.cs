@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,7 +21,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// VIP Allocation Mode. Enum options - ROUTES, ILB. Field introduced in 18.2.9, 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "mode", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mode")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Mode { get; set; }
         /// <summary>

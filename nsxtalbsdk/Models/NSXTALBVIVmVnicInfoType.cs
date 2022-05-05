@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// mac_addr of VIVmVnicInfo.
         /// </summary>
-        [JsonProperty(PropertyName = "mac_addr", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mac_addr")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MacAddr { get; set; }
         /// <summary>

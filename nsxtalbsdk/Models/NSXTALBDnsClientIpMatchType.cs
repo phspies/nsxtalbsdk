@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IP addresses to match against client IP. Field introduced in 17.1.6,17.2.2.
         /// </summary>
-        [JsonProperty(PropertyName = "client_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrMatchType ClientIp { get; set; }
         /// <summary>

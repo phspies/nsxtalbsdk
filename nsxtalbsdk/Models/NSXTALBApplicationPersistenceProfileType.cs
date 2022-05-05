@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -70,7 +69,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// A user-friendly name for the persistence profile.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -81,7 +80,7 @@ namespace nsxtalbsdk.Models
         /// PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE) edition, Essentials(Allowed values-
         /// PERSISTENCE_TYPE_CLIENT_IP_ADDRESS,PERSISTENCE_TYPE_HTTP_COOKIE) edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "persistence_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "persistence_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PersistenceType { get; set; }
         /// <summary>

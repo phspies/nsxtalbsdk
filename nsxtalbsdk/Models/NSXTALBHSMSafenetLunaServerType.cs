@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Field introduced in 16.5.2,17.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Index { get; set; }
         /// <summary>
@@ -32,13 +31,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IP address of the Safenet/Gemalto HSM device.
         /// </summary>
-        [JsonProperty(PropertyName = "remote_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "remote_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public string RemoteIp { get; set; }
         /// <summary>
         /// CA certificate of the server.
         /// </summary>
-        [JsonProperty(PropertyName = "server_cert", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_cert")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ServerCert { get; set; }
     }

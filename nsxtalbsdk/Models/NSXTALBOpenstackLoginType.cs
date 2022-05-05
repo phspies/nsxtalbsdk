@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// password of OpenstackLogin.
         /// </summary>
-        [JsonProperty(PropertyName = "password", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "password")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Password { get; set; }
         /// <summary>
@@ -42,7 +41,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// username of OpenstackLogin.
         /// </summary>
-        [JsonProperty(PropertyName = "username", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "username")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Username { get; set; }
     }

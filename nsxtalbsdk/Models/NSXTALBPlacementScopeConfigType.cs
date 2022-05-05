@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -43,7 +42,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// VCenter server configuration. It is a reference to an object of type VCenterServer. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "vcenter_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vcenter_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VcenterRef { get; set; }
     }

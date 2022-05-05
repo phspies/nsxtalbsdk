@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,7 +21,7 @@ namespace nsxtalbsdk.Models
         /// HTTP_SECURITY_ACTION_CLOSE_CONN,HTTP_SECURITY_ACTION_SEND_RESPONSE,HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS) edition,
         /// Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "action")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Action { get; set; }
         /// <summary>

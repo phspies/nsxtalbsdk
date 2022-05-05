@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// OpenStack admin tenant (or project) information. For Keystone v3, provide the project information in project@domain
         /// format. Domain need not be specified if the project belongs to the 'Default' domain.
         /// </summary>
-        [JsonProperty(PropertyName = "admin_tenant", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "admin_tenant")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AdminTenant { get; set; }
         /// <summary>
@@ -122,7 +121,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Avi Management network name or cidr.
         /// </summary>
-        [JsonProperty(PropertyName = "mgmt_network_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mgmt_network_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MgmtNetworkName { get; set; }
         /// <summary>
@@ -185,7 +184,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Access privilege. Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
         /// </summary>
-        [JsonProperty(PropertyName = "privilege", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "privilege")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Privilege { get; set; }
         /// <summary>
@@ -257,7 +256,7 @@ namespace nsxtalbsdk.Models
         /// The username Avi Vantage will use when authenticating to Keystone. For Keystone v3, provide the user information in
         /// user@domain format, unless that user belongs to the Default domain.
         /// </summary>
-        [JsonProperty(PropertyName = "username", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "username")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Username { get; set; }
         /// <summary>

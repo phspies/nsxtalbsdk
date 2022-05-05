@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Action to perform upon rate limiting. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "action")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBDnsRuleRLActionType Action { get; set; }
         /// <summary>
         /// Rate limiting object. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "rate_limiter_object", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rate_limiter_object")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBRateLimiterType RateLimiterObject { get; set; }
     }

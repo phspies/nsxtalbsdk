@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -36,7 +35,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// vip_intf_mac of SeVipInterfaceList.
         /// </summary>
-        [JsonProperty(PropertyName = "vip_intf_mac", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vip_intf_mac")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VipIntfMac { get; set; }
         /// <summary>

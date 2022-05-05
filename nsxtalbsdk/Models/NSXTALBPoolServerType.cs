@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IP address of the server in the poool.
         /// </summary>
-        [JsonProperty(PropertyName = "ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType Ip { get; set; }
         /// <summary>

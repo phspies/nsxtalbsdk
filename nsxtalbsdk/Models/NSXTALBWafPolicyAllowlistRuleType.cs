@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -33,19 +32,19 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Rules are processed in order of this index field. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Index { get; set; }
         /// <summary>
         /// Match criteria describing requests to which this rule should be applied. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "match", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBMatchTargetType Match { get; set; }
         /// <summary>
         /// A name describing the rule in a short form. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

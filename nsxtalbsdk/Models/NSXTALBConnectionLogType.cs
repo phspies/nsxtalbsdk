@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property adf of obj type ConnectionLog field type str  type boolean
         /// </summary>
-        [JsonProperty(PropertyName = "adf", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "adf")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Adf { get; set; }
         /// <summary>
@@ -37,13 +36,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of client_dest_port.
         /// </summary>
-        [JsonProperty(PropertyName = "client_dest_port", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_dest_port")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ClientDestPort { get; set; }
         /// <summary>
         /// Number of client_ip.
         /// </summary>
-        [JsonProperty(PropertyName = "client_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ClientIp { get; set; }
         /// <summary>
@@ -64,13 +63,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unit is MILLISECONDS.
         /// </summary>
-        [JsonProperty(PropertyName = "client_rtt", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_rtt")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ClientRtt { get; set; }
         /// <summary>
         /// Number of client_src_port.
         /// </summary>
-        [JsonProperty(PropertyName = "client_src_port", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_src_port")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ClientSrcPort { get; set; }
         /// <summary>
@@ -86,7 +85,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property connection_ended of obj type ConnectionLog field type str  type boolean
         /// </summary>
-        [JsonProperty(PropertyName = "connection_ended", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "connection_ended")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool ConnectionEnded { get; set; }
         /// <summary>
@@ -145,7 +144,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of log_id.
         /// </summary>
-        [JsonProperty(PropertyName = "log_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "log_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public int LogId { get; set; }
         /// <summary>
@@ -171,7 +170,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unit is BYTES.
         /// </summary>
-        [JsonProperty(PropertyName = "mss", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mss")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Mss { get; set; }
         /// <summary>
@@ -202,7 +201,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of out_of_orders.
         /// </summary>
-        [JsonProperty(PropertyName = "out_of_orders", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "out_of_orders")]
         [System.ComponentModel.DataAnnotations.Required]
         public int OutOfOrders { get; set; }
         /// <summary>
@@ -235,31 +234,31 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of report_timestamp.
         /// </summary>
-        [JsonProperty(PropertyName = "report_timestamp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "report_timestamp")]
         [System.ComponentModel.DataAnnotations.Required]
         public long ReportTimestamp { get; set; }
         /// <summary>
         /// Number of retransmits.
         /// </summary>
-        [JsonProperty(PropertyName = "retransmits", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "retransmits")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Retransmits { get; set; }
         /// <summary>
         /// Unit is BYTES.
         /// </summary>
-        [JsonProperty(PropertyName = "rx_bytes", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rx_bytes")]
         [System.ComponentModel.DataAnnotations.Required]
         public long RxBytes { get; set; }
         /// <summary>
         /// Number of rx_pkts.
         /// </summary>
-        [JsonProperty(PropertyName = "rx_pkts", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rx_pkts")]
         [System.ComponentModel.DataAnnotations.Required]
         public long RxPkts { get; set; }
         /// <summary>
         /// Number of server_conn_src_ip.
         /// </summary>
-        [JsonProperty(PropertyName = "server_conn_src_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_conn_src_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServerConnSrcIp { get; set; }
         /// <summary>
@@ -270,13 +269,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of server_dest_port.
         /// </summary>
-        [JsonProperty(PropertyName = "server_dest_port", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_dest_port")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServerDestPort { get; set; }
         /// <summary>
         /// Number of server_ip.
         /// </summary>
-        [JsonProperty(PropertyName = "server_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServerIp { get; set; }
         /// <summary>
@@ -297,73 +296,73 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of server_out_of_orders.
         /// </summary>
-        [JsonProperty(PropertyName = "server_out_of_orders", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_out_of_orders")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServerOutOfOrders { get; set; }
         /// <summary>
         /// Number of server_retransmits.
         /// </summary>
-        [JsonProperty(PropertyName = "server_retransmits", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_retransmits")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServerRetransmits { get; set; }
         /// <summary>
         /// Unit is MILLISECONDS.
         /// </summary>
-        [JsonProperty(PropertyName = "server_rtt", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_rtt")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServerRtt { get; set; }
         /// <summary>
         /// Unit is BYTES.
         /// </summary>
-        [JsonProperty(PropertyName = "server_rx_bytes", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_rx_bytes")]
         [System.ComponentModel.DataAnnotations.Required]
         public long ServerRxBytes { get; set; }
         /// <summary>
         /// Number of server_rx_pkts.
         /// </summary>
-        [JsonProperty(PropertyName = "server_rx_pkts", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_rx_pkts")]
         [System.ComponentModel.DataAnnotations.Required]
         public long ServerRxPkts { get; set; }
         /// <summary>
         /// Number of server_src_port.
         /// </summary>
-        [JsonProperty(PropertyName = "server_src_port", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_src_port")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServerSrcPort { get; set; }
         /// <summary>
         /// Number of server_timeouts.
         /// </summary>
-        [JsonProperty(PropertyName = "server_timeouts", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_timeouts")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServerTimeouts { get; set; }
         /// <summary>
         /// Unit is BYTES.
         /// </summary>
-        [JsonProperty(PropertyName = "server_total_bytes", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_total_bytes")]
         [System.ComponentModel.DataAnnotations.Required]
         public long ServerTotalBytes { get; set; }
         /// <summary>
         /// Number of server_total_pkts.
         /// </summary>
-        [JsonProperty(PropertyName = "server_total_pkts", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_total_pkts")]
         [System.ComponentModel.DataAnnotations.Required]
         public long ServerTotalPkts { get; set; }
         /// <summary>
         /// Unit is BYTES.
         /// </summary>
-        [JsonProperty(PropertyName = "server_tx_bytes", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_tx_bytes")]
         [System.ComponentModel.DataAnnotations.Required]
         public long ServerTxBytes { get; set; }
         /// <summary>
         /// Number of server_tx_pkts.
         /// </summary>
-        [JsonProperty(PropertyName = "server_tx_pkts", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_tx_pkts")]
         [System.ComponentModel.DataAnnotations.Required]
         public long ServerTxPkts { get; set; }
         /// <summary>
         /// Number of server_zero_window_size_events.
         /// </summary>
-        [JsonProperty(PropertyName = "server_zero_window_size_events", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "server_zero_window_size_events")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServerZeroWindowSizeEvents { get; set; }
         /// <summary>
@@ -379,7 +378,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of significant.
         /// </summary>
-        [JsonProperty(PropertyName = "significant", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "significant")]
         [System.ComponentModel.DataAnnotations.Required]
         public long Significant { get; set; }
         /// <summary>
@@ -617,13 +616,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of start_timestamp.
         /// </summary>
-        [JsonProperty(PropertyName = "start_timestamp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "start_timestamp")]
         [System.ComponentModel.DataAnnotations.Required]
         public long StartTimestamp { get; set; }
         /// <summary>
         /// Number of timeouts.
         /// </summary>
-        [JsonProperty(PropertyName = "timeouts", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "timeouts")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Timeouts { get; set; }
         /// <summary>
@@ -644,31 +643,31 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unit is BYTES.
         /// </summary>
-        [JsonProperty(PropertyName = "tx_bytes", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "tx_bytes")]
         [System.ComponentModel.DataAnnotations.Required]
         public long TxBytes { get; set; }
         /// <summary>
         /// Number of tx_pkts.
         /// </summary>
-        [JsonProperty(PropertyName = "tx_pkts", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "tx_pkts")]
         [System.ComponentModel.DataAnnotations.Required]
         public long TxPkts { get; set; }
         /// <summary>
         /// Placeholder for description of property udf of obj type ConnectionLog field type str  type boolean
         /// </summary>
-        [JsonProperty(PropertyName = "udf", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "udf")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Udf { get; set; }
         /// <summary>
         /// Number of vcpu_id.
         /// </summary>
-        [JsonProperty(PropertyName = "vcpu_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vcpu_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public int VcpuId { get; set; }
         /// <summary>
         /// virtualservice of ConnectionLog.
         /// </summary>
-        [JsonProperty(PropertyName = "virtualservice", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "virtualservice")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Virtualservice { get; set; }
         /// <summary>
@@ -684,7 +683,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of zero_window_size_events.
         /// </summary>
-        [JsonProperty(PropertyName = "zero_window_size_events", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "zero_window_size_events")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ZeroWindowSizeEvents { get; set; }
     }

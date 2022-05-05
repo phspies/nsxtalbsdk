@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enables real time metrics collection.  When deactivated, 6 hour view is the most granular the system will track.
         /// </summary>
-        [JsonProperty(PropertyName = "enabled", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "enabled")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Enabled { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// index used for maintaining order of AlternateAuthConfiguration. Field introduced in 20.1.6.
         /// </summary>
-        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Index { get; set; }
         /// <summary>

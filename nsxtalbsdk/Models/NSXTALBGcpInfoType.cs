@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,13 +20,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Network this SE is assigned.
         /// </summary>
-        [JsonProperty(PropertyName = "network", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "network")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Network { get; set; }
         /// <summary>
         /// Project this SE belongs to.
         /// </summary>
-        [JsonProperty(PropertyName = "project", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "project")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Project { get; set; }
         /// <summary>
@@ -38,7 +37,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Zone this SE is part of.
         /// </summary>
-        [JsonProperty(PropertyName = "zone", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "zone")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Zone { get; set; }
     }

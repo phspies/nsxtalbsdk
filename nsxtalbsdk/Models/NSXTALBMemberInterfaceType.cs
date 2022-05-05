@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// if_name of MemberInterface.
         /// </summary>
-        [JsonProperty(PropertyName = "if_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "if_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string IfName { get; set; }
         /// <summary>

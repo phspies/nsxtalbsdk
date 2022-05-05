@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Location index, this is used to determine the order of the locations. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Index { get; set; }
         /// <summary>
@@ -32,7 +31,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// User defined name for this location, it must be unique in the group. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

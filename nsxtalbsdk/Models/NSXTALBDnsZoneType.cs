@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -24,7 +23,7 @@ namespace nsxtalbsdk.Models
         /// do not have any DNS record in Avi are dropped or NXDomain response sent. For domains which are present, SOA parameters
         /// are sent in answer section of response if query type is SOA. Field introduced in 18.2.6.
         /// </summary>
-        [JsonProperty(PropertyName = "domain_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "domain_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string DomainName { get; set; }
         /// <summary>

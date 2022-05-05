@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// end of MetricsMissingDataInterval.
         /// </summary>
-        [JsonProperty(PropertyName = "end", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "end")]
         [System.ComponentModel.DataAnnotations.Required]
         public string End { get; set; }
         /// <summary>
         /// start of MetricsMissingDataInterval.
         /// </summary>
-        [JsonProperty(PropertyName = "start", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "start")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Start { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// Name of shared virtualservice. VirtualService will be created automatically by Cloud Connector. Field introduced in
         /// 17.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "virtualservice_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "virtualservice_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VirtualserviceName { get; set; }
     }

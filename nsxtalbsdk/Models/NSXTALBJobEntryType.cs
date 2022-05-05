@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,19 +20,19 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// expires_at of JobEntry.
         /// </summary>
-        [JsonProperty(PropertyName = "expires_at", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "expires_at")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ExpiresAt { get; set; }
         /// <summary>
         /// Field introduced in 18.1.2.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
         /// obj_key of JobEntry.
         /// </summary>
-        [JsonProperty(PropertyName = "obj_key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "obj_key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ObjKey { get; set; }
         /// <summary>

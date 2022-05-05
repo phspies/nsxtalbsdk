@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name Server name. Field introduced in 17.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "nsname", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "nsname")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Nsname { get; set; }
     }

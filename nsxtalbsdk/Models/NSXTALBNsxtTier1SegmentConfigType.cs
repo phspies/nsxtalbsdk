@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -30,7 +29,7 @@ namespace nsxtalbsdk.Models
         /// TIER1_SEGMENT_MANUAL, TIER1_SEGMENT_AUTOMATIC. Field introduced in 20.1.1. Allowed in Basic(Allowed values-
         /// TIER1_SEGMENT_MANUAL) edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "segment_config_mode", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "segment_config_mode")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SegmentConfigMode { get; set; }
     }

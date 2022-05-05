@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Configure service provider settings for the Controller. Field introduced in 17.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "sp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "sp")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBSamlServiceProviderSettingsType Sp { get; set; }
     }

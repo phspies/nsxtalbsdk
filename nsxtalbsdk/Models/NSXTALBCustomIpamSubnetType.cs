@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Network to use for Custom IPAM IP allocation. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "network_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "network_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string NetworkId { get; set; }
         /// <summary>

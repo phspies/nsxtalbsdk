@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,7 +21,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// DN(Distinguished Name) of a directory entry. which will be starting point of the search. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "base_dn", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "base_dn")]
         [System.ComponentModel.DataAnnotations.Required]
         public string BaseDn { get; set; }
         /// <summary>

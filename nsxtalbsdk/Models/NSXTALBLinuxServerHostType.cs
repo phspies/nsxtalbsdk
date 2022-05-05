@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property host_ip of obj type LinuxServerHost field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "host_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "host_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType HostIp { get; set; }
         /// <summary>

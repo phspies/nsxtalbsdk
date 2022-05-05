@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -106,7 +105,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS.
         /// </summary>
-        [JsonProperty(PropertyName = "source", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "source")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Source { get; set; }
         /// <summary>

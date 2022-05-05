@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of curr_value.
         /// </summary>
-        [JsonProperty(PropertyName = "curr_value", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "curr_value")]
         [System.ComponentModel.DataAnnotations.Required]
         public long CurrValue { get; set; }
         /// <summary>
         /// Number of thresh.
         /// </summary>
-        [JsonProperty(PropertyName = "thresh", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "thresh")]
         [System.ComponentModel.DataAnnotations.Required]
         public long Thresh { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -54,13 +53,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// timestamp of AnomalyData.
         /// </summary>
-        [JsonProperty(PropertyName = "timestamp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "timestamp")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Timestamp { get; set; }
         /// <summary>
         /// Placeholder for description of property value of obj type AnomalyData field type str  type number
         /// </summary>
-        [JsonProperty(PropertyName = "value", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "value")]
         [System.ComponentModel.DataAnnotations.Required]
         public double Value { get; set; }
     }

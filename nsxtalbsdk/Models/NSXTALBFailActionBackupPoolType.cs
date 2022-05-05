@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Specifies the UUID of the Pool acting as backup pool. It is a reference to an object of type Pool.
         /// </summary>
-        [JsonProperty(PropertyName = "backup_pool_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "backup_pool_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string BackupPoolRef { get; set; }
     }

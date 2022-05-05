@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Label key to match against objects for values. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "match_label", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match_label")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBRoleFilterMatchLabelType MatchLabel { get; set; }
         /// <summary>

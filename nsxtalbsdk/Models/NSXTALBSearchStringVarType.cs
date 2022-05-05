@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -24,7 +23,7 @@ namespace nsxtalbsdk.Models
         /// Value of search string - can be a variable exposed from datascript, value of an HTTP variable, a custom user-input
         /// literal string, or a regular expression. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "val", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "val")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Val { get; set; }
     }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace nsxtalbsdk
 {
     static public class Helpers
@@ -14,7 +13,6 @@ namespace nsxtalbsdk
             {
                 return "";
             }
-
             if (value is System.Enum)
             {
                 var name = System.Enum.GetName(value.GetType(), value);
@@ -30,7 +28,6 @@ namespace nsxtalbsdk
                             return attribute.Value != null ? attribute.Value : name;
                         }
                     }
-
                     var converted = System.Convert.ToString(System.Convert.ChangeType(value, System.Enum.GetUnderlyingType(value.GetType()), cultureInfo));
                     return converted == null ? string.Empty : converted;
                 }
@@ -48,7 +45,6 @@ namespace nsxtalbsdk
                 var array = System.Linq.Enumerable.OfType<object>((System.Array)value);
                 return string.Join(",", System.Linq.Enumerable.Select(array, o => ConvertToString(o, cultureInfo)));
             }
-
             var result = System.Convert.ToString(value, cultureInfo);
             return result == null ? "" : result;
         }

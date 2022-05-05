@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - ACCEPT, DROP, REJECT, DNAT, MASQUERADE.
         /// </summary>
-        [JsonProperty(PropertyName = "action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "action")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Action { get; set; }
         /// <summary>

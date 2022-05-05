@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -44,7 +43,7 @@ namespace nsxtalbsdk.Models
         /// allows Avi to create Service Engines and configure their network properties. Enum options - NO_ACCESS, READ_ACCESS,
         /// WRITE_ACCESS.
         /// </summary>
-        [JsonProperty(PropertyName = "privilege", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "privilege")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Privilege { get; set; }
         /// <summary>

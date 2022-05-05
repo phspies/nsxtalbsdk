@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -129,7 +128,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// A user friendly name for this health monitor.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -199,7 +198,7 @@ namespace nsxtalbsdk.Models
         /// HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP,HEALTH_MONITOR_HTTP,HEALTH_MONITOR_HTTPS) edition,
         /// Essentials(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP) edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
         /// <summary>

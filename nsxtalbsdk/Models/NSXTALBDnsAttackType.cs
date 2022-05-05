@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// The DNS attack vector. Enum options - DNS_REFLECTION, DNS_NXDOMAIN, DNS_AMPLIFICATION_EGRESS. Field introduced in
         /// 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "attack_vector", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "attack_vector")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AttackVector { get; set; }
         /// <summary>

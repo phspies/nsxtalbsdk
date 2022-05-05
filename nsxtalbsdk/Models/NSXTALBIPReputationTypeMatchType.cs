@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "match_operation", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match_operation")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MatchOperation { get; set; }
         /// <summary>

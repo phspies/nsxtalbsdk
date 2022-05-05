@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,13 +20,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// managed_object_id of VIDCInfo.
         /// </summary>
-        [JsonProperty(PropertyName = "managed_object_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "managed_object_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ManagedObjectId { get; set; }
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

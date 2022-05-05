@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property prefix of obj type SubnetRuntime field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "prefix", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "prefix")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrPrefixType Prefix { get; set; }
         /// <summary>

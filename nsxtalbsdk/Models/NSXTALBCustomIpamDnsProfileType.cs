@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the Custom IPAM DNS Profile. Field introduced in 17.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -38,7 +37,7 @@ namespace nsxtalbsdk.Models
         /// Script URI of form controller //ipamdnsscripts/<file-name>, file-name must have a .py extension and conform to PEP8
         /// naming convention. Field introduced in 17.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "script_uri", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "script_uri")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ScriptUri { get; set; }
         /// <summary>

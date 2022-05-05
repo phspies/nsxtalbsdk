@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IPv6 address for FQDN. Field introduced in 18.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "ip6_address", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip6_address")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType Ip6Address { get; set; }
     }

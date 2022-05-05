@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// controller_ip_addr of VISeVmOvaParams.
         /// </summary>
-        [JsonProperty(PropertyName = "controller_ip_addr", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "controller_ip_addr")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ControllerIpAddr { get; set; }
         /// <summary>
@@ -42,7 +41,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// sevm_name of VISeVmOvaParams.
         /// </summary>
-        [JsonProperty(PropertyName = "sevm_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "sevm_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SevmName { get; set; }
         /// <summary>

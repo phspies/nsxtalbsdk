@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Error page body sent to client when match. Field introduced in 17.2.4.
         /// </summary>
-        [JsonProperty(PropertyName = "error_page_body", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "error_page_body")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ErrorPageBody { get; set; }
         /// <summary>
@@ -50,7 +49,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Field introduced in 17.2.4.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

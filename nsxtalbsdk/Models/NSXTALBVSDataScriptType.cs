@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,13 +21,13 @@ namespace nsxtalbsdk.Models
         /// VS_DATASCRIPT_EVT_DNS_RESP, VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX. Allowed
         /// in Basic(Allowed values- VS_DATASCRIPT_EVT_HTTP_REQ) edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "evt", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "evt")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Evt { get; set; }
         /// <summary>
         /// Datascript to execute when the event triggers.
         /// </summary>
-        [JsonProperty(PropertyName = "script", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "script")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Script { get; set; }
     }

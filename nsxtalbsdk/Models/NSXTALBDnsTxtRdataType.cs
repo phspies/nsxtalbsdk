@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Text data associated with the FQDN. Field introduced in 18.2.9, 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "text_str", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "text_str")]
         [System.ComponentModel.DataAnnotations.Required]
         public string TextStr { get; set; }
     }

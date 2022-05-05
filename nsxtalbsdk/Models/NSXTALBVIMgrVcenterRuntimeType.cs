@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -75,7 +74,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -111,7 +110,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// password of VIMgrVcenterRuntime.
         /// </summary>
-        [JsonProperty(PropertyName = "password", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "password")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Password { get; set; }
         /// <summary>
@@ -133,7 +132,7 @@ namespace nsxtalbsdk.Models
         /// Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS,
         /// CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
         /// <summary>
@@ -144,7 +143,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// username of VIMgrVcenterRuntime.
         /// </summary>
-        [JsonProperty(PropertyName = "username", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "username")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Username { get; set; }
         /// <summary>
@@ -170,7 +169,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// vcenter_url of VIMgrVcenterRuntime.
         /// </summary>
-        [JsonProperty(PropertyName = "vcenter_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vcenter_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VcenterUrl { get; set; }
     }

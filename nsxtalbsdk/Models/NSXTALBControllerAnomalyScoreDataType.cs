@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,13 +21,13 @@ namespace nsxtalbsdk.Models
         /// Placeholder for description of property per_anomalous_controller_stats_metrics of obj type ControllerAnomalyScoreData
         /// field type str  type number
         /// </summary>
-        [JsonProperty(PropertyName = "per_anomalous_controller_stats_metrics", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "per_anomalous_controller_stats_metrics")]
         [System.ComponentModel.DataAnnotations.Required]
         public double PerAnomalousControllerStatsMetrics { get; set; }
         /// <summary>
         /// Reason for the Health Score.
         /// </summary>
-        [JsonProperty(PropertyName = "reason", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "reason")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Reason { get; set; }
         /// <summary>

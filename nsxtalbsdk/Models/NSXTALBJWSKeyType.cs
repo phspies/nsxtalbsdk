@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -23,13 +22,13 @@ namespace nsxtalbsdk.Models
         /// Secret JWK for signing/validation, length of the key varies depending upon the type of algorithm used for key generation
         /// {HS256  32 bytes, HS384  48bytes, HS512  64 bytes}. Field introduced in 20.1.6.
         /// </summary>
-        [JsonProperty(PropertyName = "key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Key { get; set; }
         /// <summary>
         /// Unique key id across all keys. Field introduced in 20.1.6.
         /// </summary>
-        [JsonProperty(PropertyName = "kid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "kid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Kid { get; set; }
         /// <summary>

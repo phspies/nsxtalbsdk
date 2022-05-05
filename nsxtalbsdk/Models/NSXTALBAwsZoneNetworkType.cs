@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Availability zone. Field introduced in 17.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "availability_zone", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "availability_zone")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AvailabilityZone { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -43,7 +42,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the NetworkService. Field introduced in 18.2.5.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -55,13 +54,13 @@ namespace nsxtalbsdk.Models
         /// Service Engine Group to which the service is applied. It is a reference to an object of type ServiceEngineGroup. Field
         /// introduced in 18.2.5.
         /// </summary>
-        [JsonProperty(PropertyName = "se_group_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "se_group_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SeGroupRef { get; set; }
         /// <summary>
         /// Indicates the type of NetworkService. Enum options - ROUTING_SERVICE. Field introduced in 18.2.5.
         /// </summary>
-        [JsonProperty(PropertyName = "service_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "service_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ServiceType { get; set; }
         /// <summary>
@@ -83,7 +82,7 @@ namespace nsxtalbsdk.Models
         /// VRF context to which the service is scoped. It is a reference to an object of type VrfContext. Field introduced in
         /// 18.2.5.
         /// </summary>
-        [JsonProperty(PropertyName = "vrf_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vrf_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VrfRef { get; set; }
     }

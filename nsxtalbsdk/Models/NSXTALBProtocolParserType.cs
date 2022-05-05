@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -43,13 +42,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the protocol parser. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
         /// Command script provided inline. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "parser_code", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "parser_code")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ParserCode { get; set; }
         /// <summary>

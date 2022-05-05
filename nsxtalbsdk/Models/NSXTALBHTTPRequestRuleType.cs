@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enable or disable the rule.
         /// </summary>
-        [JsonProperty(PropertyName = "enable", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "enable")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Enable { get; set; }
         /// <summary>
@@ -32,7 +31,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Index of the rule.
         /// </summary>
-        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Index { get; set; }
         /// <summary>
@@ -48,7 +47,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the rule.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -27,7 +26,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Rule used for evaluation.
         /// </summary>
-        [JsonProperty(PropertyName = "rule", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rule")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBPGDeploymentRuleType Rule { get; set; }
     }

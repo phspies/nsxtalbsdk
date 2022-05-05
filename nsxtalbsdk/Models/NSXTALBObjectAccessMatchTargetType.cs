@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Key of the label to be matched. Field introduced in 18.2.7, 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "label_key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "label_key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string LabelKey { get; set; }
         /// <summary>
         /// Label values that result in a successful match. Field introduced in 18.2.7, 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "label_values", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "label_values")]
         [System.ComponentModel.DataAnnotations.Required]
         public IList<string> LabelValues { get; set; }
     }

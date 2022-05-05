@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Service Engine Data Network Name. Field introduced in 18.2.2.
         /// </summary>
-        [JsonProperty(PropertyName = "data_vpc_network_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "data_vpc_network_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string DataVpcNetworkName { get; set; }
         /// <summary>
@@ -28,13 +27,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Service Engine Data Network Subnet Name. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "data_vpc_subnet_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "data_vpc_subnet_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string DataVpcSubnetName { get; set; }
         /// <summary>
         /// Service Engine Management Network Name. Field introduced in 18.2.2.
         /// </summary>
-        [JsonProperty(PropertyName = "management_vpc_network_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "management_vpc_network_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ManagementVpcNetworkName { get; set; }
         /// <summary>
@@ -46,7 +45,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Service Engine Management Network Subnet Name. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "management_vpc_subnet_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "management_vpc_subnet_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ManagementVpcSubnetName { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Rule index, this is used to determine the order of the rules. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Index { get; set; }
         /// <summary>
@@ -73,7 +72,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the rule. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -87,7 +86,7 @@ namespace nsxtalbsdk.Models
         /// Id field which is used for log and metric generation. This id must be unique for all rules in this group. Field
         /// introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "rule_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rule_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string RuleId { get; set; }
     }

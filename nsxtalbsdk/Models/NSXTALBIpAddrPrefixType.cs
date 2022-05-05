@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "ip_addr", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip_addr")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType IpAddr { get; set; }
         /// <summary>
         /// Number of mask.
         /// </summary>
-        [JsonProperty(PropertyName = "mask", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mask")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Mask { get; set; }
     }

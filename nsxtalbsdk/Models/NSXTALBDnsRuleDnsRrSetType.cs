@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// DNS resource record set - (records in the resource record set share the DNS domain name, type, and class). Field
         /// introduced in 17.2.12, 18.1.2.
         /// </summary>
-        [JsonProperty(PropertyName = "resource_record_set", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "resource_record_set")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBDnsRrSetType ResourceRecordSet { get; set; }
         /// <summary>

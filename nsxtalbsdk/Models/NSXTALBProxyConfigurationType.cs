@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Proxy hostname or IP address.
         /// </summary>
-        [JsonProperty(PropertyName = "host", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "host")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Host { get; set; }
         /// <summary>
@@ -27,7 +26,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Proxy port.
         /// </summary>
-        [JsonProperty(PropertyName = "port", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "port")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Port { get; set; }
         /// <summary>

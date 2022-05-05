@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -36,7 +35,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// customer_name of SingleLicense.
         /// </summary>
-        [JsonProperty(PropertyName = "customer_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "customer_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string CustomerName { get; set; }
         /// <summary>
@@ -62,7 +61,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// license_name of SingleLicense.
         /// </summary>
-        [JsonProperty(PropertyName = "license_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "license_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string LicenseName { get; set; }
         /// <summary>
@@ -121,7 +120,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// valid_until of SingleLicense.
         /// </summary>
-        [JsonProperty(PropertyName = "valid_until", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "valid_until")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ValidUntil { get; set; }
         /// <summary>

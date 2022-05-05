@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -18,7 +17,7 @@ namespace nsxtalbsdk.Models
         /// HTTP_SWITCHING_SELECT_POOLGROUP. Allowed in Essentials(Allowed values-
         /// HTTP_SWITCHING_SELECT_POOL,HTTP_SWITCHING_SELECT_LOCAL) edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "action")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Action { get; set; }
         /// <summary>

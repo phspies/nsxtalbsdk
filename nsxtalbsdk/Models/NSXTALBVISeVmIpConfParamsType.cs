@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - VNIC_IP_TYPE_DHCP, VNIC_IP_TYPE_STATIC.
         /// </summary>
-        [JsonProperty(PropertyName = "mgmt_ip_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mgmt_ip_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MgmtIpType { get; set; }
         /// <summary>

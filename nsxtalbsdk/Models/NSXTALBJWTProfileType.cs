@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -35,13 +34,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// JWT auth type for JWT validation. Enum options - JWT_TYPE_JWS. Field introduced in 20.1.5.
         /// </summary>
-        [JsonProperty(PropertyName = "jwt_auth_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "jwt_auth_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string JwtAuthType { get; set; }
         /// <summary>
         /// A user friendly name for this jwt profile. Field introduced in 20.1.5.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

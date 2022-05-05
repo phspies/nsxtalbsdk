@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -42,7 +41,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Index of the dns policy to use for the mitigation rules applied to the dns attacks. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "dns_policy_index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "dns_policy_index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int DnsPolicyIndex { get; set; }
         /// <summary>
@@ -60,13 +59,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The name of the security policy. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
         /// Index of the network security policy to use for the mitigation rules applied to the attacks. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "network_security_policy_index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "network_security_policy_index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int NetworkSecurityPolicyIndex { get; set; }
         /// <summary>

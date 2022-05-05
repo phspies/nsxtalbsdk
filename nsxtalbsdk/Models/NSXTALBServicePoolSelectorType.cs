@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Pool based destination port. Allowed values are 1-65535.
         /// </summary>
-        [JsonProperty(PropertyName = "service_port", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "service_port")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ServicePort { get; set; }
         /// <summary>

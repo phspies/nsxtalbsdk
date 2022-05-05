@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -18,7 +17,7 @@ namespace nsxtalbsdk.Models
         /// Field introduced in 17.2.7. Allowed in Basic(Allowed values- L4_RULE_ACTION_SELECT_POOL) edition, Essentials(Allowed
         /// values- L4_RULE_ACTION_SELECT_POOL) edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "action_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "action_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ActionType { get; set; }
         /// <summary>

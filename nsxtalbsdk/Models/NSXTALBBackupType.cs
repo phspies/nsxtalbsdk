@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The file name of backup.
         /// </summary>
-        [JsonProperty(PropertyName = "file_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "file_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string FileName { get; set; }
         /// <summary>

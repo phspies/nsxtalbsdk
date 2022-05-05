@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,7 +21,7 @@ namespace nsxtalbsdk.Models
         /// Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE,
         /// HEALTH_SECURITY_THREAT_LEVEL.
         /// </summary>
-        [JsonProperty(PropertyName = "hs_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "hs_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string HsType { get; set; }
         /// <summary>

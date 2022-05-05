@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -70,7 +69,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Mark this Site as leader of GSLB configuration. This site is the one among the Avi sites.
         /// </summary>
-        [JsonProperty(PropertyName = "leader_cluster_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "leader_cluster_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string LeaderClusterUuid { get; set; }
         /// <summary>
@@ -85,7 +84,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name for the GSLB object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

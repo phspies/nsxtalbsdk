@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,13 +20,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the Object Access Policy. Field introduced in 18.2.7, 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
         /// Rules which grant access to specific objects. Field introduced in 18.2.7, 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "rules", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rules")]
         [System.ComponentModel.DataAnnotations.Required]
         public IList<NSXTALBObjectAccessPolicyRuleType> Rules { get; set; }
         /// <summary>

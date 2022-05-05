@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property adf of obj type ApplicationLog field type str  type boolean
         /// </summary>
-        [JsonProperty(PropertyName = "adf", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "adf")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Adf { get; set; }
         /// <summary>
@@ -95,7 +94,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of client_dest_port.
         /// </summary>
-        [JsonProperty(PropertyName = "client_dest_port", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_dest_port")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ClientDestPort { get; set; }
         /// <summary>
@@ -115,7 +114,7 @@ namespace nsxtalbsdk.Models
         /// IPv4 address of the client. When true client IP feature is enabled, this will be derived from the header configured in
         /// the true client IP feature, if present in the request.
         /// </summary>
-        [JsonProperty(PropertyName = "client_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ClientIp { get; set; }
         /// <summary>
@@ -141,13 +140,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unit is MILLISECONDS.
         /// </summary>
-        [JsonProperty(PropertyName = "client_rtt", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_rtt")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ClientRtt { get; set; }
         /// <summary>
         /// Number of client_src_port.
         /// </summary>
-        [JsonProperty(PropertyName = "client_src_port", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_src_port")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ClientSrcPort { get; set; }
         /// <summary>
@@ -281,7 +280,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of log_id.
         /// </summary>
-        [JsonProperty(PropertyName = "log_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "log_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public int LogId { get; set; }
         /// <summary>
@@ -372,7 +371,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of report_timestamp.
         /// </summary>
-        [JsonProperty(PropertyName = "report_timestamp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "report_timestamp")]
         [System.ComponentModel.DataAnnotations.Required]
         public long ReportTimestamp { get; set; }
         /// <summary>
@@ -572,7 +571,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// service_engine of ApplicationLog.
         /// </summary>
-        [JsonProperty(PropertyName = "service_engine", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "service_engine")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ServiceEngine { get; set; }
         /// <summary>
@@ -588,7 +587,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of significant.
         /// </summary>
-        [JsonProperty(PropertyName = "significant", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "significant")]
         [System.ComponentModel.DataAnnotations.Required]
         public long Significant { get; set; }
         /// <summary>
@@ -843,7 +842,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property udf of obj type ApplicationLog field type str  type boolean
         /// </summary>
-        [JsonProperty(PropertyName = "udf", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "udf")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Udf { get; set; }
         /// <summary>
@@ -869,13 +868,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of vcpu_id.
         /// </summary>
-        [JsonProperty(PropertyName = "vcpu_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vcpu_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public int VcpuId { get; set; }
         /// <summary>
         /// virtualservice of ApplicationLog.
         /// </summary>
-        [JsonProperty(PropertyName = "virtualservice", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "virtualservice")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Virtualservice { get; set; }
         /// <summary>

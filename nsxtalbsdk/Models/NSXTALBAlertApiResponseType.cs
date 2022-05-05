@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty(PropertyName = "count", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "count")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Count { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        [JsonProperty(PropertyName = "results", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "results")]
         [System.ComponentModel.DataAnnotations.Required]
         public IList<NSXTALBAlertType> Results { get; set; }
         /// <summary>

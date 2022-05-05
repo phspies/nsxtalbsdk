@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// Revocation status of the certificate. Enum options - OCSP_CERTSTATUS_GOOD, OCSP_CERTSTATUS_REVOKED,
         /// OCSP_CERTSTATUS_UNKNOWN. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "cert_status", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "cert_status")]
         [System.ComponentModel.DataAnnotations.Required]
         public string CertStatus { get; set; }
         /// <summary>
@@ -29,13 +28,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The OCSP Responder URL from which the response is received. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "ocsp_resp_from_responder_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ocsp_resp_from_responder_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string OcspRespFromResponderUrl { get; set; }
         /// <summary>
         /// Signed OCSP response received from the CA's OCSP Responder. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "ocsp_response", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ocsp_response")]
         [System.ComponentModel.DataAnnotations.Required]
         public string OcspResponse { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -23,13 +22,13 @@ namespace nsxtalbsdk.Models
         /// POLICY_DROPS, DOS_CONN_RL_DROP, DOS_REQ_RL_DROP, DOS_REQ_HDR_RL_DROP, DOS_REQ_CUSTOM_RL_DROP, DNS_ATTACK_REFLECTION,
         /// DNS_ATTACK_AMPLIFICATION_EGRESS, TCP_SLOW_AND_LOW, DNS_ATTACK_NXDOMAIN. Field introduced in 18.2.5.
         /// </summary>
-        [JsonProperty(PropertyName = "attack_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "attack_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AttackType { get; set; }
         /// <summary>
         /// Field introduced in 18.2.5.
         /// </summary>
-        [JsonProperty(PropertyName = "threshold", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "threshold")]
         [System.ComponentModel.DataAnnotations.Required]
         public long Threshold { get; set; }
     }

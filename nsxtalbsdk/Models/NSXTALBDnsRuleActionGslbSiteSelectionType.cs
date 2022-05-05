@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -28,7 +27,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// GSLB site name. Field introduced in 17.1.5.
         /// </summary>
-        [JsonProperty(PropertyName = "site_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "site_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SiteName { get; set; }
     }

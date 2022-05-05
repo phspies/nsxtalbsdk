@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Field introduced in 18.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "expires_at", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "expires_at")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ExpiresAt { get; set; }
         /// <summary>
@@ -39,7 +38,7 @@ namespace nsxtalbsdk.Models
         /// JOB_TYPE_PROCESS_BASELINE_BENCHMARK, JOB_TYPE_GEODB_REFRESH_CONTROLLER_DATABASES, JOB_TYPE_POSTGRES_VACUUM. Field
         /// introduced in 18.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
     }

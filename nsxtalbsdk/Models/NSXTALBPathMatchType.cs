@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -27,7 +26,7 @@ namespace nsxtalbsdk.Models
         /// BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition,
         /// Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "match_criteria", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match_criteria")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MatchCriteria { get; set; }
         /// <summary>

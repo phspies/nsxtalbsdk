@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,13 +25,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// marathon_url of MarathonServicePortConflict.
         /// </summary>
-        [JsonProperty(PropertyName = "marathon_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "marathon_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MarathonUrl { get; set; }
         /// <summary>
         /// Number of port.
         /// </summary>
-        [JsonProperty(PropertyName = "port", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "port")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Port { get; set; }
     }

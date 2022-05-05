@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -23,7 +22,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The DNS monitor will query the DNS server for the fully qualified name in this field.
         /// </summary>
-        [JsonProperty(PropertyName = "query_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "query_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string QueryName { get; set; }
         /// <summary>

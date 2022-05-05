@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// Enable HTTP request reselect when server responds with specific response codes. Allowed in Basic(Allowed values- false)
         /// edition, Essentials(Allowed values- false) edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "enabled", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "enabled")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Enabled { get; set; }
         /// <summary>

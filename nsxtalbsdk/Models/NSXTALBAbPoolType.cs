@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Pool configured as B pool for A/B testing. It is a reference to an object of type Pool.
         /// </summary>
-        [JsonProperty(PropertyName = "pool_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "pool_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PoolRef { get; set; }
         /// <summary>

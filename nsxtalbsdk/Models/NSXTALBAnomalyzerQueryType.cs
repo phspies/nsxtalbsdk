@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -44,7 +43,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// uuid of the entity type.
         /// </summary>
-        [JsonProperty(PropertyName = "entity_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "entity_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string EntityUuid { get; set; }
         /// <summary>
@@ -66,7 +65,7 @@ namespace nsxtalbsdk.Models
         /// Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY,
         /// CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
         /// </summary>
-        [JsonProperty(PropertyName = "metric_entity", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "metric_entity")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MetricEntity { get; set; }
         /// <summary>

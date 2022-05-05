@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// HTTP_REMOVE_HDR,HTTP_REPLACE_HDR) edition, Essentials(Allowed values- HTTP_REMOVE_HDR,HTTP_REPLACE_HDR) edition,
         /// Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "action")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Action { get; set; }
         /// <summary>

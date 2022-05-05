@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -132,13 +131,13 @@ namespace nsxtalbsdk.Models
         /// WAF Policy mode. This can be detection or enforcement. It can be overwritten by rules if allow_mode_delegation is set.
         /// Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "mode", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mode")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Mode { get; set; }
         /// <summary>
         /// Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -196,7 +195,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// WAF Profile for WAF policy. It is a reference to an object of type WafProfile. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "waf_profile_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "waf_profile_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string WafProfileRef { get; set; }
         /// <summary>

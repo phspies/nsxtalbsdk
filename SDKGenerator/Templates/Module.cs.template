@@ -1,5 +1,4 @@
-﻿
-using RestSharp;
+﻿using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,6 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
-
 namespace nsxtalbsdk.Modules
 {
     public class {{module}}
@@ -20,23 +18,24 @@ namespace nsxtalbsdk.Modules
         CancellationToken cancellationToken;
         int timeout;
         int retry;
-        public {{module}}(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
+        string defaultXAviVerion;
+        RestResponseCookie sessionCookie;
+        public {{module}}(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = DefaultSerializationSettings;
+            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
+            defaultXAviVerion = _defaultXAviVerion;
+            sessionCookie = _sessionCookie;
         }
         {{#operations}}
         public async Task<{{GetOperationReturnType . "full"}}> {{GetMethodName .}}({{GetOperationPathParams .}})
         {
             {{#operation.parameters}}
-            {{#isRequired}}
-            if ({{GetParameterPascalCase name}} == null) { throw new ArgumentNullException("{{GetParameterPascalCase name}} cannot be null"); }
-            {{/isRequired}}
+            {{GetRequiredLine .}}
             {{/operation.parameters}}
-            {{GetOperationReturnType . "init"}}
             StringBuilder {{GetMethodName .}}ServiceURL = new StringBuilder("{{ GetServiceUrl . }}");
             var request = new RestRequest
             {              
@@ -48,6 +47,8 @@ namespace nsxtalbsdk.Modules
             {{GetOperationPathInjectionCode . operations.Current }}
             {{/operation.parameters}}
             request.Resource = {{GetMethodName .}}ServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<{{GetOperationReturnType . "bare"}}> response = await restClient.ExecuteTaskAsyncWithPolicy<{{GetOperationReturnType . "bare"}}>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{

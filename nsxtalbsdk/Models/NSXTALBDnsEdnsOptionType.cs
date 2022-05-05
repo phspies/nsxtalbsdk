@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -23,7 +22,7 @@ namespace nsxtalbsdk.Models
         /// EDNS_OPTION_CODE_DNSSEC_N3U, EDNS_OPTION_CODE_CLIENT_SUBNET, EDNS_OPTION_CODE_EXPIRE, EDNS_OPTION_CODE_COOKIE,
         /// EDNS_OPTION_CODE_TCP_KEEPALIVE, EDNS_OPTION_CODE_PADDING, EDNS_OPTION_CODE_CHAIN. Field introduced in 17.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "code", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "code")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Code { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -49,19 +48,19 @@ namespace nsxtalbsdk.Models
         /// Generate Alert only to external destinations. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed
         /// values- false) edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "external_only", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "external_only")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool ExternalOnly { get; set; }
         /// <summary>
         /// When an alert is generated, mark its priority via the Alert Level. Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
         /// </summary>
-        [JsonProperty(PropertyName = "level", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "level")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Level { get; set; }
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Label key string. Field introduced in 20.1.2.
         /// </summary>
-        [JsonProperty(PropertyName = "key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Key { get; set; }
         /// <summary>

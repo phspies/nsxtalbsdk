@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,19 +15,19 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Average value for the metric.
         /// </summary>
-        [JsonProperty(PropertyName = "average", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "average")]
         [System.ComponentModel.DataAnnotations.Required]
         public double Average { get; set; }
         /// <summary>
         /// Deviation of last sample to the average.
         /// </summary>
-        [JsonProperty(PropertyName = "deviation", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "deviation")]
         [System.ComponentModel.DataAnnotations.Required]
         public double Deviation { get; set; }
         /// <summary>
         /// Maximum standard deviation recorded.
         /// </summary>
-        [JsonProperty(PropertyName = "max_std_dev", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "max_std_dev")]
         [System.ComponentModel.DataAnnotations.Required]
         public double MaxStdDev { get; set; }
         /// <summary>
@@ -44,7 +43,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Predicted value for the metric at the time instant.
         /// </summary>
-        [JsonProperty(PropertyName = "prediction", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "prediction")]
         [System.ComponentModel.DataAnnotations.Required]
         public double Prediction { get; set; }
         /// <summary>
@@ -60,7 +59,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Standard deviation.
         /// </summary>
-        [JsonProperty(PropertyName = "std_dev", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "std_dev")]
         [System.ComponentModel.DataAnnotations.Required]
         public double StdDev { get; set; }
     }

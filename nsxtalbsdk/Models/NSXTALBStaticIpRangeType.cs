@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IP range. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "range", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "range")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrRangeType Range { get; set; }
         /// <summary>

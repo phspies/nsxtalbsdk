@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -106,7 +105,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Reason for the SSL Config Level.
         /// </summary>
-        [JsonProperty(PropertyName = "reason", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "reason")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Reason { get; set; }
         /// <summary>

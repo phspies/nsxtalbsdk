@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -23,19 +22,19 @@ namespace nsxtalbsdk.Models
         /// POLICY_DROPS, DOS_CONN_RL_DROP, DOS_REQ_RL_DROP, DOS_REQ_HDR_RL_DROP, DOS_REQ_CUSTOM_RL_DROP, DNS_ATTACK_REFLECTION,
         /// DNS_ATTACK_AMPLIFICATION_EGRESS, TCP_SLOW_AND_LOW, DNS_ATTACK_NXDOMAIN.
         /// </summary>
-        [JsonProperty(PropertyName = "attack", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "attack")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Attack { get; set; }
         /// <summary>
         /// Maximum number of packets or connections or requests in a given interval of time to be deemed as attack.
         /// </summary>
-        [JsonProperty(PropertyName = "max_value", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "max_value")]
         [System.ComponentModel.DataAnnotations.Required]
         public int MaxValue { get; set; }
         /// <summary>
         /// Minimum number of packets or connections or requests in a given interval of time to be deemed as attack.
         /// </summary>
-        [JsonProperty(PropertyName = "min_value", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "min_value")]
         [System.ComponentModel.DataAnnotations.Required]
         public int MinValue { get; set; }
     }

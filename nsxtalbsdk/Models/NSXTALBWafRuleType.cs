@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enable or disable WAF Rule Group. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "enable", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "enable")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Enable { get; set; }
         /// <summary>
@@ -36,7 +35,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Index { get; set; }
         /// <summary>
@@ -66,7 +65,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Rule as per Modsec language. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "rule", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rule")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Rule { get; set; }
         /// <summary>

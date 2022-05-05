@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Audience parameter used for validation using JWT token. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "audience", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "audience")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Audience { get; set; }
     }

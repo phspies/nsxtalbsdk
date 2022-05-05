@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Electronic serial number of the netHSM device. Use Thales anonkneti utility to find the netHSM ESN.
         /// </summary>
-        [JsonProperty(PropertyName = "esn", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "esn")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Esn { get; set; }
         /// <summary>
         /// Hash of the key that netHSM device uses to authenticate itself. Use Thales anonkneti utility to find the netHSM keyhash.
         /// </summary>
-        [JsonProperty(PropertyName = "keyhash", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "keyhash")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Keyhash { get; set; }
         /// <summary>
@@ -34,13 +33,13 @@ namespace nsxtalbsdk.Models
         /// Priority class of the nethsm in an high availability setup. 1 is the highest priority and 100 is the lowest priority.
         /// Allowed values are 1-100.
         /// </summary>
-        [JsonProperty(PropertyName = "priority", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "priority")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Priority { get; set; }
         /// <summary>
         /// IP address of the netHSM device.
         /// </summary>
-        [JsonProperty(PropertyName = "remote_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "remote_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType RemoteIp { get; set; }
         /// <summary>

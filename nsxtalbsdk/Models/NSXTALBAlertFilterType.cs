@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// filter_string of AlertFilter.
         /// </summary>
-        [JsonProperty(PropertyName = "filter_string", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "filter_string")]
         [System.ComponentModel.DataAnnotations.Required]
         public string FilterString { get; set; }
     }

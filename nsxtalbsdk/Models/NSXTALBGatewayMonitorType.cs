@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IP address of next hop gateway to be monitored.
         /// </summary>
-        [JsonProperty(PropertyName = "gateway_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "gateway_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrType GatewayIp { get; set; }
         /// <summary>

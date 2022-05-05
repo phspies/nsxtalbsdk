@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Health Monitor name. It is a reference to an object of type HealthMonitor.
         /// </summary>
-        [JsonProperty(PropertyName = "health_monitor", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "health_monitor")]
         [System.ComponentModel.DataAnnotations.Required]
         public string HealthMonitor { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// cidr_prefix of SummarizedSubnetInfo.
         /// </summary>
-        [JsonProperty(PropertyName = "cidr_prefix", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "cidr_prefix")]
         [System.ComponentModel.DataAnnotations.Required]
         public string CidrPrefix { get; set; }
         /// <summary>
         /// network of SummarizedSubnetInfo.
         /// </summary>
-        [JsonProperty(PropertyName = "network", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "network")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Network { get; set; }
     }

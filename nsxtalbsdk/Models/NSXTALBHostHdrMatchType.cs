@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -23,7 +22,7 @@ namespace nsxtalbsdk.Models
         /// HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS,
         /// HDR_DOES_NOT_EQUAL.
         /// </summary>
-        [JsonProperty(PropertyName = "match_criteria", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match_criteria")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MatchCriteria { get; set; }
         /// <summary>

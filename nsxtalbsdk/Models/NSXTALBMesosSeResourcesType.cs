@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Attribute (Fleet or Mesos) key of Hosts.
         /// </summary>
-        [JsonProperty(PropertyName = "attribute_key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "attribute_key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AttributeKey { get; set; }
         /// <summary>
         /// Attribute (Fleet or Mesos) value of Hosts.
         /// </summary>
-        [JsonProperty(PropertyName = "attribute_value", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "attribute_value")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AttributeValue { get; set; }
         /// <summary>

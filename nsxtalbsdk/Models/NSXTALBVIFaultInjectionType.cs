@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// HOST_CTLR_ACCESS_ERR, HOST_NO_MGMT_ERR, HOST_NO_CPU_ERR, HOST_NO_MEM_ERR, HOST_NO_DISK_ERR, CREATE_SE_VIMGR,
         /// DELETE_SE_VIMGR, SLOW_VCENTER_ACCESS, CLEAR_ALL_FAULTS.
         /// </summary>
-        [JsonProperty(PropertyName = "api", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "api")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Api { get; set; }
         /// <summary>
@@ -32,7 +31,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of count.
         /// </summary>
-        [JsonProperty(PropertyName = "count", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "count")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Count { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// command of OpenStackLbPluginOp.
         /// </summary>
-        [JsonProperty(PropertyName = "command", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "command")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Command { get; set; }
         /// <summary>
@@ -37,13 +36,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// id of OpenStackLbPluginOp.
         /// </summary>
-        [JsonProperty(PropertyName = "id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Id { get; set; }
         /// <summary>
         /// prov of OpenStackLbPluginOp.
         /// </summary>
-        [JsonProperty(PropertyName = "prov", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "prov")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Prov { get; set; }
         /// <summary>

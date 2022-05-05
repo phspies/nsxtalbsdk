@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property header of obj type MetricsDataSeries field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "header", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "header")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBMetricsDataHeaderType Header { get; set; }
     }

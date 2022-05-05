@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -63,13 +62,13 @@ namespace nsxtalbsdk.Models
         /// Protocol used for communication to the external entity. Enum options - SSH1_0, TLS1_2, HTTPS1_0, HTTP_PLAIN_TEXT,
         /// HTTPS_INSECURE, SSH2_0. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "protocol", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "protocol")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Protocol { get; set; }
         /// <summary>
         /// Summarized failure of the transaction (e.g. Invalid request, expired certificate). Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "result", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "result")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Result { get; set; }
         /// <summary>
@@ -90,7 +89,7 @@ namespace nsxtalbsdk.Models
         /// AUDIT_SECURE_KEY_EXCHANGE_CERTIFICATE_VERIFY_ERROR, AUDIT_SECURE_KEY_EXCHANGE_RESPONSE_ERROR. Field introduced in
         /// 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
         /// <summary>

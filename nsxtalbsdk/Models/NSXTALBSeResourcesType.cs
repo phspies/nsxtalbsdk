@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of disk.
         /// </summary>
-        [JsonProperty(PropertyName = "disk", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "disk")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Disk { get; set; }
         /// <summary>
@@ -37,7 +36,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of memory.
         /// </summary>
-        [JsonProperty(PropertyName = "memory", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "memory")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Memory { get; set; }
         /// <summary>
@@ -48,7 +47,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of num_vcpus.
         /// </summary>
-        [JsonProperty(PropertyName = "num_vcpus", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "num_vcpus")]
         [System.ComponentModel.DataAnnotations.Required]
         public int NumVcpus { get; set; }
         /// <summary>

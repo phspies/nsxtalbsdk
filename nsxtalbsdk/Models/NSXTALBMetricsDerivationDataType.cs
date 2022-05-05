@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// CONNECTION_SATURATION, AVG_RSA_NON_PFS, SSL_HANDSHAKES_NONPFS, DYN_MEM_USAGE,
         /// FIRST_DIVIDE_BY_DIFFERENCE_OF_SECOND_AND_THIRD, DIVIDE_BY_100.
         /// </summary>
-        [JsonProperty(PropertyName = "derivation_fn", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "derivation_fn")]
         [System.ComponentModel.DataAnnotations.Required]
         public string DerivationFn { get; set; }
         /// <summary>
@@ -62,7 +61,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// metric_ids of MetricsDerivationData.
         /// </summary>
-        [JsonProperty(PropertyName = "metric_ids", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "metric_ids")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MetricIds { get; set; }
         /// <summary>

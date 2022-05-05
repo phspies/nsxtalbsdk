@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -74,7 +73,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name for the IPAM/DNS Provider profile.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -109,7 +108,7 @@ namespace nsxtalbsdk.Models
         /// IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS. Allowed in Basic(Allowed values- IPAMDNS_TYPE_INTERNAL) edition,
         /// Essentials(Allowed values- IPAMDNS_TYPE_INTERNAL) edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// The load balancing algorithm will pick a local member within the GSLB service list of available Members. Enum options -
         /// GSLB_ALGORITHM_ROUND_ROBIN, GSLB_ALGORITHM_CONSISTENT_HASH, GSLB_ALGORITHM_GEO, GSLB_ALGORITHM_TOPOLOGY.
         /// </summary>
-        [JsonProperty(PropertyName = "algorithm", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "algorithm")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Algorithm { get; set; }
         /// <summary>
@@ -63,7 +62,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the GSLB service pool.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

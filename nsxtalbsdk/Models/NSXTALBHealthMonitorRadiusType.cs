@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,19 +15,19 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Radius monitor will query Radius server with this password. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "password", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "password")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Password { get; set; }
         /// <summary>
         /// Radius monitor will query Radius server with this shared secret. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "shared_secret", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "shared_secret")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SharedSecret { get; set; }
         /// <summary>
         /// Radius monitor will query Radius server with this username. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "username", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "username")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Username { get; set; }
     }

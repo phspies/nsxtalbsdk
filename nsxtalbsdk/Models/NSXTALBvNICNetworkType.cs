@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,13 +20,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property ip of obj type vNICNetwork field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrPrefixType Ip { get; set; }
         /// <summary>
         /// Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
         /// </summary>
-        [JsonProperty(PropertyName = "mode", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mode")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Mode { get; set; }
     }

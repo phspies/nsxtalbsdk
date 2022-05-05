@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name prepended to client key and certificate filename.
         /// </summary>
-        [JsonProperty(PropertyName = "client_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ClientIp { get; set; }
         /// <summary>

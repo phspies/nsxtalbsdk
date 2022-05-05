@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// portgroup of VIControllerVnicInfo.
         /// </summary>
-        [JsonProperty(PropertyName = "portgroup", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "portgroup")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Portgroup { get; set; }
         /// <summary>

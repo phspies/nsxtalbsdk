@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property se_params of obj type VICreateSEReq field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "se_params", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "se_params")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBVISeVmOvaParamsType SeParams { get; set; }
         /// <summary>

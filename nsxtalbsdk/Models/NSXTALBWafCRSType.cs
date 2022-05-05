@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// A short description of this ruleset. Field introduced in 18.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "description", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "description")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Description { get; set; }
         /// <summary>
@@ -37,7 +36,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Integrity protection value. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "integrity", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "integrity")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Integrity { get; set; }
         /// <summary>
@@ -49,13 +48,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The name of this ruleset object. Field introduced in 18.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
         /// The release date of this version in RFC 3339 / ISO 8601 format. Field introduced in 18.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "release_date", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "release_date")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ReleaseDate { get; set; }
         /// <summary>
@@ -76,7 +75,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The version of this ruleset object. Field introduced in 18.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "version", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "version")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Version { get; set; }
     }

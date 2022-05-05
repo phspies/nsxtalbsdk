@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// CloudStack API Key.
         /// </summary>
-        [JsonProperty(PropertyName = "access_key_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "access_key_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AccessKeyId { get; set; }
         /// <summary>
         /// CloudStack API URL.
         /// </summary>
-        [JsonProperty(PropertyName = "api_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "api_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ApiUrl { get; set; }
         /// <summary>
@@ -38,7 +37,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Avi Management network name.
         /// </summary>
-        [JsonProperty(PropertyName = "mgmt_network_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mgmt_network_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MgmtNetworkName { get; set; }
         /// <summary>
@@ -49,7 +48,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// CloudStack Secret Key.
         /// </summary>
-        [JsonProperty(PropertyName = "secret_access_key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "secret_access_key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SecretAccessKey { get; set; }
     }

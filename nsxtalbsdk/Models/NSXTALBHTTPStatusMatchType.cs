@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Criterion to use for matching the HTTP response status code(s). Enum options - IS_IN, IS_NOT_IN.
         /// </summary>
-        [JsonProperty(PropertyName = "match_criteria", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match_criteria")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MatchCriteria { get; set; }
         /// <summary>

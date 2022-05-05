@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of num_se.
         /// </summary>
-        [JsonProperty(PropertyName = "num_se", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "num_se")]
         [System.ComponentModel.DataAnnotations.Required]
         public int NumSe { get; set; }
         /// <summary>

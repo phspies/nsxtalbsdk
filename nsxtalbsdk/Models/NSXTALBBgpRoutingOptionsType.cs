@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Features are applied to peers matching this label. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "label", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "label")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Label { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -40,7 +39,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The destination Syslog server IP address or hostname.
         /// </summary>
-        [JsonProperty(PropertyName = "syslog_server", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "syslog_server")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SyslogServer { get; set; }
         /// <summary>
@@ -56,7 +55,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Network protocol to establish syslog session.
         /// </summary>
-        [JsonProperty(PropertyName = "udp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "udp")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Udp { get; set; }
     }

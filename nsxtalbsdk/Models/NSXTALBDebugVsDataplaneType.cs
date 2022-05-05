@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,7 +21,7 @@ namespace nsxtalbsdk.Models
         /// DEBUG_VS_AUTH, DEBUG_VS_BOT, DEBUG_VS_DATASCRIPT, DEBUG_VS_LBACTION, DEBUG_VS_CONTENT_REWRITE, DEBUG_VS_CONNPOOL,
         /// DEBUG_VS_ALL, DEBUG_VS_ERROR, DEBUG_VS_NONE.
         /// </summary>
-        [JsonProperty(PropertyName = "flag", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "flag")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Flag { get; set; }
     }

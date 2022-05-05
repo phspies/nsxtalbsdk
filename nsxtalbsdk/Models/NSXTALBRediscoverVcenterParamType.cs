@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// cloud of RediscoverVcenterParam.
         /// </summary>
-        [JsonProperty(PropertyName = "cloud", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "cloud")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Cloud { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - EQ, GT, GE, LT, LE, NE.
         /// </summary>
-        [JsonProperty(PropertyName = "op", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "op")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Op { get; set; }
         /// <summary>
         /// Placeholder for description of property rel_param of obj type MetricsFilters field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "rel_param", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "rel_param")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBRelationalOperatorsParamsType RelParam { get; set; }
     }

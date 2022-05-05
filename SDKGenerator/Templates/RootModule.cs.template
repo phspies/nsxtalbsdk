@@ -6,21 +6,29 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using nsxtalbsdk.Modules;
 using System.Threading;
+using System.Threading.Tasks;
+using nsxtalbsdk.Authentication;
+using System.Linq;
+using System.Collections.Generic;
 
-namespace nsxtalbapi
+namespace nsxtalbsdk
 {
-    public class NSXTALBClient
+    public class NSXTALBClientAsync
     {
         public RestClient restClient { get; set; }
         private JsonSerializerSettings defaultSerializationSettings;
         private CancellationToken cancellationToken;
         private int timeout;
         private int retry;
-        public NSXTALBClient(string host, string Username, string Password, bool? remoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2)
+        private string defaultXAviVerion;
+        private RestResponseCookie sessionCookie;
+        private List<RestResponseCookie> sessionCookies;
+        public async Task LoginAsync(string host, string Username, string Password, bool? remoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2, string _defaultXAviVerion = null)
         {
             cancellationToken = _cancellationToken;
             timeout = _timeout;
             retry = _retry;
+            defaultXAviVerion = _defaultXAviVerion;
             var uri = new UriBuilder(host)
             {
                 Scheme = Uri.UriSchemeHttps,
@@ -31,7 +39,6 @@ namespace nsxtalbapi
             {
                 restClient.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
             }            
-            restClient.Authenticator = new HttpBasicAuthenticator(Username, Password);
             if (DefaultSerializationSettings == null)
             {
                 defaultSerializationSettings = new JsonSerializerSettings
@@ -49,9 +56,33 @@ namespace nsxtalbapi
                 defaultSerializationSettings = DefaultSerializationSettings;
             }
             restClient.UseNewtonsoftJson(defaultSerializationSettings);
+
+            LoginRequestType credentials = new LoginRequestType()
+            {
+                Username = Username,
+                Password = Password
+            };
+            var response = await AuthenticationHelper.LoginAsync(credentials, restClient, defaultSerializationSettings, cancellationToken, timeout, retry);
+            sessionCookie = response.Cookies.FirstOrDefault(x => x.Name == response.Data.SessionCookieName);
+            sessionCookies = response.Cookies.ToList();
+            if (sessionCookie == null)
+            {
+                throw new NSXTALBException("Cookie variable not found", (int)response.StatusCode, response.Content, response.Headers);
+            }
+            if (defaultXAviVerion == null)
+            {
+                defaultXAviVerion = response.Data.Version.MinVersion;
+            }
+
         }
+        public async Task LogoutAsync()
+        {
+            var response = await AuthenticationHelper.Logout(sessionCookies, restClient, cancellationToken, timeout, retry);
+        }
+        public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, sessionCookie, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
+
         {{#modules}}
-        public {{.}} {{.}}Module => new(restClient, defaultSerializationSettings, cancellationToken, timeout, retry);
+        public {{.}} {{.}}Module => new {{.}}(restClient, sessionCookie, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
         {{/modules}}
     }
 }

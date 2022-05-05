@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -27,7 +26,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// BGP peer type.
         /// </summary>
-        [JsonProperty(PropertyName = "ibgp", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ibgp")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Ibgp { get; set; }
         /// <summary>
@@ -43,7 +42,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Local Autonomous System ID. Allowed values are 1-4294967295.
         /// </summary>
-        [JsonProperty(PropertyName = "local_as", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "local_as")]
         [System.ComponentModel.DataAnnotations.Required]
         public int LocalAs { get; set; }
         /// <summary>

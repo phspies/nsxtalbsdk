@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IP address of BGP peer. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "peer_ip", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "peer_ip")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PeerIp { get; set; }
         /// <summary>

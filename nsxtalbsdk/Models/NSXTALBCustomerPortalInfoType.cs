@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The FQDN or IP address of the customer portal. Field introduced in 18.2.6.
         /// </summary>
-        [JsonProperty(PropertyName = "portal_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "portal_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PortalUrl { get; set; }
         /// <summary>

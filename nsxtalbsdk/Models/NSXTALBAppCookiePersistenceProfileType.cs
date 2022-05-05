@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Header or cookie name for application cookie persistence.
         /// </summary>
-        [JsonProperty(PropertyName = "prst_hdr_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "prst_hdr_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PrstHdrName { get; set; }
         /// <summary>

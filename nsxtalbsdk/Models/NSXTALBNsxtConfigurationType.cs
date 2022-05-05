@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -23,7 +22,7 @@ namespace nsxtalbsdk.Models
         /// Data network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise
         /// edition.
         /// </summary>
-        [JsonProperty(PropertyName = "data_network_config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "data_network_config")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBDataNetworkConfigType DataNetworkConfig { get; set; }
         /// <summary>
@@ -40,7 +39,7 @@ namespace nsxtalbsdk.Models
         /// Management network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed in Basic edition,
         /// Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "management_network_config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "management_network_config")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBManagementNetworkConfigType ManagementNetworkConfig { get; set; }
         /// <summary>
@@ -52,13 +51,13 @@ namespace nsxtalbsdk.Models
         /// Credentials to access NSX-T manager. It is a reference to an object of type CloudConnectorUser. Field introduced in
         /// 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "nsxt_credentials_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "nsxt_credentials_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string NsxtCredentialsRef { get; set; }
         /// <summary>
         /// NSX-T manager hostname or IP address. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "nsxt_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "nsxt_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string NsxtUrl { get; set; }
         /// <summary>

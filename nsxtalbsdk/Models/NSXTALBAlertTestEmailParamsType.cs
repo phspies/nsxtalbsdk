@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The Subject line of the originating email from  Avi Controller.
         /// </summary>
-        [JsonProperty(PropertyName = "subject", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "subject")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Subject { get; set; }
         /// <summary>
         /// The email context.
         /// </summary>
-        [JsonProperty(PropertyName = "text", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "text")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Text { get; set; }
         /// <summary>

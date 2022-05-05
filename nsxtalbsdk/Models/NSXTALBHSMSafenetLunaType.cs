@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Set to indicate HA across more than one servers.
         /// </summary>
-        [JsonProperty(PropertyName = "is_ha", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "is_ha")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool IsHa { get; set; }
         /// <summary>

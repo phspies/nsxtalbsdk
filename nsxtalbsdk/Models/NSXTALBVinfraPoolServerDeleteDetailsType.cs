@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// pool_name of VinfraPoolServerDeleteDetails.
         /// </summary>
-        [JsonProperty(PropertyName = "pool_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "pool_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PoolName { get; set; }
         /// <summary>

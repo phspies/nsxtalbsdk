@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -514,7 +513,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// node_obj_id of VserverL7MetricsObj.
         /// </summary>
-        [JsonProperty(PropertyName = "node_obj_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "node_obj_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string NodeObjId { get; set; }
         /// <summary>

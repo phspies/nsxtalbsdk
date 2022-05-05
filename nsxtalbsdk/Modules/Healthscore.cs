@@ -1,4 +1,3 @@
-
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -10,7 +9,6 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
-
 namespace nsxtalbsdk.Modules
 {
     public class Healthscore
@@ -20,17 +18,45 @@ namespace nsxtalbsdk.Modules
         CancellationToken cancellationToken;
         int timeout;
         int retry;
-        public Healthscore(RestClient Client, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
+        string defaultXAviVerion;
+        RestResponseCookie sessionCookie;
+        public Healthscore(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = DefaultSerializationSettings;
+            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
+            defaultXAviVerion = _defaultXAviVerion;
+            sessionCookie = _sessionCookie;
         }
         public async Task<NSXTALBHealthScoreQueryResponseApiResponseType> GetAnalyticsHealthscorePool(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
-            NSXTALBHealthScoreQueryResponseApiResponseType? returnValue = default(NSXTALBHealthScoreQueryResponseApiResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscorePoolServiceURL = new StringBuilder("/api/analytics/healthscore/pool/");
             var request = new RestRequest
             {              
@@ -64,6 +90,8 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscorePoolServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -74,8 +102,31 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBHealthScoreQueryResponseType> GetAnalyticsHealthscorePoolUuid(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBHealthScoreQueryResponseType? returnValue = default(NSXTALBHealthScoreQueryResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscorePoolUuidServiceURL = new StringBuilder("/api/analytics/healthscore/pool/{uuid}");
             var request = new RestRequest
             {              
@@ -109,6 +160,8 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscorePoolUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -119,7 +172,31 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBHealthScoreQueryResponseApiResponseType> GetAnalyticsHealthscoreServiceengine(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
-            NSXTALBHealthScoreQueryResponseApiResponseType? returnValue = default(NSXTALBHealthScoreQueryResponseApiResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscoreServiceengineServiceURL = new StringBuilder("/api/analytics/healthscore/serviceengine/");
             var request = new RestRequest
             {              
@@ -153,6 +230,8 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreServiceengineServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -163,8 +242,31 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBHealthScoreQueryResponseType> GetAnalyticsHealthscoreServiceengineUuid(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBHealthScoreQueryResponseType? returnValue = default(NSXTALBHealthScoreQueryResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscoreServiceengineUuidServiceURL = new StringBuilder("/api/analytics/healthscore/serviceengine/{uuid}");
             var request = new RestRequest
             {              
@@ -198,6 +300,8 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreServiceengineUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -208,7 +312,31 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBHealthScoreQueryResponseApiResponseType> GetAnalyticsHealthscoreVirtualservice(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
-            NSXTALBHealthScoreQueryResponseApiResponseType? returnValue = default(NSXTALBHealthScoreQueryResponseApiResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscoreVirtualserviceServiceURL = new StringBuilder("/api/analytics/healthscore/virtualservice/");
             var request = new RestRequest
             {              
@@ -242,6 +370,8 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreVirtualserviceServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -252,8 +382,31 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBHealthScoreQueryResponseType> GetAnalyticsHealthscoreVirtualserviceUuid(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            NSXTALBHealthScoreQueryResponseType? returnValue = default(NSXTALBHealthScoreQueryResponseType);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscoreVirtualserviceUuidServiceURL = new StringBuilder("/api/analytics/healthscore/virtualservice/{uuid}");
             var request = new RestRequest
             {              
@@ -287,6 +440,8 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreVirtualserviceUuidServiceURL.ToString();
+            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
 			{

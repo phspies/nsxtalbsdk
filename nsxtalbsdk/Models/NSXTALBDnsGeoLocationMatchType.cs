@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -29,7 +28,7 @@ namespace nsxtalbsdk.Models
         /// Criterion to use for matching the client IP's geographical location. Enum options - IS_IN, IS_NOT_IN. Field introduced
         /// in 17.1.5.
         /// </summary>
-        [JsonProperty(PropertyName = "match_criteria", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match_criteria")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MatchCriteria { get; set; }
         /// <summary>

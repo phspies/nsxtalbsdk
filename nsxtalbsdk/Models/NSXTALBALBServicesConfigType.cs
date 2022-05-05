@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,7 +21,7 @@ namespace nsxtalbsdk.Models
         /// Default values to be used for Application Signature sync. Field introduced in 20.1.4. Allowed in Basic edition,
         /// Essentials edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "app_signature_config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "app_signature_config")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBAppSignatureConfigType AppSignatureConfig { get; set; }
         /// <summary>
@@ -34,7 +33,7 @@ namespace nsxtalbsdk.Models
         /// Default values to be used for pulse case management. Field introduced in 21.1.1. Allowed in Basic edition, Essentials
         /// edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "case_config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "case_config")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBCaseConfigType CaseConfig { get; set; }
         /// <summary>
@@ -46,13 +45,13 @@ namespace nsxtalbsdk.Models
         /// Information about the portal features opted in for controller. Field introduced in 20.1.1. Allowed in Enterprise
         /// edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "feature_opt_in_status", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "feature_opt_in_status")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBPortalFeatureOptInType FeatureOptInStatus { get; set; }
         /// <summary>
         /// Default values to be used for IP Reputation sync. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "ip_reputation_config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip_reputation_config")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpReputationConfigType IpReputationConfig { get; set; }
         /// <summary>
@@ -70,20 +69,20 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The FQDN or IP address of the customer portal. Field introduced in 18.2.6.
         /// </summary>
-        [JsonProperty(PropertyName = "portal_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "portal_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PortalUrl { get; set; }
         /// <summary>
         /// Saas licensing configuration. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise
         /// edition.
         /// </summary>
-        [JsonProperty(PropertyName = "saas_licensing_config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "saas_licensing_config")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBSaasLicensingInfoType SaasLicensingConfig { get; set; }
         /// <summary>
         /// Split proxy configuration to connect external pulse services. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "split_proxy_configuration", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "split_proxy_configuration")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBProxyConfigurationType SplitProxyConfiguration { get; set; }
         /// <summary>
@@ -107,7 +106,7 @@ namespace nsxtalbsdk.Models
         /// Default values to be used for user agent DB Service. Field introduced in 21.1.1. Allowed in Basic edition, Essentials
         /// edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "user_agent_db_config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "user_agent_db_config")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBUserAgentDBConfigType UserAgentDbConfig { get; set; }
         /// <summary>
@@ -119,7 +118,7 @@ namespace nsxtalbsdk.Models
         /// Default values to be used for pulse waf management. Field introduced in 21.1.1. Allowed in Basic edition, Essentials
         /// edition, Enterprise edition.
         /// </summary>
-        [JsonProperty(PropertyName = "waf_config", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "waf_config")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBWafCrsConfigType WafConfig { get; set; }
     }

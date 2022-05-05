@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -148,7 +147,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unique ID associated with the vip. Field introduced in 17.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "vip_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vip_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VipId { get; set; }
     }

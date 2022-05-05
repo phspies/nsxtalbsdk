@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// UUID of the 'Cluster' object of the Controller Cluster in this site.
         /// </summary>
-        [JsonProperty(PropertyName = "cluster_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "cluster_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ClusterUuid { get; set; }
         /// <summary>
@@ -79,13 +78,13 @@ namespace nsxtalbsdk.Models
         /// Name for the Site Controller Cluster. After any changes to site name, references to GSLB site name should be updated
         /// manually. Ex  Site name used in DNS policies or Topology policies should be updated to use the new site name.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
         /// The password used when authenticating with the Site.
         /// </summary>
-        [JsonProperty(PropertyName = "password", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "password")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Password { get; set; }
         /// <summary>
@@ -108,7 +107,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The username used when authenticating with the Site. .
         /// </summary>
-        [JsonProperty(PropertyName = "username", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "username")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Username { get; set; }
         /// <summary>

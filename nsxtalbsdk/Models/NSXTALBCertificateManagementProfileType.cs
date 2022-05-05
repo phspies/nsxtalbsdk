@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -32,14 +31,14 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the PKI Profile.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
         /// Alert script config object for certificate management profile. It is a reference to an object of type AlertScriptConfig.
         /// Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "run_script_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "run_script_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string RunScriptRef { get; set; }
         /// <summary>

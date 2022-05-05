@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// String to search for in the body. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "search_string", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "search_string")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBSearchStringVarType SearchString { get; set; }
     }

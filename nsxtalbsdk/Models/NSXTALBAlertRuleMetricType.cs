@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property metric_threshold of obj type AlertRuleMetric field type str  type object
         /// </summary>
-        [JsonProperty(PropertyName = "metric_threshold", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "metric_threshold")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBAlertMetricThresholdType MetricThreshold { get; set; }
     }

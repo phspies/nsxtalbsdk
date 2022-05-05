@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// List of labels allowed for the tenant. Field introduced in 20.1.5.
         /// </summary>
-        [JsonProperty(PropertyName = "match_label", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match_label")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBRoleFilterMatchLabelType MatchLabel { get; set; }
         /// <summary>

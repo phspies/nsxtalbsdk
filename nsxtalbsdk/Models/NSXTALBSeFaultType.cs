@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The name of the target fault. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "fault_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "fault_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string FaultName { get; set; }
         /// <summary>

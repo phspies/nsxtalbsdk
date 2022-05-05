@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The Bot Identification to which the IP reputation type is mapped. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "bot_identification", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "bot_identification")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBBotIdentificationType BotIdentification { get; set; }
         /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS,
         /// IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "ip_reputation_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ip_reputation_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string IpReputationType { get; set; }
     }

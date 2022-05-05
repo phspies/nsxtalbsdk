@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IP address.
         /// </summary>
-        [JsonProperty(PropertyName = "addr", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "addr")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Addr { get; set; }
         /// <summary>
         /// Enum options - V4, DNS, V6.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
     }

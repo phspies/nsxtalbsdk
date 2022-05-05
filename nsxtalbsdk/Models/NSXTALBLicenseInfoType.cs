@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Last updated time. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "last_updated", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "last_updated")]
         [System.ComponentModel.DataAnnotations.Required]
         public long LastUpdated { get; set; }
         /// <summary>
         /// Quantity of service cores. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "service_cores", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "service_cores")]
         [System.ComponentModel.DataAnnotations.Required]
         public double ServiceCores { get; set; }
         /// <summary>
@@ -34,7 +33,7 @@ namespace nsxtalbsdk.Models
         /// Specifies the license tier. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS,
         /// ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "tier", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "tier")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Tier { get; set; }
         /// <summary>

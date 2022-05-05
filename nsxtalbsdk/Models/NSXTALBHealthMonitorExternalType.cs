@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Command script provided inline.
         /// </summary>
-        [JsonProperty(PropertyName = "command_code", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "command_code")]
         [System.ComponentModel.DataAnnotations.Required]
         public string CommandCode { get; set; }
         /// <summary>

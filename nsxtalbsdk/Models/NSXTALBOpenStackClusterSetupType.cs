@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -36,7 +35,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// keystone_host of OpenStackClusterSetup.
         /// </summary>
-        [JsonProperty(PropertyName = "keystone_host", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "keystone_host")]
         [System.ComponentModel.DataAnnotations.Required]
         public string KeystoneHost { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Indicates the vip_id that needs placement retrial. Field introduced in 17.1.2.
         /// </summary>
-        [JsonProperty(PropertyName = "vip_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vip_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VipId { get; set; }
     }

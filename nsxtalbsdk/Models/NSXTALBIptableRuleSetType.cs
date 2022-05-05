@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// chain of IptableRuleSet.
         /// </summary>
-        [JsonProperty(PropertyName = "chain", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "chain")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Chain { get; set; }
         /// <summary>
@@ -27,7 +26,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// table of IptableRuleSet.
         /// </summary>
-        [JsonProperty(PropertyName = "table", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "table")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Table { get; set; }
     }

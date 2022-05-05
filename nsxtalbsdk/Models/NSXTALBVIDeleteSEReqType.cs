@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Unique object identifier of sevm.
         /// </summary>
-        [JsonProperty(PropertyName = "sevm_uuid", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "sevm_uuid")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SevmUuid { get; set; }
         /// <summary>

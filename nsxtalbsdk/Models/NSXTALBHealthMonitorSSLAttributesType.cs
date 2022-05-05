@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -35,7 +34,7 @@ namespace nsxtalbsdk.Models
         /// SSL profile defines ciphers and SSL versions to be used for healthmonitor traffic to the back-end servers. It is a
         /// reference to an object of type SSLProfile. Field introduced in 17.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "ssl_profile_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ssl_profile_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SslProfileRef { get; set; }
     }

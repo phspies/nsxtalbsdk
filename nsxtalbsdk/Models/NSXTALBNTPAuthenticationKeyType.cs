@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,13 +21,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// NTP Authentication key.
         /// </summary>
-        [JsonProperty(PropertyName = "key", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "key")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Key { get; set; }
         /// <summary>
         /// Key number to be assigned to the authentication-key. Allowed values are 1-65534.
         /// </summary>
-        [JsonProperty(PropertyName = "key_number", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "key_number")]
         [System.ComponentModel.DataAnnotations.Required]
         public int KeyNumber { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Number of cpu.
         /// </summary>
-        [JsonProperty(PropertyName = "cpu", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "cpu")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Cpu { get; set; }
         /// <summary>
         /// Number of shares.
         /// </summary>
-        [JsonProperty(PropertyName = "shares", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "shares")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Shares { get; set; }
     }

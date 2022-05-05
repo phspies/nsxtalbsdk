@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -27,7 +26,7 @@ namespace nsxtalbsdk.Models
         /// Globally unique SAML entityID for this node. The SAML application entity ID on the IDP should match this. Field
         /// introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "entity_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "entity_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string EntityId { get; set; }
         /// <summary>
@@ -44,7 +43,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// SAML Single Signon URL to be programmed on the IDP. Field introduced in 18.2.3.
         /// </summary>
-        [JsonProperty(PropertyName = "single_signon_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "single_signon_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SingleSignonUrl { get; set; }
         /// <summary>

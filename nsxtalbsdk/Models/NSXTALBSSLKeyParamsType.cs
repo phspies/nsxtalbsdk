@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
         /// </summary>
-        [JsonProperty(PropertyName = "algorithm", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "algorithm")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Algorithm { get; set; }
         /// <summary>

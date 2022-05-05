@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,13 +30,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Stores output file path, for upload to AWS S3. Field introduced in 18.2.6.
         /// </summary>
-        [JsonProperty(PropertyName = "file_path", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "file_path")]
         [System.ComponentModel.DataAnnotations.Required]
         public string FilePath { get; set; }
         /// <summary>
         /// Field introduced in 18.2.6.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

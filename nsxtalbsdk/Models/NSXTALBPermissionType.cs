@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -37,7 +36,7 @@ namespace nsxtalbsdk.Models
         /// PERMISSION_GSLBSERVICE_GROUP, PERMISSION_JWTSERVERPROFILE, PERMISSION_GEODB, PERMISSION_BOTDETECTIONPOLICY,
         /// PERMISSION_JWTPROFILE, PERMISSION_LABELGROUP, PERMISSION_WAFCRS.
         /// </summary>
-        [JsonProperty(PropertyName = "resource", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "resource")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Resource { get; set; }
         /// <summary>
@@ -49,7 +48,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
     }

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,19 +30,19 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Placeholder for description of property enabled of obj type ClientLogFilter field type str  type boolean
         /// </summary>
-        [JsonProperty(PropertyName = "enabled", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "enabled")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Enabled { get; set; }
         /// <summary>
         /// Number of index.
         /// </summary>
-        [JsonProperty(PropertyName = "index", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "index")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Index { get; set; }
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

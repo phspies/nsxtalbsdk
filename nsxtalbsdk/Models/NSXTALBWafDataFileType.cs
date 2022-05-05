@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Stringified WAF File Data. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "data", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "data")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Data { get; set; }
         /// <summary>
         /// WAF Data File Name. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

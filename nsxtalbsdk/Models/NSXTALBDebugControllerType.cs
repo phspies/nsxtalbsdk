@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,13 +25,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR.
         /// </summary>
-        [JsonProperty(PropertyName = "log_level", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "log_level")]
         [System.ComponentModel.DataAnnotations.Required]
         public string LogLevel { get; set; }
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -43,7 +42,7 @@ namespace nsxtalbsdk.Models
         /// SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG,
         /// SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG.
         /// </summary>
-        [JsonProperty(PropertyName = "sub_module", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "sub_module")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SubModule { get; set; }
         /// <summary>
@@ -54,7 +53,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Enum options - TRACE_LEVEL_DISABLED, TRACE_LEVEL_ERROR, TRACE_LEVEL_DEBUG, TRACE_LEVEL_DEBUG_DETAIL.
         /// </summary>
-        [JsonProperty(PropertyName = "trace_level", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "trace_level")]
         [System.ComponentModel.DataAnnotations.Required]
         public string TraceLevel { get; set; }
         /// <summary>

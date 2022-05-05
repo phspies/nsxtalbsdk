@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// datastore_name of VcenterDatastore.
         /// </summary>
-        [JsonProperty(PropertyName = "datastore_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "datastore_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string DatastoreName { get; set; }
     }

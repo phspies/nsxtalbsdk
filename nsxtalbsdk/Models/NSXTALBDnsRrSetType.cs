@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,7 +20,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Fully Qualified Domain Name. Field introduced in 17.2.12, 18.1.2.
         /// </summary>
-        [JsonProperty(PropertyName = "fqdn", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "fqdn")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Fqdn { get; set; }
         /// <summary>
@@ -42,7 +41,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Time To Live for this DNS record. Allowed values are 0-2147483647. Field introduced in 17.2.12, 18.1.2.
         /// </summary>
-        [JsonProperty(PropertyName = "ttl", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "ttl")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Ttl { get; set; }
         /// <summary>
@@ -50,7 +49,7 @@ namespace nsxtalbsdk.Models
         /// DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA,
         /// DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 17.2.12, 18.1.2.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
     }

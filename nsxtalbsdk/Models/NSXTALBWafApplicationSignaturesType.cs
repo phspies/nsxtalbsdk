@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -17,7 +16,7 @@ namespace nsxtalbsdk.Models
         /// The external provide for the rules. It is a reference to an object of type WafApplicationSignatureProvider. Field
         /// introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "provider_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "provider_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ProviderRef { get; set; }
         /// <summary>

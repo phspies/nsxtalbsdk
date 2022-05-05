@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// The contents of the Syslog message/SNMP Trap contents.
         /// </summary>
-        [JsonProperty(PropertyName = "text", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "text")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Text { get; set; }
         /// <summary>

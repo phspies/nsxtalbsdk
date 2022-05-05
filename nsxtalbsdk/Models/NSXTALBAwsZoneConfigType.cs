@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Availability zone.
         /// </summary>
-        [JsonProperty(PropertyName = "availability_zone", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "availability_zone")]
         [System.ComponentModel.DataAnnotations.Required]
         public string AvailabilityZone { get; set; }
         /// <summary>
         /// Name or CIDR of the network in the Availability Zone that will be used as management network.
         /// </summary>
-        [JsonProperty(PropertyName = "mgmt_network_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mgmt_network_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MgmtNetworkName { get; set; }
         /// <summary>

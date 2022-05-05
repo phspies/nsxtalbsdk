@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -23,13 +22,13 @@ namespace nsxtalbsdk.Models
         /// POLICY_DROPS, DOS_CONN_RL_DROP, DOS_REQ_RL_DROP, DOS_REQ_HDR_RL_DROP, DOS_REQ_CUSTOM_RL_DROP, DNS_ATTACK_REFLECTION,
         /// DNS_ATTACK_AMPLIFICATION_EGRESS, TCP_SLOW_AND_LOW, DNS_ATTACK_NXDOMAIN.
         /// </summary>
-        [JsonProperty(PropertyName = "attack", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "attack")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Attack { get; set; }
         /// <summary>
         /// Placeholder for description of property attack_count of obj type DosAttackEventDetails field type str  type number
         /// </summary>
-        [JsonProperty(PropertyName = "attack_count", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "attack_count")]
         [System.ComponentModel.DataAnnotations.Required]
         public double AttackCount { get; set; }
         /// <summary>

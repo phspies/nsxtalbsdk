@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -23,7 +22,7 @@ namespace nsxtalbsdk.Models
         /// Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field
         /// introduced in 18.2.9.
         /// </summary>
-        [JsonProperty(PropertyName = "count", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "count")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Count { get; set; }
         /// <summary>
@@ -34,7 +33,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC.
         /// </summary>
-        [JsonProperty(PropertyName = "period", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "period")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Period { get; set; }
     }

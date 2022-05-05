@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -21,13 +20,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// metric_id of RelationalOperatorsParams.
         /// </summary>
-        [JsonProperty(PropertyName = "metric_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "metric_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MetricId { get; set; }
         /// <summary>
         /// right_arg of RelationalOperatorsParams.
         /// </summary>
-        [JsonProperty(PropertyName = "right_arg", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "right_arg")]
         [System.ComponentModel.DataAnnotations.Required]
         public string RightArg { get; set; }
     }

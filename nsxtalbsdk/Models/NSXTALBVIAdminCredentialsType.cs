@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// vcenter_url of VIAdminCredentials.
         /// </summary>
-        [JsonProperty(PropertyName = "vcenter_url", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vcenter_url")]
         [System.ComponentModel.DataAnnotations.Required]
         public string VcenterUrl { get; set; }
         /// <summary>

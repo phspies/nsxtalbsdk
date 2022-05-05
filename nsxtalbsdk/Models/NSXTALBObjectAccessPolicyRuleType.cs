@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -82,7 +81,7 @@ namespace nsxtalbsdk.Models
         /// NSXAGENTINTERNALCLI, NSXTAGENT, SERATELIMITINGRLINTERNAL, SERATELIMITINGMSFINTERNAL, MAXOBJECTS. Field introduced in
         /// 18.2.7, 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "obj_types", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "obj_types")]
         [System.ComponentModel.DataAnnotations.Required]
         public IList<string> ObjTypes { get; set; }
         /// <summary>

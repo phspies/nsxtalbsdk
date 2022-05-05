@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Application specific identifier. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "client_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ClientId { get; set; }
         /// <summary>
         /// Application specific identifier secret. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "client_secret", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "client_secret")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ClientSecret { get; set; }
         /// <summary>

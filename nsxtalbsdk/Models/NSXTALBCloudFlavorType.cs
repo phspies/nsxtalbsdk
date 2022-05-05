@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// id of CloudFlavor.
         /// </summary>
-        [JsonProperty(PropertyName = "id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Id { get; set; }
         /// <summary>
@@ -63,7 +62,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>

@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// This field describes the GeoDb file. Field introduced in 17.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "file", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "file")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBGslbGeoDbFileType File { get; set; }
         /// <summary>

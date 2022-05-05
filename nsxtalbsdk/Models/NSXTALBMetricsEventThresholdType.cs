@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -18,7 +17,7 @@ namespace nsxtalbsdk.Models
         /// options - THRESHOLD_TYPE_STATIC, SE_CPU_THRESHOLD, SE_MEM_THRESHOLD, SE_DISK_THRESHOLD, CONTROLLER_CPU_THRESHOLD,
         /// CONTROLLER_MEM_THRESHOLD, CONTROLLER_DISK_THRESHOLD. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "metrics_event_threshold_type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "metrics_event_threshold_type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MetricsEventThresholdType { get; set; }
         /// <summary>

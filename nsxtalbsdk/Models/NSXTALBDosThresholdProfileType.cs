@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -22,7 +21,7 @@ namespace nsxtalbsdk.Models
         /// Timer value in seconds to collect DoS attack metrics based on threshold on the Service Engine for this Virtual Service.
         /// Unit is SEC.
         /// </summary>
-        [JsonProperty(PropertyName = "thresh_period", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "thresh_period")]
         [System.ComponentModel.DataAnnotations.Required]
         public int ThreshPeriod { get; set; }
     }

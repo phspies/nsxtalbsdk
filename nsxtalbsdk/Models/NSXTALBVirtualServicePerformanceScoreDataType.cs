@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -35,7 +34,7 @@ namespace nsxtalbsdk.Models
         /// OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING,
         /// OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL.
         /// </summary>
-        [JsonProperty(PropertyName = "oper_state", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "oper_state")]
         [System.ComponentModel.DataAnnotations.Required]
         public string OperState { get; set; }
         /// <summary>
@@ -47,7 +46,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Reason for the Health Score.
         /// </summary>
-        [JsonProperty(PropertyName = "reason", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "reason")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Reason { get; set; }
         /// <summary>

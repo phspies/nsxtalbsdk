@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,13 +15,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Filename to download with full path. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "filename", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "filename")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Filename { get; set; }
         /// <summary>
         /// FTP data transfer process mode. Enum options - FTP_PASSIVE_MODE, FTP_PORT_MODE. Field introduced in 21.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "mode", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "mode")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Mode { get; set; }
         /// <summary>

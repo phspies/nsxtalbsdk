@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -36,7 +35,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// lif_label of APICLifsRuntime.
         /// </summary>
-        [JsonProperty(PropertyName = "lif_label", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "lif_label")]
         [System.ComponentModel.DataAnnotations.Required]
         public string LifLabel { get; set; }
         /// <summary>
@@ -47,7 +46,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Name of the object.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -68,7 +67,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// tenant_name of APICLifsRuntime.
         /// </summary>
-        [JsonProperty(PropertyName = "tenant_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "tenant_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string TenantName { get; set; }
         /// <summary>

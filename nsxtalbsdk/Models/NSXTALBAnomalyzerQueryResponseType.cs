@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,19 +25,19 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// start of AnomalyzerQueryResponse.
         /// </summary>
-        [JsonProperty(PropertyName = "start", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "start")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Start { get; set; }
         /// <summary>
         /// Number of step.
         /// </summary>
-        [JsonProperty(PropertyName = "step", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "step")]
         [System.ComponentModel.DataAnnotations.Required]
         public int Step { get; set; }
         /// <summary>
         /// stop of AnomalyzerQueryResponse.
         /// </summary>
-        [JsonProperty(PropertyName = "stop", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "stop")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Stop { get; set; }
         /// <summary>

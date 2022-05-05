@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -16,7 +15,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Specify an IP subnet prefix for this Network.
         /// </summary>
-        [JsonProperty(PropertyName = "prefix", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "prefix")]
         [System.ComponentModel.DataAnnotations.Required]
         public NSXTALBIpAddrPrefixType Prefix { get; set; }
         /// <summary>

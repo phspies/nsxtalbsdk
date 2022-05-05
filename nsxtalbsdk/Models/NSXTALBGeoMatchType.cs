@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -20,19 +19,19 @@ namespace nsxtalbsdk.Models
         /// ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6,
         /// ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "attribute", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "attribute")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Attribute { get; set; }
         /// <summary>
         /// Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "match_operation", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "match_operation")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MatchOperation { get; set; }
         /// <summary>
         /// The values to match. Field introduced in 21.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "values", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "values")]
         [System.ComponentModel.DataAnnotations.Required]
         public IList<string> Values { get; set; }
     }

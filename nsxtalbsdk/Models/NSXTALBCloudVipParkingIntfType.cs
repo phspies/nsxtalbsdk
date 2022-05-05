@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// subnet_id of CloudVipParkingIntf.
         /// </summary>
-        [JsonProperty(PropertyName = "subnet_id", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "subnet_id")]
         [System.ComponentModel.DataAnnotations.Required]
         public string SubnetId { get; set; }
         /// <summary>

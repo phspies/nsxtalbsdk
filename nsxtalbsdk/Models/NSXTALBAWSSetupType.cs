@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -36,7 +35,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// region of AWSSetup.
         /// </summary>
-        [JsonProperty(PropertyName = "region", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "region")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Region { get; set; }
         /// <summary>

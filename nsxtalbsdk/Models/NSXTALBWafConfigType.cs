@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -133,25 +132,25 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// WAF default action for Request Body Phase. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "request_body_default_action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "request_body_default_action")]
         [System.ComponentModel.DataAnnotations.Required]
         public string RequestBodyDefaultAction { get; set; }
         /// <summary>
         /// WAF default action for Request Header Phase. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "request_hdr_default_action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "request_hdr_default_action")]
         [System.ComponentModel.DataAnnotations.Required]
         public string RequestHdrDefaultAction { get; set; }
         /// <summary>
         /// WAF default action for Response Body Phase. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "response_body_default_action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "response_body_default_action")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ResponseBodyDefaultAction { get; set; }
         /// <summary>
         /// WAF default action for Response Header Phase. Field introduced in 17.2.1.
         /// </summary>
-        [JsonProperty(PropertyName = "response_hdr_default_action", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "response_hdr_default_action")]
         [System.ComponentModel.DataAnnotations.Required]
         public string ResponseHdrDefaultAction { get; set; }
         /// <summary>

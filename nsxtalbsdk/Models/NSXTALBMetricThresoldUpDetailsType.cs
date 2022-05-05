@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// metric_name of MetricThresoldUpDetails.
         /// </summary>
-        [JsonProperty(PropertyName = "metric_name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "metric_name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string MetricName { get; set; }
         /// <summary>

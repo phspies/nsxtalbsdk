@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -26,13 +25,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Specified Claim should be present in the JWT. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "is_mandatory", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "is_mandatory")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool IsMandatory { get; set; }
         /// <summary>
         /// JWT Claim name to be validated. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -44,13 +43,13 @@ namespace nsxtalbsdk.Models
         /// Specifies the type of the Claim. Enum options - JWT_CLAIM_TYPE_BOOL, JWT_CLAIM_TYPE_INT, JWT_CLAIM_TYPE_STRING. Field
         /// introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "type", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "type")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Type { get; set; }
         /// <summary>
         /// Specifies whether to validate the Claim value. Field introduced in 20.1.3.
         /// </summary>
-        [JsonProperty(PropertyName = "validate", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "validate")]
         [System.ComponentModel.DataAnnotations.Required]
         public bool Validate { get; set; }
     }

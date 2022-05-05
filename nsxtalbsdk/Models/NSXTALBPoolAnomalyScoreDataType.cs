@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -33,7 +32,7 @@ namespace nsxtalbsdk.Models
         /// Placeholder for description of property per_anomalous_l4_metrics of obj type PoolAnomalyScoreData field type str  type
         /// number
         /// </summary>
-        [JsonProperty(PropertyName = "per_anomalous_l4_metrics", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "per_anomalous_l4_metrics")]
         [System.ComponentModel.DataAnnotations.Required]
         public double PerAnomalousL4Metrics { get; set; }
         /// <summary>
@@ -45,13 +44,13 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// It is a reference to an object of type Pool.
         /// </summary>
-        [JsonProperty(PropertyName = "pool_ref", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "pool_ref")]
         [System.ComponentModel.DataAnnotations.Required]
         public string PoolRef { get; set; }
         /// <summary>
         /// Reason for the Health Score.
         /// </summary>
-        [JsonProperty(PropertyName = "reason", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "reason")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Reason { get; set; }
         /// <summary>

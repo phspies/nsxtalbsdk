@@ -5,7 +5,6 @@ using System.Collections;
 using System.Linq;
 using NJsonSchema.Converters;
 using System.ComponentModel;
-
 namespace nsxtalbsdk.Models
 {
     /// <summary>
@@ -55,7 +54,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// IP reputation DB name. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "name", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "name")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
         /// <summary>
@@ -82,7 +81,7 @@ namespace nsxtalbsdk.Models
         /// <summary>
         /// Organization providing IP reputation data. Enum options - IP_REPUTATION_VENDOR_WEBROOT. Field introduced in 20.1.1.
         /// </summary>
-        [JsonProperty(PropertyName = "vendor", Required = Required.AllowNull)]
+        [JsonProperty(PropertyName = "vendor")]
         [System.ComponentModel.DataAnnotations.Required]
         public string Vendor { get; set; }
         /// <summary>
