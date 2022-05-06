@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBBotIdentificationType 
+    public class NSXTALBBotIdentificationType
     {
         /// <summary>
         /// The Bot Client Class of this identification. Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT. Field

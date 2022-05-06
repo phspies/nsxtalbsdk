@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBVsScaleinParamsType 
+    public class NSXTALBVsScaleinParamsType
     {
         /// <summary>
         /// Placeholder for description of property admin_down of obj type VsScaleinParams field type str  type boolean

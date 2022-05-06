@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDebugFilterUnionType 
+    public class NSXTALBDebugFilterUnionType
     {
         /// <summary>
         /// Placeholder for description of property alert_debug_filter of obj type DebugFilterUnion field type str  type object

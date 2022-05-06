@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBTencentCredentialsType 
+    public class NSXTALBTencentCredentialsType
     {
         /// <summary>
         /// Tencent secret ID. Field introduced in 18.2.3.

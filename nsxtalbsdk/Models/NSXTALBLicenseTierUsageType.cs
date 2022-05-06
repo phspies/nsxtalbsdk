@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBLicenseTierUsageType 
+    public class NSXTALBLicenseTierUsageType
     {
         /// <summary>
         /// Specifies the license tier. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS,

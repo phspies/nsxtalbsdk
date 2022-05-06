@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBControllerLicenseReconcileDetailsType 
+    public class NSXTALBControllerLicenseReconcileDetailsType
     {
         /// <summary>
         /// Placeholder for description of property new_available_service_cores of obj type ControllerLicenseReconcileDetails field

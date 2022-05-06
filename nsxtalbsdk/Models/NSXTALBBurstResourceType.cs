@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBBurstResourceType 
+    public class NSXTALBBurstResourceType
     {
         /// <summary>
         /// License ID against which this burst has been accounted. Field introduced in 17.2.5.

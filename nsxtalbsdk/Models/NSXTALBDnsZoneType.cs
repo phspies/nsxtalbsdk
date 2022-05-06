@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsZoneType 
+    public class NSXTALBDnsZoneType
     {
         /// <summary>
         /// Email address of the administrator responsible for this zone. This field is used in SOA records as rname (RFC 1035). If

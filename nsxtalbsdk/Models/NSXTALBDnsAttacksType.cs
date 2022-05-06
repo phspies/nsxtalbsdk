@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsAttacksType 
+    public class NSXTALBDnsAttacksType
     {
         /// <summary>
         /// Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks. Field introduced in

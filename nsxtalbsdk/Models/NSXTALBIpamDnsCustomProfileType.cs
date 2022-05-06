@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIpamDnsCustomProfileType 
+    public class NSXTALBIpamDnsCustomProfileType
     {
         /// <summary>
         /// It is a reference to an object of type CustomIpamDnsProfile. Field introduced in 17.1.1.

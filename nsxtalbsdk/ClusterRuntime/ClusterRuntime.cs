@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using nsxtalbsdk.Models;
+﻿using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -13,23 +12,21 @@ namespace nsxtalbsdk.Modules
     public class ClusterRuntime
     {
         RestClient restClient;
-        JsonSerializerSettings defaultSerializationSettings;
         CancellationToken cancellationToken;
         int timeout;
         int retry;
         string defaultXAviVerion;
         List<RestResponseCookie> sessionCookies;
-        public ClusterRuntime(RestClient Client, List<RestResponseCookie> _sessionCookies, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public ClusterRuntime(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
             sessionCookies = _sessionCookies;
         }
-        public async Task<ClusterRuntimeType> GetRuntimeAsync(string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
+        public async Task<ClusterRuntimeType> GetRuntimeAsync(string? XAviTenant = null, string? XAviTenantUUID = null, string? XAviVersion = null)
         {
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             StringBuilder GetAlbservicesfileuploadServiceURL = new StringBuilder("/api/cluster/runtime");
@@ -42,7 +39,6 @@ namespace nsxtalbsdk.Modules
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
-            if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetAlbservicesfileuploadServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
             request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);

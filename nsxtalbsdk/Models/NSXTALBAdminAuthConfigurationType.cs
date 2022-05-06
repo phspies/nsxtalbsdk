@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAdminAuthConfigurationType 
+    public class NSXTALBAdminAuthConfigurationType
     {
         /// <summary>
         /// Allow any user created locally to login with local credentials. Field introduced in 17.1.1.

@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBPoolDeploymentSuccessInfoType 
+    public class NSXTALBPoolDeploymentSuccessInfoType
     {
         /// <summary>
         /// Previous pool in service. Field introduced in 18.1.1.

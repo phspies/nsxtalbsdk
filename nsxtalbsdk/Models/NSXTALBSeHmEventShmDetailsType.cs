@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeHmEventShmDetailsType 
+    public class NSXTALBSeHmEventShmDetailsType
     {
         /// <summary>
         /// Average health monitor response time from server in milli-seconds.

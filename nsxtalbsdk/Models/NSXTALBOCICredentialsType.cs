@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOCICredentialsType 
+    public class NSXTALBOCICredentialsType
     {
         /// <summary>
         /// API key with respect to the Public Key. Field introduced in 18.2.1,18.1.3.

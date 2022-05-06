@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIpamDnsAzureProfileType 
+    public class NSXTALBIpamDnsAzureProfileType
     {
         /// <summary>
         /// Service principal based credentials for azure. Only one of azure_userpass or azure_serviceprincipal is allowed. Field

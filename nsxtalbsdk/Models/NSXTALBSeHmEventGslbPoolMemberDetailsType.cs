@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeHmEventGslbPoolMemberDetailsType 
+    public class NSXTALBSeHmEventGslbPoolMemberDetailsType
     {
         /// <summary>
         /// Placeholder for description of property app_info of obj type SeHmEventGslbPoolMemberDetails field type str  type object

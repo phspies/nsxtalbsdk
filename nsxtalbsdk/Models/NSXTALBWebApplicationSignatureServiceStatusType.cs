@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBWebApplicationSignatureServiceStatusType 
+    public class NSXTALBWebApplicationSignatureServiceStatusType
     {
         /// <summary>
         /// If the last attempted update failed, this is a more detailed error message. Field introduced in 20.1.3.

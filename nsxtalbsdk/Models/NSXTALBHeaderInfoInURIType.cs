@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHeaderInfoInURIType 
+    public class NSXTALBHeaderInfoInURIType
     {
         /// <summary>
         /// Header field name in hitted signature rule match_element. Field introduced in 21.1.1.

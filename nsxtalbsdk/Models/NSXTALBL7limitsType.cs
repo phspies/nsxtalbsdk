@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBL7limitsType 
+    public class NSXTALBL7limitsType
     {
         /// <summary>
         /// Number of HTTPPolicies attached to a VS. Field introduced in 21.1.1.

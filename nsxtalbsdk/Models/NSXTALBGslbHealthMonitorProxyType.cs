@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGslbHealthMonitorProxyType 
+    public class NSXTALBGslbHealthMonitorProxyType
     {
         /// <summary>
         /// This field identifies the health monitor proxy behavior. The designated site for health monitor proxy can monitor public

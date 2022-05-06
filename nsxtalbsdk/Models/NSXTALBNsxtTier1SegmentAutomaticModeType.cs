@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBNsxtTier1SegmentAutomaticModeType 
+    public class NSXTALBNsxtTier1SegmentAutomaticModeType
     {
         /// <summary>
         /// Uber IP subnet for the logical segments created automatically by Avi controller. Field introduced in 20.1.1.

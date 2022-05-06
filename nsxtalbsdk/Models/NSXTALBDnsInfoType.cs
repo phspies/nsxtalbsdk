@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsInfoType 
+    public class NSXTALBDnsInfoType
     {
         /// <summary>
         /// Specifies the algorithm to pick the IP address(es) to be returned, when multiple entries are configured. This does not

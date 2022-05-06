@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBVinfraMgmtNwChangeDetailsType 
+    public class NSXTALBVinfraMgmtNwChangeDetailsType
     {
         /// <summary>
         /// existing_nw of VinfraMgmtNwChangeDetails.

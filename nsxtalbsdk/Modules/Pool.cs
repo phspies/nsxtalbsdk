@@ -1,31 +1,26 @@
+using Newtonsoft.Json;
+using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
-using Newtonsoft.Json;
 using System.Net;
-using nsxtalbsdk;
-using nsxtalbsdk.Models;
-using System.Linq;
-using System.Collections.Generic;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 namespace nsxtalbsdk.Modules
 {
     public class Pool
     {
-        RestClient restClient;
-        JsonSerializerSettings defaultSerializationSettings;
-        CancellationToken cancellationToken;
-        int timeout;
-        int retry;
-        string defaultXAviVerion;
-         List<RestResponseCookie> sessionCookies;
-        public Pool(RestClient Client, List<RestResponseCookie> _sessionCookies, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private RestClient restClient;
+        private CancellationToken cancellationToken;
+        private int timeout;
+        private int retry;
+        private string defaultXAviVerion;
+        private List<RestResponseCookie> sessionCookies;
+        public Pool(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
@@ -37,7 +32,7 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             StringBuilder GetPoolServiceURL = new StringBuilder("/api/pool");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -61,10 +56,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBPoolApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPoolApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBPoolType> PostPoolAsync(NSXTALBPoolType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -73,7 +68,7 @@ namespace nsxtalbsdk.Modules
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostPoolServiceURL = new StringBuilder("/api/pool");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -82,17 +77,17 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             request.Resource = PostPoolServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
             request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBPoolType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPoolType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostPoolServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBPoolType> GetPoolUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
@@ -101,7 +96,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidServiceURL = new StringBuilder("/api/pool/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -122,10 +117,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBPoolType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPoolType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBPoolType> PutPoolUuidAsync(NSXTALBPoolType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -135,7 +130,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutPoolUuidServiceURL = new StringBuilder("/api/pool/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.PUT
             };
@@ -145,7 +140,7 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             PutPoolUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutPoolUuidServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
@@ -153,10 +148,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBPoolType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPoolType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP PUT operation to " + PutPoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBPoolType> PatchPoolUuidAsync(NSXTALBPoolType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -166,7 +161,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchPoolUuidServiceURL = new StringBuilder("/api/pool/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.PATCH
             };
@@ -176,7 +171,7 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             PatchPoolUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchPoolUuidServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
@@ -184,10 +179,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBPoolType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPoolType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP PATCH operation to " + PatchPoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> DeletePoolUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -196,7 +191,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeletePoolUuidServiceURL = new StringBuilder("/api/pool/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.DELETE
             };
@@ -213,10 +208,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP DELETE operation to " + DeletePoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> PostPoolUuidScaleoutAsync(NSXTALBServerScaleOutParamsType Body, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -226,7 +221,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PostPoolUuidScaleoutServiceURL = new StringBuilder("/api/pool/{uuid}/scaleout");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -235,7 +230,7 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             PostPoolUuidScaleoutServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PostPoolUuidScaleoutServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
@@ -243,10 +238,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostPoolUuidScaleoutServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> PostPoolUuidScaleinAsync(NSXTALBServerScaleInParamsType Body, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -256,7 +251,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PostPoolUuidScaleinServiceURL = new StringBuilder("/api/pool/{uuid}/scalein");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -265,7 +260,7 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             PostPoolUuidScaleinServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PostPoolUuidScaleinServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
@@ -273,10 +268,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostPoolUuidScaleinServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> PostPoolClearAsync(string Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -285,7 +280,7 @@ namespace nsxtalbsdk.Modules
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostPoolClearServiceURL = new StringBuilder("/api/pool/clear");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -301,10 +296,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostPoolClearServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -313,7 +308,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -329,10 +324,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeServerAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -341,7 +336,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeServerServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/server/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -357,10 +352,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeServerServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeDetailAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -369,7 +364,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeDetailServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/detail/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -385,10 +380,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeDetailServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeServerDetailAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -397,7 +392,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeServerDetailServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/server/detail/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -413,10 +408,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeServerDetailServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeInternalAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -425,7 +420,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeInternalServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/internal/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -441,10 +436,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeInternalServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidObjsyncAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -453,7 +448,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidObjsyncServiceURL = new StringBuilder("/api/pool/{uuid}/objsync/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -469,10 +464,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidObjsyncServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeServerInternalAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -481,7 +476,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeServerInternalServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/server/internal/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -497,10 +492,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeServerInternalServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> PostPoolUuidRuntimeStatsClearAsync(string Body, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -510,7 +505,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PostPoolUuidRuntimeStatsClearServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/stats/clear");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -527,10 +522,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostPoolUuidRuntimeStatsClearServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> PostPoolUuidRuntimeRequestQueueClearAsync(string Body, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -540,7 +535,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PostPoolUuidRuntimeRequestQueueClearServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/request_queue/clear");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -557,10 +552,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostPoolUuidRuntimeRequestQueueClearServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeDebugAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -569,7 +564,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeDebugServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/debug/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -585,10 +580,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeDebugServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidHmonAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -597,7 +592,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidHmonServiceURL = new StringBuilder("/api/pool/{uuid}/hmon/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -613,10 +608,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidHmonServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeServerHmonstatAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -625,7 +620,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeServerHmonstatServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/server/hmonstat/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -641,10 +636,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeServerHmonstatServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidAlgoAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -653,7 +648,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidAlgoServiceURL = new StringBuilder("/api/pool/{uuid}/algo/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -669,10 +664,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidAlgoServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidPersistenceAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -681,7 +676,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidPersistenceServiceURL = new StringBuilder("/api/pool/{uuid}/persistence/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -697,10 +692,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidPersistenceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidConnpoolAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -709,7 +704,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidConnpoolServiceURL = new StringBuilder("/api/pool/{uuid}/connpool/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -725,10 +720,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidConnpoolServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> PostPoolUuidConnpoolstatsClearAsync(string Body, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -738,7 +733,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PostPoolUuidConnpoolstatsClearServiceURL = new StringBuilder("/api/pool/{uuid}/connpoolstats/clear");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -755,10 +750,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostPoolUuidConnpoolstatsClearServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidHttpcacheAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -767,7 +762,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidHttpcacheServiceURL = new StringBuilder("/api/pool/{uuid}/httpcache/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -783,10 +778,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidHttpcacheServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidHttpcachestatsAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -795,7 +790,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidHttpcachestatsServiceURL = new StringBuilder("/api/pool/{uuid}/httpcachestats/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -811,10 +806,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidHttpcachestatsServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidHttpcachestatsDetailAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -823,7 +818,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidHttpcachestatsDetailServiceURL = new StringBuilder("/api/pool/{uuid}/httpcachestats/detail/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -839,10 +834,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidHttpcachestatsDetailServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidVsAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -851,7 +846,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidVsServiceURL = new StringBuilder("/api/pool/{uuid}/vs/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -867,10 +862,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidVsServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeVsServiceServerMapKvAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -879,7 +874,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeVsServiceServerMapKvServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/vs/service/server/map/kv/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -895,10 +890,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeVsServiceServerMapKvServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetPoolUuidRuntimeVsServiceServerMapTableAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -907,7 +902,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetPoolUuidRuntimeVsServiceServerMapTableServiceURL = new StringBuilder("/api/pool/{uuid}/runtime/vs/service/server/map/table/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -923,10 +918,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetPoolUuidRuntimeVsServiceServerMapTableServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
     }

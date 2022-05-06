@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBNtlmLogType 
+    public class NSXTALBNtlmLogType
     {
         /// <summary>
         /// Set to true, if request is detected to be NTLM. Field introduced in 20.1.3.

@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBBotConfigIPLocationType 
+    public class NSXTALBBotConfigIPLocationType
     {
         /// <summary>
         /// If this is enabled, IP location information is used to determine if a client is a known search engine bot, comes from

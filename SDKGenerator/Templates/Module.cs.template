@@ -15,17 +15,15 @@ namespace nsxtalbsdk.Modules
 {
     public class {{module}}
     {
-        RestClient restClient;
-        JsonSerializerSettings defaultSerializationSettings;
-        CancellationToken cancellationToken;
-        int timeout;
-        int retry;
-        string defaultXAviVerion;
-         List<RestResponseCookie> sessionCookies;
-        public {{module}}(RestClient Client, List<RestResponseCookie> _sessionCookies, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private RestClient restClient;
+        private CancellationToken cancellationToken;
+        private int timeout;
+        private int retry;
+        private string defaultXAviVerion;
+        private List<RestResponseCookie> sessionCookies;
+        public {{module}}(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;

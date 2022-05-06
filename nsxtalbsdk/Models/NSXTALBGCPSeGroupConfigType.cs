@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGCPSeGroupConfigType 
+    public class NSXTALBGCPSeGroupConfigType
     {
         /// <summary>
         /// Service Engine Backend Data Network Name, used only for GCP cloud.Overrides the cloud level setting for Backend Data

@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeVipInterfaceListType 
+    public class NSXTALBSeVipInterfaceListType
     {
         /// <summary>
         /// Placeholder for description of property is_portchannel of obj type SeVipInterfaceList field type str  type boolean

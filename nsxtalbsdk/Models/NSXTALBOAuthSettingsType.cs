@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOAuthSettingsType 
+    public class NSXTALBOAuthSettingsType
     {
         /// <summary>
         /// Application-specific OAuth config. Field introduced in 21.1.3.

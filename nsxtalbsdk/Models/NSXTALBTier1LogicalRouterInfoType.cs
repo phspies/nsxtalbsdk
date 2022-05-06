@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBTier1LogicalRouterInfoType 
+    public class NSXTALBTier1LogicalRouterInfoType
     {
         /// <summary>
         /// Locale-services configuration, holds T1 edge-cluster information. When VirtualService is enabled with preserve client

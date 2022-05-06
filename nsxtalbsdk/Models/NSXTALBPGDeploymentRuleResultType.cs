@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBPGDeploymentRuleResultType 
+    public class NSXTALBPGDeploymentRuleResultType
     {
         /// <summary>
         /// Metric value that is used as the pass fail. If it is not provided then it will simply compare it with current pool vs

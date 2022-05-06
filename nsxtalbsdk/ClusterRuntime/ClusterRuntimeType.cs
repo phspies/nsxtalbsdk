@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace nsxtalbsdk.Models
 {
     public class ClusterRuntimeType
@@ -19,7 +17,7 @@ namespace nsxtalbsdk.Models
         [JsonProperty("service_states")]
         public List<ServiceState> ServiceStates { get; set; }
     }
-    public class NodeInfo 
+    public class NodeInfo
     {
         [JsonProperty("uuid")]
         public string Uuid { get; set; }

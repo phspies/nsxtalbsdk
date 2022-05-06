@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGslbDnsGeoUpdateType 
+    public class NSXTALBGslbDnsGeoUpdateType
     {
         /// <summary>
         /// GslbGeoDbProfile object that is pushed on on a per Dns basis. Field deprecated in 18.1.5, 18.2.1. Field introduced in

@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHealthScoreDataSeriesType 
+    public class NSXTALBHealthScoreDataSeriesType
     {
         /// <summary>
         /// Placeholder for description of property data of obj type HealthScoreDataSeries field type str  type object

@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDosAttackLevelDataType 
+    public class NSXTALBDosAttackLevelDataType
     {
         /// <summary>
         /// Placeholder for description of property avg_dos_total_req of obj type DosAttackLevelData field type str  type number

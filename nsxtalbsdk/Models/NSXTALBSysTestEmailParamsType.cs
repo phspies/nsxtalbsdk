@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSysTestEmailParamsType 
+    public class NSXTALBSysTestEmailParamsType
     {
         /// <summary>
         /// Alerts are copied to the comma separated list of  email recipients.

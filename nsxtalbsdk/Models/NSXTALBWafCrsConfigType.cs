@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBWafCrsConfigType 
+    public class NSXTALBWafCrsConfigType
     {
         /// <summary>
         /// Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed

@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIcapOPSWATLogType 
+    public class NSXTALBIcapOPSWATLogType
     {
         /// <summary>
         /// Blocking reason for the content. It is available only if content was scanned by ICAP server and some violations were

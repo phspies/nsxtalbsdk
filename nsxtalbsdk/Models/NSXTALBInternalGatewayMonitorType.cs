@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBInternalGatewayMonitorType 
+    public class NSXTALBInternalGatewayMonitorType
     {
         /// <summary>
         /// Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1.

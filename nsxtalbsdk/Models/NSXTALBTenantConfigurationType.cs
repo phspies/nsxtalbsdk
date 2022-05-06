@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBTenantConfigurationType 
+    public class NSXTALBTenantConfigurationType
     {
         /// <summary>
         /// Controls the ownership of ServiceEngines. Service Engines can either be exclusively owned by each tenant or owned by the

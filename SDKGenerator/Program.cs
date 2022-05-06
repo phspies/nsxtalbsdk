@@ -424,7 +424,7 @@ namespace nsxtapi
                 }
                 else
                 {
-                    context.Write($"request.AddJsonBody(JsonConvert.SerializeObject({PascalCase(parameter.Name)}, defaultSerializationSettings));");
+                    context.Write($"request.AddJsonBody({PascalCase(parameter.Name)});");
                 }
             }
             else if (parameter.Kind == OpenApiParameterKind.Header)

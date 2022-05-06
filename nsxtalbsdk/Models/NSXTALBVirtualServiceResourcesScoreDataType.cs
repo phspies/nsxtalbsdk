@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBVirtualServiceResourcesScoreDataType 
+    public class NSXTALBVirtualServiceResourcesScoreDataType
     {
         /// <summary>
         /// Resources of the virtual service with respect to max_throughput.

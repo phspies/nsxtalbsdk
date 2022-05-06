@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBContentRewriteProfileType 
+    public class NSXTALBContentRewriteProfileType
     {
         /// <summary>
         /// Strings to be matched and replaced with on the request body. This should be configured when request_rewrite_enabled is

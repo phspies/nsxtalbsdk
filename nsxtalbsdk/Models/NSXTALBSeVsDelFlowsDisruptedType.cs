@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeVsDelFlowsDisruptedType 
+    public class NSXTALBSeVsDelFlowsDisruptedType
     {
         /// <summary>
         /// Name of the VS which was deleted from the SE. It is a reference to an object of type VirtualService. Field introduced in

@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSSLClientRequestHeaderType 
+    public class NSXTALBSSLClientRequestHeaderType
     {
         /// <summary>
         /// If this header exists, reset the connection. If the ssl variable is specified, add a header with this value.

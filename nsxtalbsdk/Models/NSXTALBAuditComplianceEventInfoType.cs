@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAuditComplianceEventInfoType 
+    public class NSXTALBAuditComplianceEventInfoType
     {
         /// <summary>
         /// Cluster uuid used for controller event. Field introduced in 20.1.6.

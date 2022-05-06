@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace nsxtalbsdk
 {
     static public class Helpers
@@ -11,7 +8,7 @@ namespace nsxtalbsdk
         {
             if (value == null)
             {
-                return "";
+                return string.Empty;
             }
             if (value is System.Enum)
             {
@@ -46,7 +43,7 @@ namespace nsxtalbsdk
                 return string.Join(",", System.Linq.Enumerable.Select(array, o => ConvertToString(o, cultureInfo)));
             }
             var result = System.Convert.ToString(value, cultureInfo);
-            return result == null ? "" : result;
+            return result == null ? string.Empty : result;
         }
     }
 }

@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOAuthVSConfigType 
+    public class NSXTALBOAuthVSConfigType
     {
         /// <summary>
         /// HTTP cookie name for authorized session. Field introduced in 21.1.3.

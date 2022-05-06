@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsRuleActionPoolSwitchingType 
+    public class NSXTALBDnsRuleActionPoolSwitchingType
     {
         /// <summary>
         /// Reference of the pool group to serve the passthrough DNS query which cannot be served locally. It is a reference to an

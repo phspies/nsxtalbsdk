@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHTTPSecurityActionRateProfileType 
+    public class NSXTALBHTTPSecurityActionRateProfileType
     {
         /// <summary>
         /// The action to take when the rate limit has been reached. Field introduced in 18.2.9.

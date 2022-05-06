@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBBfdProfileType 
+    public class NSXTALBBfdProfileType
     {
         /// <summary>
         /// Default required minimum receive interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in

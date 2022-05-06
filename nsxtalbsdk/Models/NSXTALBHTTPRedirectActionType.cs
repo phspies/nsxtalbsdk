@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHTTPRedirectActionType 
+    public class NSXTALBHTTPRedirectActionType
     {
         /// <summary>
         /// Add a query string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming

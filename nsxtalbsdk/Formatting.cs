@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace nsxtalbsdk
 {
     public static class FormattingExtentions
@@ -13,11 +10,11 @@ namespace nsxtalbsdk
         }
         public static string ToLowerString(this string? _string)
         {
-            return _string ?? "";
+            return _string ?? string.Empty;
         }
         public static string ToLowerString(this int? _int)
         {
-            return _int.ToString() ?? "";
+            return _int.ToString() ?? string.Empty;
         }
     }
 }

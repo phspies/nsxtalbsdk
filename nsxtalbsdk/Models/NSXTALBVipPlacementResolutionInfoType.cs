@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBVipPlacementResolutionInfoType 
+    public class NSXTALBVipPlacementResolutionInfoType
     {
         /// <summary>
         /// Placeholder for description of property ip of obj type VipPlacementResolutionInfo field type str  type object

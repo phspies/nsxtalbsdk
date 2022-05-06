@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBCC_AgentPropertiesType 
+    public class NSXTALBCC_AgentPropertiesType
     {
         /// <summary>
         /// Maximum polls to check for async jobs to finish.

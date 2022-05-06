@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHealthMonitorUdpType 
+    public class NSXTALBHealthMonitorUdpType
     {
         /// <summary>
         /// Match or look for this keyword in the first 2KB of server's response indicating server maintenance.  A successful match

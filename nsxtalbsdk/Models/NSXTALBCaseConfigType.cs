@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBCaseConfigType 
+    public class NSXTALBCaseConfigType
     {
         /// <summary>
         /// Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed in

@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHTTPSecurityActionType 
+    public class NSXTALBHTTPSecurityActionType
     {
         /// <summary>
         /// Type of the security action to perform. Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN,

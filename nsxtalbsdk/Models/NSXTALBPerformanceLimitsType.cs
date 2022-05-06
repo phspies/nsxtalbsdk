@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBPerformanceLimitsType 
+    public class NSXTALBPerformanceLimitsType
     {
         /// <summary>
         /// The maximum number of concurrent client conections allowed to the Virtual Service.

@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBControllerAnomalyScoreDataType 
+    public class NSXTALBControllerAnomalyScoreDataType
     {
         /// <summary>
         /// anomalous_controller_stats_metrics of ControllerAnomalyScoreData.

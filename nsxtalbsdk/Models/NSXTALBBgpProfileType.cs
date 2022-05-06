@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBBgpProfileType 
+    public class NSXTALBBgpProfileType
     {
         /// <summary>
         /// Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet.

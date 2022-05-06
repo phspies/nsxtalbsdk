@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBVssPlacementType 
+    public class NSXTALBVssPlacementType
     {
         /// <summary>
         /// Degree of core non-affinity for VS placement. Allowed values are 1-256. Field introduced in 17.2.5.

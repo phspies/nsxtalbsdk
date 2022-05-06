@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHTTP2PoolPropertiesType 
+    public class NSXTALBHTTP2PoolPropertiesType
     {
         /// <summary>
         /// The max number of control frames that server can send over an HTTP/2 connection. '0' means unlimited. Allowed values are

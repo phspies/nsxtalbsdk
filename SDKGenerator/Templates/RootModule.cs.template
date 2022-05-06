@@ -1,15 +1,14 @@
 ﻿using System;
 using RestSharp;
-using RestSharp.Authenticators;
 using RestSharp.Serializers.NewtonsoftJson;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using nsxtalbsdk.Modules;
 using System.Threading;
 using System.Threading.Tasks;
-using nsxtalbsdk.Authentication;
 using System.Linq;
 using System.Collections.Generic;
+using nsxtalbsdk.Models;
 namespace nsxtalbsdk
 {
     public class NSXTALBClient
@@ -46,10 +45,7 @@ namespace nsxtalbsdk
                 Port = port
             };
             restClient = new RestClient(uri.Uri);
-            if (remoteCertificateValidation == false)
-            {
-                restClient.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
-            }
+            if (!remoteCertificateValidation) { restClient.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true; };
             if (DefaultSerializationSettings == null)
             {
                 defaultSerializationSettings = new JsonSerializerSettings
@@ -87,9 +83,9 @@ namespace nsxtalbsdk
         {
             AuthenticationHelper.Logout(sessionCookies, restClient);
         }
-        public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
+        public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, sessionCookies, cancellationToken, timeout, retry, defaultXAviVerion);
         {{#modules}}
-        public {{.}} {{.}}Module => new {{.}}(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
+        public {{.}} {{.}}Module => new {{.}}(restClient, sessionCookies, cancellationToken, timeout, retry, defaultXAviVerion);
         {{/modules}}
     }
 }

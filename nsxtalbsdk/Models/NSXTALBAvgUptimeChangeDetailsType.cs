@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAvgUptimeChangeDetailsType 
+    public class NSXTALBAvgUptimeChangeDetailsType
     {
         /// <summary>
         /// Placeholder for description of property current_value of obj type AvgUptimeChangeDetails field type str  type number

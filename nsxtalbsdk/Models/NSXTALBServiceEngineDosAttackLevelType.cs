@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBServiceEngineDosAttackLevelType 
+    public class NSXTALBServiceEngineDosAttackLevelType
     {
         /// <summary>
         /// Placeholder for description of property hs_entity of obj type ServiceEngineDosAttackLevel field type str  type object

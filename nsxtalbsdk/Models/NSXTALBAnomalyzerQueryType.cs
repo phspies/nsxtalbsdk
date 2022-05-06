@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAnomalyzerQueryType 
+    public class NSXTALBAnomalyzerQueryType
     {
         /// <summary>
         /// Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a

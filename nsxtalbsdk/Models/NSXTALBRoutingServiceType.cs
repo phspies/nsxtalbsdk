@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBRoutingServiceType 
+    public class NSXTALBRoutingServiceType
     {
         /// <summary>
         /// Advertise reachability of backend server networks via ADC through BGP for default gateway feature. Field introduced in

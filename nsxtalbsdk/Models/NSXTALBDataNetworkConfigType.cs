@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDataNetworkConfigType 
+    public class NSXTALBDataNetworkConfigType
     {
         /// <summary>
         /// Nsxt tier1 segment configuration for Avi Service Engine data path. This should be set only when transport zone is of

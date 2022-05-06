@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBJWSKeyType 
+    public class NSXTALBJWSKeyType
     {
         /// <summary>
         /// Algorithm that need to be used while signing/validation, allowed values  HS256, HS384, HS512. Field introduced in

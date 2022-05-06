@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSamlSettingsType 
+    public class NSXTALBSamlSettingsType
     {
         /// <summary>
         /// Configure remote Identity provider settings. Field introduced in 17.2.3.

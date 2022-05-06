@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHTTPServerReselectType 
+    public class NSXTALBHTTPServerReselectType
     {
         /// <summary>
         /// Enable HTTP request reselect when server responds with specific response codes. Allowed in Basic(Allowed values- false)

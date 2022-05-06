@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBNsxtSIEndpointDetailsType 
+    public class NSXTALBNsxtSIEndpointDetailsType
     {
         /// <summary>
         /// VirtualEndpoint Path. Field introduced in 21.1.3.

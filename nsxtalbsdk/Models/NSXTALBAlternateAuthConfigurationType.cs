@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAlternateAuthConfigurationType 
+    public class NSXTALBAlternateAuthConfigurationType
     {
         /// <summary>
         /// UUID of the authprofile. It is a reference to an object of type AuthProfile. Field introduced in 20.1.6.

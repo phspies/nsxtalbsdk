@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSearchStringVarType 
+    public class NSXTALBSearchStringVarType
     {
         /// <summary>
         /// Type of search string - can be a variable exposed from datascript, value of an HTTP variable, a custom user-input

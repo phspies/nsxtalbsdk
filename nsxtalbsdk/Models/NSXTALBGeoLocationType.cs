@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGeoLocationType 
+    public class NSXTALBGeoLocationType
     {
         /// <summary>
         /// Latitude of the location. This is represented as degrees.minutes. The range is from -90.0 (south) to +90.0 (north).

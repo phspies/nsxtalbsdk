@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOpenStackVipNetworkType 
+    public class NSXTALBOpenStackVipNetworkType
     {
         /// <summary>
         /// Neutron network UUID. Field introduced in 18.1.2.

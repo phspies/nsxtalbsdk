@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBManagementNetworkConfigType 
+    public class NSXTALBManagementNetworkConfigType
     {
         /// <summary>
         /// Management overlay segment to use for Avi Service Engines. This should be set only when transport zone is of type

@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBPortalFeatureOptInType 
+    public class NSXTALBPortalFeatureOptInType
     {
         /// <summary>
         /// Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed in Basic(Allowed values-

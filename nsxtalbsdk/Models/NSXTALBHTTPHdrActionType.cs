@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHTTPHdrActionType 
+    public class NSXTALBHTTPHdrActionType
     {
         /// <summary>
         /// ADD  A new header with the new value is added irrespective of the existence of an HTTP header of the given name. REPLACE

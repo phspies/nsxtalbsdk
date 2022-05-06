@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOCSPConfigType 
+    public class NSXTALBOCSPConfigType
     {
         /// <summary>
         /// Describes the Time Interval after which the next OCSP job needs to be scheduled in case of the OCSP job failures.

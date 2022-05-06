@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBNetworkProfileUnionType 
+    public class NSXTALBNetworkProfileUnionType
     {
         /// <summary>
         /// Placeholder for description of property tcp_fast_path_profile of obj type NetworkProfileUnion field type str  type

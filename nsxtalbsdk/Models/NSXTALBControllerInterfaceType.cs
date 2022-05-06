@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBControllerInterfaceType 
+    public class NSXTALBControllerInterfaceType
     {
         /// <summary>
         /// Default gateway of the mgmt interface. Field introduced in 21.1.3.

@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBWafRuleMatchDataType 
+    public class NSXTALBWafRuleMatchDataType
     {
         /// <summary>
         /// The match_element is an internal variable. It is not possible to add exclusions for this element. Field introduced in

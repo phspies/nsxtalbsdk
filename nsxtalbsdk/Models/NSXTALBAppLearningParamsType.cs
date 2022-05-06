@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAppLearningParamsType 
+    public class NSXTALBAppLearningParamsType
     {
         /// <summary>
         /// Learn the params per URI path. Field introduced in 18.2.3.

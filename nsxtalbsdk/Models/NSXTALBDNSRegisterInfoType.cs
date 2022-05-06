@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDNSRegisterInfoType 
+    public class NSXTALBDNSRegisterInfoType
     {
         /// <summary>
         /// Placeholder for description of property dns_info of obj type DNSRegisterInfo field type str  type object

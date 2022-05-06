@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBCustomParamsType 
+    public class NSXTALBCustomParamsType
     {
         /// <summary>
         /// Placeholder for description of property is_dynamic of obj type CustomParams field type str  type boolean

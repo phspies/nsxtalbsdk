@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsQueryTypeMatchType 
+    public class NSXTALBDnsQueryTypeMatchType
     {
         /// <summary>
         /// Criterion to use for matching the DNS query typein the question section. Enum options - IS_IN, IS_NOT_IN. Field

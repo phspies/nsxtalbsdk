@@ -1,31 +1,26 @@
+using Newtonsoft.Json;
+using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
-using Newtonsoft.Json;
 using System.Net;
-using nsxtalbsdk;
-using nsxtalbsdk.Models;
-using System.Linq;
-using System.Collections.Generic;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 namespace nsxtalbsdk.Modules
 {
     public class ServiceEngineGroup
     {
-        RestClient restClient;
-        JsonSerializerSettings defaultSerializationSettings;
-        CancellationToken cancellationToken;
-        int timeout;
-        int retry;
-        string defaultXAviVerion;
-         List<RestResponseCookie> sessionCookies;
-        public ServiceEngineGroup(RestClient Client, List<RestResponseCookie> _sessionCookies, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private RestClient restClient;
+        private CancellationToken cancellationToken;
+        private int timeout;
+        private int retry;
+        private string defaultXAviVerion;
+        private List<RestResponseCookie> sessionCookies;
+        public ServiceEngineGroup(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
@@ -37,7 +32,7 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             StringBuilder GetServiceenginegroupServiceURL = new StringBuilder("/api/serviceenginegroup");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -61,10 +56,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBServiceEngineGroupApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEngineGroupApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetServiceenginegroupServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBServiceEngineGroupType> PostServiceenginegroupAsync(NSXTALBServiceEngineGroupType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -73,7 +68,7 @@ namespace nsxtalbsdk.Modules
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostServiceenginegroupServiceURL = new StringBuilder("/api/serviceenginegroup");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -82,17 +77,17 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             request.Resource = PostServiceenginegroupServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
             request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBServiceEngineGroupType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEngineGroupType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostServiceenginegroupServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBServiceEngineGroupType> GetServiceenginegroupUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
@@ -101,7 +96,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetServiceenginegroupUuidServiceURL = new StringBuilder("/api/serviceenginegroup/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -122,10 +117,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBServiceEngineGroupType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEngineGroupType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetServiceenginegroupUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBServiceEngineGroupType> PutServiceenginegroupUuidAsync(NSXTALBServiceEngineGroupType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -135,7 +130,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutServiceenginegroupUuidServiceURL = new StringBuilder("/api/serviceenginegroup/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.PUT
             };
@@ -145,7 +140,7 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             PutServiceenginegroupUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutServiceenginegroupUuidServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
@@ -153,10 +148,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBServiceEngineGroupType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEngineGroupType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP PUT operation to " + PutServiceenginegroupUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBServiceEngineGroupType> PatchServiceenginegroupUuidAsync(NSXTALBServiceEngineGroupType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -166,7 +161,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchServiceenginegroupUuidServiceURL = new StringBuilder("/api/serviceenginegroup/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.PATCH
             };
@@ -176,7 +171,7 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             PatchServiceenginegroupUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchServiceenginegroupUuidServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
@@ -184,10 +179,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBServiceEngineGroupType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEngineGroupType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP PATCH operation to " + PatchServiceenginegroupUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> DeleteServiceenginegroupUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -196,7 +191,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeleteServiceenginegroupUuidServiceURL = new StringBuilder("/api/serviceenginegroup/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.DELETE
             };
@@ -213,10 +208,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP DELETE operation to " + DeleteServiceenginegroupUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> PostServiceenginegroupUuidRedistributeAsync(string Body, string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -226,7 +221,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PostServiceenginegroupUuidRedistributeServiceURL = new StringBuilder("/api/serviceenginegroup/{uuid}/redistribute");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -243,10 +238,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostServiceenginegroupUuidRedistributeServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> PostServiceenginegroupClearAsync(string Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -255,7 +250,7 @@ namespace nsxtalbsdk.Modules
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostServiceenginegroupClearServiceURL = new StringBuilder("/api/serviceenginegroup/clear");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -271,10 +266,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostServiceenginegroupClearServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetServiceenginegroupUuidRuntimeAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -283,7 +278,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetServiceenginegroupUuidRuntimeServiceURL = new StringBuilder("/api/serviceenginegroup/{uuid}/runtime/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -299,10 +294,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetServiceenginegroupUuidRuntimeServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetServiceenginegroupUuidPlacementSummaryAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -311,7 +306,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetServiceenginegroupUuidPlacementSummaryServiceURL = new StringBuilder("/api/serviceenginegroup/{uuid}/placement/summary/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -327,10 +322,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetServiceenginegroupUuidPlacementSummaryServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetServiceenginegroupUuidPlacementDetailAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -339,7 +334,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetServiceenginegroupUuidPlacementDetailServiceURL = new StringBuilder("/api/serviceenginegroup/{uuid}/placement/detail/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -355,10 +350,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetServiceenginegroupUuidPlacementDetailServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetServiceenginegroupUuidPlacementIneligibleAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -367,7 +362,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetServiceenginegroupUuidPlacementIneligibleServiceURL = new StringBuilder("/api/serviceenginegroup/{uuid}/placement/ineligible/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -383,10 +378,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetServiceenginegroupUuidPlacementIneligibleServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
     }

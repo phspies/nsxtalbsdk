@@ -1,31 +1,26 @@
+using Newtonsoft.Json;
+using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
-using Newtonsoft.Json;
 using System.Net;
-using nsxtalbsdk;
-using nsxtalbsdk.Models;
-using System.Linq;
-using System.Collections.Generic;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 namespace nsxtalbsdk.Modules
 {
     public class MicroService
     {
-        RestClient restClient;
-        JsonSerializerSettings defaultSerializationSettings;
-        CancellationToken cancellationToken;
-        int timeout;
-        int retry;
-        string defaultXAviVerion;
-         List<RestResponseCookie> sessionCookies;
-        public MicroService(RestClient Client, List<RestResponseCookie> _sessionCookies, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private RestClient restClient;
+        private CancellationToken cancellationToken;
+        private int timeout;
+        private int retry;
+        private string defaultXAviVerion;
+        private List<RestResponseCookie> sessionCookies;
+        public MicroService(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
-            defaultSerializationSettings = _defaultSerializationSettings;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
@@ -37,7 +32,7 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             StringBuilder GetMicroserviceServiceURL = new StringBuilder("/api/microservice");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -59,10 +54,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMicroServiceApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetMicroserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBMicroServiceType> PostMicroserviceAsync(NSXTALBMicroServiceType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -71,7 +66,7 @@ namespace nsxtalbsdk.Modules
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostMicroserviceServiceURL = new StringBuilder("/api/microservice");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -80,17 +75,17 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             request.Resource = PostMicroserviceServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
             request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMicroServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP POST operation to " + PostMicroserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBMicroServiceType> GetMicroserviceUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
@@ -99,7 +94,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetMicroserviceUuidServiceURL = new StringBuilder("/api/microservice/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -120,10 +115,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMicroServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetMicroserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBMicroServiceType> PutMicroserviceUuidAsync(NSXTALBMicroServiceType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -133,7 +128,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutMicroserviceUuidServiceURL = new StringBuilder("/api/microservice/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.PUT
             };
@@ -143,7 +138,7 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             PutMicroserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutMicroserviceUuidServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
@@ -151,10 +146,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMicroServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP PUT operation to " + PutMicroserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<NSXTALBMicroServiceType> PatchMicroserviceUuidAsync(NSXTALBMicroServiceType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -164,7 +159,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchMicroserviceUuidServiceURL = new StringBuilder("/api/microservice/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.PATCH
             };
@@ -174,7 +169,7 @@ namespace nsxtalbsdk.Modules
             if (XAviTenantUUID != null) request.AddHeader("X-Avi-Tenant-UUID", XAviTenantUUID);
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
-            request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
+            request.AddJsonBody(Body);
             PatchMicroserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchMicroserviceUuidServiceURL.ToString();
             request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
@@ -182,10 +177,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMicroServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMicroServiceType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP PATCH operation to " + PatchMicroserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> DeleteMicroserviceUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -194,7 +189,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeleteMicroserviceUuidServiceURL = new StringBuilder("/api/microservice/{uuid}");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.DELETE
             };
@@ -211,10 +206,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP DELETE operation to " + DeleteMicroserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetMicroserviceUuidRuntimeInternalAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -223,7 +218,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetMicroserviceUuidRuntimeInternalServiceURL = new StringBuilder("/api/microservice/{uuid}/runtime/internal/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -239,10 +234,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetMicroserviceUuidRuntimeInternalServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
         public async Task<string> GetMicroserviceUuidRuntimeDetailAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
@@ -251,7 +246,7 @@ namespace nsxtalbsdk.Modules
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetMicroserviceUuidRuntimeDetailServiceURL = new StringBuilder("/api/microservice/{uuid}/runtime/detail/");
             var request = new RestRequest
-            {              
+            {
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -267,10 +262,10 @@ namespace nsxtalbsdk.Modules
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
-			{
+            {
                 var message = "HTTP GET operation to " + GetMicroserviceUuidRuntimeDetailServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
-			}
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
+            }
             return response.Data;
         }
     }

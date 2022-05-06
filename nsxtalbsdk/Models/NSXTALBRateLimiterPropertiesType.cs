@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBRateLimiterPropertiesType 
+    public class NSXTALBRateLimiterPropertiesType
     {
         /// <summary>
         /// Number of stages in msf rate limiter. Allowed values are 1-2. Field introduced in 20.1.1.

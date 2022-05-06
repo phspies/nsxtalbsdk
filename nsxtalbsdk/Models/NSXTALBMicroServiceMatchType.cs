@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBMicroServiceMatchType 
+    public class NSXTALBMicroServiceMatchType
     {
         /// <summary>
         /// UUID of Micro Service group(s). It is a reference to an object of type MicroServiceGroup.

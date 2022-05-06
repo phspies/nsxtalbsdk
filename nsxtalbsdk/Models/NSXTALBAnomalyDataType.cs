@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAnomalyDataType 
+    public class NSXTALBAnomalyDataType
     {
         /// <summary>
         /// Placeholder for description of property anomaly_context of obj type AnomalyData field type str  type object

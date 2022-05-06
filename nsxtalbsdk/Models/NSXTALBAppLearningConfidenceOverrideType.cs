@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAppLearningConfidenceOverrideType 
+    public class NSXTALBAppLearningConfidenceOverrideType
     {
         /// <summary>
         /// Confidence threshold for label CONFIDENCE_HIGH. Field introduced in 18.2.3.

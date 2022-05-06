@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBServerAnomalyScoreType 
+    public class NSXTALBServerAnomalyScoreType
     {
         /// <summary>
         /// Placeholder for description of property hs_entity of obj type ServerAnomalyScore field type str  type object

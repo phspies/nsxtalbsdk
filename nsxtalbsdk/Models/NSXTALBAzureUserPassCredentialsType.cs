@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAzureUserPassCredentialsType 
+    public class NSXTALBAzureUserPassCredentialsType
     {
         /// <summary>
         /// Password for Azure subscription. Required only if username is provided. Field introduced in 17.2.1.

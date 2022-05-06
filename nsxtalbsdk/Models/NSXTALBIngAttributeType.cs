@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIngAttributeType 
+    public class NSXTALBIngAttributeType
     {
         /// <summary>
         /// Attribute to match. Field introduced in 17.2.15, 18.1.5, 18.2.1.

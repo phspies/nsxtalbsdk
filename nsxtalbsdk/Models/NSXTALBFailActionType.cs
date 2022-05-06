@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBFailActionType 
+    public class NSXTALBFailActionType
     {
         /// <summary>
         /// Backup Pool when pool experiences a failure. Field deprecated in 18.1.2.

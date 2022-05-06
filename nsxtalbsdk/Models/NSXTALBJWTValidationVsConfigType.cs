@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBJWTValidationVsConfigType 
+    public class NSXTALBJWTValidationVsConfigType
     {
         /// <summary>
         /// Uniquely identifies a resource server. This is used to validate against the aud claim. Field introduced in 20.1.3.

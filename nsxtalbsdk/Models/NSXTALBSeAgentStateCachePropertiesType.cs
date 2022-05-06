@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeAgentStateCachePropertiesType 
+    public class NSXTALBSeAgentStateCachePropertiesType
     {
         /// <summary>
         /// Max elements to flush in one shot from the internal buffer by the statecache thread. Allowed values are 1-10000. Field

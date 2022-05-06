@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBUDPProxyProfileType 
+    public class NSXTALBUDPProxyProfileType
     {
         /// <summary>
         /// The amount of time (in sec) for which a flow needs to be idle before it is deleted. Allowed values are 2-3600. Field

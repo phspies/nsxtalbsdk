@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAWSASGDeleteType 
+    public class NSXTALBAWSASGDeleteType
     {
         /// <summary>
         /// List of Autoscale groups deleted from AWS. Field introduced in 17.2.10,18.1.2.

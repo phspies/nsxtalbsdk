@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBvNICNetworkType 
+    public class NSXTALBvNICNetworkType
     {
         /// <summary>
         /// Placeholder for description of property ctlr_alloc of obj type vNICNetwork field type str  type boolean

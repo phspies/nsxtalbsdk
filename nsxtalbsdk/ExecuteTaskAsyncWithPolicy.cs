@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Polly;
+using Polly.Timeout;
+using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Polly;
-using Polly.Timeout;
-using RestSharp;
 namespace nsxtalbsdk
 {
     public static class RestSharpExtentions
@@ -15,7 +15,7 @@ namespace nsxtalbsdk
             var timeoutRetryPolicy = Policy<IRestResponse<T>>
                                         .Handle<TimeoutRejectedException>() // thrown by Polly's TimeoutPolicy if the inner call times out
                                         .WaitAndRetryAsync(
-                                            retryCount: retry, 
+                                            retryCount: retry,
                                             sleepDurationProvider: attempt => TimeSpan.FromSeconds(0.25 * Math.Pow(2, attempt)), // Back off!  2, 4, 8 etc times 1/4-second = 0.5, 1, 2 seconds
                                             onRetryAsync: RetryDelegateAsync
                                         );

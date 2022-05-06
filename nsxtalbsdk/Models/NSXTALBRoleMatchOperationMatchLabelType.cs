@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBRoleMatchOperationMatchLabelType 
+    public class NSXTALBRoleMatchOperationMatchLabelType
     {
         /// <summary>
         /// List of labels allowed for the tenant. Field introduced in 20.1.5.

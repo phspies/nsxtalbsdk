@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBMetricLogType 
+    public class NSXTALBMetricLogType
     {
         /// <summary>
         /// Placeholder for description of property end_timestamp of obj type MetricLog field type str  type number

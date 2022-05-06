@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGslbSiteRuntimeInfoType 
+    public class NSXTALBGslbSiteRuntimeInfoType
     {
         /// <summary>
         /// The Leader-IP/VIP/FQDN of the site-cluster.

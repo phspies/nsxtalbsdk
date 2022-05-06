@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAuthenticationRuleType 
+    public class NSXTALBAuthenticationRuleType
     {
         /// <summary>
         /// Enable or disable authentication for matched targets. Field introduced in 18.2.5.

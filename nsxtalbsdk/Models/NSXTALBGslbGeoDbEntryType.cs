@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGslbGeoDbEntryType 
+    public class NSXTALBGslbGeoDbEntryType
     {
         /// <summary>
         /// This field describes the GeoDb file. Field introduced in 17.1.1.

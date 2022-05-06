@@ -1,16 +1,11 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHealthScoreResourcesDataType 
+    public class NSXTALBHealthScoreResourcesDataType
     {
         /// <summary>
         /// Placeholder for description of property application_resources of obj type HealthScoreResourcesData field type str  type

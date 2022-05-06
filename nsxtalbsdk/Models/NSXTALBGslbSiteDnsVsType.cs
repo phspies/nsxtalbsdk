@@ -1,16 +1,12 @@
-using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Collections;
 using System.Linq;
-using NJsonSchema.Converters;
-using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGslbSiteDnsVsType 
+    public class NSXTALBGslbSiteDnsVsType
     {
         /// <summary>
         /// This field identifies the DNS VS uuid for this site. Field introduced in 17.2.3.
