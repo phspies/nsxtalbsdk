@@ -7,7 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-namespace nsxtalbsdk.Authentication
+namespace nsxtalbsdk.Modules
 {
     public class AuthenticationHelper
     {

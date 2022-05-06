@@ -1,21 +1,22 @@
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
 using Xunit;
-
 namespace Testing
 {
     public class BaseTests
     {
-        NSXTALBClientAsync nsxtalb;
+        NSXTALBClient nsxtalb;
         [Fact]
         public async void Login()
         {
-            nsxtalb = new NSXTALBClientAsync("10.0.100.18", "admin", "VMware1!", false);
-            var loginresponse = await nsxtalb.LoginAsync();
+            nsxtalb = new NSXTALBClient("10.0.100.18", "admin", "VMware1!", false);
+            LoginResponseType loginresponse = await nsxtalb.LoginAsync();
             Assert.NotNull(loginresponse);
-            var nsxalbrespone = await nsxtalb.ClusterRuntimeModule.GetRuntime();
+            ClusterRuntimeType runtimerespone = await nsxtalb.ClusterRuntimeModule.GetRuntimeAsync();
+            Assert.NotNull(runtimerespone);
+            NSXTALBServiceEngineApiResponseType se = await nsxtalb.ServiceEngineModule.GetServiceengineAsync();
+            Assert.NotNull(se);
             nsxtalb.Logout();
-            Assert.NotNull(nsxalbrespone);
         }
     }
 }

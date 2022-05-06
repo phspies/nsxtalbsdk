@@ -10,10 +10,9 @@ using System.Threading.Tasks;
 using nsxtalbsdk.Authentication;
 using System.Linq;
 using System.Collections.Generic;
-
 namespace nsxtalbsdk
 {
-    public class NSXTALBClientAsync
+    public class NSXTALBClient
     {
         public RestClient restClient { get; set; }
         private JsonSerializerSettings defaultSerializationSettings;
@@ -27,7 +26,7 @@ namespace nsxtalbsdk
         private int port;
         private bool remoteCertificateValidation;
         private LoginRequestType credentials;
-        public NSXTALBClientAsync(string Host, string Username, string Password, bool? RemoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2, string _defaultXAviVerion = null)
+        public NSXTALBClient(string Host, string Username, string Password, bool? RemoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2, string _defaultXAviVerion = null)
         {
             host = Host;
             cancellationToken = _cancellationToken;
@@ -69,7 +68,7 @@ namespace nsxtalbsdk
             }
             restClient.UseNewtonsoftJson(defaultSerializationSettings);
         }
-        public async Task<IRestResponse<LoginResponseType>> LoginAsync()
+        public async Task<LoginResponseType> LoginAsync()
         {
             IRestResponse<LoginResponseType> response = await AuthenticationHelper.LoginAsync(credentials, restClient, defaultSerializationSettings, cancellationToken, timeout, retry);
             sessionCookie = response.Cookies.First(x => x.Name == response.Data.SessionCookieName);
@@ -82,14 +81,13 @@ namespace nsxtalbsdk
             {
                 defaultXAviVerion = response.Data.Version.MinVersion;
             }
-            return response;
+            return response.Data;
         }
         public void Logout()
         {
             AuthenticationHelper.Logout(sessionCookies, restClient);
         }
         public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
-
         {{#modules}}
         public {{.}} {{.}}Module => new {{.}}(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
         {{/modules}}

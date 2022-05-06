@@ -10,10 +10,9 @@ using System.Threading.Tasks;
 using nsxtalbsdk.Authentication;
 using System.Linq;
 using System.Collections.Generic;
-
 namespace nsxtalbsdk
 {
-    public class NSXTALBClientAsync
+    public class NSXTALBClient
     {
         public RestClient restClient { get; set; }
         private JsonSerializerSettings defaultSerializationSettings;
@@ -27,7 +26,7 @@ namespace nsxtalbsdk
         private int port;
         private bool remoteCertificateValidation;
         private LoginRequestType credentials;
-        public NSXTALBClientAsync(string Host, string Username, string Password, bool? RemoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2, string _defaultXAviVerion = null)
+        public NSXTALBClient(string Host, string Username, string Password, bool? RemoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2, string _defaultXAviVerion = null)
         {
             host = Host;
             cancellationToken = _cancellationToken;
@@ -89,7 +88,6 @@ namespace nsxtalbsdk
             AuthenticationHelper.Logout(sessionCookies, restClient);
         }
         public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
-
         public ActionGroupConfig ActionGroupConfigModule => new ActionGroupConfig(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
         public AlbservicesConfig AlbservicesConfigModule => new AlbservicesConfig(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
         public AlbservicesFileUpload AlbservicesFileUploadModule => new AlbservicesFileUpload(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);

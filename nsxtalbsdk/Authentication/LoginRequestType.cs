@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-namespace nsxtalbsdk.Authentication
+namespace nsxtalbsdk.Models
 {
     public class LoginRequestType
     {

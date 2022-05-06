@@ -11,8 +11,6 @@ using nsxtalbsdk;
 using nsxtalbsdk.Models;
 using System.Linq;
 using System.Collections.Generic;
-
-
 namespace nsxtalbsdk.Modules
 {
     public class {{module}}
@@ -35,7 +33,7 @@ namespace nsxtalbsdk.Modules
             sessionCookies = _sessionCookies;
         }
         {{#operations}}
-        public async Task<{{GetOperationReturnType . "full"}}> {{GetMethodName .}}({{GetOperationPathParams .}})
+        public async Task<{{GetOperationReturnType . "full"}}> {{GetMethodName .}}Async({{GetOperationPathParams .}})
         {
             {{#operation.parameters}}
             {{GetRequiredLine .}}
@@ -51,8 +49,8 @@ namespace nsxtalbsdk.Modules
             {{GetOperationPathInjectionCode . operations.Current }}
             {{/operation.parameters}}
             request.Resource = {{GetMethodName .}}ServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<{{GetOperationReturnType . "bare"}}> response = await restClient.ExecuteTaskAsyncWithPolicy<{{GetOperationReturnType . "bare"}}>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
