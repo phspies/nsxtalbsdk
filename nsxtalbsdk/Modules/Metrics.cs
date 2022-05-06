@@ -9,6 +9,10 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
+using System.Linq;
+using System.Collections.Generic;
+
+
 namespace nsxtalbsdk.Modules
 {
     public class Metrics
@@ -19,8 +23,8 @@ namespace nsxtalbsdk.Modules
         int timeout;
         int retry;
         string defaultXAviVerion;
-        RestResponseCookie sessionCookie;
-        public Metrics(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+         List<RestResponseCookie> sessionCookies;
+        public Metrics(RestClient Client, List<RestResponseCookie> _sessionCookies, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             defaultSerializationSettings = _defaultSerializationSettings;
@@ -28,7 +32,7 @@ namespace nsxtalbsdk.Modules
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookie = _sessionCookie;
+            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBMetricsCollectionApiRspType> PostAnalyticsMetricsCollection(NSXTALBMetricsCollectionApiReqType Body, bool? IncludeName = null, bool? IncludeRefs = null, int? Limit = null, bool? PadMissingData = null, string? Start = null, int? Step = null, string? Stop = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
@@ -62,7 +66,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostAnalyticsMetricsCollectionServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsCollectionApiRspType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsCollectionApiRspType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -178,7 +183,8 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsControllerServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -294,7 +300,8 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsControllerUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -410,7 +417,8 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsPoolServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -526,7 +534,8 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsPoolUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -642,7 +651,8 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsServiceengineServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -758,7 +768,8 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsServiceengineUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -874,7 +885,8 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsVirtualserviceServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -990,7 +1002,8 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsVirtualserviceUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)

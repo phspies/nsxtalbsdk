@@ -8,7 +8,6 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
 namespace nsxtalbsdk.Modules
 {
     public class ClusterRuntime
@@ -19,8 +18,8 @@ namespace nsxtalbsdk.Modules
         int timeout;
         int retry;
         string defaultXAviVerion;
-        RestResponseCookie sessionCookie;
-        public ClusterRuntime(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        List<RestResponseCookie> sessionCookies;
+        public ClusterRuntime(RestClient Client, List<RestResponseCookie> _sessionCookies, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             defaultSerializationSettings = _defaultSerializationSettings;
@@ -28,12 +27,11 @@ namespace nsxtalbsdk.Modules
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookie = _sessionCookie;
+            sessionCookies = _sessionCookies;
         }
         public async Task<ClusterRuntimeType> GetRuntime(string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-
             StringBuilder GetAlbservicesfileuploadServiceURL = new StringBuilder("/api/cluster/runtime");
             var request = new RestRequest
             {
@@ -46,7 +44,9 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetAlbservicesfileuploadServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
+            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<ClusterRuntimeType> response = await restClient.ExecuteTaskAsyncWithPolicy<ClusterRuntimeType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
             {

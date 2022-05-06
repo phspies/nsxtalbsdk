@@ -10,10 +10,11 @@ namespace Testing
         [Fact]
         public async void Login()
         {
-            nsxtalb = new NSXTALBClientAsync();
-            await nsxtalb.LoginAsync("10.0.100.18", "admin", "VMware1!", false);
+            nsxtalb = new NSXTALBClientAsync("10.0.100.18", "admin", "VMware1!", false);
+            var loginresponse = await nsxtalb.LoginAsync();
+            Assert.NotNull(loginresponse);
             var nsxalbrespone = await nsxtalb.ClusterRuntimeModule.GetRuntime();
-            await nsxtalb.LogoutAsync();
+            nsxtalb.Logout();
             Assert.NotNull(nsxalbrespone);
         }
     }

@@ -9,6 +9,10 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
+using System.Linq;
+using System.Collections.Generic;
+
+
 namespace nsxtalbsdk.Modules
 {
     public class TrafficCloneProfile
@@ -19,8 +23,8 @@ namespace nsxtalbsdk.Modules
         int timeout;
         int retry;
         string defaultXAviVerion;
-        RestResponseCookie sessionCookie;
-        public TrafficCloneProfile(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+         List<RestResponseCookie> sessionCookies;
+        public TrafficCloneProfile(RestClient Client, List<RestResponseCookie> _sessionCookies, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             defaultSerializationSettings = _defaultSerializationSettings;
@@ -28,7 +32,7 @@ namespace nsxtalbsdk.Modules
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookie = _sessionCookie;
+            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBTrafficCloneProfileApiResponseType> GetTrafficcloneprofile(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? CloudUuid = null, string? CloudRefName = null, string? XAviVersion = null)
         {
@@ -66,7 +70,8 @@ namespace nsxtalbsdk.Modules
             if (CloudUuid != null) { request.AddQueryParameter("cloud_uuid", JsonConvert.ToString(CloudUuid).ToLowerString()); }
             if (CloudRefName != null) { request.AddQueryParameter("cloud_ref.name", JsonConvert.ToString(CloudRefName).ToLowerString()); }
             request.Resource = GetTrafficcloneprofileServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBTrafficCloneProfileApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTrafficCloneProfileApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -96,7 +101,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostTrafficcloneprofileServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBTrafficCloneProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTrafficCloneProfileType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -136,7 +142,8 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetTrafficcloneprofileUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBTrafficCloneProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTrafficCloneProfileType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -170,7 +177,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PutTrafficcloneprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutTrafficcloneprofileUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBTrafficCloneProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTrafficCloneProfileType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -204,7 +212,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PatchTrafficcloneprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchTrafficcloneprofileUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBTrafficCloneProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBTrafficCloneProfileType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -236,7 +245,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteTrafficcloneprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteTrafficcloneprofileUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)

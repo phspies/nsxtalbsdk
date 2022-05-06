@@ -9,6 +9,10 @@ using Newtonsoft.Json;
 using System.Net;
 using nsxtalbsdk;
 using nsxtalbsdk.Models;
+using System.Linq;
+using System.Collections.Generic;
+
+
 namespace nsxtalbsdk.Modules
 {
     public class DebugServiceEngine
@@ -19,8 +23,8 @@ namespace nsxtalbsdk.Modules
         int timeout;
         int retry;
         string defaultXAviVerion;
-        RestResponseCookie sessionCookie;
-        public DebugServiceEngine(RestClient Client, RestResponseCookie _sessionCookie, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+         List<RestResponseCookie> sessionCookies;
+        public DebugServiceEngine(RestClient Client, List<RestResponseCookie> _sessionCookies, JsonSerializerSettings _defaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             defaultSerializationSettings = _defaultSerializationSettings;
@@ -28,7 +32,7 @@ namespace nsxtalbsdk.Modules
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookie = _sessionCookie;
+            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBDebugServiceEngineApiResponseType> GetDebugserviceengine(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -62,7 +66,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetDebugserviceengineServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBDebugServiceEngineApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineApiResponseType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -92,7 +97,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             request.Resource = PostDebugserviceengineServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBDebugServiceEngineType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -132,7 +138,8 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetDebugserviceengineUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBDebugServiceEngineType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -166,7 +173,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PutDebugserviceengineUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutDebugserviceengineUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBDebugServiceEngineType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -200,7 +208,8 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(JsonConvert.SerializeObject(Body, defaultSerializationSettings));
             PatchDebugserviceengineUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchDebugserviceengineUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBDebugServiceEngineType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineType>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -232,7 +241,8 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteDebugserviceengineUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteDebugserviceengineUuidServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)
@@ -262,7 +272,8 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetDebugserviceengineUuidFaultruntimeServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetDebugserviceengineUuidFaultruntimeServiceURL.ToString();
-            request.AddParameter("sessionid", sessionCookie.Value, ParameterType.Cookie);
+            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken"), ParameterType.Cookie);
+            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid"), ParameterType.Cookie);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
             if (response.StatusCode != HttpStatusCode.OK)

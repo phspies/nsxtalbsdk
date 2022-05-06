@@ -23,22 +23,34 @@ namespace nsxtalbsdk
         private string defaultXAviVerion;
         private RestResponseCookie sessionCookie;
         private List<RestResponseCookie> sessionCookies;
-        public async Task LoginAsync(string host, string Username, string Password, bool? remoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2, string _defaultXAviVerion = null)
+        private string host;
+        private int port;
+        private bool remoteCertificateValidation;
+        private LoginRequestType credentials;
+        public NSXTALBClientAsync(string Host, string Username, string Password, bool? RemoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2, string _defaultXAviVerion = null)
         {
+            host = Host;
             cancellationToken = _cancellationToken;
             timeout = _timeout;
             retry = _retry;
             defaultXAviVerion = _defaultXAviVerion;
+            port = Port;
+            remoteCertificateValidation = RemoteCertificateValidation ?? true;
+            credentials = new LoginRequestType()
+            {
+                Username = Username,
+                Password = Password
+            };
             var uri = new UriBuilder(host)
             {
                 Scheme = Uri.UriSchemeHttps,
-                Port = Port
+                Port = port
             };
             restClient = new RestClient(uri.Uri);
             if (remoteCertificateValidation == false)
             {
                 restClient.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
-            }            
+            }
             if (DefaultSerializationSettings == null)
             {
                 defaultSerializationSettings = new JsonSerializerSettings
@@ -56,14 +68,11 @@ namespace nsxtalbsdk
                 defaultSerializationSettings = DefaultSerializationSettings;
             }
             restClient.UseNewtonsoftJson(defaultSerializationSettings);
-
-            LoginRequestType credentials = new LoginRequestType()
-            {
-                Username = Username,
-                Password = Password
-            };
-            var response = await AuthenticationHelper.LoginAsync(credentials, restClient, defaultSerializationSettings, cancellationToken, timeout, retry);
-            sessionCookie = response.Cookies.FirstOrDefault(x => x.Name == response.Data.SessionCookieName);
+        }
+        public async Task<IRestResponse<LoginResponseType>> LoginAsync()
+        {
+            IRestResponse<LoginResponseType> response = await AuthenticationHelper.LoginAsync(credentials, restClient, defaultSerializationSettings, cancellationToken, timeout, retry);
+            sessionCookie = response.Cookies.First(x => x.Name == response.Data.SessionCookieName);
             sessionCookies = response.Cookies.ToList();
             if (sessionCookie == null)
             {
@@ -73,16 +82,16 @@ namespace nsxtalbsdk
             {
                 defaultXAviVerion = response.Data.Version.MinVersion;
             }
-
+            return response;
         }
-        public async Task LogoutAsync()
+        public void Logout()
         {
-            var response = await AuthenticationHelper.Logout(sessionCookies, restClient, cancellationToken, timeout, retry);
+            AuthenticationHelper.Logout(sessionCookies, restClient);
         }
-        public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, sessionCookie, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
+        public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
 
         {{#modules}}
-        public {{.}} {{.}}Module => new {{.}}(restClient, sessionCookie, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
+        public {{.}} {{.}}Module => new {{.}}(restClient, sessionCookies, defaultSerializationSettings, cancellationToken, timeout, retry, defaultXAviVerion);
         {{/modules}}
     }
 }

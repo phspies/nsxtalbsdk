@@ -26,8 +26,7 @@ namespace nsxtalbsdk
                                         sleepDurationProvider: attempt => TimeSpan.FromSeconds(0.25 * Math.Pow(2, attempt)), // Back off!  2, 4, 8 etc times 1/4-second = 0.5, 1, 2 seconds
                                         onRetryAsync: RetryDelegateAsync
                                         );
-            // The goal is to place the timeoutPolicy inside the resultPolicy, to make it time out each try.
-            var finalPolicy = Policy.WrapAsync(restResponsePolicy, timeoutRetryPolicy, timeoutPolicy); //timeoutPolicy is innermost and responseResultPolicy is outermost.
+            var finalPolicy = Policy.WrapAsync(restResponsePolicy, timeoutRetryPolicy, timeoutPolicy);
             var policyResult = await finalPolicy.ExecuteAndCaptureAsync((context, ct) => client.ExecuteAsync<T>(request, ct),
                                         contextData: new Dictionary<string, object>
                                         {

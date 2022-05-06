@@ -7,7 +7,6 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
 namespace nsxtalbsdk.Authentication
 {
     public class AuthenticationHelper
@@ -20,7 +19,6 @@ namespace nsxtalbsdk.Authentication
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
-
             request.Resource = GetAlertServiceURL.ToString();
             request.AddJsonBody(credentials);
             IRestResponse<LoginResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<LoginResponseType>(request, _cancellationToken, _timeout, _retry);
@@ -29,7 +27,6 @@ namespace nsxtalbsdk.Authentication
                 var message = "Login operation to " + GetAlertServiceURL.ToString() + " did not complete successfully";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
             }
-
             return response;
         }
         public static void Logout(List<RestResponseCookie> sessionCookies, RestClient restClient)
@@ -47,7 +44,6 @@ namespace nsxtalbsdk.Authentication
             request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             request.Resource = PostLogoutURL.ToString();
-
             IRestResponse response = restClient.Post(request);
             if (response.StatusCode != HttpStatusCode.OK)
             {
