@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHealthMonitorSIPType
+    public class NSXTALBHealthMonitorSIPType 
     {
         /// <summary>
         /// Specify the transport protocol TCP or UDP, to be used for SIP health monitor. The default transport is UDP. Enum options

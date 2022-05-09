@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAlertSyslogServerType
+    public class NSXTALBAlertSyslogServerType 
     {
         /// <summary>
         /// Enable anonymous authentication of Syslog Serverwhich will disable server certificate authentication. Field introduced

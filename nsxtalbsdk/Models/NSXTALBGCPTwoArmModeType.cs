@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGCPTwoArmModeType
+    public class NSXTALBGCPTwoArmModeType 
     {
         /// <summary>
         /// Service Engine Backend Data Network Name. Field introduced in 18.2.2.

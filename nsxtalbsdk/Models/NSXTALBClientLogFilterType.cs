@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBClientLogFilterType
+    public class NSXTALBClientLogFilterType 
     {
         /// <summary>
         /// Placeholder for description of property all_headers of obj type ClientLogFilter field type str  type boolean

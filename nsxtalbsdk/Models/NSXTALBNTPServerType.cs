@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBNTPServerType
+    public class NSXTALBNTPServerType 
     {
         /// <summary>
         /// Key number from the list of trusted keys used to authenticate this server. Allowed values are 1-65534.

@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsRuleMatchTargetType
+    public class NSXTALBDnsRuleMatchTargetType 
     {
         /// <summary>
         /// IP addresses to match against client IP. From 17.1.6 release onwards, IP addresses needs to be configured in the

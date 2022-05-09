@@ -1,13 +1,16 @@
-using Newtonsoft.Json;
-using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Net;
+using nsxtalbsdk;
+using nsxtalbsdk.Models;
+using System.Linq;
+using System.Collections.Generic;
 namespace nsxtalbsdk.Modules
 {
     public class VsGs
@@ -29,10 +32,20 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBVsGsApiResponseType> GetVsgsAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             StringBuilder GetVsgsServiceURL = new StringBuilder("/api/vsgs");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -49,24 +62,29 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetVsgsServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVsGsApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVsGsApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetVsgsServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBVsGsType> PostVsgsAsync(NSXTALBVsGsType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostVsgsServiceURL = new StringBuilder("/api/vsgs");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -77,24 +95,34 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(Body);
             request.Resource = PostVsgsServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVsGsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVsGsType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP POST operation to " + PostVsgsServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBVsGsType> GetVsgsUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
             StringBuilder GetVsgsUuidServiceURL = new StringBuilder("/api/vsgs/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -110,25 +138,31 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetVsgsUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVsGsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVsGsType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetVsgsUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBVsGsType> PutVsgsUuidAsync(NSXTALBVsGsType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutVsgsUuidServiceURL = new StringBuilder("/api/vsgs/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.PUT
             };
@@ -141,25 +175,31 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PutVsgsUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutVsgsUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVsGsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVsGsType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP PUT operation to " + PutVsgsUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBVsGsType> PatchVsgsUuidAsync(NSXTALBVsGsType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchVsgsUuidServiceURL = new StringBuilder("/api/vsgs/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.PATCH
             };
@@ -172,24 +212,30 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PatchVsgsUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchVsgsUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBVsGsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBVsGsType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP PATCH operation to " + PatchVsgsUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<string> DeleteVsgsUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeleteVsgsUuidServiceURL = new StringBuilder("/api/vsgs/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.DELETE
             };
@@ -201,15 +247,17 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteVsgsUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteVsgsUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP DELETE operation to " + DeleteVsgsUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
     }

@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSEFaultInjectSeParamType
+    public class NSXTALBSEFaultInjectSeParamType 
     {
         /// <summary>
         /// Inject fault in specific core. Field introduced in 18.1.5,18.2.1.

@@ -47,14 +47,16 @@ namespace nsxtalbsdk.Modules
             {{GetOperationPathInjectionCode . operations.Current }}
             {{/operation.parameters}}
             request.Resource = {{GetMethodName .}}ServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<{{GetOperationReturnType . "bare"}}> response = await restClient.ExecuteTaskAsyncWithPolicy<{{GetOperationReturnType . "bare"}}>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
                 var message = "HTTP {{GetOperationHttpMethod .}} operation to " + {{GetMethodName .}}ServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers);
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             {{GetOperationReturnType . "return"}}
         }

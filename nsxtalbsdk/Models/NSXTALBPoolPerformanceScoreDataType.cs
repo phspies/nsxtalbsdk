@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBPoolPerformanceScoreDataType
+    public class NSXTALBPoolPerformanceScoreDataType 
     {
         /// <summary>
         /// Placeholder for description of property apdexc of obj type PoolPerformanceScoreData field type str  type number

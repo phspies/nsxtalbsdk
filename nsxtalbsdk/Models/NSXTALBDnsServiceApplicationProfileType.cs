@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsServiceApplicationProfileType
+    public class NSXTALBDnsServiceApplicationProfileType 
     {
         /// <summary>
         /// Respond to AAAA queries with empty response when there are only IPV4 records.

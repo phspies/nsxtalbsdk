@@ -1,13 +1,16 @@
-using Newtonsoft.Json;
-using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Net;
+using nsxtalbsdk;
+using nsxtalbsdk.Models;
+using System.Linq;
+using System.Collections.Generic;
 namespace nsxtalbsdk.Modules
 {
     public class NetworkProfile
@@ -29,10 +32,20 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBNetworkProfileApiResponseType> GetNetworkprofileAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             StringBuilder GetNetworkprofileServiceURL = new StringBuilder("/api/networkprofile");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -49,24 +62,29 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetNetworkprofileServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBNetworkProfileApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBNetworkProfileApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetNetworkprofileServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBNetworkProfileType> PostNetworkprofileAsync(NSXTALBNetworkProfileType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostNetworkprofileServiceURL = new StringBuilder("/api/networkprofile");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -77,24 +95,34 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(Body);
             request.Resource = PostNetworkprofileServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBNetworkProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBNetworkProfileType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP POST operation to " + PostNetworkprofileServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBNetworkProfileType> GetNetworkprofileUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
             StringBuilder GetNetworkprofileUuidServiceURL = new StringBuilder("/api/networkprofile/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -110,25 +138,31 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetNetworkprofileUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBNetworkProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBNetworkProfileType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetNetworkprofileUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBNetworkProfileType> PutNetworkprofileUuidAsync(NSXTALBNetworkProfileType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutNetworkprofileUuidServiceURL = new StringBuilder("/api/networkprofile/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.PUT
             };
@@ -141,25 +175,31 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PutNetworkprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutNetworkprofileUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBNetworkProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBNetworkProfileType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP PUT operation to " + PutNetworkprofileUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBNetworkProfileType> PatchNetworkprofileUuidAsync(NSXTALBNetworkProfileType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchNetworkprofileUuidServiceURL = new StringBuilder("/api/networkprofile/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.PATCH
             };
@@ -172,24 +212,30 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PatchNetworkprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchNetworkprofileUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBNetworkProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBNetworkProfileType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP PATCH operation to " + PatchNetworkprofileUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<string> DeleteNetworkprofileUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeleteNetworkprofileUuidServiceURL = new StringBuilder("/api/networkprofile/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.DELETE
             };
@@ -201,24 +247,29 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteNetworkprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteNetworkprofileUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP DELETE operation to " + DeleteNetworkprofileUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<string> GetNetworkprofileUuidRuntimeInternalAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetNetworkprofileUuidRuntimeInternalServiceURL = new StringBuilder("/api/networkprofile/{uuid}/runtime/internal/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -229,15 +280,17 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetNetworkprofileUuidRuntimeInternalServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetNetworkprofileUuidRuntimeInternalServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetNetworkprofileUuidRuntimeInternalServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
     }

@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBMetricsEventThresholdType
+    public class NSXTALBMetricsEventThresholdType 
     {
         /// <summary>
         /// Type of the metrics event threshold. This value will decide which metric rule (or rules) use configured thresholds. Enum

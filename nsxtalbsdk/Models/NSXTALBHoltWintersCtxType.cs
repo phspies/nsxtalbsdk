@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHoltWintersCtxType
+    public class NSXTALBHoltWintersCtxType 
     {
         /// <summary>
         /// Placeholder for description of property deviation of obj type HoltWintersCtx field type str  type number

@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBControllerSizingLimitsType
+    public class NSXTALBControllerSizingLimitsType 
     {
         /// <summary>
         /// Controller system limits specific to cloud type for this controller sizing. Field introduced in 20.1.1.

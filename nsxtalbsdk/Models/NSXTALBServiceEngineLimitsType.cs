@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBServiceEngineLimitsType
+    public class NSXTALBServiceEngineLimitsType 
     {
         /// <summary>
         /// Maximum number of virtualservices per serviceengine, including east-west virtualservices. Field introduced in 20.1.1.

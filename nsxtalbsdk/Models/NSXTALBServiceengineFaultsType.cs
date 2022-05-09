@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBServiceengineFaultsType
+    public class NSXTALBServiceengineFaultsType 
     {
         /// <summary>
         /// Enable debug faults. Field introduced in 20.1.6.

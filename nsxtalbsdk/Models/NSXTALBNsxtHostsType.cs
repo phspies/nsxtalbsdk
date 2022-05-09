@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBNsxtHostsType
+    public class NSXTALBNsxtHostsType 
     {
         /// <summary>
         /// List of transport nodes. Field introduced in 20.1.1.

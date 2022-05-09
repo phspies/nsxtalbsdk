@@ -1,13 +1,16 @@
-using Newtonsoft.Json;
-using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Net;
+using nsxtalbsdk;
+using nsxtalbsdk.Models;
+using System.Linq;
+using System.Collections.Generic;
 namespace nsxtalbsdk.Modules
 {
     public class Anomaly
@@ -29,9 +32,40 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBAnomalyzerQueryResponseApiResponseType> GetAnalyticsAnomalyPoolAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsAnomalyPoolServiceURL = new StringBuilder("/api/analytics/anomaly/pool/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -68,23 +102,55 @@ namespace nsxtalbsdk.Modules
             if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyPoolServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnomalyzerQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyPoolServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBAnomalyzerQueryResponseType> GetAnalyticsAnomalyPoolUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsAnomalyPoolUuidServiceURL = new StringBuilder("/api/analytics/anomaly/pool/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -121,22 +187,55 @@ namespace nsxtalbsdk.Modules
             if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyPoolUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnomalyzerQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyPoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBAnomalyzerQueryResponseApiResponseType> GetAnalyticsAnomalyServiceengineAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsAnomalyServiceengineServiceURL = new StringBuilder("/api/analytics/anomaly/serviceengine/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -173,23 +272,55 @@ namespace nsxtalbsdk.Modules
             if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyServiceengineServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnomalyzerQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyServiceengineServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBAnomalyzerQueryResponseType> GetAnalyticsAnomalyServiceengineUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsAnomalyServiceengineUuidServiceURL = new StringBuilder("/api/analytics/anomaly/serviceengine/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -226,22 +357,55 @@ namespace nsxtalbsdk.Modules
             if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyServiceengineUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnomalyzerQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyServiceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBAnomalyzerQueryResponseApiResponseType> GetAnalyticsAnomalyVirtualserviceAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsAnomalyVirtualserviceServiceURL = new StringBuilder("/api/analytics/anomaly/virtualservice/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -278,23 +442,55 @@ namespace nsxtalbsdk.Modules
             if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyVirtualserviceServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnomalyzerQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyVirtualserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBAnomalyzerQueryResponseType> GetAnalyticsAnomalyVirtualserviceUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsAnomalyVirtualserviceUuidServiceURL = new StringBuilder("/api/analytics/anomaly/virtualservice/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -331,15 +527,17 @@ namespace nsxtalbsdk.Modules
             if (Stop != null) { request.AddQueryParameter("stop", JsonConvert.ToString(Stop).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyVirtualserviceUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBAnomalyzerQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsAnomalyVirtualserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
     }

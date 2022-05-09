@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHealthMonitorSSLAttributesType
+    public class NSXTALBHealthMonitorSSLAttributesType 
     {
         /// <summary>
         /// PKI profile used to validate the SSL certificate presented by a server. It is a reference to an object of type

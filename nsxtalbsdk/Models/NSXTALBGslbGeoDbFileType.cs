@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGslbGeoDbFileType
+    public class NSXTALBGslbGeoDbFileType 
     {
         /// <summary>
         /// File checksum is internally computed. Field introduced in 17.1.1.

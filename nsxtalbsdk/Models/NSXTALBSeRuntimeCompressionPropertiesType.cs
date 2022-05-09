@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeRuntimeCompressionPropertiesType
+    public class NSXTALBSeRuntimeCompressionPropertiesType 
     {
         /// <summary>
         /// If client RTT is higher than this threshold, enable normal compression on the response. Unit is MILLISECONDS.

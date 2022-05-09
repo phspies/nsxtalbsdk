@@ -1,13 +1,16 @@
-using Newtonsoft.Json;
-using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Net;
+using nsxtalbsdk;
+using nsxtalbsdk.Models;
+using System.Linq;
+using System.Collections.Generic;
 namespace nsxtalbsdk.Modules
 {
     public class GslbService
@@ -29,10 +32,20 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBGslbServiceApiResponseType> GetGslbserviceAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             StringBuilder GetGslbserviceServiceURL = new StringBuilder("/api/gslbservice");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -49,24 +62,29 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetGslbserviceServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbServiceApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbServiceApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetGslbserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBGslbServiceType> PostGslbserviceAsync(NSXTALBGslbServiceType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostGslbserviceServiceURL = new StringBuilder("/api/gslbservice");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -77,24 +95,34 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(Body);
             request.Resource = PostGslbserviceServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbServiceType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP POST operation to " + PostGslbserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBGslbServiceType> GetGslbserviceUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
             StringBuilder GetGslbserviceUuidServiceURL = new StringBuilder("/api/gslbservice/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -110,25 +138,31 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetGslbserviceUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbServiceType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetGslbserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBGslbServiceType> PutGslbserviceUuidAsync(NSXTALBGslbServiceType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutGslbserviceUuidServiceURL = new StringBuilder("/api/gslbservice/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.PUT
             };
@@ -141,25 +175,31 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PutGslbserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutGslbserviceUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbServiceType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP PUT operation to " + PutGslbserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBGslbServiceType> PatchGslbserviceUuidAsync(NSXTALBGslbServiceType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchGslbserviceUuidServiceURL = new StringBuilder("/api/gslbservice/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.PATCH
             };
@@ -172,24 +212,30 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PatchGslbserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchGslbserviceUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBGslbServiceType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBGslbServiceType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP PATCH operation to " + PatchGslbserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<string> DeleteGslbserviceUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeleteGslbserviceUuidServiceURL = new StringBuilder("/api/gslbservice/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.DELETE
             };
@@ -201,24 +247,29 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteGslbserviceUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteGslbserviceUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP DELETE operation to " + DeleteGslbserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<string> GetGslbserviceUuidRuntimeAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
+            
+            
+            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetGslbserviceUuidRuntimeServiceURL = new StringBuilder("/api/gslbservice/{uuid}/runtime/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -229,15 +280,17 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetGslbserviceUuidRuntimeServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetGslbserviceUuidRuntimeServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetGslbserviceUuidRuntimeServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
     }

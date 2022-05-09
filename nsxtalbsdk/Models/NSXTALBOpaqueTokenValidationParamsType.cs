@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOpaqueTokenValidationParamsType
+    public class NSXTALBOpaqueTokenValidationParamsType 
     {
         /// <summary>
         /// Resource server specific identifier used to validate against introspection endpoint when access token is opaque. Field

@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBLogAgentEventDetailType
+    public class NSXTALBLogAgentEventDetailType 
     {
         /// <summary>
         /// Protocol used for communication to the external entity. Enum options - TCP_CONN. Field introduced in 20.1.3.

@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAzureInfoType
+    public class NSXTALBAzureInfoType 
     {
         /// <summary>
         /// Name of the availability set of which the VM is a part of. Field introduced in 17.2.1.

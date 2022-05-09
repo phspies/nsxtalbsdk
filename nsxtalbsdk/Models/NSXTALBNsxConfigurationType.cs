@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBNsxConfigurationType
+    public class NSXTALBNsxConfigurationType 
     {
         /// <summary>
         /// This prefix will be added to the names of all NSX objects created by Avi Controller. It should be unique across all the

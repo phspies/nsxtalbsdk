@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBServiceEngineDosAttackLevelDataType
+    public class NSXTALBServiceEngineDosAttackLevelDataType 
     {
         /// <summary>
         /// Placeholder for description of property avg_connections of obj type ServiceEngineDosAttackLevelData field type str  type

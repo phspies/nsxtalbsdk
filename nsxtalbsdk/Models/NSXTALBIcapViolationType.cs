@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIcapViolationType
+    public class NSXTALBIcapViolationType 
     {
         /// <summary>
         /// The file that ICAP server has identified as containing a violation. Field introduced in 20.1.3.

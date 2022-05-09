@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBLdapUserBindSettingsType
+    public class NSXTALBLdapUserBindSettingsType 
     {
         /// <summary>
         /// LDAP user DN pattern is used to bind LDAP user after replacing the user token with real username.

@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBBotEvaluationResultType
+    public class NSXTALBBotEvaluationResultType 
     {
         /// <summary>
         /// The component of the bot module that made this evaluation. Enum options - BOT_DECIDER_CONSOLIDATION,

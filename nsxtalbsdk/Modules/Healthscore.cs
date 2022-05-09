@@ -1,13 +1,16 @@
-using Newtonsoft.Json;
-using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Net;
+using nsxtalbsdk;
+using nsxtalbsdk.Models;
+using System.Linq;
+using System.Collections.Generic;
 namespace nsxtalbsdk.Modules
 {
     public class Healthscore
@@ -29,9 +32,34 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBHealthScoreQueryResponseApiResponseType> GetAnalyticsHealthscorePoolAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscorePoolServiceURL = new StringBuilder("/api/analytics/healthscore/pool/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -62,23 +90,49 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscorePoolServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsHealthscorePoolServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBHealthScoreQueryResponseType> GetAnalyticsHealthscorePoolUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscorePoolUuidServiceURL = new StringBuilder("/api/analytics/healthscore/pool/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -109,22 +163,49 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscorePoolUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsHealthscorePoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBHealthScoreQueryResponseApiResponseType> GetAnalyticsHealthscoreServiceengineAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscoreServiceengineServiceURL = new StringBuilder("/api/analytics/healthscore/serviceengine/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -155,23 +236,49 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreServiceengineServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsHealthscoreServiceengineServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBHealthScoreQueryResponseType> GetAnalyticsHealthscoreServiceengineUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscoreServiceengineUuidServiceURL = new StringBuilder("/api/analytics/healthscore/serviceengine/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -202,22 +309,49 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreServiceengineUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsHealthscoreServiceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBHealthScoreQueryResponseApiResponseType> GetAnalyticsHealthscoreVirtualserviceAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscoreVirtualserviceServiceURL = new StringBuilder("/api/analytics/healthscore/virtualservice/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -248,23 +382,49 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreVirtualserviceServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsHealthscoreVirtualserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBHealthScoreQueryResponseType> GetAnalyticsHealthscoreVirtualserviceUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsHealthscoreVirtualserviceUuidServiceURL = new StringBuilder("/api/analytics/healthscore/virtualservice/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -295,15 +455,17 @@ namespace nsxtalbsdk.Modules
             if (Summary != null) { request.AddQueryParameter("summary", JsonConvert.ToString(Summary).ToLowerString()); }
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreVirtualserviceUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBHealthScoreQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsHealthscoreVirtualserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
     }

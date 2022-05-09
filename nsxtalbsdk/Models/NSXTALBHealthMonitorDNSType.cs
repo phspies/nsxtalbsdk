@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHealthMonitorDNSType
+    public class NSXTALBHealthMonitorDNSType 
     {
         /// <summary>
         /// Query_Type  Response has atleast one answer of which      the resource record type matches the query type   Any_Type 

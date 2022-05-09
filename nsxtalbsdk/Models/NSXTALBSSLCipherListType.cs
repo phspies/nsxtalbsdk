@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSSLCipherListType
+    public class NSXTALBSSLCipherListType 
     {
         /// <summary>
         /// List of ciphers from the client's SSL cipher list that could be identified. The ciphers are represented by their RFC

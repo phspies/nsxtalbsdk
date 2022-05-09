@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIPReputationTypeMappingType
+    public class NSXTALBIPReputationTypeMappingType 
     {
         /// <summary>
         /// The Bot Identification to which the IP reputation type is mapped. Field introduced in 21.1.1.

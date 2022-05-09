@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSamlServiceProviderNodeType
+    public class NSXTALBSamlServiceProviderNodeType 
     {
         /// <summary>
         /// Globally unique entityID for this node. Entity ID on the IDP should match this. Field introduced in 17.2.3.

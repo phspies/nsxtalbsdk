@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBMesosConfigurationType
+    public class NSXTALBMesosConfigurationType 
     {
         /// <summary>
         /// Consider all Virtualservices as Front End Proxies. Front End proxies are placed on specific SEs as opposed to Back End

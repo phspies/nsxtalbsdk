@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBTCPApplicationProfileType
+    public class NSXTALBTCPApplicationProfileType 
     {
         /// <summary>
         /// Select the PKI profile to be associated with the Virtual Service. This profile defines the Certificate Authority and

@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeAgentPropertiesType
+    public class NSXTALBSeAgentPropertiesType 
     {
         /// <summary>
         /// Aggressive Count of HB misses for se health check failure. Allowed values are 1-1000.

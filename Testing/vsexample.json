@@ -1,0 +1,229 @@
+﻿{
+  "_last_modified": "1648580154042103",
+  "active_standby_se_tag": "ACTIVE_STANDBY_SE_1",
+  "advertise_down_vs": null,
+  "allow_invalid_client_cert": false,
+  "analytics_policy": {
+    "all_headers": false,
+    "client_insights": "NO_INSIGHTS",
+    "client_insights_sampling": null,
+    "client_log_filters": null,
+    "enabled": null,
+    "full_client_logs": {
+      "all_headers": null,
+      "duration": 0,
+      "enabled": false,
+      "throttle": 10
+    },
+    "learning_log_policy": null,
+    "metrics_realtime_update": {
+      "duration": 0,
+      "enabled": false
+    },
+    "significant_log_throttle": 10,
+    "udf_log_throttle": 10
+  },
+  "analytics_profile_ref": "https://10.0.100.18/api/analyticsprofile/analyticsprofile-ed3bcc9a-ebc2-427e-aa49-fba2234f3d20",
+  "apic_contract_graph": null,
+  "application_profile_ref": "https://10.0.100.18/api/applicationprofile/applicationprofile-c173743e-f904-4e2d-a893-78b4a0cfbd14",
+  "auto_allocate_floating_ip": null,
+  "auto_allocate_ip": null,
+  "availability_zone": null,
+  "avi_allocated_fip": null,
+  "avi_allocated_vip": null,
+  "azure_availability_set": null,
+  "bgp_peer_labels": null,
+  "bot_policy_ref": null,
+  "bulk_sync_kvcache": false,
+  "client_auth": null,
+  "close_client_conn_on_config_update": false,
+  "cloud_config_cksum": null,
+  "cloud_ref": "https://10.0.100.18/api/cloud/cloud-2ae9cffc-9c1e-40d5-9f66-8fa90618867c",
+  "cloud_type": "CLOUD_VCENTER",
+  "configpb_attributes": null,
+  "connections_rate_limit": null,
+  "content_rewrite": {
+    "req_match_replace_pair": null,
+    "request_rewrite_enabled": false,
+    "response_rewrite_enabled": false,
+    "rewritable_content_ref": "https://10.0.100.18/api/stringgroup/stringgroup-2ed70902-74f3-498a-846b-2198cb1eef16",
+    "rsp_match_replace_pair": null,
+    "rsp_rewrite_rules": null
+  },
+  "created_by": null,
+  "delay_fairness": false,
+  "description": null,
+  "discovered_network_ref": null,
+  "discovered_networks": null,
+  "discovered_subnet": null,
+  "dns_info": [
+    {
+      "algorithm": "DNS_RECORD_RESPONSE_CONSISTENT_HASH",
+      "cname": null,
+      "fqdn": "DNS-VS.tanzu.lab.local",
+      "metadata": null,
+      "num_records_in_response": null,
+      "ttl": 30,
+      "type": "DNS_RECORD_A"
+    }
+  ],
+  "dns_policies": [
+    {
+      "dns_policy_ref": "https://10.0.100.18/api/dnspolicy/dnspolicy-5f40ee20-5624-47d0-a044-851d3176d5fb",
+      "index": 11
+    }
+  ],
+  "east_west_placement": false,
+  "enable_autogw": true,
+  "enable_rhi": null,
+  "enable_rhi_snat": null,
+  "enabled": true,
+  "error_page_profile_ref": "https://10.0.100.18/api/errorpageprofile/errorpageprofile-71dce90d-ed44-4456-9565-9fe2fd387ff1",
+  "floating_ip": null,
+  "floating_subnet_uuid": null,
+  "flow_dist": "LOAD_AWARE",
+  "flow_label_type": "NO_LABEL",
+  "fqdn": null,
+  "host_name_xlate": null,
+  "http_policies": null,
+  "icap_request_profile_refs": null,
+  "ign_pool_net_reach": false,
+  "ip_address": null,
+  "ipam_network_subnet": null,
+  "jwt_config": null,
+  "l4_policies": null,
+  "labels": null,
+  "ldap_vs_config": null,
+  "limit_doser": false,
+  "markers": null,
+  "max_cps_per_client": 0,
+  "microservice_ref": null,
+  "min_pools_up": null,
+  "name": "DNS-VS",
+  "network_profile_ref": "https://10.0.100.18/api/networkprofile/networkprofile-d03b6394-5b42-4c8e-9291-1ab9a33fcc78",
+  "network_ref": null,
+  "network_security_policy_ref": "https://10.0.100.18/api/networksecuritypolicy/networksecuritypolicy-c2286faa-ed33-4668-9dd0-542785968c41",
+  "nsx_securitygroup": null,
+  "oauth_vs_config": null,
+  "performance_limits": null,
+  "pool_group_ref": null,
+  "pool_ref": null,
+  "port_uuid": null,
+  "remove_listening_port_on_vs_down": false,
+  "requests_rate_limit": null,
+  "saml_sp_config": null,
+  "scaleout_ecmp": false,
+  "se_group_ref": "https://10.0.100.18/api/serviceenginegroup/serviceenginegroup-614c5642-9f83-42b7-852e-d0a28c5dc863",
+  "security_policy_ref": null,
+  "server_network_profile_ref": null,
+  "service_metadata": null,
+  "service_pool_select": null,
+  "services": [
+    {
+      "enable_http2": null,
+      "enable_ssl": false,
+      "horizon_internal_ports": null,
+      "override_application_profile_ref": null,
+      "override_network_profile_ref": null,
+      "port": 53,
+      "port_range_end": 53
+    }
+  ],
+  "sideband_profile": {
+    "ip": null,
+    "sideband_max_request_body_size": 1024
+  },
+  "snat_ip": null,
+  "sp_pool_refs": null,
+  "ssl_key_and_certificate_refs": null,
+  "ssl_profile_ref": null,
+  "ssl_profile_selectors": null,
+  "ssl_sess_cache_avg_size": 1024,
+  "sso_policy": null,
+  "sso_policy_ref": null,
+  "static_dns_records": null,
+  "subnet": null,
+  "subnet_uuid": null,
+  "tenant_ref": "https://10.0.100.18/api/tenant/admin",
+  "test_se_datastore_level_1_ref": null,
+  "topology_policies": [
+    {
+      "dns_policy_ref": "https://10.0.100.18/api/dnspolicy/dnspolicy-3d756092-ff13-4d68-aaf8-c14d8f5c53b0",
+      "index": 11
+    }
+  ],
+  "traffic_clone_profile_ref": null,
+  "traffic_enabled": true,
+  "type": "VS_TYPE_NORMAL",
+  "url": "https://10.0.100.18/api/virtualservice/virtualservice-a30ce384-0311-4975-9fb0-55d71dd0c2a1",
+  "use_bridge_ip_as_vip": false,
+  "use_vip_as_snat": false,
+  "uuid": "virtualservice-a30ce384-0311-4975-9fb0-55d71dd0c2a1",
+  "vh_domain_name": null,
+  "vh_matches": null,
+  "vh_parent_vs_ref": null,
+  "vh_type": null,
+  "vip": [
+    {
+      "auto_allocate_floating_ip": false,
+      "auto_allocate_ip": true,
+      "auto_allocate_ip_type": "V4_ONLY",
+      "availability_zone": null,
+      "avi_allocated_fip": false,
+      "avi_allocated_vip": false,
+      "discovered_networks": [
+        {
+          "network_ref": "/api/network/dvportgroup-32017-cloud-2ae9cffc-9c1e-40d5-9f66-8fa90618867c",
+          "subnet": [
+            {
+              "ip_addr": {
+                "addr": "192.168.10.0",
+                "type": "V4"
+              },
+              "mask": 24
+            }
+          ],
+          "subnet6": null
+        }
+      ],
+      "enabled": true,
+      "floating_ip": null,
+      "floating_ip6": null,
+      "floating_subnet6_uuid": null,
+      "floating_subnet_uuid": null,
+      "ip6_address": null,
+      "ip_address": {
+        "addr": "192.168.10.10",
+        "type": "V4"
+      },
+      "ipam_network_subnet": {
+        "network_ref": "/api/network/dvportgroup-32017-cloud-2ae9cffc-9c1e-40d5-9f66-8fa90618867c",
+        "subnet": {
+          "ip_addr": {
+            "addr": "192.168.10.0",
+            "type": "V4"
+          },
+          "mask": 24
+        },
+        "subnet6": null,
+        "subnet6_uuid": null,
+        "subnet_uuid": null
+      },
+      "network_ref": null,
+      "placement_networks": null,
+      "port_uuid": null,
+      "prefix_length": null,
+      "subnet": null,
+      "subnet6": null,
+      "subnet6_uuid": null,
+      "subnet_uuid": null,
+      "vip_id": "1"
+    }
+  ],
+  "vrf_context_ref": "https://10.0.100.18/api/vrfcontext/vrfcontext-9916514e-7e41-4e6e-b064-adfb2535716b",
+  "vs_datascripts": null,
+  "vsvip_cloud_config_cksum": null,
+  "vsvip_ref": "https://10.0.100.18/api/vsvip/vsvip-62efbc0c-228a-4c8a-8b70-6ff8209d02f4",
+  "waf_policy_ref": null,
+  "weight": 1
+}

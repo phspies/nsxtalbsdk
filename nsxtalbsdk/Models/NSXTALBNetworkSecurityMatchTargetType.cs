@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBNetworkSecurityMatchTargetType
+    public class NSXTALBNetworkSecurityMatchTargetType 
     {
         /// <summary>
         /// Placeholder for description of property client_ip of obj type NetworkSecurityMatchTarget field type str  type object

@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSingleLicenseType
+    public class NSXTALBSingleLicenseType 
     {
         /// <summary>
         /// Total number of Service Engine burst cores for core based licenses. Field introduced in 17.2.5.

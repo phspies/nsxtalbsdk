@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBUpgradeOpsStateType
+    public class NSXTALBUpgradeOpsStateType 
     {
         /// <summary>
         /// The last time the state changed. Field introduced in 18.2.6.

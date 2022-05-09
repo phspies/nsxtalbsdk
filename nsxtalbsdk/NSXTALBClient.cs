@@ -1,14 +1,14 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using nsxtalbsdk.Models;
-using nsxtalbsdk.Modules;
+using System;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using nsxtalbsdk.Modules;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Linq;
+using System.Collections.Generic;
+using nsxtalbsdk.Models;
 namespace nsxtalbsdk
 {
     public class NSXTALBClient

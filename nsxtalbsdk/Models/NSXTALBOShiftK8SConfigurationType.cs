@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOShiftK8SConfigurationType
+    public class NSXTALBOShiftK8SConfigurationType 
     {
         /// <summary>
         /// Sync frequency in seconds with frameworks.

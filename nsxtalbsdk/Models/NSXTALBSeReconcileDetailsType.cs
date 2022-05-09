@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeReconcileDetailsType
+    public class NSXTALBSeReconcileDetailsType 
     {
         /// <summary>
         /// Placeholder for description of property new_service_cores of obj type SeReconcileDetails field type str  type number

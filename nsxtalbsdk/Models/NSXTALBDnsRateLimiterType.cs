@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsRateLimiterType
+    public class NSXTALBDnsRateLimiterType 
     {
         /// <summary>
         /// Action to perform upon rate limiting. Field introduced in 20.1.1.

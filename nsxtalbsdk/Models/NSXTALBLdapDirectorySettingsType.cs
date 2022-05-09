@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBLdapDirectorySettingsType
+    public class NSXTALBLdapDirectorySettingsType 
     {
         /// <summary>
         /// LDAP Admin User DN. Administrator credentials are required to search for users under user search DN or groups under

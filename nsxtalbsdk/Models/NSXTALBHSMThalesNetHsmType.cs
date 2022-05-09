@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHSMThalesNetHsmType
+    public class NSXTALBHSMThalesNetHsmType 
     {
         /// <summary>
         /// Electronic serial number of the netHSM device. Use Thales anonkneti utility to find the netHSM ESN.

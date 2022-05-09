@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOshiftDockerRegistryMetaDataType
+    public class NSXTALBOshiftDockerRegistryMetaDataType 
     {
         /// <summary>
         /// Namespace for the ServiceEngine image to be hosted in Openshift Integrated registry.

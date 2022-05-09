@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBPoolResourcesScoreType
+    public class NSXTALBPoolResourcesScoreType 
     {
         /// <summary>
         /// Placeholder for description of property hs_entity of obj type PoolResourcesScore field type str  type object

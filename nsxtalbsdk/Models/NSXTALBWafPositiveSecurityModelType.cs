@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBWafPositiveSecurityModelType
+    public class NSXTALBWafPositiveSecurityModelType 
     {
         /// <summary>
         /// These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark

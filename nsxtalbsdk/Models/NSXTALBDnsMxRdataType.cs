@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsMxRdataType
+    public class NSXTALBDnsMxRdataType 
     {
         /// <summary>
         /// Fully qualified domain name of a mailserver . The host name maps directly to one or more address records in the DNS

@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBMetricsDataType
+    public class NSXTALBMetricsDataType 
     {
         /// <summary>
         /// Placeholder for description of property application_response_time of obj type MetricsData field type str  type number

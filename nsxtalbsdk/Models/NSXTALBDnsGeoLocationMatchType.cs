@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsGeoLocationMatchType
+    public class NSXTALBDnsGeoLocationMatchType 
     {
         /// <summary>
         /// Geographical location of the client IP to be used in the match. This location is of the format Country/State/City e.g.

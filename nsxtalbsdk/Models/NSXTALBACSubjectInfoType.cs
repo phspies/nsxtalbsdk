@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBACSubjectInfoType
+    public class NSXTALBACSubjectInfoType 
     {
         /// <summary>
         /// Subject type for the audit event (e.g. DNS Hostname, IP address, URI). Field introduced in 20.1.3.

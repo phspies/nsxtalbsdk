@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDSRequestLogType
+    public class NSXTALBDSRequestLogType 
     {
         /// <summary>
         /// Name of the DataScript where this request was called. Field introduced in 20.1.3.

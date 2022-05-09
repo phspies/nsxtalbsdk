@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBDnsResourceRecordType
+    public class NSXTALBDnsResourceRecordType 
     {
         /// <summary>
         /// IPv6 address of the requested FQDN. Field introduced in 18.1.1.

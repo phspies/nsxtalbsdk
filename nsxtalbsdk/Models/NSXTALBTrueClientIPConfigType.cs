@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBTrueClientIPConfigType
+    public class NSXTALBTrueClientIPConfigType 
     {
         /// <summary>
         /// Denotes the end from which to count the IPs in the specified header value. Enum options - LEFT, RIGHT. Field introduced

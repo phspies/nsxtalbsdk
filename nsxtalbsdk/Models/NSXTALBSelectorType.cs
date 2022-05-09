@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSelectorType
+    public class NSXTALBSelectorType 
     {
         /// <summary>
         /// Labels as key value pairs to select on. Field introduced in 20.1.3. Minimum of 1 items required.

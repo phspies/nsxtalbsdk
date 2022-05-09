@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBWafPSMLocationMatchType
+    public class NSXTALBWafPSMLocationMatchType 
     {
         /// <summary>
         /// Apply the rules only to requests that match the specified Host header. If this is not set, the host header will not be

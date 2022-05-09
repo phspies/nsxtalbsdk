@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBTCPProxyProfileType
+    public class NSXTALBTCPProxyProfileType 
     {
         /// <summary>
         /// Controls the our congestion window to send, normally it's 1 mss, If this option is turned on, we use 10 msses.

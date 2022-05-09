@@ -1,13 +1,16 @@
-using Newtonsoft.Json;
-using nsxtalbsdk.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Net;
+using nsxtalbsdk;
+using nsxtalbsdk.Models;
+using System.Linq;
+using System.Collections.Generic;
 namespace nsxtalbsdk.Modules
 {
     public class Metrics
@@ -29,10 +32,20 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBMetricsCollectionApiRspType> PostAnalyticsMetricsCollectionAsync(NSXTALBMetricsCollectionApiReqType Body, bool? IncludeName = null, bool? IncludeRefs = null, int? Limit = null, bool? PadMissingData = null, string? Start = null, int? Step = null, string? Stop = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostAnalyticsMetricsCollectionServiceURL = new StringBuilder("/api/analytics/metrics/collection/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.POST
             };
@@ -49,22 +62,72 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(Body);
             request.Resource = PostAnalyticsMetricsCollectionServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsCollectionApiRspType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsCollectionApiRspType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP POST operation to " + PostAnalyticsMetricsCollectionServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBMetricsQueryResponseApiResponseType> GetAnalyticsMetricsControllerAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateEntity = null, bool? AggregateObjId = null, string? Asn = null, string? Attack = null, string? Browser = null, string? ClientInsights = null, string? Country = null, bool? DetailedHeader = null, string? Devtype = null, string? DimensionAggregation = null, string? DimensionFilterOp = null, int? DimensionLimit = null, int? DimensionSampling = null, string? Dimensions = null, string? EntityUuid = null, string? Id = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, string? Ipgroup = null, string? Lang = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, int? MicroserviceLevels = null, string? ObjId = null, string? OrderBy = null, string? Os = null, bool? PadMissingData = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, bool? Prediction = null, string? ResultFormat = null, string? SamplingLevel = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null, string? Url = null, bool? ValidateData = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsMetricsControllerServiceURL = new StringBuilder("/api/analytics/metrics/controller/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -118,23 +181,72 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsControllerServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsMetricsControllerServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBMetricsQueryResponseType> GetAnalyticsMetricsControllerUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateEntity = null, bool? AggregateObjId = null, string? Asn = null, string? Attack = null, string? Browser = null, string? ClientInsights = null, string? Country = null, bool? DetailedHeader = null, string? Devtype = null, string? DimensionAggregation = null, string? DimensionFilterOp = null, int? DimensionLimit = null, int? DimensionSampling = null, string? Dimensions = null, string? EntityUuid = null, string? Id = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, string? Ipgroup = null, string? Lang = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, int? MicroserviceLevels = null, string? ObjId = null, string? OrderBy = null, string? Os = null, bool? PadMissingData = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, bool? Prediction = null, string? ResultFormat = null, string? SamplingLevel = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null, string? Url = null, bool? ValidateData = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsMetricsControllerUuidServiceURL = new StringBuilder("/api/analytics/metrics/controller/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -188,22 +300,72 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsControllerUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsMetricsControllerUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBMetricsQueryResponseApiResponseType> GetAnalyticsMetricsPoolAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateEntity = null, bool? AggregateObjId = null, string? Asn = null, string? Attack = null, string? Browser = null, string? ClientInsights = null, string? Country = null, bool? DetailedHeader = null, string? Devtype = null, string? DimensionAggregation = null, string? DimensionFilterOp = null, int? DimensionLimit = null, int? DimensionSampling = null, string? Dimensions = null, string? EntityUuid = null, string? Id = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, string? Ipgroup = null, string? Lang = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, int? MicroserviceLevels = null, string? ObjId = null, string? OrderBy = null, string? Os = null, bool? PadMissingData = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, bool? Prediction = null, string? ResultFormat = null, string? SamplingLevel = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null, string? Url = null, bool? ValidateData = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsMetricsPoolServiceURL = new StringBuilder("/api/analytics/metrics/pool/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -257,23 +419,72 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsPoolServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsMetricsPoolServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBMetricsQueryResponseType> GetAnalyticsMetricsPoolUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateEntity = null, bool? AggregateObjId = null, string? Asn = null, string? Attack = null, string? Browser = null, string? ClientInsights = null, string? Country = null, bool? DetailedHeader = null, string? Devtype = null, string? DimensionAggregation = null, string? DimensionFilterOp = null, int? DimensionLimit = null, int? DimensionSampling = null, string? Dimensions = null, string? EntityUuid = null, string? Id = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, string? Ipgroup = null, string? Lang = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, int? MicroserviceLevels = null, string? ObjId = null, string? OrderBy = null, string? Os = null, bool? PadMissingData = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, bool? Prediction = null, string? ResultFormat = null, string? SamplingLevel = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null, string? Url = null, bool? ValidateData = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsMetricsPoolUuidServiceURL = new StringBuilder("/api/analytics/metrics/pool/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -327,22 +538,72 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsPoolUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsMetricsPoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBMetricsQueryResponseApiResponseType> GetAnalyticsMetricsServiceengineAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateEntity = null, bool? AggregateObjId = null, string? Asn = null, string? Attack = null, string? Browser = null, string? ClientInsights = null, string? Country = null, bool? DetailedHeader = null, string? Devtype = null, string? DimensionAggregation = null, string? DimensionFilterOp = null, int? DimensionLimit = null, int? DimensionSampling = null, string? Dimensions = null, string? EntityUuid = null, string? Id = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, string? Ipgroup = null, string? Lang = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, int? MicroserviceLevels = null, string? ObjId = null, string? OrderBy = null, string? Os = null, bool? PadMissingData = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, bool? Prediction = null, string? ResultFormat = null, string? SamplingLevel = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null, string? Url = null, bool? ValidateData = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsMetricsServiceengineServiceURL = new StringBuilder("/api/analytics/metrics/serviceengine/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -396,23 +657,72 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsServiceengineServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsMetricsServiceengineServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBMetricsQueryResponseType> GetAnalyticsMetricsServiceengineUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateEntity = null, bool? AggregateObjId = null, string? Asn = null, string? Attack = null, string? Browser = null, string? ClientInsights = null, string? Country = null, bool? DetailedHeader = null, string? Devtype = null, string? DimensionAggregation = null, string? DimensionFilterOp = null, int? DimensionLimit = null, int? DimensionSampling = null, string? Dimensions = null, string? EntityUuid = null, string? Id = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, string? Ipgroup = null, string? Lang = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, int? MicroserviceLevels = null, string? ObjId = null, string? OrderBy = null, string? Os = null, bool? PadMissingData = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, bool? Prediction = null, string? ResultFormat = null, string? SamplingLevel = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null, string? Url = null, bool? ValidateData = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsMetricsServiceengineUuidServiceURL = new StringBuilder("/api/analytics/metrics/serviceengine/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -466,22 +776,72 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsServiceengineUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsMetricsServiceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBMetricsQueryResponseApiResponseType> GetAnalyticsMetricsVirtualserviceAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateEntity = null, bool? AggregateObjId = null, string? Asn = null, string? Attack = null, string? Browser = null, string? ClientInsights = null, string? Country = null, bool? DetailedHeader = null, string? Devtype = null, string? DimensionAggregation = null, string? DimensionFilterOp = null, int? DimensionLimit = null, int? DimensionSampling = null, string? Dimensions = null, string? EntityUuid = null, string? Id = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, string? Ipgroup = null, string? Lang = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, int? MicroserviceLevels = null, string? ObjId = null, string? OrderBy = null, string? Os = null, bool? PadMissingData = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, bool? Prediction = null, string? ResultFormat = null, string? SamplingLevel = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null, string? Url = null, bool? ValidateData = null)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsMetricsVirtualserviceServiceURL = new StringBuilder("/api/analytics/metrics/virtualservice/");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -535,23 +895,72 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsVirtualserviceServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsMetricsVirtualserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
         public async Task<NSXTALBMetricsQueryResponseType> GetAnalyticsMetricsVirtualserviceUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateEntity = null, bool? AggregateObjId = null, string? Asn = null, string? Attack = null, string? Browser = null, string? ClientInsights = null, string? Country = null, bool? DetailedHeader = null, string? Devtype = null, string? DimensionAggregation = null, string? DimensionFilterOp = null, int? DimensionLimit = null, int? DimensionSampling = null, string? Dimensions = null, string? EntityUuid = null, string? Id = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, string? Ipgroup = null, string? Lang = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, int? MicroserviceLevels = null, string? ObjId = null, string? OrderBy = null, string? Os = null, bool? PadMissingData = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, bool? Prediction = null, string? ResultFormat = null, string? SamplingLevel = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null, string? Url = null, bool? ValidateData = null)
         {
+            
+            
+            
+            
+            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             StringBuilder GetAnalyticsMetricsVirtualserviceUuidServiceURL = new StringBuilder("/api/analytics/metrics/virtualservice/{uuid}");
             var request = new RestRequest
-            {
+            {              
                 RequestFormat = DataFormat.Json,
                 Method = Method.GET
             };
@@ -605,15 +1014,17 @@ namespace nsxtalbsdk.Modules
             if (Url != null) { request.AddQueryParameter("url", JsonConvert.ToString(Url).ToLowerString()); }
             if (ValidateData != null) { request.AddQueryParameter("validate_data", JsonConvert.ToString(ValidateData).ToLowerString()); }
             request.Resource = GetAnalyticsMetricsVirtualserviceUuidServiceURL.ToString();
-            request.AddParameter("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value, ParameterType.Cookie);
-            request.AddParameter("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, ParameterType.Cookie);
+            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
             request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             IRestResponse<NSXTALBMetricsQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBMetricsQueryResponseType>(request, cancellationToken, timeout, retry);
-            if (response.StatusCode != HttpStatusCode.OK)
-            {
+		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
+			{
                 var message = "HTTP GET operation to " + GetAnalyticsMetricsVirtualserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content, response.Headers);
-            }
+                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
+			}
             return response.Data;
         }
     }

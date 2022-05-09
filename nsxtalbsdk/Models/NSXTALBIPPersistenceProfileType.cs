@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIPPersistenceProfileType
+    public class NSXTALBIPPersistenceProfileType 
     {
         /// <summary>
         /// Mask to be applied on client IP. This may be used to persist clients from a subnet to the same server. When set to 0,

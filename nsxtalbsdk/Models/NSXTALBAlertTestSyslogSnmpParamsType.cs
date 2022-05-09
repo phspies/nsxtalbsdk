@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAlertTestSyslogSnmpParamsType
+    public class NSXTALBAlertTestSyslogSnmpParamsType 
     {
         /// <summary>
         /// The contents of the Syslog message/SNMP Trap contents.

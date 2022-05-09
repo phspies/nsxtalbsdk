@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBCaptureFiltersType
+    public class NSXTALBCaptureFiltersType 
     {
         /// <summary>
         /// Per packet IP filter. Matches with source and destination address. Curently not applicable for DebugServiceEngine. Field

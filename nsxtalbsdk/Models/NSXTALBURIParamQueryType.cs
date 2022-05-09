@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBURIParamQueryType
+    public class NSXTALBURIParamQueryType 
     {
         /// <summary>
         /// Concatenate a string to the query of the incoming request URI and then use it in the request URI going to the backend

@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBWafContentTypeMappingType
+    public class NSXTALBWafContentTypeMappingType 
     {
         /// <summary>
         /// Request Content-Type. When it is equal to request Content-Type header value, the specified request_body_parser is used.

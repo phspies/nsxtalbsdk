@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOpenStackConfigurationType
+    public class NSXTALBOpenStackConfigurationType 
     {
         /// <summary>
         /// OpenStack admin tenant (or project) information. For Keystone v3, provide the project information in project@domain

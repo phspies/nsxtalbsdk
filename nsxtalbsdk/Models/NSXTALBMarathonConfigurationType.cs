@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBMarathonConfigurationType
+    public class NSXTALBMarathonConfigurationType 
     {
         /// <summary>
         /// Framework tag to be used in Virtualservice name. Default is framework name from Mesos. If this tag is altered atruntime,

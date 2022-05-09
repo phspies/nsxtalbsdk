@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBPortMatchType
+    public class NSXTALBPortMatchType 
     {
         /// <summary>
         /// Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN.

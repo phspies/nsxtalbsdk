@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBRebootDataType
+    public class NSXTALBRebootDataType 
     {
         /// <summary>
         /// Patch version for which reboot flag need to be computed. Field introduced in 18.2.8, 20.1.1.

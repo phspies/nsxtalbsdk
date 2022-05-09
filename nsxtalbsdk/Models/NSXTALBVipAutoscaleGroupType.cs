@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBVipAutoscaleGroupType
+    public class NSXTALBVipAutoscaleGroupType 
     {
         /// <summary>
         /// Field introduced in 17.2.12, 18.1.2.

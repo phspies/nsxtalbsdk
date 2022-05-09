@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGslbGeoLocationType
+    public class NSXTALBGslbGeoLocationType 
     {
         /// <summary>
         /// Geographic location of the site. Field introduced in 17.1.1.

@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIcapRequestLogType
+    public class NSXTALBIcapRequestLogType 
     {
         /// <summary>
         /// Denotes whether the content was processed by ICAP server and an action was taken. Enum options - ICAP_DISABLED,

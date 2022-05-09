@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBRebalanceMigrateEventDetailsType
+    public class NSXTALBRebalanceMigrateEventDetailsType 
     {
         /// <summary>
         /// Placeholder for description of property migrate_params of obj type RebalanceMigrateEventDetails field type str  type

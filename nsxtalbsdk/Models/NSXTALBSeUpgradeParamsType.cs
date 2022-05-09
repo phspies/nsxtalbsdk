@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeUpgradeParamsType
+    public class NSXTALBSeUpgradeParamsType 
     {
         /// <summary>
         /// This field is used to disable scale-in/scale out operations during upgrade operations. .

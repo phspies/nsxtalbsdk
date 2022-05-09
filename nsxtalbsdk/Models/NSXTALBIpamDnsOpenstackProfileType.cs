@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIpamDnsOpenstackProfileType
+    public class NSXTALBIpamDnsOpenstackProfileType 
     {
         /// <summary>
         /// Keystone's hostname or IP address.

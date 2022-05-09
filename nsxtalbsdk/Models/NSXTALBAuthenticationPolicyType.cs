@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAuthenticationPolicyType
+    public class NSXTALBAuthenticationPolicyType 
     {
         /// <summary>
         /// Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field deprecated in

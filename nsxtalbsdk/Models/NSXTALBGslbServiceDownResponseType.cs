@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBGslbServiceDownResponseType
+    public class NSXTALBGslbServiceDownResponseType 
     {
         /// <summary>
         /// Fallback IP address to use in A response to the client query when the GSLB service is DOWN.

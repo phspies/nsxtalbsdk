@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBOperationalStatusType
+    public class NSXTALBOperationalStatusType 
     {
         /// <summary>
         /// Placeholder for description of property last_changed_time of obj type OperationalStatus field type str  type object

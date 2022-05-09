@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBIpAddrPrefixType
+    public class NSXTALBIpAddrPrefixType 
     {
         /// <summary>
         /// Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object

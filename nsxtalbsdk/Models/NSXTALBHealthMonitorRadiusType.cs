@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHealthMonitorRadiusType
+    public class NSXTALBHealthMonitorRadiusType 
     {
         /// <summary>
         /// Radius monitor will query Radius server with this password. Field introduced in 18.2.3.

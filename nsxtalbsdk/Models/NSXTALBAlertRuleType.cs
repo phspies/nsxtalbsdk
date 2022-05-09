@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBAlertRuleType
+    public class NSXTALBAlertRuleType 
     {
         /// <summary>
         /// Placeholder for description of property conn_app_log_rule of obj type AlertRule field type str  type object

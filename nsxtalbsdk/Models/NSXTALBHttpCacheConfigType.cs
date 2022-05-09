@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHttpCacheConfigType
+    public class NSXTALBHttpCacheConfigType 
     {
         /// <summary>
         /// Add an Age header to content served from cache, which indicates to the client the number of seconds the object has been

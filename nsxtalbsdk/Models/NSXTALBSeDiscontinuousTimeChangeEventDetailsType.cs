@@ -1,11 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBSeDiscontinuousTimeChangeEventDetailsType
+    public class NSXTALBSeDiscontinuousTimeChangeEventDetailsType 
     {
         /// <summary>
         /// Relative time drift between SE and controller in terms of microseconds.

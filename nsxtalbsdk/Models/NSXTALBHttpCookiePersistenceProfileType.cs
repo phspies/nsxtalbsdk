@@ -1,12 +1,16 @@
+using nsxtalbsdk.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using NJsonSchema.Converters;
+using System.ComponentModel;
 namespace nsxtalbsdk.Models
 {
     /// <summary>
     /// 
     /// </summary>
-    public class NSXTALBHttpCookiePersistenceProfileType
+    public class NSXTALBHttpCookiePersistenceProfileType 
     {
         /// <summary>
         /// If no persistence cookie was received from the client, always send it.
