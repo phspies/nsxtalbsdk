@@ -20,15 +20,13 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<Cookie> sessionCookies;
-        public ScvsStateInfo(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public ScvsStateInfo(RestClient Client, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBSCVsStateInfoApiResponseType> GetScvsstateinfoAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -53,12 +51,9 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetScvsstateinfoServiceURL.ToString();
             RestResponse<NSXTALBSCVsStateInfoApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBSCVsStateInfoApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetScvsstateinfoServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBSCVsStateInfoType> PostScvsstateinfoAsync(NSXTALBSCVsStateInfoType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -78,12 +73,9 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             request.Resource = PostScvsstateinfoServiceURL.ToString();
             RestResponse<NSXTALBSCVsStateInfoType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBSCVsStateInfoType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Post operation to " + PostScvsstateinfoServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBSCVsStateInfoType> GetScvsstateinfoUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
@@ -108,12 +100,9 @@ namespace nsxtalbsdk.Modules
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetScvsstateinfoUuidServiceURL.ToString();
             RestResponse<NSXTALBSCVsStateInfoType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBSCVsStateInfoType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetScvsstateinfoUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBSCVsStateInfoType> PutScvsstateinfoUuidAsync(NSXTALBSCVsStateInfoType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -136,12 +125,9 @@ namespace nsxtalbsdk.Modules
             PutScvsstateinfoUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutScvsstateinfoUuidServiceURL.ToString();
             RestResponse<NSXTALBSCVsStateInfoType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBSCVsStateInfoType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Put operation to " + PutScvsstateinfoUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBSCVsStateInfoType> PatchScvsstateinfoUuidAsync(NSXTALBSCVsStateInfoType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -164,12 +150,9 @@ namespace nsxtalbsdk.Modules
             PatchScvsstateinfoUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchScvsstateinfoUuidServiceURL.ToString();
             RestResponse<NSXTALBSCVsStateInfoType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBSCVsStateInfoType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Patch operation to " + PatchScvsstateinfoUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<string> DeleteScvsstateinfoUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -190,12 +173,9 @@ namespace nsxtalbsdk.Modules
             DeleteScvsstateinfoUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteScvsstateinfoUuidServiceURL.ToString();
             RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Delete operation to " + DeleteScvsstateinfoUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 404) { throw new NSXTALBException("not found", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
     }
 }

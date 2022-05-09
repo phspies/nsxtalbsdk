@@ -20,15 +20,13 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<Cookie> sessionCookies;
-        public ErrorPageProfile(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public ErrorPageProfile(RestClient Client, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBErrorPageProfileApiResponseType> GetErrorpageprofileAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -53,12 +51,9 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetErrorpageprofileServiceURL.ToString();
             RestResponse<NSXTALBErrorPageProfileApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBErrorPageProfileApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetErrorpageprofileServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBErrorPageProfileType> PostErrorpageprofileAsync(NSXTALBErrorPageProfileType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -78,12 +73,9 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             request.Resource = PostErrorpageprofileServiceURL.ToString();
             RestResponse<NSXTALBErrorPageProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBErrorPageProfileType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Post operation to " + PostErrorpageprofileServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBErrorPageProfileType> GetErrorpageprofileUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
@@ -108,12 +100,9 @@ namespace nsxtalbsdk.Modules
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetErrorpageprofileUuidServiceURL.ToString();
             RestResponse<NSXTALBErrorPageProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBErrorPageProfileType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetErrorpageprofileUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBErrorPageProfileType> PutErrorpageprofileUuidAsync(NSXTALBErrorPageProfileType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -136,12 +125,9 @@ namespace nsxtalbsdk.Modules
             PutErrorpageprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutErrorpageprofileUuidServiceURL.ToString();
             RestResponse<NSXTALBErrorPageProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBErrorPageProfileType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Put operation to " + PutErrorpageprofileUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBErrorPageProfileType> PatchErrorpageprofileUuidAsync(NSXTALBErrorPageProfileType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -164,12 +150,9 @@ namespace nsxtalbsdk.Modules
             PatchErrorpageprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchErrorpageprofileUuidServiceURL.ToString();
             RestResponse<NSXTALBErrorPageProfileType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBErrorPageProfileType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Patch operation to " + PatchErrorpageprofileUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<string> DeleteErrorpageprofileUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -190,12 +173,9 @@ namespace nsxtalbsdk.Modules
             DeleteErrorpageprofileUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteErrorpageprofileUuidServiceURL.ToString();
             RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Delete operation to " + DeleteErrorpageprofileUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 404) { throw new NSXTALBException("not found", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
     }
 }

@@ -20,15 +20,13 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<Cookie> sessionCookies;
-        public DebugServiceEngine(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public DebugServiceEngine(RestClient Client, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBDebugServiceEngineApiResponseType> GetDebugserviceengineAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -53,12 +51,9 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetDebugserviceengineServiceURL.ToString();
             RestResponse<NSXTALBDebugServiceEngineApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetDebugserviceengineServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBDebugServiceEngineType> PostDebugserviceengineAsync(NSXTALBDebugServiceEngineType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -78,12 +73,9 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             request.Resource = PostDebugserviceengineServiceURL.ToString();
             RestResponse<NSXTALBDebugServiceEngineType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Post operation to " + PostDebugserviceengineServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBDebugServiceEngineType> GetDebugserviceengineUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
@@ -108,12 +100,9 @@ namespace nsxtalbsdk.Modules
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetDebugserviceengineUuidServiceURL.ToString();
             RestResponse<NSXTALBDebugServiceEngineType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetDebugserviceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBDebugServiceEngineType> PutDebugserviceengineUuidAsync(NSXTALBDebugServiceEngineType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -136,12 +125,9 @@ namespace nsxtalbsdk.Modules
             PutDebugserviceengineUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutDebugserviceengineUuidServiceURL.ToString();
             RestResponse<NSXTALBDebugServiceEngineType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Put operation to " + PutDebugserviceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBDebugServiceEngineType> PatchDebugserviceengineUuidAsync(NSXTALBDebugServiceEngineType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -164,12 +150,9 @@ namespace nsxtalbsdk.Modules
             PatchDebugserviceengineUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchDebugserviceengineUuidServiceURL.ToString();
             RestResponse<NSXTALBDebugServiceEngineType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBDebugServiceEngineType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Patch operation to " + PatchDebugserviceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<string> DeleteDebugserviceengineUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -190,12 +173,9 @@ namespace nsxtalbsdk.Modules
             DeleteDebugserviceengineUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteDebugserviceengineUuidServiceURL.ToString();
             RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Delete operation to " + DeleteDebugserviceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 404) { throw new NSXTALBException("not found", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<string> GetDebugserviceengineUuidFaultruntimeAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -215,12 +195,9 @@ namespace nsxtalbsdk.Modules
             GetDebugserviceengineUuidFaultruntimeServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetDebugserviceengineUuidFaultruntimeServiceURL.ToString();
             RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetDebugserviceengineUuidFaultruntimeServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
     }
 }

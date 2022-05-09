@@ -16,15 +16,13 @@ namespace nsxtalbsdk.Modules
         int timeout;
         int retry;
         string defaultXAviVerion;
-        List<Cookie> sessionCookies;
-        public ClusterRuntime(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public ClusterRuntime(RestClient Client, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookies = _sessionCookies;
         }
         public async Task<ClusterRuntimeType> GetRuntimeAsync(string? XAviTenant = null, string? XAviTenantUUID = null, string? XAviVersion = null)
         {

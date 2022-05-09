@@ -20,15 +20,13 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<Cookie> sessionCookies;
-        public ActionGroupConfig(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public ActionGroupConfig(RestClient Client, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBActionGroupConfigApiResponseType> GetActiongroupconfigAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -53,12 +51,9 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetActiongroupconfigServiceURL.ToString();
             RestResponse<NSXTALBActionGroupConfigApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBActionGroupConfigApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetActiongroupconfigServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBActionGroupConfigType> PostActiongroupconfigAsync(NSXTALBActionGroupConfigType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -78,12 +73,9 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             request.Resource = PostActiongroupconfigServiceURL.ToString();
             RestResponse<NSXTALBActionGroupConfigType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBActionGroupConfigType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Post operation to " + PostActiongroupconfigServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBActionGroupConfigType> GetActiongroupconfigUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
@@ -108,12 +100,9 @@ namespace nsxtalbsdk.Modules
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetActiongroupconfigUuidServiceURL.ToString();
             RestResponse<NSXTALBActionGroupConfigType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBActionGroupConfigType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetActiongroupconfigUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBActionGroupConfigType> PutActiongroupconfigUuidAsync(NSXTALBActionGroupConfigType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -136,12 +125,9 @@ namespace nsxtalbsdk.Modules
             PutActiongroupconfigUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutActiongroupconfigUuidServiceURL.ToString();
             RestResponse<NSXTALBActionGroupConfigType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBActionGroupConfigType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Put operation to " + PutActiongroupconfigUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBActionGroupConfigType> PatchActiongroupconfigUuidAsync(NSXTALBActionGroupConfigType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -164,12 +150,9 @@ namespace nsxtalbsdk.Modules
             PatchActiongroupconfigUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchActiongroupconfigUuidServiceURL.ToString();
             RestResponse<NSXTALBActionGroupConfigType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBActionGroupConfigType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Patch operation to " + PatchActiongroupconfigUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<string> DeleteActiongroupconfigUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -190,12 +173,9 @@ namespace nsxtalbsdk.Modules
             DeleteActiongroupconfigUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteActiongroupconfigUuidServiceURL.ToString();
             RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Delete operation to " + DeleteActiongroupconfigUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 404) { throw new NSXTALBException("not found", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
     }
 }

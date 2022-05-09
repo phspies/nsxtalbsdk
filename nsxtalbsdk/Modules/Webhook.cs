@@ -20,15 +20,13 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<Cookie> sessionCookies;
-        public Webhook(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public Webhook(RestClient Client, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBWebhookApiResponseType> GetWebhookAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -53,12 +51,9 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetWebhookServiceURL.ToString();
             RestResponse<NSXTALBWebhookApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBWebhookApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetWebhookServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBWebhookType> PostWebhookAsync(NSXTALBWebhookType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -78,12 +73,9 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             request.Resource = PostWebhookServiceURL.ToString();
             RestResponse<NSXTALBWebhookType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBWebhookType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Post operation to " + PostWebhookServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBWebhookType> GetWebhookUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
@@ -108,12 +100,9 @@ namespace nsxtalbsdk.Modules
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetWebhookUuidServiceURL.ToString();
             RestResponse<NSXTALBWebhookType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBWebhookType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetWebhookUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBWebhookType> PutWebhookUuidAsync(NSXTALBWebhookType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -136,12 +125,9 @@ namespace nsxtalbsdk.Modules
             PutWebhookUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutWebhookUuidServiceURL.ToString();
             RestResponse<NSXTALBWebhookType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBWebhookType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Put operation to " + PutWebhookUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBWebhookType> PatchWebhookUuidAsync(NSXTALBWebhookType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -164,12 +150,9 @@ namespace nsxtalbsdk.Modules
             PatchWebhookUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchWebhookUuidServiceURL.ToString();
             RestResponse<NSXTALBWebhookType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBWebhookType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Patch operation to " + PatchWebhookUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<string> DeleteWebhookUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
@@ -190,12 +173,9 @@ namespace nsxtalbsdk.Modules
             DeleteWebhookUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteWebhookUuidServiceURL.ToString();
             RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Delete operation to " + DeleteWebhookUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 404) { throw new NSXTALBException("not found", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
     }
 }

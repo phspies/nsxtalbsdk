@@ -10,7 +10,7 @@ namespace nsxtalbsdk.Modules
 {
     public class AuthenticationHelper
     {
-        public static async Task<RestResponse<LoginResponseType>> LoginAsync(LoginRequestType credentials, RestClient restClient, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
+        public static async Task<RestResponse<LoginResponseType>> LoginAsync(LoginRequestType credentials, RestClient restClient, CancellationToken _cancellationToken, int _timeout, int _retry)
         {
             StringBuilder GetAlertServiceURL = new StringBuilder("/login");
             var request = new RestRequest
@@ -28,8 +28,8 @@ namespace nsxtalbsdk.Modules
             }
             return response;
         }
-        public static async         Task
-Logout(List<Cookie> sessionCookies, RestClient restClient)
+        public static async Task
+        Logout(RestClient restClient)
         {
             StringBuilder PostLogoutURL = new StringBuilder("/logout");
             var request = new RestRequest

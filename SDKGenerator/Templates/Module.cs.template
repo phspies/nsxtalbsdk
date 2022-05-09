@@ -20,15 +20,13 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<Cookie> sessionCookies;
-        public {{module}}(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public {{module}}(RestClient Client, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookies = _sessionCookies;
         }
         {{#operations}}
         public async Task<{{GetOperationReturnType . "full"}}> {{GetMethodName .}}Async({{GetOperationPathParams .}})
@@ -44,16 +42,14 @@ namespace nsxtalbsdk.Modules
             };
             request.AddHeader("Content-type", "application/json");
             {{#operation.parameters}}
-            {{GetOperationPathInjectionCode . operations.Current }}
+            {{GetOperationPathInjectionCode . path method }}
             {{/operation.parameters}}
             request.Resource = {{GetMethodName .}}ServiceURL.ToString();
             RestResponse<{{GetOperationReturnType . "bare"}}> response = await restClient.ExecuteTaskAsyncWithPolicy<{{GetOperationReturnType . "bare"}}>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP {{GetOperationHttpMethod .}} operation to " + {{GetMethodName .}}ServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            {{GetOperationReturnType . "return"}}
+		    {{#each operation.responses}}
+            {{GetEvaulateResponse .}}
+      	    {{/each operation.responses}}
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         {{/operations}}
     }

@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
 using nsxtalbsdk.Models;
+using System.Net;
 namespace nsxtalbsdk
 {
     public class NSXTALBClient
     {
-        public RestClient restClient { get; set; }
-        private JsonSerializerSettings defaultSerializationSettings;
+       public RestClient restClient { get; set; }
         private CancellationToken cancellationToken;
         private int timeout;
         private int retry;
@@ -50,7 +50,7 @@ namespace nsxtalbsdk
             restClient = new RestClient(restOptions);
             if (DefaultSerializationSettings == null)
             {
-                defaultSerializationSettings = new JsonSerializerSettings
+                restClient.UseNewtonsoftJson(new JsonSerializerSettings
                 {
                     ContractResolver = new CamelCasePropertyNamesContractResolver(),
                     DefaultValueHandling = DefaultValueHandling.Include,
@@ -58,18 +58,20 @@ namespace nsxtalbsdk
                     NullValueHandling = NullValueHandling.Ignore,
                     Formatting = Formatting.None,
                     ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
-                };
+                });
             }
             else
             {
-                defaultSerializationSettings = DefaultSerializationSettings;
+                restClient.UseNewtonsoftJson(DefaultSerializationSettings);
             }
-            restClient.UseNewtonsoftJson(defaultSerializationSettings);
         }
         public async Task<LoginResponseType> LoginAsync()
         {
-            RestResponse<LoginResponseType> response = await AuthenticationHelper.LoginAsync(credentials, restClient, defaultSerializationSettings, cancellationToken, timeout, retry);
-            sessionCookie = response.Cookies.First(x => x.Name == response.Data.SessionCookieName);
+            RestResponse<LoginResponseType> response = await AuthenticationHelper.LoginAsync(credentials, restClient, cancellationToken, timeout, retry);
+            ArgumentNullException.ThrowIfNull(response);
+            ArgumentNullException.ThrowIfNull(response.Cookies);
+            ArgumentNullException.ThrowIfNull(response.Data);
+            sessionCookie = response.Cookies.Single(x => x.Name == response.Data.SessionCookieName);
             sessionCookies = response.Cookies.ToList();
             if (sessionCookie == null)
             {
@@ -79,20 +81,22 @@ namespace nsxtalbsdk
             {
                 defaultXAviVerion = response.Data.Version.MinVersion;
             }
-            restClient.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value, "/", "");
-            restClient.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, "/", "");
-            restClient.AddDefaultHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            restClient.AddDefaultHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            Cookie csrftoken = sessionCookies.Single(x => x.Name == "csrftoken");
+            Cookie sessionid = sessionCookies.Single(x => x.Name == "sessionid");
+            restClient.AddCookie("csrftoken", csrftoken.Value, csrftoken.Path, csrftoken.Domain);
+            restClient.AddCookie("sessionid", sessionid.Value, sessionid.Path, sessionid.Domain);
+            restClient.AddDefaultHeader("X-CSRFToken", csrftoken.Value);
+            restClient.AddDefaultHeader("sessionid", sessionid.Value);
             restClient.AddDefaultHeader("Referer", uri.AbsoluteUri);
             return response.Data;
         }
-        public void Logout()
+        public async void Logout()
         {
-            AuthenticationHelper.Logout(sessionCookies, restClient);
+            await AuthenticationHelper.Logout(restClient);
         }
-        public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, sessionCookies, cancellationToken, timeout, retry, defaultXAviVerion);
+        public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, cancellationToken, timeout, retry, defaultXAviVerion);
         {{#modules}}
-        public {{.}} {{.}}Module => new {{.}}(restClient, sessionCookies, cancellationToken, timeout, retry, defaultXAviVerion);
+        public {{.}} {{.}}Module => new {{.}}(restClient, cancellationToken, timeout, retry, defaultXAviVerion);
         {{/modules}}
     }
 }

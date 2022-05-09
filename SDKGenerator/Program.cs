@@ -12,6 +12,7 @@ using System.Web;
 using System.Text;
 using NSwag.Collections;
 using System.Linq;
+using System.Collections;
 namespace nsxtapi
 {
     class Program
@@ -43,6 +44,7 @@ namespace nsxtapi
             Helpers.Register(nameof(GetParameterPascalCase), GetParameterPascalCase);
             Helpers.Register(nameof(SetDefaultValue), SetDefaultValue);
             Helpers.Register(nameof(GetRequiredLine), GetRequiredLine);
+            Helpers.Register(nameof(GetEvaulateResponse), GetEvaulateResponse);
             List<apiSpecification> modules = new List<apiSpecification>();
             List<string> swaggerFiles = Directory.GetFiles(swaggerFilesDirectory, "*.json").ToList();
             swaggerFiles.ForEach(file =>
@@ -145,6 +147,19 @@ namespace nsxtapi
             }
             var result = System.Convert.ToString(value, cultureInfo);
             return result == null ? "" : result;
+        }
+        private static void GetEvaulateResponse(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
+        {
+            int code = int.Parse((string)((DictionaryEntry)arguments[0]).Key);
+            OpenApiResponse response = (OpenApiResponse)((DictionaryEntry)arguments[0]).Value;
+            if (!(200 <= code && code <= 300))
+            {
+                context.Write("else if ((int)response.StatusCode == " + code + ") { throw new NSXTALBException(" + $"\"{response.Description}\"" + ", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }");
+            }
+            else
+            {
+                context.Write("if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }");
+            }
         }
         private static void GetServiceUrl(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
@@ -408,8 +423,7 @@ namespace nsxtapi
             var parameter = (arguments[0] as OpenApiParameter);
             if (parameter.Kind == OpenApiParameterKind.Path)
             {
-                var operation = (arguments[1] as OpenApiOperationDescription);
-                var method = PascalCase($"{operation.Method} {operation.Path.Replace("/", " ").Replace("{", " ").Replace("}", " ")}");
+                var method = PascalCase($"{arguments[2]} {arguments[1].ToString().Replace("/", " ").Replace("{", " ").Replace("}", " ")}");
                 context.Write($"{method}ServiceURL.Replace(\"{{{parameter.Name}}}\", Uri.EscapeDataString(Helpers.ConvertToString({PascalCase(parameter.Name)}, System.Globalization.CultureInfo.InvariantCulture)));");
             }
             else if (parameter.Kind == OpenApiParameterKind.Query)

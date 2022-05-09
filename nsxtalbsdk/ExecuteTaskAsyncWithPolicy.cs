@@ -1,4 +1,6 @@
-﻿using Polly;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Polly;
 using Polly.Timeout;
 using RestSharp;
 using System;
@@ -48,11 +50,8 @@ namespace nsxtalbsdk
             }
             else
             {
-                return new RestResponse<T>
-                {
-                    Request = request,
-                    ErrorException = new Exception(policyResult.FinalHandledResult?.ErrorMessage)
-                };
+                policyResult.FinalHandledResult.ErrorMessage = policyResult.FinalHandledResult?.ErrorMessage ?? JObject.Parse(policyResult?.FinalHandledResult?.Content)?.Value<string>("error");
+                return policyResult.FinalHandledResult;
             }
         }
         public static Task RetryDelegateAsync<T>(DelegateResult<T> result, TimeSpan calculatedWaitDuration, int retryCount, Context context)

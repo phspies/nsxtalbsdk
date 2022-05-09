@@ -20,15 +20,13 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<Cookie> sessionCookies;
-        public Anomaly(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public Anomaly(RestClient Client, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBAnomalyzerQueryResponseApiResponseType> GetAnalyticsAnomalyPoolAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
@@ -72,12 +70,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyPoolServiceURL.ToString();
             RestResponse<NSXTALBAnomalyzerQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsAnomalyPoolServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBAnomalyzerQueryResponseType> GetAnalyticsAnomalyPoolUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
@@ -122,12 +117,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyPoolUuidServiceURL.ToString();
             RestResponse<NSXTALBAnomalyzerQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsAnomalyPoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBAnomalyzerQueryResponseApiResponseType> GetAnalyticsAnomalyServiceengineAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
@@ -171,12 +163,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyServiceengineServiceURL.ToString();
             RestResponse<NSXTALBAnomalyzerQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsAnomalyServiceengineServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBAnomalyzerQueryResponseType> GetAnalyticsAnomalyServiceengineUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
@@ -221,12 +210,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyServiceengineUuidServiceURL.ToString();
             RestResponse<NSXTALBAnomalyzerQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsAnomalyServiceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBAnomalyzerQueryResponseApiResponseType> GetAnalyticsAnomalyVirtualserviceAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
@@ -270,12 +256,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyVirtualserviceServiceURL.ToString();
             RestResponse<NSXTALBAnomalyzerQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsAnomalyVirtualserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBAnomalyzerQueryResponseType> GetAnalyticsAnomalyVirtualserviceUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? AggregateObjId = null, string? Aggregation = null, int? AggregationWindow = null, bool? DetailedHeader = null, string? DimensionFilterOp = null, string? EntityUuid = null, bool? IncludeRefs = null, bool? IncludeRelated = null, int? Limit = null, string? MetricEntity = null, string? MetricId = null, string? Model = null, string? ObjId = null, string? OrderBy = null, int? Page = null, int? PageSize = null, string? PoolUuid = null, string? Priority = null, string? ResultFormat = null, string? Server = null, string? ServiceengineUuid = null, string? Start = null, int? Step = null, string? Stop = null, string? TenantUuid = null)
         {
@@ -320,12 +303,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsAnomalyVirtualserviceUuidServiceURL.ToString();
             RestResponse<NSXTALBAnomalyzerQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBAnomalyzerQueryResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsAnomalyVirtualserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
     }
 }

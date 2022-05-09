@@ -20,15 +20,13 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<Cookie> sessionCookies;
-        public Healthscore(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        public Healthscore(RestClient Client, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
             retry = _retry;
             timeout = _timeout;
             defaultXAviVerion = _defaultXAviVerion;
-            sessionCookies = _sessionCookies;
         }
         public async Task<NSXTALBHealthScoreQueryResponseApiResponseType> GetAnalyticsHealthscorePoolAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
@@ -66,12 +64,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscorePoolServiceURL.ToString();
             RestResponse<NSXTALBHealthScoreQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsHealthscorePoolServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBHealthScoreQueryResponseType> GetAnalyticsHealthscorePoolUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
@@ -110,12 +105,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscorePoolUuidServiceURL.ToString();
             RestResponse<NSXTALBHealthScoreQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsHealthscorePoolUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBHealthScoreQueryResponseApiResponseType> GetAnalyticsHealthscoreServiceengineAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
@@ -153,12 +145,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreServiceengineServiceURL.ToString();
             RestResponse<NSXTALBHealthScoreQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsHealthscoreServiceengineServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBHealthScoreQueryResponseType> GetAnalyticsHealthscoreServiceengineUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
@@ -197,12 +186,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreServiceengineUuidServiceURL.ToString();
             RestResponse<NSXTALBHealthScoreQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsHealthscoreServiceengineUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBHealthScoreQueryResponseApiResponseType> GetAnalyticsHealthscoreVirtualserviceAsync(bool? IncludeName = null, bool? SkipDefault = null, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
@@ -240,12 +226,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreVirtualserviceServiceURL.ToString();
             RestResponse<NSXTALBHealthScoreQueryResponseApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseApiResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsHealthscoreVirtualserviceServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
         public async Task<NSXTALBHealthScoreQueryResponseType> GetAnalyticsHealthscoreVirtualserviceUuidAsync(string Uuid, bool? IncludeName = null, bool? SkipDefault = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, bool? DetailedHeader = null, string? DimensionAggregation = null, string? EntityUuid = null, string? HsType = null, bool? IncludeRefs = null, bool? IncludeStatistics = null, int? Limit = null, string? MetricEntity = null, string? OrderSeriesBy = null, bool? PadMissingData = null, bool? PatchOperStatus = null, string? PoolUuid = null, string? ResultFormat = null, string? Server = null, string? Start = null, int? Step = null, string? Stop = null, bool? Summary = null, string? TenantUuid = null)
         {
@@ -284,12 +267,9 @@ namespace nsxtalbsdk.Modules
             if (TenantUuid != null) { request.AddQueryParameter("tenant_uuid", JsonConvert.ToString(TenantUuid).ToLowerString()); }
             request.Resource = GetAnalyticsHealthscoreVirtualserviceUuidServiceURL.ToString();
             RestResponse<NSXTALBHealthScoreQueryResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBHealthScoreQueryResponseType>(request, cancellationToken, timeout, retry);
-		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
-			{
-                var message = "HTTP Get operation to " + GetAnalyticsHealthscoreVirtualserviceUuidServiceURL.ToString() + " did not complete successfull";
-                throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
-			}
-            return response.Data;
+            if (200 <= (int)response.StatusCode && (int)response.StatusCode <= 300) { return response.Data; }
+            else if ((int)response.StatusCode == 401) { throw new NSXTALBException("log in failed", (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); }
+            else { throw new NSXTALBException(response.ErrorMessage, (int)response.StatusCode, response.Content, response.Headers, response.ErrorException); } 
         }
     }
 }
