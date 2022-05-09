@@ -20,8 +20,8 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<RestResponseCookie> sessionCookies;
-        public FileObject(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private List<Cookie> sessionCookies;
+        public FileObject(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
@@ -32,22 +32,12 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBFileObjectApiResponseType> GetFileobjectAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             StringBuilder GetFileobjectServiceURL = new StringBuilder("/api/fileobject");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -62,31 +52,23 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetFileobjectServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBFileObjectApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectApiResponseType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBFileObjectApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectApiResponseType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetFileobjectServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetFileobjectServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBFileObjectType> PostFileobjectAsync(NSXTALBFileObjectType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostFileobjectServiceURL = new StringBuilder("/api/fileobject");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.POST
+                Method = Method.Post
             };
             request.AddHeader("Content-type", "application/json");
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
@@ -95,36 +77,23 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(Body);
             request.Resource = PostFileobjectServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBFileObjectType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBFileObjectType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP POST operation to " + PostFileobjectServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Post operation to " + PostFileobjectServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBFileObjectType> GetFileobjectUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            
-            
-            
-            
             StringBuilder GetFileobjectUuidServiceURL = new StringBuilder("/api/fileobject/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -138,33 +107,24 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetFileobjectUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBFileObjectType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBFileObjectType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetFileobjectUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetFileobjectUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBFileObjectType> PutFileobjectUuidAsync(NSXTALBFileObjectType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutFileobjectUuidServiceURL = new StringBuilder("/api/fileobject/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PUT
+                Method = Method.Put
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -175,33 +135,24 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PutFileobjectUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutFileobjectUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBFileObjectType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBFileObjectType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PUT operation to " + PutFileobjectUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Put operation to " + PutFileobjectUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBFileObjectType> PatchFileobjectUuidAsync(NSXTALBFileObjectType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchFileobjectUuidServiceURL = new StringBuilder("/api/fileobject/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PATCH
+                Method = Method.Patch
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -212,32 +163,23 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PatchFileobjectUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchFileobjectUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBFileObjectType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBFileObjectType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBFileObjectType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PATCH operation to " + PatchFileobjectUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Patch operation to " + PatchFileobjectUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<string> DeleteFileobjectUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeleteFileobjectUuidServiceURL = new StringBuilder("/api/fileobject/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.DELETE
+                Method = Method.Delete
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -247,15 +189,10 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteFileobjectUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteFileobjectUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
+            RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP DELETE operation to " + DeleteFileobjectUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Delete operation to " + DeleteFileobjectUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;

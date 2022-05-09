@@ -20,8 +20,8 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<RestResponseCookie> sessionCookies;
-        public ServiceEnginePolicy(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private List<Cookie> sessionCookies;
+        public ServiceEnginePolicy(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
@@ -32,18 +32,14 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBServiceEnginePolicyType> PutServiceenginepolicyUuidAsync(NSXTALBServiceEnginePolicyType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutServiceenginepolicyUuidServiceURL = new StringBuilder("/api/serviceenginepolicy/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PUT
+                Method = Method.Put
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -54,36 +50,23 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PutServiceenginepolicyUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutServiceenginepolicyUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBServiceEnginePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBServiceEnginePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PUT operation to " + PutServiceenginepolicyUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Put operation to " + PutServiceenginepolicyUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBServiceEnginePolicyType> GetServiceenginepolicyUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            
-            
-            
-            
             StringBuilder GetServiceenginepolicyUuidServiceURL = new StringBuilder("/api/serviceenginepolicy/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -97,33 +80,24 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetServiceenginepolicyUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBServiceEnginePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBServiceEnginePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetServiceenginepolicyUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetServiceenginepolicyUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBServiceEnginePolicyType> PatchServiceenginepolicyUuidAsync(NSXTALBServiceEnginePolicyType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchServiceenginepolicyUuidServiceURL = new StringBuilder("/api/serviceenginepolicy/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PATCH
+                Method = Method.Patch
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -134,32 +108,23 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PatchServiceenginepolicyUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchServiceenginepolicyUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBServiceEnginePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBServiceEnginePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PATCH operation to " + PatchServiceenginepolicyUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Patch operation to " + PatchServiceenginepolicyUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<string> DeleteServiceenginepolicyUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeleteServiceenginepolicyUuidServiceURL = new StringBuilder("/api/serviceenginepolicy/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.DELETE
+                Method = Method.Delete
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -169,31 +134,23 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteServiceenginepolicyUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteServiceenginepolicyUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
+            RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP DELETE operation to " + DeleteServiceenginepolicyUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Delete operation to " + DeleteServiceenginepolicyUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBServiceEnginePolicyType> PostServiceenginepolicyAsync(NSXTALBServiceEnginePolicyType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostServiceenginepolicyServiceURL = new StringBuilder("/api/serviceenginepolicy");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.POST
+                Method = Method.Post
             };
             request.AddHeader("Content-type", "application/json");
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
@@ -202,37 +159,22 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(Body);
             request.Resource = PostServiceenginepolicyServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBServiceEnginePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBServiceEnginePolicyType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP POST operation to " + PostServiceenginepolicyServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Post operation to " + PostServiceenginepolicyServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBServiceEnginePolicyApiResponseType> GetServiceenginepolicyAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             StringBuilder GetServiceenginepolicyServiceURL = new StringBuilder("/api/serviceenginepolicy");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -247,15 +189,10 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetServiceenginepolicyServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBServiceEnginePolicyApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyApiResponseType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBServiceEnginePolicyApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBServiceEnginePolicyApiResponseType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetServiceenginepolicyServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetServiceenginepolicyServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;

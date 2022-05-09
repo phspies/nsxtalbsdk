@@ -20,8 +20,8 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<RestResponseCookie> sessionCookies;
-        public IpreputationDB(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private List<Cookie> sessionCookies;
+        public IpreputationDB(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
@@ -32,22 +32,12 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBIPReputationDBApiResponseType> GetIpreputationdbAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             StringBuilder GetIpreputationdbServiceURL = new StringBuilder("/api/ipreputationdb");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -62,31 +52,23 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetIpreputationdbServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBIPReputationDBApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBApiResponseType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBIPReputationDBApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBApiResponseType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetIpreputationdbServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetIpreputationdbServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBIPReputationDBType> PostIpreputationdbAsync(NSXTALBIPReputationDBType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostIpreputationdbServiceURL = new StringBuilder("/api/ipreputationdb");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.POST
+                Method = Method.Post
             };
             request.AddHeader("Content-type", "application/json");
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
@@ -95,36 +77,23 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(Body);
             request.Resource = PostIpreputationdbServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBIPReputationDBType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBIPReputationDBType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP POST operation to " + PostIpreputationdbServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Post operation to " + PostIpreputationdbServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBIPReputationDBType> GetIpreputationdbUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            
-            
-            
-            
             StringBuilder GetIpreputationdbUuidServiceURL = new StringBuilder("/api/ipreputationdb/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -138,33 +107,24 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetIpreputationdbUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBIPReputationDBType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBIPReputationDBType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetIpreputationdbUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetIpreputationdbUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBIPReputationDBType> PutIpreputationdbUuidAsync(NSXTALBIPReputationDBType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutIpreputationdbUuidServiceURL = new StringBuilder("/api/ipreputationdb/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PUT
+                Method = Method.Put
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -175,33 +135,24 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PutIpreputationdbUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutIpreputationdbUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBIPReputationDBType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBIPReputationDBType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PUT operation to " + PutIpreputationdbUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Put operation to " + PutIpreputationdbUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBIPReputationDBType> PatchIpreputationdbUuidAsync(NSXTALBIPReputationDBType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchIpreputationdbUuidServiceURL = new StringBuilder("/api/ipreputationdb/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PATCH
+                Method = Method.Patch
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -212,32 +163,23 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PatchIpreputationdbUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchIpreputationdbUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBIPReputationDBType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBIPReputationDBType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBIPReputationDBType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PATCH operation to " + PatchIpreputationdbUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Patch operation to " + PatchIpreputationdbUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<string> DeleteIpreputationdbUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeleteIpreputationdbUuidServiceURL = new StringBuilder("/api/ipreputationdb/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.DELETE
+                Method = Method.Delete
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -247,31 +189,23 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteIpreputationdbUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteIpreputationdbUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
+            RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP DELETE operation to " + DeleteIpreputationdbUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Delete operation to " + DeleteIpreputationdbUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<string> GetIpreputationdbUuidRuntimeInternalAsync(string Uuid, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder GetIpreputationdbUuidRuntimeInternalServiceURL = new StringBuilder("/api/ipreputationdb/{uuid}/runtime/internal/");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
@@ -280,15 +214,10 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             GetIpreputationdbUuidRuntimeInternalServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = GetIpreputationdbUuidRuntimeInternalServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
+            RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetIpreputationdbUuidRuntimeInternalServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetIpreputationdbUuidRuntimeInternalServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;

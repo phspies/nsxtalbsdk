@@ -10,17 +10,17 @@ namespace nsxtalbsdk.Modules
 {
     public class AuthenticationHelper
     {
-        public static async Task<IRestResponse<LoginResponseType>> LoginAsync(LoginRequestType credentials, RestClient restClient, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
+        public static async Task<RestResponse<LoginResponseType>> LoginAsync(LoginRequestType credentials, RestClient restClient, JsonSerializerSettings DefaultSerializationSettings, CancellationToken _cancellationToken, int _timeout, int _retry)
         {
             StringBuilder GetAlertServiceURL = new StringBuilder("/login");
             var request = new RestRequest
             {
                 RequestFormat = DataFormat.Json,
-                Method = Method.POST
+                Method = Method.Post
             };
             request.Resource = GetAlertServiceURL.ToString();
             request.AddJsonBody(credentials);
-            IRestResponse<LoginResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<LoginResponseType>(request, _cancellationToken, _timeout, _retry);
+            RestResponse<LoginResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<LoginResponseType>(request, _cancellationToken, _timeout, _retry);
             if (response.StatusCode != HttpStatusCode.OK)
             {
                 var message = "Login operation to " + GetAlertServiceURL.ToString() + " did not complete successfully";
@@ -28,22 +28,17 @@ namespace nsxtalbsdk.Modules
             }
             return response;
         }
-        public static void Logout(List<RestResponseCookie> sessionCookies, RestClient restClient)
+        public static async         Task
+Logout(List<Cookie> sessionCookies, RestClient restClient)
         {
             StringBuilder PostLogoutURL = new StringBuilder("/logout");
             var request = new RestRequest
             {
                 RequestFormat = DataFormat.Json,
-                Method = Method.POST
+                Method = Method.Post
             };
-            sessionCookies.ForEach(x =>
-            {
-                request.AddCookie(x.Name, x.Value);
-            });
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
             request.Resource = PostLogoutURL.ToString();
-            IRestResponse response = restClient.Post(request);
+            RestResponse response = await restClient.PostAsync(request);
             if (response.StatusCode != HttpStatusCode.OK)
             {
                 var message = "logout operation to " + PostLogoutURL.ToString() + " did not complete successfully";

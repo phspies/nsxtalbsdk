@@ -20,8 +20,8 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<RestResponseCookie> sessionCookies;
-        public UserActivity(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private List<Cookie> sessionCookies;
+        public UserActivity(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
@@ -32,22 +32,12 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBUserActivityApiResponseType> GetUseractivityAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             StringBuilder GetUseractivityServiceURL = new StringBuilder("/api/useractivity");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -62,31 +52,23 @@ namespace nsxtalbsdk.Modules
             if (XAviVersion != null) request.AddHeader("X-Avi-Version", XAviVersion);
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.Resource = GetUseractivityServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBUserActivityApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityApiResponseType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBUserActivityApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityApiResponseType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetUseractivityServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetUseractivityServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBUserActivityType> PostUseractivityAsync(NSXTALBUserActivityType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostUseractivityServiceURL = new StringBuilder("/api/useractivity");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.POST
+                Method = Method.Post
             };
             request.AddHeader("Content-type", "application/json");
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
@@ -95,36 +77,23 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(Body);
             request.Resource = PostUseractivityServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBUserActivityType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBUserActivityType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP POST operation to " + PostUseractivityServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Post operation to " + PostUseractivityServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBUserActivityType> GetUseractivityUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            
-            
-            
-            
             StringBuilder GetUseractivityUuidServiceURL = new StringBuilder("/api/useractivity/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -138,33 +107,24 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetUseractivityUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBUserActivityType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBUserActivityType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetUseractivityUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetUseractivityUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBUserActivityType> PutUseractivityUuidAsync(NSXTALBUserActivityType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutUseractivityUuidServiceURL = new StringBuilder("/api/useractivity/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PUT
+                Method = Method.Put
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -175,33 +135,24 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PutUseractivityUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutUseractivityUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBUserActivityType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBUserActivityType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PUT operation to " + PutUseractivityUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Put operation to " + PutUseractivityUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBUserActivityType> PatchUseractivityUuidAsync(NSXTALBUserActivityType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchUseractivityUuidServiceURL = new StringBuilder("/api/useractivity/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PATCH
+                Method = Method.Patch
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -212,32 +163,23 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PatchUseractivityUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchUseractivityUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBUserActivityType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBUserActivityType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBUserActivityType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PATCH operation to " + PatchUseractivityUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Patch operation to " + PatchUseractivityUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<string> DeleteUseractivityUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeleteUseractivityUuidServiceURL = new StringBuilder("/api/useractivity/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.DELETE
+                Method = Method.Delete
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -247,15 +189,10 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeleteUseractivityUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeleteUseractivityUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
+            RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP DELETE operation to " + DeleteUseractivityUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Delete operation to " + DeleteUseractivityUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;

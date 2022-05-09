@@ -20,8 +20,8 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<RestResponseCookie> sessionCookies;
-        public PriorityLabels(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private List<Cookie> sessionCookies;
+        public PriorityLabels(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
@@ -32,24 +32,12 @@ namespace nsxtalbsdk.Modules
         }
         public async Task<NSXTALBPriorityLabelsApiResponseType> GetPrioritylabelsAsync(string? Name = null, string? RefersTo = null, string? ReferredBy = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? CloudUuid = null, string? CloudRefName = null, string? XAviVersion = null)
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
-            
-            
             StringBuilder GetPrioritylabelsServiceURL = new StringBuilder("/api/prioritylabels");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -66,31 +54,23 @@ namespace nsxtalbsdk.Modules
             if (CloudUuid != null) { request.AddQueryParameter("cloud_uuid", JsonConvert.ToString(CloudUuid).ToLowerString()); }
             if (CloudRefName != null) { request.AddQueryParameter("cloud_ref.name", JsonConvert.ToString(CloudRefName).ToLowerString()); }
             request.Resource = GetPrioritylabelsServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBPriorityLabelsApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsApiResponseType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBPriorityLabelsApiResponseType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsApiResponseType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetPrioritylabelsServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetPrioritylabelsServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBPriorityLabelsType> PostPrioritylabelsAsync(NSXTALBPriorityLabelsType Body, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             StringBuilder PostPrioritylabelsServiceURL = new StringBuilder("/api/prioritylabels");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.POST
+                Method = Method.Post
             };
             request.AddHeader("Content-type", "application/json");
             if (XAviTenant != null) request.AddHeader("X-Avi-Tenant", XAviTenant);
@@ -99,36 +79,23 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             request.AddJsonBody(Body);
             request.Resource = PostPrioritylabelsServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBPriorityLabelsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBPriorityLabelsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP POST operation to " + PostPrioritylabelsServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Post operation to " + PostPrioritylabelsServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBPriorityLabelsType> GetPrioritylabelsUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? Fields = null, bool? IncludeName = null, bool? SkipDefault = null, string? JoinSubresources = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
-            
-            
-            
-            
             StringBuilder GetPrioritylabelsUuidServiceURL = new StringBuilder("/api/prioritylabels/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.GET
+                Method = Method.Get
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -142,33 +109,24 @@ namespace nsxtalbsdk.Modules
             if (SkipDefault != null) { request.AddQueryParameter("skip_default", JsonConvert.ToString(SkipDefault).ToLowerString()); }
             if (JoinSubresources != null) { request.AddQueryParameter("join_subresources", JsonConvert.ToString(JoinSubresources).ToLowerString()); }
             request.Resource = GetPrioritylabelsUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBPriorityLabelsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBPriorityLabelsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP GET operation to " + GetPrioritylabelsUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Get operation to " + GetPrioritylabelsUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBPriorityLabelsType> PutPrioritylabelsUuidAsync(NSXTALBPriorityLabelsType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PutPrioritylabelsUuidServiceURL = new StringBuilder("/api/prioritylabels/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PUT
+                Method = Method.Put
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -179,33 +137,24 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PutPrioritylabelsUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PutPrioritylabelsUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBPriorityLabelsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBPriorityLabelsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PUT operation to " + PutPrioritylabelsUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Put operation to " + PutPrioritylabelsUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<NSXTALBPriorityLabelsType> PatchPrioritylabelsUuidAsync(NSXTALBPriorityLabelsType Body, string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Body == null) { throw new ArgumentNullException("Body cannot be null"); }
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder PatchPrioritylabelsUuidServiceURL = new StringBuilder("/api/prioritylabels/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.PATCH
+                Method = Method.Patch
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -216,32 +165,23 @@ namespace nsxtalbsdk.Modules
             request.AddJsonBody(Body);
             PatchPrioritylabelsUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = PatchPrioritylabelsUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<NSXTALBPriorityLabelsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsType>(request, cancellationToken, timeout, retry);
+            RestResponse<NSXTALBPriorityLabelsType> response = await restClient.ExecuteTaskAsyncWithPolicy<NSXTALBPriorityLabelsType>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP PATCH operation to " + PatchPrioritylabelsUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Patch operation to " + PatchPrioritylabelsUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;
         }
         public async Task<string> DeletePrioritylabelsUuidAsync(string Uuid, string? Name = null, string? XAviTenant = null, string? XAviTenantUUID = null, string? XCsrftoken = null, string? XAviVersion = null)
         {
-            
-            
-            
             if (XAviVersion == null) { XAviVersion = defaultXAviVerion; }
-            
             if (Uuid == null) { throw new ArgumentNullException("Uuid cannot be null"); }
             StringBuilder DeletePrioritylabelsUuidServiceURL = new StringBuilder("/api/prioritylabels/{uuid}");
             var request = new RestRequest
             {              
                 RequestFormat = DataFormat.Json,
-                Method = Method.DELETE
+                Method = Method.Delete
             };
             request.AddHeader("Content-type", "application/json");
             if (Name != null) { request.AddQueryParameter("name", JsonConvert.ToString(Name).ToLowerString()); }
@@ -251,15 +191,10 @@ namespace nsxtalbsdk.Modules
             if (XCsrftoken != null) request.AddHeader("X-CSRFToken", XCsrftoken);
             DeletePrioritylabelsUuidServiceURL.Replace("{uuid}", Uri.EscapeDataString(Helpers.ConvertToString(Uuid, System.Globalization.CultureInfo.InvariantCulture)));
             request.Resource = DeletePrioritylabelsUuidServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
+            RestResponse<string> response = await restClient.ExecuteTaskAsyncWithPolicy<string>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
-                var message = "HTTP DELETE operation to " + DeletePrioritylabelsUuidServiceURL.ToString() + " did not complete successfull";
+                var message = "HTTP Delete operation to " + DeletePrioritylabelsUuidServiceURL.ToString() + " did not complete successfull";
                 throw new NSXTALBException(message, (int)response.StatusCode, response.Content,  response.Headers, response.ErrorException);
 			}
             return response.Data;

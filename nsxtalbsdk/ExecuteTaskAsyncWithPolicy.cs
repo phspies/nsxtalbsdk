@@ -9,10 +9,10 @@ namespace nsxtalbsdk
 {
     public static class RestSharpExtentions
     {
-        public static async Task<IRestResponse<T>> ExecuteTaskAsyncWithPolicy<T>(this IRestClient client, IRestRequest request, CancellationToken cancellationToken = default(CancellationToken), int timeout = 5, int retry = 2)
+        public static async Task<RestResponse<T>> ExecuteTaskAsyncWithPolicy<T>(this RestClient client, RestRequest request, CancellationToken cancellationToken = default(CancellationToken), int timeout = 5, int retry = 2)
         {
-            var timeoutPolicy = Policy.TimeoutAsync<IRestResponse<T>>(timeout);
-            var timeoutRetryPolicy = Policy<IRestResponse<T>>
+            var timeoutPolicy = Policy.TimeoutAsync<RestResponse<T>>(timeout);
+            var timeoutRetryPolicy = Policy<RestResponse<T>>
                                         .Handle<TimeoutRejectedException>() // thrown by Polly's TimeoutPolicy if the inner call times out
                                         .WaitAndRetryAsync(
                                             retryCount: retry,
@@ -20,7 +20,7 @@ namespace nsxtalbsdk
                                             onRetryAsync: RetryDelegateAsync
                                         );
             var restResponsePolicy = Policy
-                                        .HandleResult<IRestResponse<T>>(result => result.ResponseStatus != ResponseStatus.Completed)
+                                        .HandleResult<RestResponse<T>>(result => result.ResponseStatus != ResponseStatus.Completed)
                                         .WaitAndRetryAsync(
                                         retryCount: retry, //2: retryCountOnBadResult
                                         sleepDurationProvider: attempt => TimeSpan.FromSeconds(0.25 * Math.Pow(2, attempt)), // Back off!  2, 4, 8 etc times 1/4-second = 0.5, 1, 2 seconds

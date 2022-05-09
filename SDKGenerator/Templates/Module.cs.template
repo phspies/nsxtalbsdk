@@ -20,8 +20,8 @@ namespace nsxtalbsdk.Modules
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private List<RestResponseCookie> sessionCookies;
-        public {{module}}(RestClient Client, List<RestResponseCookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
+        private List<Cookie> sessionCookies;
+        public {{module}}(RestClient Client, List<Cookie> _sessionCookies, CancellationToken _cancellationToken, int _timeout, int _retry, string _defaultXAviVerion)
         {
             restClient = Client;
             cancellationToken = _cancellationToken;
@@ -47,12 +47,7 @@ namespace nsxtalbsdk.Modules
             {{GetOperationPathInjectionCode . operations.Current }}
             {{/operation.parameters}}
             request.Resource = {{GetMethodName .}}ServiceURL.ToString();
-            request.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
-            request.AddHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
-            request.AddHeader("Referer", restClient.BaseUrl.AbsoluteUri.ToString());
-            IRestResponse<{{GetOperationReturnType . "bare"}}> response = await restClient.ExecuteTaskAsyncWithPolicy<{{GetOperationReturnType . "bare"}}>(request, cancellationToken, timeout, retry);
+            RestResponse<{{GetOperationReturnType . "bare"}}> response = await restClient.ExecuteTaskAsyncWithPolicy<{{GetOperationReturnType . "bare"}}>(request, cancellationToken, timeout, retry);
 		    if (!(200 <= (int)response.StatusCode && (int)response.StatusCode <= 300)) 
 			{
                 var message = "HTTP {{GetOperationHttpMethod .}} operation to " + {{GetMethodName .}}ServiceURL.ToString() + " did not complete successfull";

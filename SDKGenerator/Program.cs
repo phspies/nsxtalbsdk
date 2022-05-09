@@ -385,7 +385,7 @@ namespace nsxtapi
         }
         private static void GetOperationHttpMethod(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {
-            context.Write((arguments[0] as OpenApiOperationDescription).Method.ToUpper());
+            context.Write(CultureInfo.CurrentCulture.TextInfo.ToTitleCase((arguments[0] as OpenApiOperationDescription).Method));
         }
         private static void GetResponseType(RenderContext context, IList<object> arguments, IDictionary<string, object> options, RenderBlock fn, RenderBlock inverse)
         {

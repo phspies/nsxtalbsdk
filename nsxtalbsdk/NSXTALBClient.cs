@@ -1,14 +1,15 @@
-using System;
-using RestSharp;
-using RestSharp.Serializers.NewtonsoftJson;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using nsxtalbsdk.Models;
 using nsxtalbsdk.Modules;
+using RestSharp;
+using RestSharp.Serializers.NewtonsoftJson;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Linq;
-using System.Collections.Generic;
-using nsxtalbsdk.Models;
 namespace nsxtalbsdk
 {
     public class NSXTALBClient
@@ -19,12 +20,13 @@ namespace nsxtalbsdk
         private int timeout;
         private int retry;
         private string defaultXAviVerion;
-        private RestResponseCookie sessionCookie;
-        private List<RestResponseCookie> sessionCookies;
+        private Cookie sessionCookie;
+        private List<Cookie> sessionCookies;
         private string host;
         private int port;
         private bool remoteCertificateValidation;
         private LoginRequestType credentials;
+        private Uri uri;
         public NSXTALBClient(string Host, string Username, string Password, bool? RemoteCertificateValidation = true, JsonSerializerSettings? DefaultSerializationSettings = null, CancellationToken _cancellationToken = default(CancellationToken), int Port = 443, int _timeout = 5, int _retry = 2, string _defaultXAviVerion = null)
         {
             host = Host;
@@ -39,13 +41,14 @@ namespace nsxtalbsdk
                 Username = Username,
                 Password = Password
             };
-            var uri = new UriBuilder(host)
+            uri = new UriBuilder(host)
             {
                 Scheme = Uri.UriSchemeHttps,
                 Port = port
-            };
-            restClient = new RestClient(uri.Uri);
-            if (!remoteCertificateValidation) { restClient.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true; };
+            }.Uri;
+            var restOptions = new RestClientOptions() { BaseUrl = uri };
+            if (!remoteCertificateValidation) { restOptions.RemoteCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true; };
+            restClient = new RestClient(restOptions);
             if (DefaultSerializationSettings == null)
             {
                 defaultSerializationSettings = new JsonSerializerSettings
@@ -66,7 +69,7 @@ namespace nsxtalbsdk
         }
         public async Task<LoginResponseType> LoginAsync()
         {
-            IRestResponse<LoginResponseType> response = await AuthenticationHelper.LoginAsync(credentials, restClient, defaultSerializationSettings, cancellationToken, timeout, retry);
+            RestResponse<LoginResponseType> response = await AuthenticationHelper.LoginAsync(credentials, restClient, defaultSerializationSettings, cancellationToken, timeout, retry);
             sessionCookie = response.Cookies.First(x => x.Name == response.Data.SessionCookieName);
             sessionCookies = response.Cookies.ToList();
             if (sessionCookie == null)
@@ -77,11 +80,16 @@ namespace nsxtalbsdk
             {
                 defaultXAviVerion = response.Data.Version.MinVersion;
             }
+            restClient.AddCookie("csrftoken", sessionCookies.Find(x => x.Name == "csrftoken").Value, "/", response.Cookies.First().Domain);
+            restClient.AddCookie("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value, "/", response.Cookies.First().Domain);
+            restClient.AddDefaultHeader("X-CSRFToken", sessionCookies.Find(x => x.Name == "csrftoken").Value);
+            restClient.AddDefaultHeader("sessionid", sessionCookies.Find(x => x.Name == "sessionid").Value);
+            restClient.AddDefaultHeader("Referer", uri.AbsoluteUri);
             return response.Data;
         }
-        public void Logout()
+        public async void Logout()
         {
-            AuthenticationHelper.Logout(sessionCookies, restClient);
+            await AuthenticationHelper.Logout(sessionCookies, restClient);
         }
         public ClusterRuntime ClusterRuntimeModule => new ClusterRuntime(restClient, sessionCookies, cancellationToken, timeout, retry, defaultXAviVerion);
         public ActionGroupConfig ActionGroupConfigModule => new ActionGroupConfig(restClient, sessionCookies, cancellationToken, timeout, retry, defaultXAviVerion);
